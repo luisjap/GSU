@@ -58,8 +58,26 @@ a { color: inherit; }
 .hero-hi { color: var(--accent-ink); font-weight: 700; margin: 0 0 4px; }
 .hero h1 { font-size: clamp(3rem, 9vw, 4.5rem); letter-spacing: -0.02em; }
 .hero-role { font-size: clamp(1.1rem, 3.5vw, 1.4rem); font-weight: 700; color: var(--muted); margin: 6px 0 0; }
+.hero h1 em { font-style: italic; color: var(--accent); }
 .hero-bio { color: var(--muted); max-width: 460px; margin: 18px auto 0; }
 .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+
+/* Stats del hero */
+.stats {
+  list-style: none; padding: 24px 0 0; margin: 32px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+}
+.stats li { display: grid; gap: 2px; max-width: 150px; }
+.stats strong { font-size: 1.5rem; color: var(--accent-ink); }
+.stats span { font-size: 0.8rem; color: var(--muted); line-height: 1.35; }
+
+/* Encabezados de sección */
+.eyebrow {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.22em;
+  color: var(--accent-ink); margin: 0 0 4px;
+}
+.section-sub { color: var(--muted); margin-top: -8px; }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -92,6 +110,53 @@ a { color: inherit; }
   padding: 6px 14px; border-radius: 999px;
   font-size: 0.85rem; font-weight: 600;
 }
+
+/* ---- Servicios ---- */
+.services { display: grid; gap: 14px; grid-template-columns: 1fr; margin-top: 24px; }
+@media (min-width: 640px) { .services { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .services { grid-template-columns: repeat(3, 1fr); } }
+.service {
+  position: relative; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.service::before {
+  content: ""; position: absolute; inset: 0 auto auto 0;
+  height: 3px; width: 38px; background: var(--sa);
+  border-bottom-right-radius: 6px;
+  transition: width 0.45s ease;
+}
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 32px -18px rgba(0, 0, 0, 0.35);
+  border-color: transparent;
+}
+.service:hover::before { width: 100%; }
+.service-ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 12px; font-size: 1.25rem;
+  background: color-mix(in srgb, var(--sa) 12%, transparent);
+  transition: transform 0.25s ease;
+}
+.service:hover .service-ico { transform: scale(1.12) rotate(-6deg); }
+.service h3 { font-size: 1rem; margin-top: 12px; }
+.service p { color: var(--muted); font-size: 0.88rem; margin: 6px 0 0; }
+
+/* ---- Proceso ---- */
+.steps { display: grid; gap: 14px; grid-template-columns: 1fr; margin-top: 24px; }
+@media (min-width: 720px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+  padding: 18px;
+}
+.step-n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 999px;
+  background: var(--accent); color: #fff; font-weight: 800;
+}
+.step h3 { font-size: 0.95rem; margin-top: 10px; }
+.step p { color: var(--muted); font-size: 0.85rem; margin: 6px 0 0; }
 
 /* ---- Filtros ---- */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
@@ -190,12 +255,12 @@ a { color: inherit; }
 .contact-sub { color: var(--muted); margin-top: -6px; }
 #contact-form { display: grid; gap: 14px; max-width: 480px; margin-top: 20px; }
 #contact-form label { display: grid; gap: 6px; font-weight: 600; font-size: 0.9rem; }
-#contact-form input, #contact-form textarea {
+#contact-form input, #contact-form textarea, #contact-form select {
   width: 100%; padding: 12px 14px; border-radius: 12px;
   border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
   font: inherit;
 }
-#contact-form input:focus, #contact-form textarea:focus {
+#contact-form input:focus, #contact-form textarea:focus, #contact-form select:focus {
   outline: none; border-color: var(--accent);
 }
 #form-status { min-height: 1.2em; font-size: 0.9rem; font-weight: 600; margin: 0; }

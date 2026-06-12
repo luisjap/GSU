@@ -74,11 +74,13 @@ app.get('/api/projects', async (_req, res) => {
 
 /** Contacto: por ahora solo loguea; listo para enchufar Resend/SendGrid */
 app.post('/api/contact', (req, res) => {
-  const { name, email, message } = req.body ?? {};
+  const { name, email, message, service } = req.body ?? {};
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Faltan campos: nombre, email y mensaje son obligatorios' });
   }
-  console.log(`[contacto] ${new Date().toISOString()} — ${name} <${email}>: ${message}`);
+  console.log(
+    `[cotización] ${new Date().toISOString()} — ${name} <${email}>${service ? ` · ${service}` : ''}: ${message}`,
+  );
   res.json({ ok: true });
 });
 
