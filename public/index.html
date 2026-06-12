@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lu.dev — Full-Stack Developer</title>
+  <meta name="description" content="Portfolio de Lu: desarrollo full-stack de plataformas web, e-commerce y sistemas a medida. Node.js, React, Next.js." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Lu.dev — Full-Stack Developer" />
+  <meta property="og:description" content="Construyo plataformas web, e-commerce y sistemas a medida que resuelven negocios reales." />
+  <meta property="og:image" content="/images/projects/sistema-catalogo.svg" />
+  <meta property="og:locale" content="es_CL" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-brand" href="#top">Lu<span>.dev</span></a>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto" class="nav-cta">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-hi">Hola, soy</p>
+      <h1>Lu</h1>
+      <p class="hero-role">Full-Stack Developer</p>
+      <p class="hero-bio">
+        Construyo plataformas web, e-commerce y sistemas a medida
+        que resuelven negocios reales — de la idea al deploy.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn-ghost" href="#contacto">Contacto</a>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="section reveal" id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p class="about-text">
+        Desarrollador full-stack enfocado en productos que se usan de verdad:
+        marketplaces multi-tienda, CRMs a medida y plataformas de venta online.
+        Me muevo cómodo entre el backend, el frontend y el deploy — y me obsesiona
+        que las cosas sean simples para el usuario final.
+      </p>
+      <ul class="skills" aria-label="Tecnologías">
+        <li>JavaScript</li><li>TypeScript</li><li>Node.js</li><li>Express</li>
+        <li>NestJS</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li>
+        <li>PostgreSQL</li><li>Redis</li><li>SQLite</li><li>Railway</li><li>Git</li>
+      </ul>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section reveal" id="proyectos">
+      <h2>Proyectos</h2>
+      <div class="filters" role="tablist" aria-label="Filtrar proyectos">
+        <button class="chip active" data-filter="todos">Todos</button>
+        <button class="chip" data-filter="personal">Personal</button>
+        <button class="chip" data-filter="cliente">Cliente</button>
+      </div>
+      <div class="grid" id="projects-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section reveal" id="contacto">
+      <h2>Contacto</h2>
+      <p class="contact-sub">¿Tienes un proyecto en mente? Escríbeme.</p>
+      <form id="contact-form" novalidate>
+        <label>
+          Nombre
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+        <p id="form-status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Lu.dev</span>
+    <nav>
+      <a href="https://github.com/luisjap" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
