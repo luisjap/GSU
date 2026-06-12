@@ -47,8 +47,48 @@ function render() {
   grid.innerHTML = visible.length
     ? visible.map(card).join('')
     : '<p class="grid-empty">No hay proyectos en esta categoría todavía.</p>';
+  grid.scrollTo({ left: 0 });
+  renderDots(visible.length);
   observeReveals();
 }
+
+/* ---- Carrusel: dots + flechas ---- */
+const dotsBox = document.getElementById('carousel-dots');
+
+function renderDots(count) {
+  dotsBox.innerHTML = count > 1
+    ? Array.from({ length: count }, (_, i) => `<span${i === 0 ? ' class="on"' : ''}></span>`).join('')
+    : '';
+  updateNav();
+}
+
+function cardStep() {
+  const first = grid.querySelector('.card');
+  return first ? first.offsetWidth + 18 : 340;
+}
+
+grid.addEventListener('scroll', () => {
+  const dots = dotsBox.children;
+  if (!dots.length) return;
+  const max = grid.scrollWidth - grid.clientWidth;
+  const idx = max > 0
+    ? Math.min(dots.length - 1, Math.round((grid.scrollLeft / max) * (dots.length - 1)))
+    : 0;
+  [...dots].forEach((d, i) => d.classList.toggle('on', i === idx));
+  updateNav();
+});
+
+const prevBtn = document.getElementById('nav-prev');
+const nextBtn = document.getElementById('nav-next');
+prevBtn.addEventListener('click', () => grid.scrollBy({ left: -cardStep(), behavior: 'smooth' }));
+nextBtn.addEventListener('click', () => grid.scrollBy({ left: cardStep(), behavior: 'smooth' }));
+
+function updateNav() {
+  const max = grid.scrollWidth - grid.clientWidth;
+  prevBtn.style.visibility = grid.scrollLeft > 8 ? 'visible' : 'hidden';
+  nextBtn.style.visibility = grid.scrollLeft < max - 8 ? 'visible' : 'hidden';
+}
+window.addEventListener('resize', updateNav);
 
 /* Filtros */
 document.querySelectorAll('.chip').forEach((chip) => {

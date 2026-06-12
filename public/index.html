@@ -65,7 +65,12 @@
         <button class="chip" data-filter="personal">Personal</button>
         <button class="chip" data-filter="cliente">Cliente</button>
       </div>
-      <div class="grid" id="projects-grid" aria-live="polite"></div>
+      <div class="carousel">
+        <button class="cnav cnav-prev" id="nav-prev" aria-label="Proyecto anterior">←</button>
+        <div class="track" id="projects-grid" aria-live="polite"></div>
+        <button class="cnav cnav-next" id="nav-next" aria-label="Proyecto siguiente">→</button>
+        <div class="cdots" id="carousel-dots" aria-hidden="true"></div>
+      </div>
     </section>
 
     <!-- CONTACTO -->

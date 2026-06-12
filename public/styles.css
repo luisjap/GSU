@@ -104,12 +104,41 @@ a { color: inherit; }
 .chip:hover { border-color: var(--accent); color: var(--accent-ink); }
 .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-/* ---- Grid de proyectos ---- */
-.grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
-@media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+/* ---- Carrusel de proyectos ---- */
+.carousel { position: relative; }
+.track {
+  display: flex; gap: 18px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  padding: 4px 4px 10px;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.track::-webkit-scrollbar { display: none; }
+
+.cnav {
+  position: absolute; top: 42%; z-index: 5;
+  display: none; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font-size: 1.1rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+.cnav:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cnav-prev { left: -14px; }
+.cnav-next { right: -14px; }
+@media (min-width: 720px) { .cnav { display: flex; } }
+
+.cdots { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
+.cdots span {
+  width: 7px; height: 7px; border-radius: 999px;
+  background: var(--line); transition: all 0.3s ease;
+}
+.cdots span.on { width: 24px; background: var(--accent); }
 
 .card {
   position: relative; display: flex; flex-direction: column; overflow: hidden;
+  flex: 0 0 min(80vw, 340px); scroll-snap-align: start;
   background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
