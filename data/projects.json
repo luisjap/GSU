@@ -28,17 +28,17 @@
     "year": 2026
   },
   {
-    "id": "crm-servicio-tecnico",
-    "title": "CRM Servicio Técnico",
-    "description": "CRM a medida para servicio técnico: clientes, equipos, presupuestos, agenda y kiosko.",
-    "longDescription": "Sistema de gestión integral para un servicio técnico multinacional (Chile y Perú): ingreso de equipos, presupuestos, pagos, stock, agenda de citas, kiosko de autoatención con QR, integración con Gmail y sincronización con Zoho CRM. Módulo independiente de gestión de ventas multi-sucursal.",
+    "id": "bosskin",
+    "title": "BOSSKIN",
+    "description": "Landing de asesoría de skincare online: agenda de consultas, confirmaciones y panel de administración.",
+    "longDescription": "Sitio para cosmetóloga certificada: landing de conversión con asesoría de skincare personalizada, flujo de agendamiento de consultas online con confirmación y reagendamiento, y panel de administración. Incluye editor de video con IA (Whisper) para contenido de la marca.",
     "category": "cliente",
     "status": "completado",
-    "thumbnail": "/images/projects/crm-servicio-tecnico.svg",
-    "tech": ["Node.js", "Express", "SQLite", "Railway"],
-    "demoUrl": "https://crm-servicio-tecnico-production.up.railway.app",
-    "repoUrl": "https://github.com/luisjap/crm-servicio-tecnico",
+    "thumbnail": "/images/projects/bosskin.svg",
+    "tech": ["HTML/CSS/JS", "Node.js", "Railway"],
+    "demoUrl": "https://bosskinlab.com",
+    "repoUrl": "https://github.com/luisjap",
     "featured": false,
-    "year": 2025
+    "year": 2026
   }
 ]
