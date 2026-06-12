@@ -9,10 +9,22 @@ const esc = (s) =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 function card(p) {
+  const img = p.preview?.image ?? p.thumbnail;
+  const linkBar = p.preview
+    ? `<a class="card-link" href="${esc(p.demoUrl)}" target="_blank" rel="noopener noreferrer">
+         <img src="${esc(p.preview.favicon)}" alt="" width="16" height="16" loading="lazy" />
+         <span>${esc(p.preview.domain)}</span>
+         <span aria-hidden>↗</span>
+       </a>`
+    : '';
   return `
   <article class="card reveal ${p.featured ? 'featured' : ''}" data-category="${esc(p.category)}">
     ${p.featured ? '<span class="card-badge">★ DESTACADO</span>' : ''}
-    <img src="${esc(p.thumbnail)}" alt="${esc(p.title)}" loading="lazy" />
+    <a href="${esc(p.demoUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Abrir ${esc(p.title)}">
+      <img class="card-cover" src="${esc(img)}" alt="${esc(p.title)}" loading="lazy"
+           onerror="this.onerror=null;this.src='${esc(p.thumbnail)}'" />
+    </a>
+    ${linkBar}
     <div class="card-body">
       <div class="card-head">
         <h3>${esc(p.title)}</h3>

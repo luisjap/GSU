@@ -121,7 +121,19 @@ a { color: inherit; }
   font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em;
   padding: 4px 10px; border-radius: 999px;
 }
-.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+.card-cover { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; display: block; background: var(--chip-bg); }
+.card-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-block: 1px solid var(--line);
+  background: var(--chip-bg);
+  font-size: 0.8rem; font-weight: 600; color: var(--muted);
+  text-decoration: none;
+}
+.card-link:hover { color: var(--accent-ink); }
+.card-link img { border-radius: 4px; }
+.card-link span:first-of-type {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
 .card-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .card-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
 .card h3 { font-size: 1.08rem; }
