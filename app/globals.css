@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 224 15% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 15% 10%;
+    --primary: 161 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 220 14% 46%;
+    --muted-foreground: 220 14% 46%;
+    --border: 220 13% 91%;
+    --ring: 161 76% 36%;
+    --radius: 0.75rem;
+  }
+  .dark {
+    --background: 225 25% 8%;
+    --foreground: 215 25% 95%;
+    --card: 225 20% 12%;
+    --card-foreground: 215 25% 95%;
+    --primary: 161 76% 40%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 220 14% 60%;
+    --border: 215 20% 18%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  h1, h2, h3, h4 { @apply font-display; }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .text-gradient {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(100deg, #34d399, #10b981 55%, #5eead4);
+  }
+}
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
