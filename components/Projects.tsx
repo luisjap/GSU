@@ -31,7 +31,16 @@ function ProjectCard({ project }: { project: Project }) {
   const { title, description, tech, demoUrl, category, preview } = project;
 
   return (
-    <div className="group relative flex flex-col rounded-2xl bg-white/[0.03] border border-white/[0.07] overflow-hidden hover:border-white/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 h-full">
+    <div className={`group relative flex flex-col rounded-2xl bg-white/[0.03] border border-white/[0.07] overflow-hidden hover:border-white/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 h-full${demoUrl ? ' cursor-pointer' : ''}`}>
+      {demoUrl && (
+        <a
+          href={demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Ver proyecto ${title}`}
+          className="absolute inset-0 z-10"
+        />
+      )}
       {/* screenshot */}
       <div className="relative w-full h-44 bg-[#111827] overflow-hidden shrink-0">
         {preview?.image ? (
@@ -88,17 +97,12 @@ function ProjectCard({ project }: { project: Project }) {
           </div>
         )}
         {demoUrl && (
-          <a
-            href={demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors group/link"
-          >
+          <span className="mt-2 inline-flex items-center gap-1.5 text-emerald-400 group-hover:text-emerald-300 text-sm font-medium transition-colors">
             Ver proyecto
-            <svg className="w-3.5 h-3.5 translate-x-0 group-hover/link:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
-          </a>
+          </span>
         )}
       </div>
     </div>
