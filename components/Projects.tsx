@@ -18,6 +18,7 @@ interface Project {
   category: string;
   status?: string;
   tech?: string[];
+  thumbnail?: string;
   demoUrl?: string;
   repoUrl?: string;
   featured?: boolean;
@@ -28,7 +29,7 @@ interface Project {
 const CATS = ['todos', 'personal', 'cliente'];
 
 function ProjectCard({ project }: { project: Project }) {
-  const { title, description, tech, demoUrl, category, preview } = project;
+  const { title, description, tech, demoUrl, category, preview, thumbnail } = project;
 
   return (
     <div className={`group relative flex flex-col rounded-2xl bg-white/[0.03] border border-white/[0.07] overflow-hidden hover:border-white/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 h-full${demoUrl ? ' cursor-pointer' : ''}`}>
@@ -43,9 +44,9 @@ function ProjectCard({ project }: { project: Project }) {
       )}
       {/* screenshot */}
       <div className="relative w-full h-44 bg-[#111827] overflow-hidden shrink-0">
-        {preview?.image ? (
+        {(preview?.image || thumbnail) ? (
           <Image
-            src={preview.image}
+            src={preview?.image || thumbnail!}
             alt={title}
             fill
             className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
