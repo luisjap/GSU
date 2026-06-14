@@ -1,5 +1,19 @@
 [
   {
+    "id": "tour-cartagena",
+    "title": "Tour Cartagena Travel",
+    "description": "Sitio web cinematográfico para agencia de tours en Cartagena de Indias con scroll GSAP, 33 experiencias y booking por WhatsApp.",
+    "longDescription": "Landing page inmersiva para agencia de tours en Cartagena de Indias. Hero con video vertical/horizontal adaptativo, sección de 5 destinos con scroll horizontal pinneado (GSAP + Lenis), catálogo por destino con 33 actividades únicas ilustradas con imágenes IA (kie.ai Flux Kontext Pro), sistema de reserva directo por WhatsApp con mensaje pre-armado. Rutas separadas por destino (/catalogo/:id) con React Router, code splitting por ruta, preload de video y fuentes optimizadas.",
+    "category": "cliente",
+    "status": "completado",
+    "thumbnail": "/images/projects/tour-cartagena.svg",
+    "tech": ["React", "Vite", "TypeScript", "Tailwind CSS v4", "GSAP", "Framer Motion", "kie.ai"],
+    "demoUrl": null,
+    "repoUrl": null,
+    "featured": true,
+    "year": 2026
+  },
+  {
     "id": "sistema-catalogo",
     "title": "Sistema de Catálogo — Centro Comercial",
     "description": "Marketplace SaaS multi-tenant: cada tienda con su e-commerce y pedidos por WhatsApp.",
