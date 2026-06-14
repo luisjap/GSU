@@ -6,6 +6,7 @@
     "category": "cliente",
     "status": "completado",
     "thumbnail": "/images/projects/tour-cartagena.svg",
+    "demoUrl": "/antravel/",
     "featured": true,
     "year": 2026
   },

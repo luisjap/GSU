@@ -136,8 +136,8 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
       {demoUrl && (
         <a
           href={demoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={demoUrl.startsWith('/') ? '_self' : '_blank'}
+          rel={demoUrl.startsWith('/') ? undefined : 'noopener noreferrer'}
           aria-label={`Ver proyecto ${title}`}
           className="absolute inset-0 z-10"
         />
