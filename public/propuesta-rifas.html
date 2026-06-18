@@ -114,9 +114,23 @@ nav{position:sticky;top:0;z-index:200;background:rgba(7,7,7,.92);backdrop-filter
 }
 
 /* Dots */
-.c-dots{display:flex;justify-content:center;gap:5px;margin-top:10px}
-.dot{width:5px;height:5px;border-radius:50%;background:var(--dim);border:none;transition:background .2s,width .25s,border-radius .25s;cursor:pointer}
-.dot.active{background:var(--gold);width:22px;border-radius:3px}
+.c-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18);border:none;transition:background .25s,width .3s,border-radius .3s;cursor:pointer;padding:0}
+.dot.active{background:var(--gold);width:24px;border-radius:4px}
+/* Swipe hint */
+.c-swipe-hint{display:none;align-items:center;gap:7px;justify-content:center;margin-top:10px;pointer-events:none;transition:opacity .6s ease}
+.c-swipe-hint.gone{opacity:0}
+.swipe-label{color:rgba(255,255,255,.3);font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.swipe-arr{color:rgba(201,168,76,.5);font-size:14px;font-weight:700}
+.swipe-arr.ra{animation:nudge-r 1.4s ease-in-out infinite}
+.swipe-arr.la{animation:nudge-l 1.4s ease-in-out infinite;animation-delay:.15s}
+@keyframes nudge-r{0%,60%,100%{transform:translateX(0);opacity:.4}30%{transform:translateX(5px);opacity:1}}
+@keyframes nudge-l{0%,60%,100%{transform:translateX(0);opacity:.4}30%{transform:translateX(-5px);opacity:1}}
+@media(max-width:767px){.c-swipe-hint{display:flex}}
+/* Right-edge fade overlay para indicar contenido oculto */
+.c-edge{position:absolute;right:0;top:0;bottom:20px;width:52px;background:linear-gradient(to right,transparent,rgba(5,5,5,.7));pointer-events:none;z-index:3;border-radius:0 12px 12px 0;transition:opacity .5s}
+.c-edge.gone{opacity:0}
+@media(min-width:768px){.c-edge{display:none}}
 
 /* ===== IMAGE HELPERS ===== */
 /* Aspect-ratio wrappers — NO fixed heights */
@@ -516,7 +530,13 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
         </div>
 
       </div>
+      <div class="c-edge" id="edge-preview"></div>
       <div class="c-dots" id="dots-preview"></div>
+      <div class="c-swipe-hint" id="hint-preview">
+        <span class="swipe-arr la">‹</span>
+        <span class="swipe-label">Desliza</span>
+        <span class="swipe-arr ra">›</span>
+      </div>
     </div>
   </div>
 </section>
@@ -627,7 +647,13 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
         </div>
 
       </div>
+      <div class="c-edge" id="edge-setup"></div>
       <div class="c-dots" id="dots-setup"></div>
+      <div class="c-swipe-hint" id="hint-setup">
+        <span class="swipe-arr la">‹</span>
+        <span class="swipe-label">Desliza</span>
+        <span class="swipe-arr ra">›</span>
+      </div>
     </div>
   </div>
 </section>
@@ -679,7 +705,13 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
           <div class="c-slide"><div class="feat-card" style="min-height:120px"><div class="feat-icon">💳</div><div><h4>MercadoPago</h4><p>Integración opcional para pagos online.</p></div></div></div>
           <div class="c-slide"><div class="feat-card" style="min-height:120px"><div class="feat-icon">📱</div><div><h4>Notificaciones Telegram</h4><p>Aviso instantáneo por cada compra nueva.</p></div></div></div>
         </div>
+        <div class="c-edge" id="edge-feat"></div>
         <div class="c-dots" id="dots-feat"></div>
+        <div class="c-swipe-hint" id="hint-feat">
+          <span class="swipe-arr la">‹</span>
+          <span class="swipe-label">Desliza</span>
+          <span class="swipe-arr ra">›</span>
+        </div>
       </div>
     </div>
   </div>
@@ -823,7 +855,13 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
             </div>
 
           </div>
+          <div class="c-edge" id="edge-content"></div>
           <div class="c-dots" id="dots-content"></div>
+          <div class="c-swipe-hint" id="hint-content">
+            <span class="swipe-arr la">‹</span>
+            <span class="swipe-label">Desliza</span>
+            <span class="swipe-arr ra">›</span>
+          </div>
         </div>
         <div class="reveal" style="margin-top:14px;padding:14px 18px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);border-radius:var(--r-sm)">
           <p style="color:var(--muted);font-size:13px;line-height:1.65"><strong style="color:var(--gold)">Entrega única por paquete.</strong> Contenido adicional o entregas extra se cotizan aparte.</p>
@@ -1039,6 +1077,41 @@ new Carousel({ scrollId:'scroll-preview', dotsId:'dots-preview', prevId:'prev-pr
 new Carousel({ scrollId:'scroll-setup',   dotsId:'dots-setup',   prevId:'prev-setup',   nextId:'next-setup',   counterId:'counter-setup' })
 new Carousel({ scrollId:'scroll-feat',    dotsId:'dots-feat',    prevId:'prev-feat',    nextId:'next-feat',    counterId:'counter-feat' })
 new Carousel({ scrollId:'scroll-content', dotsId:'dots-content', prevId:'prev-content', nextId:'next-content', counterId:'counter-content' })
+
+// Swipe hints: nudge + auto-dismiss on first scroll
+;(function(){
+  const carousels = [
+    {scroll:'scroll-preview', hint:'hint-preview', edge:'edge-preview'},
+    {scroll:'scroll-setup',   hint:'hint-setup',   edge:'edge-setup'},
+    {scroll:'scroll-feat',    hint:'hint-feat',     edge:'edge-feat'},
+    {scroll:'scroll-content', hint:'hint-content',  edge:'edge-content'},
+  ]
+  function dismiss(hintEl, edgeEl) {
+    if (hintEl) hintEl.classList.add('gone')
+    if (edgeEl) edgeEl.classList.add('gone')
+  }
+  const isMobile = window.innerWidth < 768
+  carousels.forEach(({scroll, hint, edge}, idx) => {
+    const sc = document.getElementById(scroll)
+    const ht = document.getElementById(hint)
+    const ed = document.getElementById(edge)
+    if (!sc) return
+    // Nudge animation on mobile: peek right then return
+    if (isMobile) {
+      setTimeout(() => {
+        sc.scrollTo({left: 38, behavior:'smooth'})
+        setTimeout(() => sc.scrollTo({left: 0, behavior:'smooth'}), 550)
+      }, 1800 + idx * 400)
+    }
+    // Dismiss hint on first user scroll
+    let dismissed = false
+    sc.addEventListener('scroll', () => {
+      if (!dismissed) { dismissed = true; dismiss(ht, ed) }
+    }, {passive:true})
+    // Also dismiss after 6s automatically
+    setTimeout(() => dismiss(ht, ed), 6000)
+  })
+})()
 
 /* ===== EMAIL TABS ===== */
 const emailData = [
