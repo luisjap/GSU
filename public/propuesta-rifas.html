@@ -289,7 +289,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(7,7,7,.92);backdrop-filter
 .pf{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--muted);line-height:1.4}
 .pf-check{color:var(--green);flex-shrink:0;font-size:13px;margin-top:1px}
 .pf-x{color:var(--dim);flex-shrink:0;font-size:13px;margin-top:1px}
-.pc-btn{width:100%;margin-top:22px;padding:13px;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s;border:none}
+.pc-btn{width:100%;margin-top:22px;padding:13px;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s;border:none;display:block;text-align:center;text-decoration:none}
 .pc-btn:hover{opacity:.85;transform:translateY(-1px)}
 .pc-btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#000}
 .pc-btn-silver{background:linear-gradient(135deg,var(--silver),var(--silver-lt));color:#000}
@@ -679,7 +679,6 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
       <div class="feat-card reveal d2"><div class="feat-icon">📤</div><div><h4>Exportar a CSV</h4><p>Descarga el listado completo de compras con un solo clic.</p></div></div>
       <div class="feat-card reveal d3"><div class="feat-icon">🔐</div><div><h4>Panel protegido</h4><p>Acceso con contraseña segura y sesión con tiempo de expiración.</p></div></div>
       <div class="feat-card reveal d1"><div class="feat-icon">💳</div><div><h4>MercadoPago</h4><p>Integración opcional para recibir pagos online directamente.</p></div></div>
-      <div class="feat-card reveal d2"><div class="feat-icon">📱</div><div><h4>Notificaciones Telegram</h4><p>Aviso instantáneo a tu teléfono por cada compra nueva.</p></div></div>
       <div class="feat-card reveal d3"><div class="feat-icon">📁</div><div><h4>Gestión de comprobantes</h4><p>Almacenamiento seguro y acceso desde el panel admin.</p></div></div>
     </div>
 
@@ -703,7 +702,6 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
           <div class="c-slide"><div class="feat-card" style="min-height:120px"><div class="feat-icon">📤</div><div><h4>Exportar a CSV</h4><p>Descarga el listado completo con un clic.</p></div></div></div>
           <div class="c-slide"><div class="feat-card" style="min-height:120px"><div class="feat-icon">🔐</div><div><h4>Panel protegido</h4><p>Acceso con contraseña y sesión segura.</p></div></div></div>
           <div class="c-slide"><div class="feat-card" style="min-height:120px"><div class="feat-icon">💳</div><div><h4>MercadoPago</h4><p>Integración opcional para pagos online.</p></div></div></div>
-          <div class="c-slide"><div class="feat-card" style="min-height:120px"><div class="feat-icon">📱</div><div><h4>Notificaciones Telegram</h4><p>Aviso instantáneo por cada compra nueva.</p></div></div></div>
         </div>
         <div class="c-edge" id="edge-feat"></div>
         <div class="c-dots" id="dots-feat"></div>
@@ -882,7 +880,7 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
           <div class="cp-item"><span class="cp-check">✔</span>Formato 9:16 listo para subir</div>
           <div class="cp-item"><span class="cp-x">—</span><span style="color:var(--dim)">Contenido extra se cotiza aparte</span></div>
         </div>
-        <button class="pc-btn pc-btn-gold" style="margin-top:22px">Contratar paquete</button>
+        <a href="https://wa.me/56998501325?text=Hola%2C%20me%20interesa%20contratar%20el%20Paquete%20de%20Contenido%20Digital%20%28%24250.000%20CLP%29" target="_blank" class="pc-btn pc-btn-gold" style="margin-top:22px">Contratar paquete</a>
       </div>
     </div>
   </div>
@@ -914,7 +912,7 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
           <div class="pf"><span class="pf-check">✔</span>Soporte técnico mensual</div>
           <div class="pf"><span class="pf-x">—</span><span style="color:var(--dim)">Creación de contenido</span></div>
         </div>
-        <button class="pc-btn pc-btn-gold">Contratar plataforma</button>
+        <a href="https://wa.me/56998501325?text=Hola%2C%20me%20interesa%20contratar%20la%20Plataforma%20Web%20de%20Rifas%20%28%24350.000%20CLP%29" target="_blank" class="pc-btn pc-btn-gold">Contratar plataforma</a>
       </div>
       <div class="price-card plata reveal d2">
         <p class="pc-name">Todo incluido</p>
@@ -932,7 +930,7 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
           <div class="pf"><span class="pf-check">✔</span>Optimizado Reels y TikTok</div>
           <div class="pf"><span class="pf-check">✔</span>Soporte técnico mensual</div>
         </div>
-        <button class="pc-btn pc-btn-silver">Contratar combo</button>
+        <a href="https://wa.me/56998501325?text=Hola%2C%20me%20interesa%20contratar%20el%20Combo%20Todo%20Incluido%20%28%24500.000%20CLP%29" target="_blank" class="pc-btn pc-btn-silver">Contratar combo</a>
       </div>
       <div class="price-card bronce reveal d3">
         <p class="pc-name">Contenido digital</p>
@@ -949,7 +947,7 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
           <div class="pf"><span class="pf-check">✔</span>1 ronda de ajustes por video</div>
           <div class="pf"><span class="pf-check">✔</span>Optimizado Reels y TikTok</div>
         </div>
-        <button class="pc-btn pc-btn-bronze">Contratar contenido</button>
+        <a href="https://wa.me/56998501325?text=Hola%2C%20me%20interesa%20contratar%20el%20Paquete%20de%20Contenido%20Digital%20%28%24250.000%20CLP%29" target="_blank" class="pc-btn pc-btn-bronze">Contratar contenido</a>
       </div>
     </div>
     <div class="pricing-note reveal">
@@ -970,8 +968,7 @@ footer{padding:24px 20px;border-top:1px solid var(--border);text-align:center;co
     <h2 class="reveal d1">¿Listo para lanzar<br>tu rifa?</h2>
     <p class="reveal d2">Cuéntanos el premio, la fecha y los boletos.<br>Te tenemos online en 48 horas.</p>
     <div class="cta-actions reveal d3">
-      <a href="https://wa.me/56912345678" class="btn btn-gold">Escribir por WhatsApp</a>
-      <a href="mailto:contacto@ejemplo.cl" class="btn btn-outline">Enviar un correo</a>
+      <a href="https://wa.me/56998501325?text=Hola%2C%20quiero%20lanzar%20mi%20rifa%20digital" target="_blank" class="btn btn-gold">Escribir por WhatsApp</a>
     </div>
   </div>
 </section>
