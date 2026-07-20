@@ -1,56 +1,58 @@
+import { ClipboardList, Wallet, Wrench, ShieldCheck } from 'lucide-react';
+
 const STEPS = [
   {
     n: '01',
-    title: 'Descubrimiento',
-    desc: 'Analizamos tu negocio, objetivos y usuarios. Definimos el alcance, el stack técnico y el roadmap del proyecto.',
-    icon: '🎯',
+    title: 'Diagnóstico y cotización',
+    desc: 'Evaluamos el trabajo y entregamos una cotización clara, con mano de obra y materiales desglosados por separado.',
+    icon: ClipboardList,
   },
   {
     n: '02',
-    title: 'Diseño & Prototipo',
-    desc: 'Wireframes, arquitectura de información y prototipo interactivo. Validamos antes de escribir una línea de código.',
-    icon: '✏️',
+    title: 'Confirmación y anticipo',
+    desc: 'Confirmas el trabajo y cubres el anticipo — con eso reservamos al técnico certificado y los materiales.',
+    icon: Wallet,
   },
   {
     n: '03',
-    title: 'Desarrollo Iterativo',
-    desc: 'Sprints cortos con entregables reales. Deploy continuo para que veas el avance desde el primer día.',
-    icon: '⚙️',
+    title: 'Ejecución certificada',
+    desc: 'El técnico especializado ejecuta el trabajo en la fecha acordada, con los materiales ya listos.',
+    icon: Wrench,
   },
   {
     n: '04',
-    title: 'Launch & Soporte',
-    desc: 'Deployment en producción, monitoreo, capacitación y soporte post-lanzamiento para asegurar el éxito.',
-    icon: '🚀',
+    title: 'Garantía y cierre',
+    desc: 'Verificamos el resultado contigo y respondemos por el trabajo ejecutado bajo garantía.',
+    icon: ShieldCheck,
   },
 ];
 
 export default function Process() {
   return (
-    <section id="proceso" className="bg-[#0b1220] py-24 px-4 sm:px-6">
+    <section id="proceso" className="bg-[#0a141f] py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <span className="text-emerald-400 text-sm font-semibold tracking-widest uppercase">Proceso</span>
+          <span className="text-[#5fe6da] text-sm font-semibold tracking-widest uppercase">Cómo trabajamos</span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
-            De la idea al producto<br />en 4 pasos
+            De la cotización al trabajo<br />terminado, en 4 pasos
           </h2>
           <p className="mt-4 text-white/45 text-base leading-relaxed">
-            Un proceso ágil y transparente diseñado para minimizar riesgos y maximizar el valor entregado.
+            Un proceso transparente: sabes qué pagas, cuándo, y quién responde por el resultado.
           </p>
         </div>
 
         <div className="relative">
           {/* connector line desktop */}
-          <div className="hidden lg:block absolute top-10 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+          <div className="hidden lg:block absolute top-10 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-px bg-gradient-to-r from-transparent via-[#22d3c4]/30 to-transparent" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {STEPS.map((s) => (
               <div key={s.n} className="group relative flex flex-col items-center text-center">
                 {/* step circle */}
-                <div className="relative w-20 h-20 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6 text-3xl
-                  group-hover:bg-emerald-500/10 group-hover:border-emerald-500/30 group-hover:shadow-xl group-hover:shadow-emerald-500/10 transition-all duration-300">
-                  {s.icon}
-                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-emerald-500 text-[#0b1220] text-[10px] font-bold flex items-center justify-center font-display">
+                <div className="relative w-20 h-20 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6 text-white/70
+                  group-hover:bg-[#22d3c4]/10 group-hover:border-[#22d3c4]/30 group-hover:text-[#5fe6da] group-hover:shadow-xl group-hover:shadow-[#22d3c4]/10 transition-all duration-300">
+                  <s.icon size={26} strokeWidth={1.75} />
+                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#22d3c4] text-[#0a141f] text-[10px] font-bold flex items-center justify-center font-display font-mono">
                     {s.n.slice(1)}
                   </span>
                 </div>

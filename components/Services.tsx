@@ -1,78 +1,38 @@
 'use client';
-import { useRef } from 'react';
+import { Droplet, Zap, Snowflake, Cpu, ArrowRight } from 'lucide-react';
 
-const SERVICES = [
+const SPECIALTIES = [
   {
-    icon: '⚡',
-    title: 'Desarrollo Web & Apps',
-    desc: 'Plataformas rápidas, escalables y modernas. Next.js, React, Node.js, APIs REST/GraphQL. Desde landing pages hasta sistemas complejos.',
-    accent: '#0e9f6e',
-    wide: true,
+    icon: Droplet,
+    title: 'Gasfitería',
+    desc: 'Griferías, artefactos sanitarios, calefonts y redes de agua y gas, con certificación SEC cuando corresponde.',
+    accent: '#22d3c4',
+    tags: ['Instalación', 'Mantención', 'Reparación'],
   },
   {
-    icon: '🛒',
-    title: 'E-commerce',
-    desc: 'Tiendas online que convierten. Integraciones de pago, catálogos dinámicos, gestión de inventario y paneles de administración.',
-    accent: '#6366f1',
-    wide: false,
+    icon: Zap,
+    title: 'Electricidad',
+    desc: 'Tableros, circuitos, iluminación y certificación eléctrica TE1 ante la SEC.',
+    accent: '#4a7dfa',
+    tags: ['Instalación', 'Mantención', 'Reparación'],
   },
   {
-    icon: '🤖',
-    title: 'Automatización & AI',
-    desc: 'Workflows inteligentes, integración de APIs, bots y agentes IA para optimizar procesos de negocio.',
-    accent: '#f59e0b',
-    wide: false,
-  },
-  {
-    icon: '📊',
-    title: 'CRM & Sistemas a Medida',
-    desc: 'Software de gestión personalizado para tu industria. CRMs, agendas, reportes y paneles en tiempo real.',
-    accent: '#3b82f6',
-    wide: false,
-  },
-  {
-    icon: '📦',
-    title: 'SaaS Multi-tenant',
-    desc: 'Arquitecturas multi-inquilino con aislamiento de datos, planes de suscripción y onboarding automatizado.',
-    accent: '#ec4899',
-    wide: false,
-  },
-  {
-    icon: '🚀',
-    title: 'Deploy & DevOps',
-    desc: 'CI/CD en Railway, Vercel o AWS. Monitoreo, escalado automático y mantenimiento continuo.',
-    accent: '#14b8a6',
-    wide: false,
+    icon: Snowflake,
+    title: 'Climatización',
+    desc: 'Aire acondicionado, calefacción, ductos y mantención de gas refrigerante.',
+    accent: '#5fd0f2',
+    tags: ['Instalación', 'Mantención', 'Reparación'],
   },
 ];
 
-function ServiceCard({
-  icon,
-  title,
-  desc,
-  accent,
-  wide,
-}: (typeof SERVICES)[number]) {
-  const barRef = useRef<HTMLDivElement>(null);
-
+function SpecialtyCard({ icon: Icon, title, desc, accent, tags }: (typeof SPECIALTIES)[number]) {
   return (
     <div
-      className={`group relative rounded-2xl bg-white/[0.03] border border-white/[0.07] p-6 overflow-hidden cursor-default
-        hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-300
-        ${wide ? 'md:col-span-2' : ''}`}
-      onMouseEnter={() => {
-        if (barRef.current) barRef.current.style.width = '100%';
-      }}
-      onMouseLeave={() => {
-        if (barRef.current) barRef.current.style.width = '0%';
-      }}
+      className="group relative rounded-2xl bg-white/[0.03] border border-white/[0.07] p-7 overflow-hidden cursor-default
+        hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-300"
     >
-      {/* accent bar */}
-      <div
-        ref={barRef}
-        className="absolute top-0 left-0 h-[2px] transition-[width] duration-500 ease-out"
-        style={{ width: '0%', background: accent }}
-      />
+      {/* rail — el color identifica la especialidad, no es decorativo */}
+      <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: accent }} />
 
       {/* glow */}
       <div
@@ -81,37 +41,69 @@ function ServiceCard({
       />
 
       <div
-        className="text-3xl mb-4 inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110"
+        className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+        style={{ background: `${accent}1a`, color: accent }}
       >
-        {icon}
+        <Icon size={22} strokeWidth={2} />
       </div>
-      <h3 className="text-white font-display font-semibold text-lg mb-2 group-hover:text-gradient transition-all">
-        {title}
-      </h3>
-      <p className="text-white/45 text-sm leading-relaxed">{desc}</p>
+
+      <h3 className="text-white font-display font-semibold text-xl mb-2">{title}</h3>
+      <p className="text-white/45 text-sm leading-relaxed mb-5">{desc}</p>
+
+      <div className="flex flex-wrap gap-2">
+        {tags.map((t) => (
+          <span
+            key={t}
+            className="text-[11px] font-medium px-2.5 py-1 rounded-full border"
+            style={{ borderColor: `${accent}40`, color: accent }}
+          >
+            {t}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default function Services() {
   return (
-    <section id="servicios" className="bg-[#0b1220] py-24 px-4 sm:px-6">
+    <section id="servicios" className="bg-[#0a141f] py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-14 max-w-2xl">
-          <span className="text-emerald-400 text-sm font-semibold tracking-widest uppercase">Servicios</span>
+          <span className="text-[#5fe6da] text-sm font-semibold tracking-widest uppercase">Especialidades</span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white leading-tight">
-            Todo lo que tu negocio<br />digital necesita
+            Tres oficios certificados,<br />un solo proveedor
           </h2>
           <p className="mt-4 text-white/45 text-lg leading-relaxed">
-            Un equipo completo para cada etapa del producto: diseño, desarrollo, deploy y evolución continua.
+            Coordinamos técnicos certificados para instalación, mantención y reparación —
+            tú tratas con un solo proveedor en vez de tres.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {SERVICES.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+          {SPECIALTIES.map((s) => (
+            <SpecialtyCard key={s.title} {...s} />
           ))}
         </div>
+
+        {/* línea secundaria — deliberadamente más discreta */}
+        <a
+          href="#contacto"
+          className="mt-4 group flex items-center justify-between gap-4 rounded-2xl border border-white/[0.06] bg-white/[0.015] px-6 py-5 hover:bg-white/[0.03] hover:border-white/[0.1] transition-all duration-300"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 rounded-lg bg-white/[0.05] flex items-center justify-center text-white/50 shrink-0">
+              <Cpu size={18} strokeWidth={2} />
+            </div>
+            <div>
+              <span className="text-white/30 text-[11px] font-medium uppercase tracking-widest">Línea complementaria</span>
+              <p className="text-white/60 text-sm mt-0.5">
+                Soluciones tecnológicas: sistemas de gestión y automatización para tu negocio.
+              </p>
+            </div>
+          </div>
+          <ArrowRight size={16} className="text-white/30 group-hover:text-white/60 group-hover:translate-x-0.5 transition-all shrink-0" />
+        </a>
       </div>
     </section>
   );

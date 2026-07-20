@@ -4,9 +4,9 @@ import { Button } from '@relume_io/relume-ui';
 import { Badge } from '@relume_io/relume-ui';
 
 const STATS = [
-  { value: 30, suffix: '+', label: 'Proyectos entregados' },
-  { value: 98, suffix: '%', label: 'Satisfacción de clientes' },
-  { value: 5, suffix: ' días', label: 'Tiempo promedio MVP' },
+  { value: 3, suffix: '', label: 'Especialidades certificadas' },
+  { value: 100, suffix: '%', label: 'Técnicos certificados SEC' },
+  { value: 24, suffix: 'h', label: 'Respuesta a cotizaciones' },
 ];
 
 function useCountUp(ref: React.RefObject<HTMLSpanElement>, target: number) {
@@ -37,7 +37,7 @@ function Stat({ value, suffix, label }: { value: number; suffix: string; label: 
   useCountUp(ref, value);
   return (
     <div className="text-center">
-      <div className="text-3xl font-display font-bold text-white">
+      <div className="text-3xl font-display font-bold text-white font-mono tabular-nums">
         <span ref={ref}>0</span>{suffix}
       </div>
       <div className="text-sm text-white/50 mt-1">{label}</div>
@@ -47,13 +47,13 @@ function Stat({ value, suffix, label }: { value: number; suffix: string; label: 
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0b1220] pt-16">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0a141f] pt-16">
       {/* background glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-teal-400/8 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-[#22d3c4]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-[#4a7dfa]/8 rounded-full blur-[100px]" />
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
               'linear-gradient(rgba(255,255,255,0.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.6) 1px,transparent 1px)',
@@ -63,34 +63,33 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 flex flex-col items-center text-center gap-8">
-        <Badge className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs px-4 py-1.5 rounded-full font-medium backdrop-blur-sm animate-rise">
-          Soluciones Tecnológicas · Chile
+        <Badge className="bg-[#22d3c4]/10 border border-[#22d3c4]/20 text-[#5fe6da] text-xs px-4 py-1.5 rounded-full font-medium backdrop-blur-sm animate-rise">
+          Servicios Integrales AL · Chile
         </Badge>
 
-        <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] max-w-5xl animate-rise [animation-delay:80ms]">
-          Convertimos ideas en{' '}
-          <em className="not-italic text-gradient">productos digitales</em>{' '}
-          que escalan
+        <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] max-w-5xl animate-rise [animation-delay:80ms]" style={{ textWrap: 'balance' }}>
+          Técnicos certificados en{' '}
+          <em className="not-italic text-gradient">gasfitería, electricidad y climatización</em>
         </h1>
 
         <p className="text-white/55 text-lg sm:text-xl max-w-2xl leading-relaxed animate-rise [animation-delay:160ms]">
-          Desarrollamos plataformas web, e-commerce y sistemas a medida con tecnología de punta.
-          De la idea a producción en tiempo récord.
+          Instalación, mantención y reparación con anticipo transparente y garantía del trabajo.
+          Un solo proveedor para empresas y hogares en Chile.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 animate-rise [animation-delay:240ms]">
           <Button
             asChild
-            className="bg-emerald-500 hover:bg-emerald-400 text-[#0b1220] font-semibold px-8 py-3 rounded-full text-base shadow-xl shadow-emerald-500/25 hover:shadow-emerald-400/35 transition-all"
+            className="bg-[#22d3c4] hover:bg-[#5fe6da] text-[#0a141f] font-semibold px-8 py-3 rounded-full text-base shadow-xl shadow-[#22d3c4]/25 hover:shadow-[#22d3c4]/35 transition-all"
           >
-            <a href="#contacto">Cotizar proyecto →</a>
+            <a href="#contacto">Solicitar cotización →</a>
           </Button>
           <Button
             asChild
             variant="secondary"
             className="border-white/15 text-white/80 hover:bg-white/5 hover:text-white hover:border-white/30 px-8 py-3 rounded-full text-base transition-all bg-transparent"
           >
-            <a href="#proyectos">Ver proyectos</a>
+            <a href="#servicios">Ver especialidades</a>
           </Button>
         </div>
 

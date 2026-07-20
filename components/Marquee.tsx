@@ -1,24 +1,24 @@
-const TECHS = [
-  'Next.js', 'React', 'TypeScript', 'Node.js', 'NestJS', 'PostgreSQL',
-  'Redis', 'Tailwind CSS', 'Railway', 'Vercel', 'Stripe', 'WhatsApp API',
-  'Google Sheets', 'Resend', 'Framer Motion', 'Docker',
+const CAPACIDADES = [
+  'Gasfitería', 'Electricidad', 'Climatización', 'Instalación', 'Mantención preventiva',
+  'Reparación', 'Certificación SEC', 'Servicio a empresas', 'Servicio a domicilio',
+  'Anticipo transparente', 'Garantía del trabajo', 'Contratos de mantención mensual',
 ];
 
 export default function Marquee() {
-  const items = [...TECHS, ...TECHS];
+  const items = [...CAPACIDADES, ...CAPACIDADES];
   return (
-    <div className="bg-[#0b1220] border-y border-white/[0.05] py-5 overflow-hidden">
+    <div className="bg-[#0a141f] border-y border-white/[0.05] py-5 overflow-hidden">
       <div
         className="flex gap-10 w-max"
         style={{ animation: 'marquee 36s linear infinite' }}
       >
-        {items.map((tech, i) => (
+        {items.map((item, i) => (
           <span
             key={i}
             className="text-white/30 text-sm font-medium tracking-wide whitespace-nowrap flex items-center gap-3"
           >
-            <span className="w-1 h-1 rounded-full bg-emerald-500/60 inline-block" />
-            {tech}
+            <span className="w-1 h-1 rounded-full bg-[#22d3c4]/60 inline-block" />
+            {item}
           </span>
         ))}
       </div>

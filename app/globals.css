@@ -1,31 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 224 15% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 15% 10%;
-    --primary: 161 76% 36%;
-    --primary-foreground: 0 0% 100%;
-    --muted: 220 14% 46%;
-    --muted-foreground: 220 14% 46%;
-    --border: 220 13% 91%;
-    --ring: 161 76% 36%;
+    --background: 205 45% 7%;
+    --foreground: 200 30% 95%;
+    --card: 205 38% 10%;
+    --card-foreground: 200 30% 95%;
+    --primary: 175 72% 46%;
+    --primary-foreground: 205 45% 7%;
+    --muted: 205 18% 62%;
+    --muted-foreground: 205 18% 62%;
+    --border: 205 25% 20%;
+    --ring: 175 72% 46%;
     --radius: 0.75rem;
   }
   .dark {
-    --background: 225 25% 8%;
-    --foreground: 215 25% 95%;
-    --card: 225 20% 12%;
-    --card-foreground: 215 25% 95%;
-    --primary: 161 76% 40%;
-    --primary-foreground: 0 0% 100%;
-    --muted: 220 14% 60%;
-    --border: 215 20% 18%;
+    --background: 205 45% 7%;
+    --foreground: 200 30% 95%;
+    --card: 205 38% 10%;
+    --card-foreground: 200 30% 95%;
+    --primary: 175 72% 46%;
+    --primary-foreground: 205 45% 7%;
+    --muted: 205 18% 62%;
+    --border: 205 25% 20%;
   }
 }
 
@@ -40,7 +40,7 @@
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   .text-gradient {
     @apply text-transparent bg-clip-text;
-    background-image: linear-gradient(100deg, #34d399, #10b981 55%, #5eead4);
+    background-image: linear-gradient(100deg, #5fe6da, #22d3c4 55%, #4a7dfa);
   }
 }
 

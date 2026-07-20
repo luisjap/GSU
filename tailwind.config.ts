@@ -10,8 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Sora", "system-ui", "sans-serif"],
+        sans: ["IBM Plex Sans", "system-ui", "sans-serif"],
+        display: ["Barlow Semi Condensed", "system-ui", "sans-serif"],
+        mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
       },
       colors: {
         background: "hsl(var(--background))",
@@ -29,12 +30,31 @@ const config: Config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        // Marca — turquesa (gasfitería / acento principal)
         accent: {
-          DEFAULT: "#0e9f6e",
-          dark: "#0b7a55",
-          soft: "rgba(14,159,110,0.1)",
+          DEFAULT: "#22d3c4",
+          light: "#5fe6da",
+          dark: "#159c90",
+          soft: "rgba(34,211,196,0.1)",
         },
-        dark: "#0b1220",
+        // Electricidad
+        volt: {
+          DEFAULT: "#4a7dfa",
+          light: "#7fa2ff",
+          soft: "rgba(74,125,250,0.1)",
+        },
+        // Climatización
+        frost: {
+          DEFAULT: "#5fd0f2",
+          light: "#90e4f9",
+          soft: "rgba(95,208,242,0.1)",
+        },
+        // Certificaciones / seguridad — uso puntual
+        safety: {
+          DEFAULT: "#f2a33d",
+          soft: "rgba(242,163,61,0.12)",
+        },
+        dark: "#0a141f",
       },
       keyframes: {
         marquee: { to: { transform: "translateX(-50%)" } },

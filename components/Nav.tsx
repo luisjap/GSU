@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { Button } from '@relume_io/relume-ui';
 
 const LINKS = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Proceso', href: '#proceso' },
+  { label: 'Especialidades', href: '#servicios' },
+  { label: 'Cómo trabajamos', href: '#proceso' },
+  { label: 'Cobertura', href: '#cobertura' },
   { label: 'Contacto', href: '#contacto' },
 ];
 
@@ -35,17 +35,20 @@ export default function Nav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0b1220]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_32px_rgba(0,0,0,0.4)]'
+          ? 'bg-[#0a141f]/85 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_32px_rgba(0,0,0,0.4)]'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-[#0b1220] font-display font-bold text-sm shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-400/40 transition-all">
-            L
+        <a href="#" className="flex items-center gap-2.5 group">
+          <span
+            className="w-9 h-9 flex items-center justify-center text-[#0a141f] font-display font-bold text-sm bg-gradient-to-br from-[#5fe6da] to-[#22d3c4] shadow-lg shadow-[#22d3c4]/20 group-hover:shadow-[#22d3c4]/40 transition-all"
+            style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
+          >
+            AL
           </span>
-          <span className="text-white font-display font-bold text-lg">
-            Lu<span className="text-gradient">.dev</span>
+          <span className="text-white font-display font-bold text-lg leading-none">
+            Servicios Integrales <span className="text-gradient">AL</span>
           </span>
         </a>
 
@@ -56,7 +59,7 @@ export default function Nav() {
               href={l.href}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                 active === l.href.slice(1)
-                  ? 'text-emerald-400 bg-emerald-400/10'
+                  ? 'text-[#22d3c4] bg-[#22d3c4]/10'
                   : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -68,9 +71,9 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-3">
           <Button
             asChild
-            className="bg-emerald-500 hover:bg-emerald-400 text-[#0b1220] font-semibold text-sm px-5 py-2 rounded-full shadow-lg shadow-emerald-500/20 hover:shadow-emerald-400/30 transition-all"
+            className="bg-[#22d3c4] hover:bg-[#5fe6da] text-[#0a141f] font-semibold text-sm px-5 py-2 rounded-full shadow-lg shadow-[#22d3c4]/20 hover:shadow-[#22d3c4]/30 transition-all"
           >
-            <a href="#contacto">Cotizar proyecto</a>
+            <a href="#contacto">Solicitar cotización</a>
           </Button>
         </div>
 
@@ -86,7 +89,7 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-[#0b1220]/95 backdrop-blur-xl border-t border-white/[0.06] px-4 py-4 flex flex-col gap-2">
+        <div className="md:hidden bg-[#0a141f]/95 backdrop-blur-xl border-t border-white/[0.06] px-4 py-4 flex flex-col gap-2">
           {LINKS.map((l) => (
             <a
               key={l.href}
@@ -100,9 +103,9 @@ export default function Nav() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="mt-2 block text-center bg-emerald-500 text-[#0b1220] font-semibold py-2.5 rounded-full"
+            className="mt-2 block text-center bg-[#22d3c4] text-[#0a141f] font-semibold py-2.5 rounded-full"
           >
-            Cotizar proyecto
+            Solicitar cotización
           </a>
         </div>
       )}

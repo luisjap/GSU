@@ -2,7 +2,7 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
 import Services from '@/components/Services';
-import Projects from '@/components/Projects';
+import Coverage from '@/components/Coverage';
 import Process from '@/components/Process';
 import CtaBanner from '@/components/CtaBanner';
 import Contact from '@/components/Contact';
@@ -16,7 +16,7 @@ export default function Home() {
         <Hero />
         <Marquee />
         <Services />
-        <Projects />
+        <Coverage />
         <Process />
         <CtaBanner />
         <Contact />
