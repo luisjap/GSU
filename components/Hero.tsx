@@ -64,7 +64,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 flex flex-col items-center text-center gap-8">
         <Badge className="bg-[#22d3c4]/10 border border-[#22d3c4]/20 text-[#5fe6da] text-xs px-4 py-1.5 rounded-full font-medium backdrop-blur-sm animate-rise">
-          Servicios Integrales AL · Chile
+          GSU Servicios y Mantenimiento · Chile
         </Badge>
 
         <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] max-w-5xl animate-rise [animation-delay:80ms]" style={{ textWrap: 'balance' }}>

@@ -42,13 +42,13 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
           <span
-            className="w-9 h-9 flex items-center justify-center text-[#0a141f] font-display font-bold text-sm bg-gradient-to-br from-[#5fe6da] to-[#22d3c4] shadow-lg shadow-[#22d3c4]/20 group-hover:shadow-[#22d3c4]/40 transition-all"
+            className="w-9 h-9 flex items-center justify-center text-[#0a141f] font-display font-bold text-[11px] tracking-tight bg-gradient-to-br from-[#5fe6da] to-[#22d3c4] shadow-lg shadow-[#22d3c4]/20 group-hover:shadow-[#22d3c4]/40 transition-all"
             style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
           >
-            AL
+            GSU
           </span>
           <span className="text-white font-display font-bold text-lg leading-none">
-            Servicios Integrales <span className="text-gradient">AL</span>
+            <span className="text-gradient">GSU</span> Servicios y Mantenimiento
           </span>
         </a>
 

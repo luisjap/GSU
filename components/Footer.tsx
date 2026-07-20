@@ -23,13 +23,13 @@ export default function Footer() {
           <div>
             <a href="#" className="flex items-center gap-2.5 mb-4">
               <span
-                className="w-8 h-8 flex items-center justify-center text-[#0a141f] font-display font-bold text-sm bg-gradient-to-br from-[#5fe6da] to-[#22d3c4]"
+                className="w-8 h-8 flex items-center justify-center text-[#0a141f] font-display font-bold text-[10px] tracking-tight bg-gradient-to-br from-[#5fe6da] to-[#22d3c4]"
                 style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
               >
-                AL
+                GSU
               </span>
               <span className="text-white font-display font-bold text-lg">
-                Servicios Integrales <span className="text-gradient">AL</span>
+                <span className="text-gradient">GSU</span> Servicios y Mantenimiento
               </span>
             </a>
             <p className="text-white/30 text-sm leading-relaxed max-w-xs">
@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/[0.04] pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/20 text-sm">© {YEAR} Servicios Integrales AL — Todos los derechos reservados</p>
+          <p className="text-white/20 text-sm">© {YEAR} GSU Servicios y Mantenimiento — Todos los derechos reservados</p>
           <p className="text-white/15 text-sm">Chile</p>
         </div>
       </div>
