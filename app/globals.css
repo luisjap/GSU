@@ -5,27 +5,27 @@
 
 @layer base {
   :root {
-    --background: 205 45% 7%;
-    --foreground: 200 30% 95%;
-    --card: 205 38% 10%;
-    --card-foreground: 200 30% 95%;
-    --primary: 175 72% 46%;
-    --primary-foreground: 205 45% 7%;
-    --muted: 205 18% 62%;
-    --muted-foreground: 205 18% 62%;
-    --border: 205 25% 20%;
-    --ring: 175 72% 46%;
+    --background: 140 22% 98%;
+    --foreground: 165 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 165 25% 10%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 165 8% 42%;
+    --muted-foreground: 165 8% 42%;
+    --border: 150 15% 88%;
+    --ring: 142 76% 36%;
     --radius: 0.75rem;
   }
   .dark {
-    --background: 205 45% 7%;
-    --foreground: 200 30% 95%;
-    --card: 205 38% 10%;
-    --card-foreground: 200 30% 95%;
-    --primary: 175 72% 46%;
-    --primary-foreground: 205 45% 7%;
-    --muted: 205 18% 62%;
-    --border: 205 25% 20%;
+    --background: 140 22% 98%;
+    --foreground: 165 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 165 25% 10%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 165 8% 42%;
+    --border: 150 15% 88%;
   }
 }
 
@@ -40,7 +40,7 @@
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   .text-gradient {
     @apply text-transparent bg-clip-text;
-    background-image: linear-gradient(100deg, #5fe6da, #22d3c4 55%, #4a7dfa);
+    background-image: linear-gradient(100deg, #16a34a, #0d9488 65%, #0891b2);
   }
 }
 

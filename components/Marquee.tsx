@@ -7,7 +7,7 @@ const CAPACIDADES = [
 export default function Marquee() {
   const items = [...CAPACIDADES, ...CAPACIDADES];
   return (
-    <div className="bg-[#0a141f] border-y border-white/[0.05] py-5 overflow-hidden">
+    <div className="bg-white border-y border-black/[0.05] py-5 overflow-hidden">
       <div
         className="flex gap-10 w-max"
         style={{ animation: 'marquee 36s linear infinite' }}
@@ -15,9 +15,9 @@ export default function Marquee() {
         {items.map((item, i) => (
           <span
             key={i}
-            className="text-white/30 text-sm font-medium tracking-wide whitespace-nowrap flex items-center gap-3"
+            className="text-[#5b6b62] text-sm font-medium tracking-wide whitespace-nowrap flex items-center gap-3"
           >
-            <span className="w-1 h-1 rounded-full bg-[#22d3c4]/60 inline-block" />
+            <span className="w-1 h-1 rounded-full bg-leaf/60 inline-block" />
             {item}
           </span>
         ))}

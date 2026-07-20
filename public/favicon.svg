@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#5fe6da"/>
-      <stop offset="1" stop-color="#22d3c4"/>
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#16a34a"/>
     </linearGradient>
   </defs>
   <polygon points="16,0 48,0 64,32 48,64 16,64 0,32" fill="url(#g)"/>
-  <text x="32" y="39" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" letter-spacing="-0.5" fill="#0a141f">GSU</text>
+  <text x="32" y="39" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" letter-spacing="-0.5" fill="#ffffff">GSU</text>
 </svg>

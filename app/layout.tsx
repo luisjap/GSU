@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { CartProvider } from '@/components/CartContext';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
+import CartDrawer from '@/components/CartDrawer';
 
 export const metadata: Metadata = {
   title: 'GSU Servicios y Mantenimiento — Gasfitería, Electricidad y Climatización',
@@ -18,7 +22,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          <Nav />
+          {children}
+          <Footer />
+          <CartDrawer />
+        </CartProvider>
+      </body>
     </html>
   );
 }

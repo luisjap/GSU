@@ -30,29 +30,36 @@ const config: Config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        // Marca — turquesa (gasfitería / acento principal)
+        // Marca — verde (acento principal, CTA, precios, tienda)
+        leaf: {
+          DEFAULT: "#16a34a",
+          light: "#22c55e",
+          dark: "#0f7a3d",
+          soft: "rgba(22,163,74,0.08)",
+        },
+        // Gasfitería
         accent: {
-          DEFAULT: "#22d3c4",
-          light: "#5fe6da",
-          dark: "#159c90",
-          soft: "rgba(34,211,196,0.1)",
+          DEFAULT: "#0d9488",
+          light: "#14b8a6",
+          dark: "#0f766e",
+          soft: "rgba(13,148,136,0.08)",
         },
         // Electricidad
         volt: {
-          DEFAULT: "#4a7dfa",
-          light: "#7fa2ff",
-          soft: "rgba(74,125,250,0.1)",
+          DEFAULT: "#2563eb",
+          light: "#3b82f6",
+          soft: "rgba(37,99,235,0.08)",
         },
         // Climatización
         frost: {
-          DEFAULT: "#5fd0f2",
-          light: "#90e4f9",
-          soft: "rgba(95,208,242,0.1)",
+          DEFAULT: "#0891b2",
+          light: "#06b6d4",
+          soft: "rgba(8,145,178,0.08)",
         },
         // Certificaciones / seguridad — uso puntual
         safety: {
-          DEFAULT: "#f2a33d",
-          soft: "rgba(242,163,61,0.12)",
+          DEFAULT: "#d97706",
+          soft: "rgba(217,119,6,0.1)",
         },
         dark: "#0a141f",
       },
