@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Montserrat, Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import { CartProvider } from '@/components/CartContext';
 import Nav from '@/components/Nav';
@@ -6,6 +7,25 @@ import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
 
 const BASE_URL = 'https://gsu.cl';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  variable: '--font-roboto-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -53,7 +73,7 @@ const LOCAL_BUSINESS_JSON_LD = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${montserrat.variable} ${inter.variable} ${robotoMono.variable}`}>
       <body>
         <script
           type="application/ld+json"

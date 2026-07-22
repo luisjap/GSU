@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const STEPS = [
   {
     n: '01',
@@ -48,11 +50,12 @@ export default function Process() {
               <div key={s.n} className="group relative flex flex-col items-center text-center">
                 {/* step photo */}
                 <div className="relative w-20 h-20 rounded-full overflow-hidden mb-6 border border-black/[0.07] shadow-sm group-hover:border-brand/30 group-hover:shadow-lg transition-all duration-300">
-                  <img
+                  <Image
                     src={`/images/library/${s.image}.webp`}
                     alt={s.title}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
                   />
                   <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-brand text-white text-[10px] font-bold flex items-center justify-center font-display font-mono ring-2 ring-[#E8ECEF]">
                     {s.n.slice(1)}

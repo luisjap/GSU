@@ -1,14 +1,16 @@
+import Image from 'next/image';
 import { Button } from '@relume_io/relume-ui';
 
 export default function CtaBanner() {
   return (
     <section className="bg-white py-20 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto relative overflow-hidden rounded-3xl border border-brand/15 p-10 sm:p-16 text-center">
-        <img
+        <Image
           src="/images/library/banner-equipo.webp"
           alt="Equipo técnico de GSU"
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          sizes="(max-width: 896px) 100vw, 896px"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/85 via-brand-dark/75 to-brand-dark/85" />
 

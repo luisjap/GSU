@@ -1,5 +1,6 @@
 'use client';
 import { Suspense, useMemo, useState } from 'react';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { PRODUCTS } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
@@ -31,10 +32,13 @@ function TiendaContent() {
     <main className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
         <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-10">
-          <img
+          <Image
             src="/images/library/tienda-header.webp"
             alt="Bodega de equipos GSU"
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-cover"
           />
         </div>
 

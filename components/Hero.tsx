@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { Button } from '@relume_io/relume-ui';
 import { Badge } from '@relume_io/relume-ui';
 import { MessageCircle, Phone } from 'lucide-react';
@@ -93,15 +94,21 @@ export default function Hero() {
 
         {/* visual — fachada corporativa (escritorio) / sala técnica (móvil) */}
         <div className="relative aspect-square max-w-md mx-auto lg:max-w-none w-full rounded-[2.5rem] overflow-hidden border border-black/[0.05]">
-          <img
+          <Image
             src="/images/library/home-hero.webp"
             alt="Técnico de GSU trabajando en una sala eléctrica"
-            className="lg:hidden absolute inset-0 w-full h-full object-cover"
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="lg:hidden object-cover"
           />
-          <img
+          <Image
             src="/images/library/hero-fachada-corporativa.webp"
             alt="Fachada corporativa moderna — GSU Ingeniería y Mantenimiento"
-            className="hidden lg:block absolute inset-0 w-full h-full object-cover"
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="hidden lg:block object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 via-transparent to-transparent" />
 
@@ -109,7 +116,7 @@ export default function Hero() {
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-3">
             <a
               href="/#contacto"
-              className="flex items-center gap-2 bg-[#25D366] text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg hover:brightness-105 transition-all"
+              className="flex items-center gap-2 bg-[#25D366] text-[#0A2342] text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg hover:brightness-105 transition-all"
             >
               <MessageCircle size={16} />
               WhatsApp

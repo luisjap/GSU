@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { ShieldCheck, Wrench, Heart, TrendingUp, Award, Lightbulb } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -33,10 +34,13 @@ export default function NosotrosPage() {
             climatización y sistemas hidráulicos bajo una misma organización.
           </p>
           <div className="mt-10 relative aspect-[21/9] rounded-2xl overflow-hidden">
-            <img
+            <Image
               src="/images/library/nosotros-equipo.webp"
               alt="Equipo técnico de GSU"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+              className="object-cover"
             />
           </div>
         </div>

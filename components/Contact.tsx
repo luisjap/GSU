@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Input, Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@relume_io/relume-ui';
@@ -70,11 +71,12 @@ export default function Contact() {
           </div>
 
           <div className="mt-10 relative aspect-video rounded-2xl overflow-hidden border border-black/[0.06]">
-            <img
+            <Image
               src="/images/library/landing-contacto.webp"
               alt="Oficina de atención GSU"
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
             />
           </div>
         </div>
@@ -112,7 +114,7 @@ export default function Contact() {
           <div className="flex flex-col gap-1.5">
             <label className="text-[#4B4F54] text-xs font-medium uppercase tracking-wide">Especialidad</label>
             <Select onValueChange={(v) => setValue('service', v)}>
-              <SelectTrigger className="bg-[#E8ECEF] border-black/[0.08] text-[#0A2342] rounded-xl">
+              <SelectTrigger aria-label="Especialidad" className="bg-[#E8ECEF] border-black/[0.08] text-[#0A2342] rounded-xl">
                 <SelectValue placeholder="¿Qué necesitas?" />
               </SelectTrigger>
               <SelectContent className="bg-white border-black/10">
