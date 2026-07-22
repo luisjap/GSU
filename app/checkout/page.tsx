@@ -1,34 +1,41 @@
 'use client';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useCart } from '@/components/CartContext';
 import { formatCLP } from '@/lib/format';
+import { orderSchema, type OrderInput } from '@/lib/validation';
 import { Minus, Plus, Trash2, ArrowLeft, CheckCircle2 } from 'lucide-react';
+
+type OrderForm = Omit<OrderInput, 'items' | 'total'>;
 
 export default function CheckoutPage() {
   const { items, updateQuantity, removeItem, totalPrice, clearCart } = useCart();
-  const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', comuna: '', notes: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'err'>('idle');
+  const [status, setStatus] = useState<'idle' | 'ok' | 'err'>('idle');
   const [orderId, setOrderId] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<OrderForm>({
+    resolver: zodResolver(orderSchema.omit({ items: true, total: true })),
+  });
+
+  const onSubmit = async (data: OrderForm) => {
     if (items.length === 0) return;
-    setStatus('sending');
     try {
       const res = await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, items, total: totalPrice }),
+        body: JSON.stringify({ ...data, items, total: totalPrice }),
       });
-      const data = await res.json();
-      if (res.ok) {
-        setOrderId(data.orderId);
-        setStatus('ok');
-        clearCart();
-      } else {
-        setStatus('err');
-      }
+      const resData = await res.json();
+      if (!res.ok) throw new Error('request_failed');
+      setOrderId(resData.orderId);
+      setStatus('ok');
+      clearCart();
     } catch {
       setStatus('err');
     }
@@ -122,43 +129,39 @@ export default function CheckoutPage() {
           </div>
 
           {/* form */}
-          <form onSubmit={handleSubmit} className="lg:col-span-3 order-1 lg:order-2 bg-white border border-black/[0.06] rounded-2xl p-6 sm:p-8 flex flex-col gap-5">
+          <form onSubmit={handleSubmit(onSubmit)} noValidate className="lg:col-span-3 order-1 lg:order-2 bg-white border border-black/[0.06] rounded-2xl p-6 sm:p-8 flex flex-col gap-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
                 <label className="text-[#4B4F54] text-xs font-medium uppercase tracking-wide">Nombre completo</label>
                 <input
-                  required
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  {...register('name')}
                   className="bg-[#E8ECEF] border border-black/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-[#0A2342] focus:outline-none focus:border-brand/50"
                 />
+                {errors.name && <p className="text-red-600 text-xs">{errors.name.message}</p>}
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-[#4B4F54] text-xs font-medium uppercase tracking-wide">Email</label>
                 <input
-                  required
+                  {...register('email')}
                   type="email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="bg-[#E8ECEF] border border-black/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-[#0A2342] focus:outline-none focus:border-brand/50"
                 />
+                {errors.email && <p className="text-red-600 text-xs">{errors.email.message}</p>}
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-[#4B4F54] text-xs font-medium uppercase tracking-wide">Teléfono</label>
                 <input
-                  required
+                  {...register('phone')}
                   type="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   placeholder="+56 9 ..."
                   className="bg-[#E8ECEF] border border-black/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-[#0A2342] focus:outline-none focus:border-brand/50"
                 />
+                {errors.phone && <p className="text-red-600 text-xs">{errors.phone.message}</p>}
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-[#4B4F54] text-xs font-medium uppercase tracking-wide">Comuna</label>
                 <input
-                  value={form.comuna}
-                  onChange={(e) => setForm({ ...form, comuna: e.target.value })}
+                  {...register('comuna')}
                   className="bg-[#E8ECEF] border border-black/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-[#0A2342] focus:outline-none focus:border-brand/50"
                 />
               </div>
@@ -167,8 +170,7 @@ export default function CheckoutPage() {
             <div className="flex flex-col gap-1.5">
               <label className="text-[#4B4F54] text-xs font-medium uppercase tracking-wide">Dirección (para instalación o despacho)</label>
               <input
-                value={form.address}
-                onChange={(e) => setForm({ ...form, address: e.target.value })}
+                {...register('address')}
                 className="bg-[#E8ECEF] border border-black/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-[#0A2342] focus:outline-none focus:border-brand/50"
               />
             </div>
@@ -176,19 +178,18 @@ export default function CheckoutPage() {
             <div className="flex flex-col gap-1.5">
               <label className="text-[#4B4F54] text-xs font-medium uppercase tracking-wide">Notas (opcional)</label>
               <textarea
+                {...register('notes')}
                 rows={3}
-                value={form.notes}
-                onChange={(e) => setForm({ ...form, notes: e.target.value })}
                 className="bg-[#E8ECEF] border border-black/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-[#0A2342] resize-none focus:outline-none focus:border-brand/50"
               />
             </div>
 
             <button
               type="submit"
-              disabled={status === 'sending'}
+              disabled={isSubmitting}
               className="w-full bg-brand hover:bg-brand-light disabled:opacity-50 text-white font-semibold py-3.5 rounded-xl text-base shadow-lg shadow-brand/20 transition-all"
             >
-              {status === 'sending' ? 'Enviando…' : 'Confirmar pedido'}
+              {isSubmitting ? 'Enviando…' : 'Confirmar pedido'}
             </button>
             <p className="text-[11px] text-[#4B4F54] text-center leading-relaxed">
               Aún no procesamos pago en línea — te contactamos para coordinar el pago y la entrega o instalación.

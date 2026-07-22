@@ -118,6 +118,12 @@ Lucide React, lineales, sin relleno, un solo color por contexto (azul
 corporativo) — sin codificar por color cada división (a diferencia de una
 versión anterior que usaba un color distinto por especialidad).
 
+## 8bis. Espaciado, radios y elevación
+
+- **Espaciado**: se usa la escala por defecto de Tailwind (4/8/12/16/24/32/40/48/64/80/96/128px vía `p-1`…`p-32`), que ya coincide con la escala pedida — no se define una escala custom para evitar duplicar lo que Tailwind ya resuelve.
+- **Radios**: `rounded-xl` (12px) en inputs/badges, `rounded-2xl` (16px) en cards, `rounded-full` en botones y pills. `--radius: 0.75rem` en `globals.css` para componentes Radix/Relume.
+- **Elevación**: `shadow-sm` (reposo) → `hover:shadow-lg hover:shadow-black/[0.05]` (hover de cards) → `shadow-lg shadow-brand/20` (CTA primario) → `shadow-2xl` (drawers/modales). No se usan más de 4 niveles para mantener la jerarquía simple.
+
 ## 9. Pendiente / fuera de alcance de este repo
 
 El brandbook también define papelería, uniformes, vehículos, redes sociales y

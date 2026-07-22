@@ -9,17 +9,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@relume_io/relume-tailwind": "latest",
+    "@relume_io/relume-ui": "latest",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.11",
+    "lucide-react": "^0.454.0",
     "next": "^14.2.35",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@relume_io/relume-ui": "latest",
-    "@relume_io/relume-tailwind": "latest",
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
+    "react-hook-form": "^7.82.0",
     "tailwind-merge": "^2.5.4",
-    "framer-motion": "^11.11.11",
-    "lucide-react": "^0.454.0"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
