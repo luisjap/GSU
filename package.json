@@ -1,7 +1,7 @@
 {
-  "name": "lu-dev",
+  "name": "gsu",
   "version": "2.0.0",
-  "description": "Lu.dev — Soluciones Tecnológicas",
+  "description": "GSU Servicios y Mantenimiento — Gasfitería, Electricidad y Climatización",
   "private": true,
   "scripts": {
     "dev": "next dev -p 4321",
