@@ -9,7 +9,8 @@ seguir esta guía.
 | Versión | Alcance | Estado |
 |---|---|---|
 | **v1** | Fase 1 (20 imágenes: Home, Servicios, Nosotros, CTA, Contacto) | **Aprobada para desarrollo** — no se regenera todavía. Congelada tal como está hasta la pasada de consistencia final. |
-| **v2** | Fase 2 en adelante | **Obligatoria** desde este documento en adelante |
+| **v2** | Fase 2 (28 imágenes: Sectores/Arquitectura, Proceso, Mantenimiento, Seguridad, Macro, Infraestructura) | **Aprobada** (9.5–10/10). No se regenera todavía. |
+| **v2.1** | Fase 3 en adelante | **Obligatoria** desde este documento en adelante — agrega reglas de marcas de terceros y variedad de planos |
 
 Regla explícita: no se optimizan/regeneran activos que aún pueden cambiar por
 decisiones de diseño en curso (identidad visual, logo, tratamiento
@@ -40,6 +41,14 @@ Idéntico en **toda** la biblioteca, sin variaciones:
 - Lentes transparentes
 - Guantes negros
 - Botines negros
+
+## 2bis. Marcas de terceros (obligatorio, v2.1)
+
+No deben aparecer marcas ni logos reconocibles de terceros (ej. Siemens) en
+equipos, edificios, vehículos ni señalética. Usar superficies limpias sin
+marca o etiquetado genérico. Si aparece una marca reconocible en una
+generación, esa imagen se regenera — no se usa tal cual ni se edita para
+tapar el logo.
 
 ## 3. Vehículos (v2)
 
@@ -83,6 +92,29 @@ destaca la infraestructura y la calidad técnica primero.
 - **Casos ilustrativos**: escenarios genéricos antes/después (nunca
   atribuidos a un cliente real — ver nota en sección 8)
 
+## 5bis. Sectores — identificabilidad sin depender de rótulos (nota para el refresco futuro)
+
+Las 9 fachadas de Fase 2 quedan aprobadas tal cual. Para cuando se
+refresquen (pasada de consistencia final), agregar elementos que hagan cada
+sector identificable sin depender de texto/rótulo:
+
+- Hospital: ambulancia, acceso de urgencias, señalética sanitaria (sin texto legible)
+- Hotel: recepción, lobby, fachada con acceso vehicular
+- Centro logístico: muelles de carga, camiones, racks
+- Retail: vitrinas, acceso comercial
+- Condominio: áreas comunes, acceso residencial
+
+## 5ter. Variedad de planos (obligatorio, v2.1)
+
+Distribución objetivo aproximada por fase (no exacta por imagen):
+
+| Plano | % objetivo |
+|---|---|
+| General (establishing shot, wide) | 20% |
+| Abierto (full/open shot) | 30% |
+| Medio (medium shot) | 30% |
+| Primer plano / detalle (close-up) | 20% |
+
 ## 6. Relaciones de aspecto
 
 El modelo (Flux Kontext) soporta nativamente: `21:9`, `16:9`, `4:3`, `1:1`,
@@ -100,34 +132,65 @@ No generar las 5 variantes de cada imagen por defecto — encarece el costo
 ~5x sin necesidad. Se define ratio por pieza según su uso real al momento de
 generarla (ver metadata `aspect_ratio`).
 
-## 7. Metadata obligatoria por imagen
+## 7. Asset Manifest (schema v2, obligatorio desde Fase 3)
 
-Cada imagen se registra en `staging/manifest.json` (y luego en el manifest
-final del repo) con:
+Cada imagen se registra en `public/images/library/manifest.json` con este
+schema (permite buscar por servicio, página, orientación o contenido):
 
 ```json
 {
-  "id": "servicio-electrica-1",
-  "title": "Técnico inspeccionando tablero eléctrico",
-  "category": "servicios-electrica",
-  "page": "home",
+  "id": "proceso-inspeccion-01",
+  "title": "Técnico realizando inspección inicial",
+  "category": "process",
+  "service": "inspection",
+  "page": ["home", "process", "services"],
   "orientation": "landscape",
   "aspect_ratio": "16:9",
+  "shot": "medio",
+  "people": true,
+  "industry": ["commercial", "industrial"],
+  "contains": ["technician", "electrical_panel", "tablet"],
+  "dominant_colors": ["#F5F7FA", "#0057B8", "#6B7280"],
   "prompt": "...",
   "negative_prompt": "...",
   "generation_date": "2026-07-22",
-  "version": "v1",
+  "version": "v2.1",
   "status": "generated",
-  "approved": true
+  "approved": null
 }
 ```
+
+Fase 1 y Fase 2 usan un schema más simple (sin `service`/`industry`/
+`contains`/`dominant_colors`/`shot`) — se migran al schema v2 en la pasada
+de consistencia final, no antes (no se toca lo ya aprobado sin necesidad).
 
 ## 8. Casos ilustrativos — recordatorio
 
 No se generan imágenes que aparenten ser proyectos reales de clientes
 (antes/después atribuido a un cliente específico). Solo escenarios
 genéricos de apoyo visual, reemplazables por fotografía real de proyectos
-propios cuando existan.
+propios cuando existan. Tipos de escena cubiertos:
+
+- Equipos obsoletos vs. modernizados (Fase 3: HVAC)
+- Instalaciones desordenadas vs. organizadas (Fase 3: tablero, sala de bombas, red hidráulica)
+- Mantenimiento preventivo exitoso (ya cubierto en Fase 2: `mantenimiento-preventivo-1/2`)
+- Diagnóstico técnico (ya cubierto en Fase 2: `proceso-diagnostico`)
+
+## 8bis. Emergencias — respuesta controlada (v2.1)
+
+Nunca mostrar: incendios, explosiones, personas heridas, situaciones
+caóticas. Mostrar una secuencia de respuesta profesional y en control:
+llegada del técnico → inspección inicial → aislamiento del área /
+diagnóstico → reparación → restablecimiento del servicio. La sensación debe
+ser de control y eficiencia, nunca de crisis.
+
+## 8ter. Blog — biblioteca reutilizable (v2.1)
+
+Las imágenes de blog no se atan a un artículo específico; deben servir para
+ilustrar cualquier futuro artículo sobre: ahorro energético, mantenimiento
+preventivo, climatización, electricidad, gasfitería, bombas, inspecciones,
+seguridad, normativa, eficiencia operacional, automatización, gestión de
+activos.
 
 ## 9. Próximo paso (pendiente, no iniciado)
 
