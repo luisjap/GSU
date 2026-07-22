@@ -2,19 +2,12 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@relume_io/relume-ui';
 import { Badge } from '@relume_io/relume-ui';
-import { Zap, Snowflake, Droplet, ShieldCheck, MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle, Phone } from 'lucide-react';
 
 const STATS = [
   { value: 4, suffix: '', label: 'Divisiones de ingeniería' },
   { value: 100, suffix: '%', label: 'Técnicos certificados SEC' },
   { value: 24, suffix: 'h', label: 'Respuesta a propuestas técnicas' },
-];
-
-const DIVISIONS = [
-  { icon: Zap, label: 'Eléctrica' },
-  { icon: Snowflake, label: 'Climatización' },
-  { icon: Droplet, label: 'Hidráulica' },
-  { icon: ShieldCheck, label: 'Mantenimiento' },
 ];
 
 function useCountUp(ref: React.RefObject<HTMLSpanElement>, target: number) {
@@ -98,24 +91,19 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* visual — ecosistema de las 4 divisiones GSU */}
-        <div className="relative aspect-square max-w-md mx-auto lg:max-w-none w-full">
-          <div className="absolute inset-0 rounded-[2.5rem] bg-white border border-black/[0.05]" />
-          <div className="absolute top-8 right-8 w-40 h-40 rounded-full bg-brand/10 blur-2xl" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-brand-dark/10 blur-2xl" />
-          <div className="absolute inset-0 flex items-center justify-center p-14">
-            <div className="grid grid-cols-2 gap-5 w-full max-w-[240px]">
-              {DIVISIONS.map((d) => (
-                <div
-                  key={d.label}
-                  className="flex flex-col items-center justify-center gap-2 aspect-square rounded-2xl bg-brand-soft border border-brand/15"
-                >
-                  <d.icon size={30} strokeWidth={1.5} className="text-brand" />
-                  <span className="text-[11px] font-medium text-[#0A2342]">{d.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* visual — fachada corporativa (escritorio) / sala técnica (móvil) */}
+        <div className="relative aspect-square max-w-md mx-auto lg:max-w-none w-full rounded-[2.5rem] overflow-hidden border border-black/[0.05]">
+          <img
+            src="/images/library/home-hero.webp"
+            alt="Técnico de GSU trabajando en una sala eléctrica"
+            className="lg:hidden absolute inset-0 w-full h-full object-cover"
+          />
+          <img
+            src="/images/library/hero-fachada-corporativa.webp"
+            alt="Fachada corporativa moderna — GSU Ingeniería y Mantenimiento"
+            className="hidden lg:block absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 via-transparent to-transparent" />
 
           {/* floating contact buttons */}
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-3">

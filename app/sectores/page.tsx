@@ -11,16 +11,16 @@ export const metadata: Metadata = {
 };
 
 const EMPRESAS = [
-  { icon: Building2, label: 'Hoteles' },
-  { icon: Stethoscope, label: 'Clínicas' },
-  { icon: Stethoscope, label: 'Hospitales' },
-  { icon: Home, label: 'Condominios' },
-  { icon: HardHat, label: 'Constructoras' },
-  { icon: Briefcase, label: 'Oficinas' },
-  { icon: Factory, label: 'Plantas industriales' },
-  { icon: ShoppingBag, label: 'Centros comerciales' },
-  { icon: UtensilsCrossed, label: 'Restaurantes' },
-  { icon: Coffee, label: 'Cafeterías' },
+  { icon: Building2, label: 'Hoteles', image: 'sector-hotel' },
+  { icon: Stethoscope, label: 'Clínicas', image: 'sector-clinica' },
+  { icon: Stethoscope, label: 'Hospitales', image: 'sector-hospital' },
+  { icon: Home, label: 'Condominios', image: 'sector-condominio' },
+  { icon: HardHat, label: 'Constructoras', image: null },
+  { icon: Briefcase, label: 'Oficinas', image: 'sector-oficina' },
+  { icon: Factory, label: 'Plantas industriales', image: 'sector-industria' },
+  { icon: ShoppingBag, label: 'Centros comerciales', image: 'sector-retail' },
+  { icon: UtensilsCrossed, label: 'Restaurantes', image: 'sector-restaurante' },
+  { icon: Coffee, label: 'Cafeterías', image: null },
 ];
 
 export default function SectoresPage() {
@@ -36,6 +36,13 @@ export default function SectoresPage() {
             Contratos de mantención mensual para edificios y empresas, o servicio puntual para el
             hogar — según lo que tu operación necesite.
           </p>
+          <div className="mt-10 relative aspect-[21/9] rounded-2xl overflow-hidden">
+            <img
+              src="/images/library/landing-sectores.webp"
+              alt="GSU trabajando en distintos sectores"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -51,12 +58,25 @@ export default function SectoresPage() {
             {EMPRESAS.map((s) => (
               <div
                 key={s.label}
-                className="flex flex-col items-center text-center gap-3 rounded-2xl bg-[#E8ECEF] border border-black/[0.05] p-6"
+                className="rounded-2xl bg-[#E8ECEF] border border-black/[0.05] overflow-hidden"
               >
-                <div className="w-11 h-11 rounded-xl bg-brand-soft text-brand flex items-center justify-center">
-                  <s.icon size={20} strokeWidth={2} />
-                </div>
-                <span className="text-[#0A2342] text-sm font-medium">{s.label}</span>
+                {s.image ? (
+                  <div className="relative aspect-square">
+                    <img
+                      src={`/images/library/${s.image}.webp`}
+                      alt={s.label}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="aspect-square flex items-center justify-center">
+                    <div className="w-11 h-11 rounded-xl bg-brand-soft text-brand flex items-center justify-center">
+                      <s.icon size={20} strokeWidth={2} />
+                    </div>
+                  </div>
+                )}
+                <span className="block text-center py-3 text-[#0A2342] text-sm font-medium">{s.label}</span>
               </div>
             ))}
           </div>

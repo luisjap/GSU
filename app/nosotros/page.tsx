@@ -32,6 +32,13 @@ export default function NosotrosPage() {
             independientes o empresas enfocadas en una sola especialidad, GSU reúne electricidad,
             climatización y sistemas hidráulicos bajo una misma organización.
           </p>
+          <div className="mt-10 relative aspect-[21/9] rounded-2xl overflow-hidden">
+            <img
+              src="/images/library/nosotros-equipo.webp"
+              alt="Equipo técnico de GSU"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 

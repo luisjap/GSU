@@ -68,6 +68,15 @@ export default function Contact() {
               </div>
             ))}
           </div>
+
+          <div className="mt-10 relative aspect-video rounded-2xl overflow-hidden border border-black/[0.06]">
+            <img
+              src="/images/library/landing-contacto.webp"
+              alt="Oficina de atención GSU"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         {/* right — form */}

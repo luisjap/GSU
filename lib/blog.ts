@@ -4,6 +4,7 @@ export interface BlogPost {
   excerpt: string;
   date: string;
   category: string;
+  image: string;
   content: string[];
 }
 
@@ -15,6 +16,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Toda instalación eléctrica o de gas en Chile debe contar con certificación ante la Superintendencia de Electricidad y Combustibles. Esto es lo que implica.',
     date: '2026-06-02',
     category: 'Infraestructura Eléctrica',
+    image: 'blog-certificacion-sec',
     content: [
       'La Superintendencia de Electricidad y Combustibles (SEC) es el organismo que fiscaliza las instalaciones eléctricas, de gas y de combustibles en Chile. Su objetivo es garantizar que los proyectos cumplan con normas de seguridad que protegen a las personas y a los inmuebles.',
       'Para instalaciones eléctricas, la certificación relevante es el formulario TE1, que emite un instalador eléctrico autorizado tras verificar que el proyecto cumple con la normativa vigente (NCH Elec. 4/2003, entre otras). Sin esta certificación, la instalación no puede declararse habitable ni conectarse formalmente a la red de distribución en muchos casos.',
@@ -29,6 +31,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Esperar a que un equipo falle para actuar suele costar más que mantenerlo. Así se comparan ambos enfoques en infraestructura eléctrica, climatización y sistemas hidráulicos.',
     date: '2026-05-14',
     category: 'Mantenimiento Integral',
+    image: 'blog-mantenimiento-calendario',
     content: [
       'La mantención correctiva ocurre después de una falla: un equipo de climatización deja de enfriar, una bomba de agua se detiene, un tablero eléctrico presenta una falla intermitente. Se resuelve, pero casi siempre en el peor momento — cuando la instalación ya dejó de operar con normalidad.',
       'La mantención preventiva, en cambio, se ejecuta en base a un calendario y a inspecciones periódicas, antes de que ocurra la falla. Para climatización, esto incluye limpieza de filtros y serpentines, revisión de gas refrigerante y de presiones de trabajo. Para electricidad, revisión de conexiones, torque de terminales y termografía de tableros. Para sistemas hidráulicos, revisión de bombas, presurización y detección temprana de fugas.',

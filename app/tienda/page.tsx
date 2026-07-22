@@ -30,6 +30,14 @@ function TiendaContent() {
   return (
     <main className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+        <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+          <img
+            src="/images/library/tienda-header.webp"
+            alt="Bodega de equipos GSU"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+
         <div className="mb-10 max-w-2xl">
           <span className="text-brand text-sm font-semibold tracking-widest uppercase">Tienda</span>
           <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#0A2342] leading-tight">

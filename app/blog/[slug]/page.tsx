@@ -11,7 +11,11 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = getBlogPost(params.slug);
   if (!post) return {};
-  return { title: `${post.title} — GSU Ingeniería y Mantenimiento`, description: post.excerpt };
+  return {
+    title: `${post.title} — GSU Ingeniería y Mantenimiento`,
+    description: post.excerpt,
+    openGraph: { images: [`/images/library/${post.image}.webp`] },
+  };
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -31,6 +35,14 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         <time className="mt-4 block text-[#4B4F54] text-sm" dateTime={post.date}>
           {new Date(post.date).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}
         </time>
+
+        <div className="mt-8 relative aspect-video rounded-2xl overflow-hidden">
+          <img
+            src={`/images/library/${post.image}.webp`}
+            alt={post.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
 
         <div className="mt-8 flex flex-col gap-5">
           {post.content.map((p, i) => (

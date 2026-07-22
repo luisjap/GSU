@@ -22,11 +22,13 @@ export const metadata: Metadata = {
       'Ingeniería eléctrica, climatización y ventilación, sistemas hidráulicos y mantenimiento integral. Soluciones técnicas que garantizan continuidad operacional.',
     locale: 'es_CL',
     url: BASE_URL,
+    images: ['/images/library/hero-fachada-corporativa.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'GSU Ingeniería y Mantenimiento',
     description: 'Ingeniería aplicada a la continuidad operacional.',
+    images: ['/images/library/hero-fachada-corporativa.webp'],
   },
   icons: { icon: '/favicon.svg' },
 };

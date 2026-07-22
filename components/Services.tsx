@@ -4,6 +4,7 @@ import { Zap, Snowflake, Droplet, ShieldCheck } from 'lucide-react';
 const DIVISIONS = [
   {
     icon: Zap,
+    image: 'servicio-electrica-2',
     name: 'GSU Electric',
     title: 'Infraestructura Eléctrica',
     desc: 'Tableros, alumbrado, canalizaciones y certificación eléctrica TE1 ante la SEC.',
@@ -11,6 +12,7 @@ const DIVISIONS = [
   },
   {
     icon: Snowflake,
+    image: 'servicio-climatizacion-1',
     name: 'GSU Climate',
     title: 'Climatización y Ventilación',
     desc: 'Equipos split, multi split, VRV/VRF, ventilación y mantención de gas refrigerante.',
@@ -18,6 +20,7 @@ const DIVISIONS = [
   },
   {
     icon: Droplet,
+    image: 'servicio-hidraulica-1',
     name: 'GSU Hydro',
     title: 'Sistemas Hidráulicos',
     desc: 'Redes de agua potable y sanitarias, bombas, presurización y detección de fugas.',
@@ -25,6 +28,7 @@ const DIVISIONS = [
   },
   {
     icon: ShieldCheck,
+    image: 'servicio-mantenimiento-1',
     name: 'GSU Care',
     title: 'Mantenimiento Integral',
     desc: 'Contratos de mantención mensual, inspecciones, diagnósticos y planes anuales.',
@@ -32,31 +36,41 @@ const DIVISIONS = [
   },
 ];
 
-function DivisionCard({ icon: Icon, name, title, desc, tags }: (typeof DIVISIONS)[number]) {
+function DivisionCard({ icon: Icon, image, name, title, desc, tags }: (typeof DIVISIONS)[number]) {
   return (
     <div
-      className="group relative rounded-2xl bg-white border border-black/[0.06] p-7 overflow-hidden cursor-default
+      className="group relative rounded-2xl bg-white border border-black/[0.06] overflow-hidden cursor-default
         hover:shadow-lg hover:shadow-black/[0.05] hover:-translate-y-0.5 transition-all duration-300"
     >
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-brand" />
-
-      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-brand-soft text-brand transition-transform duration-300 group-hover:scale-110">
-        <Icon size={22} strokeWidth={2} />
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <img
+          src={`/images/library/${image}.webp`}
+          alt={title}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div
+          className="absolute top-3 left-3 w-9 h-9 rounded-lg flex items-center justify-center bg-white/90 text-brand backdrop-blur-sm"
+        >
+          <Icon size={18} strokeWidth={2} />
+        </div>
       </div>
 
-      <span className="text-brand text-[11px] font-semibold tracking-widest uppercase">{name}</span>
-      <h3 className="mt-1 text-[#0A2342] font-display font-semibold text-xl mb-2">{title}</h3>
-      <p className="text-[#4B4F54] text-sm leading-relaxed mb-5">{desc}</p>
+      <div className="p-7">
+        <span className="text-brand text-[11px] font-semibold tracking-widest uppercase">{name}</span>
+        <h3 className="mt-1 text-[#0A2342] font-display font-semibold text-xl mb-2">{title}</h3>
+        <p className="text-[#4B4F54] text-sm leading-relaxed mb-5">{desc}</p>
 
-      <div className="flex flex-wrap gap-2">
-        {tags.map((t) => (
-          <span
-            key={t}
-            className="text-[11px] font-medium px-2.5 py-1 rounded-full border border-brand/25 text-brand"
-          >
-            {t}
-          </span>
-        ))}
+        <div className="flex flex-wrap gap-2">
+          {tags.map((t) => (
+            <span
+              key={t}
+              className="text-[11px] font-medium px-2.5 py-1 rounded-full border border-brand/25 text-brand"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

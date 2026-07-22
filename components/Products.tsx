@@ -9,6 +9,15 @@ export default function Products() {
   return (
     <section id="tienda" className="bg-white py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
+        <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+          <img
+            src="/images/library/tienda-header.webp"
+            alt="Bodega de equipos GSU"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-6">
           <div>
             <span className="text-brand text-sm font-semibold tracking-widest uppercase">Tienda</span>

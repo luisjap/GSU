@@ -1,29 +1,27 @@
-import { ClipboardList, Wallet, Wrench, ShieldCheck } from 'lucide-react';
-
 const STEPS = [
   {
     n: '01',
     title: 'Diagnóstico y propuesta técnica',
     desc: 'Evaluamos el proyecto y entregamos una propuesta técnica clara, con mano de obra y materiales desglosados por separado.',
-    icon: ClipboardList,
+    image: 'proceso-diagnostico',
   },
   {
     n: '02',
     title: 'Aceptación y orden de trabajo',
     desc: 'Aceptas la propuesta y cubres el anticipo — con eso reservamos al técnico especialista y los materiales.',
-    icon: Wallet,
+    image: 'proceso-propuesta',
   },
   {
     n: '03',
     title: 'Ejecución certificada',
     desc: 'El técnico especialista ejecuta el proyecto en la fecha acordada, con los materiales ya listos.',
-    icon: Wrench,
+    image: 'proceso-trabajo',
   },
   {
     n: '04',
     title: 'Informe técnico y garantía',
     desc: 'Verificamos el resultado contigo, entregamos un informe técnico y respaldamos el proyecto entregado bajo garantía.',
-    icon: ShieldCheck,
+    image: 'proceso-entrega',
   },
 ];
 
@@ -48,11 +46,15 @@ export default function Process() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {STEPS.map((s) => (
               <div key={s.n} className="group relative flex flex-col items-center text-center">
-                {/* step circle */}
-                <div className="relative w-20 h-20 rounded-full bg-white border border-black/[0.07] flex items-center justify-center mb-6 text-[#4B4F54] shadow-sm
-                  group-hover:bg-brand-soft group-hover:border-brand/30 group-hover:text-brand-dark group-hover:shadow-lg transition-all duration-300">
-                  <s.icon size={26} strokeWidth={1.75} />
-                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand text-white text-[10px] font-bold flex items-center justify-center font-display font-mono">
+                {/* step photo */}
+                <div className="relative w-20 h-20 rounded-full overflow-hidden mb-6 border border-black/[0.07] shadow-sm group-hover:border-brand/30 group-hover:shadow-lg transition-all duration-300">
+                  <img
+                    src={`/images/library/${s.image}.webp`}
+                    alt={s.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-brand text-white text-[10px] font-bold flex items-center justify-center font-display font-mono ring-2 ring-[#E8ECEF]">
                     {s.n.slice(1)}
                   </span>
                 </div>
