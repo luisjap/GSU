@@ -1,57 +1,51 @@
-# Lu.dev — Portfolio
+# GSU Servicios y Mantenimiento
 
-Portfolio personal de Lu (Full-Stack Developer). Landing page servida por
-Node.js + Express, sin base de datos: los proyectos viven en un JSON local.
+Landing y tienda online de GSU: gasfitería, electricidad y climatización
+certificada para empresas y hogares en Chile.
 
 ## Stack
 
-- Node.js + Express (servidor + API)
-- HTML / CSS / JS vanilla (sin frameworks)
-- Modo oscuro automático (`prefers-color-scheme`)
-- Mobile-first, animaciones con Intersection Observer
+- Next.js 14 (App Router) + TypeScript
+- Tailwind CSS + Relume UI
+- Carrito de compras en cliente (React Context), sin base de datos
+- Desplegado en Railway
 
 ## Instalación local
 
 ```bash
 npm install
-npm run dev      # con recarga (nodemon) — http://localhost:3000
-# o
-npm start        # producción local
+npm run dev      # http://localhost:4321
 ```
 
-## Cómo agregar un proyecto
+## Estructura
 
-Edita `data/projects.json` y agrega un objeto con este schema (sin tocar código):
+- `app/page.tsx` — landing (Hero, Servicios, Productos, Cobertura, Proceso, Contacto)
+- `app/tienda/` — catálogo de equipos y accesorios (`data/products.ts`)
+- `app/checkout/` — flujo de pedido con carrito
+- `app/api/contact/` — recibe solicitudes de cotización (`{name, email, message, service}`)
+- `app/api/orders/` — recibe pedidos de la tienda (`{name, email, phone, address, comuna, notes, items, total}`)
 
-```json
+Ambos endpoints por ahora solo loguean en consola (listos para conectar Resend — ver `.env.example`).
+
+## Cómo agregar un producto
+
+Edita `data/products.ts` y agrega un objeto con este schema:
+
+```ts
 {
-  "id": "mi-proyecto",
-  "title": "Nombre del proyecto",
-  "description": "Descripción corta, máximo 120 caracteres",
-  "longDescription": "Descripción larga opcional",
-  "category": "personal",            // "personal" | "cliente"
-  "status": "completado",            // "completado" | "en-progreso" | "archivado"
-  "thumbnail": "/images/projects/mi-proyecto.svg",
-  "tech": ["React", "Node.js"],
-  "demoUrl": "https://...",
-  "repoUrl": "https://github.com/...",
-  "featured": false,                 // true => badge ★ DESTACADO
-  "year": 2026
+  id: 'mi-producto',
+  name: 'Nombre del producto',
+  price: 100000,
+  category: 'equipos', // 'equipos' | 'accesorios' | 'servicios'
+  description: 'Descripción corta',
+  icon: 'ac', // 'ac' | 'wind' | 'wrench' | 'plug' | 'ruler'
+  featured: false,
 }
 ```
-
-Coloca la imagen en `public/images/projects/` (SVG/PNG/WebP, ideal 16:9).
 
 ## Deploy en Railway
 
 1. Sube el repo a GitHub y conéctalo en Railway (New Project → Deploy from GitHub repo).
-2. Railway detecta Node y usa `npm start` (también está `railway.json` con el start command).
+2. Railway detecta Node y usa `next start` (también está `railway.json` con el start command).
 3. `PORT` la inyecta Railway automáticamente — no hay que configurar nada.
 4. Cada push a `main` redeploya solo.
-
-## API
-
-| Endpoint | Descripción |
-|---|---|
-| `GET /api/projects` | Devuelve el JSON de proyectos |
-| `POST /api/contact` | Recibe `{name, email, message}`; por ahora loguea en consola (listo para enchufar Resend — ver `.env.example`) |
