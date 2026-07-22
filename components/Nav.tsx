@@ -7,8 +7,10 @@ import { useCart } from '@/components/CartContext';
 
 const LINKS = [
   { label: 'Servicios', href: '/#servicios' },
+  { label: 'Sectores', href: '/sectores' },
+  { label: 'Nosotros', href: '/nosotros' },
   { label: 'Tienda', href: '/tienda' },
-  { label: 'Cómo trabajamos', href: '/#proceso' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contacto', href: '/#contacto' },
 ];
 

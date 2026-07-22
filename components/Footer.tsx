@@ -8,9 +8,15 @@ const LINKS = {
     { label: 'Mantenimiento Integral', href: '/#servicios' },
   ],
   Empresa: [
-    { label: 'Tienda', href: '/tienda' },
+    { label: 'Nosotros', href: '/nosotros' },
+    { label: 'Sectores', href: '/sectores' },
     { label: 'Cómo trabajamos', href: '/#proceso' },
     { label: 'Cobertura y garantía', href: '/#cobertura' },
+  ],
+  Recursos: [
+    { label: 'Tienda', href: '/tienda' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Preguntas frecuentes', href: '/faq' },
     { label: 'Contacto', href: '/#contacto' },
   ],
 };
@@ -19,9 +25,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#E8ECEF] border-t border-black/[0.05] py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* brand */}
-          <div>
+          <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-2.5 mb-4">
               <span
                 className="w-8 h-8 flex items-center justify-center text-white font-display font-bold text-[10px] tracking-tight bg-brand"
