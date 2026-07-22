@@ -684,5 +684,914 @@
     "version": "v2",
     "status": "generated",
     "approved": null
+  },
+  {
+    "id": "blog-seguridad-electrica",
+    "title": "blog seguridad electrica",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "multimeter"
+    ],
+    "dominant_colors": [
+      "#C0C0C0",
+      "#A0A0A0",
+      "#A0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Medium shot, A technician performing an electrical safety inspection with a digital multimeter on an open panel.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-eficiencia-energetica",
+    "title": "blog eficiencia energetica",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "general",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "hvac_unit"
+    ],
+    "dominant_colors": [
+      "#100100100",
+      "#A0A0A0",
+      "#80A0A0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Wide establishing shot, Modern efficient VRF outdoor condensing units on a rooftop next to a contemporary glass building, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-filtro-hvac",
+    "title": "blog filtro hvac",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "detalle",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "hvac_unit"
+    ],
+    "dominant_colors": [
+      "#C0C0C0",
+      "#606060",
+      "#A0A0A0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Close-up detail shot, Hands replacing an air filter in an HVAC air handling unit.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-red-tuberias",
+    "title": "blog red tuberias",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "abierto",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "piping",
+      "valve"
+    ],
+    "dominant_colors": [
+      "#A0A0A0",
+      "#808080",
+      "#A0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Full open shot showing the whole scene, An organized network of copper and PVC piping with labeled valves in a clean mechanical room, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-certificacion-sec",
+    "title": "blog certificacion sec",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "electrical_panel",
+      "tablet",
+      "checklist"
+    ],
+    "dominant_colors": [
+      "#A0A0A0",
+      "#808080",
+      "#80A0A0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Medium shot, A technician holding a tablet showing a compliance certification checklist in front of an electrical distribution panel.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-mantenimiento-calendario",
+    "title": "blog mantenimiento calendario",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "detalle",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "tablet"
+    ],
+    "dominant_colors": [
+      "#C0C0E0",
+      "#A0C0C0",
+      "#A0A0A0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Close-up detail shot, A tablet on a clean desk showing a digital maintenance schedule calendar dashboard interface, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-capacitacion",
+    "title": "blog capacitacion",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "electrical_panel"
+    ],
+    "dominant_colors": [
+      "#808080",
+      "#A0A0A0",
+      "#80A0A0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Medium shot, Two technicians in a training session reviewing an electrical panel together, one pointing at a component.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-eficiencia-bombas",
+    "title": "blog eficiencia bombas",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "pump"
+    ],
+    "dominant_colors": [
+      "#A0A0A0",
+      "#808080",
+      "#C0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Medium shot, A technician inspecting an industrial water pump with a diagnostic device attached.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-deteccion-fugas",
+    "title": "blog deteccion fugas",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "abierto",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "piping"
+    ],
+    "dominant_colors": [
+      "#C0C0C0",
+      "#A0A0A0",
+      "#A0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Full open shot showing the whole scene, A technician using a leak detection device on a section of pipe in a mechanical room.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-automatizacion",
+    "title": "blog automatizacion",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "detalle",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "bms_screen"
+    ],
+    "dominant_colors": [
+      "#C0C0E0",
+      "#C0E0E0",
+      "#A0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Close-up detail shot, A modern building automation control panel (BMS) screen showing system status graphics, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "blog-gestion-activos",
+    "title": "blog gestion activos",
+    "category": "blog",
+    "service": "blog",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "detalle",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "tablet"
+    ],
+    "dominant_colors": [
+      "#A0C0C0",
+      "#C0C0C0",
+      "#A0A0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Close-up detail shot, A tablet screen showing a digital asset inventory and equipment tracking dashboard, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-electrico-antes",
+    "title": "caso electrico antes",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "abierto",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "electrical_panel"
+    ],
+    "dominant_colors": [
+      "#A0A0A0",
+      "#80A0A0",
+      "#808080"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Full open shot showing the whole scene, An outdated electrical panel with disorganized, unlabeled wiring and visible wear, dim lighting, generic illustrative example, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-electrico-despues",
+    "title": "caso electrico despues",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "abierto",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "electrical_panel"
+    ],
+    "dominant_colors": [
+      "#A0C0C0",
+      "#80A0A0",
+      "#A0A0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Full open shot showing the whole scene, The same type of electrical panel now modernized: organized labeled cable routing, clean and orderly, well lit, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-hvac-antes",
+    "title": "caso hvac antes",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "medio",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "hvac_unit"
+    ],
+    "dominant_colors": [
+      "#E0E0E0",
+      "#A0A0A0",
+      "#C0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Medium shot, An outdoor HVAC condensing unit with dirty coils and visible wear, in need of maintenance, generic illustrative example, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-hvac-despues",
+    "title": "caso hvac despues",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "medio",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "hvac_unit"
+    ],
+    "dominant_colors": [
+      "#A0C0C0",
+      "#608080",
+      "#6080A0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Medium shot, The same type of outdoor HVAC condensing unit now clean, serviced, and operating like new, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-bombas-antes",
+    "title": "caso bombas antes",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "general",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "pump",
+      "piping"
+    ],
+    "dominant_colors": [
+      "#404040",
+      "#606060",
+      "#202020"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Wide establishing shot, A pump room before maintenance: cluttered, dim lighting, unlabeled pipes, generic illustrative example, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-bombas-despues",
+    "title": "caso bombas despues",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "general",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "pump",
+      "piping"
+    ],
+    "dominant_colors": [
+      "#A0A0A0",
+      "#A0A0C0",
+      "#A0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Wide establishing shot, The same type of pump room now organized, well lit, labeled pipes, clean and functional, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-tablero-antes",
+    "title": "caso tablero antes",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "medio",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer"
+    ],
+    "dominant_colors": [
+      "#C0C0C0",
+      "#A0A0A0",
+      "#808080"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Medium shot, Exposed, disorganized electrical cabling without proper conduit, generic illustrative example, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-tablero-despues",
+    "title": "caso tablero despues",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "medio",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer"
+    ],
+    "dominant_colors": [
+      "#A0C0C0",
+      "#A0A0C0",
+      "#C0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Medium shot, The same type of electrical installation now with proper conduit routing, neatly organized, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-hidraulico-antes",
+    "title": "caso hidraulico antes",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "general",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "piping"
+    ],
+    "dominant_colors": [
+      "#A0A0A0",
+      "#808080",
+      "#606060"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Wide establishing shot, An old corroded water pipe section with visible mineral deposits, generic illustrative example, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "caso-hidraulico-despues",
+    "title": "caso hidraulico despues",
+    "category": "casos",
+    "service": "casos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "shot": "general",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "piping"
+    ],
+    "dominant_colors": [
+      "#808080",
+      "#80A0A0",
+      "#A0A0A0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Wide establishing shot, The same type of water piping now renewed with modern clean pipe and fittings, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "emergencia-llegada",
+    "title": "emergencia llegada",
+    "category": "emergencias",
+    "service": "emergencias",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "abierto",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer"
+    ],
+    "dominant_colors": [
+      "#606080",
+      "#6080A0",
+      "#404040"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Full open shot showing the whole scene, A technician arriving at a modern building entrance at dusk carrying a tool case, walking with purpose.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "emergencia-inspeccion",
+    "title": "emergencia inspeccion",
+    "category": "emergencias",
+    "service": "emergencias",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "electrical_panel",
+      "tablet"
+    ],
+    "dominant_colors": [
+      "#A0A0A0",
+      "#808080",
+      "#A0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Medium shot, A technician conducting an initial inspection of an electrical panel with a flashlight and tablet, calm and focused.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "emergencia-reparacion",
+    "title": "emergencia reparacion",
+    "category": "emergencias",
+    "service": "emergencias",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer"
+    ],
+    "dominant_colors": [
+      "#C0C0C0",
+      "#A0A0A0",
+      "#808080"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Medium shot, A technician performing a controlled repair on an isolated electrical circuit, methodical and precise.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "emergencia-restablecimiento",
+    "title": "emergencia restablecimiento",
+    "category": "emergencias",
+    "service": "emergencias",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "abierto",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "electrical_panel"
+    ],
+    "dominant_colors": [
+      "#C0C0C0",
+      "#A0C0C0",
+      "#80A0A0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Full open shot showing the whole scene, A technician closing an electrical panel after a completed repair, the building lighting visibly back on, calm resolution.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "proyecto-instalacion",
+    "title": "proyecto instalacion",
+    "category": "proyectos",
+    "service": "proyectos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "abierto",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer"
+    ],
+    "dominant_colors": [
+      "#808080",
+      "#A0A0A0",
+      "#C0C0C0"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Full open shot showing the whole scene, A technician installing new electrical infrastructure in a building under renovation, exposed ceiling structure visible.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "proyecto-ductos",
+    "title": "proyecto ductos",
+    "category": "proyectos",
+    "service": "proyectos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": true,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "technician",
+      "engineer",
+      "hvac_unit"
+    ],
+    "dominant_colors": [
+      "#606060",
+      "#A0A0A0",
+      "#808080"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. The technician wears a locked, consistent corporate uniform: gray technical shirt with royal blue (#0057B8) trim accents, charcoal-gray work pants, white safety helmet, clear safety glasses, black work gloves, black work boots. No logo visible on the uniform (added in post-production later). Never looking at the camera, never posing, never smiling artificially, always mid-task. Medium shot, A technician installing HVAC ductwork in an unfinished ceiling void of a commercial building under construction.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
+  },
+  {
+    "id": "proyecto-entrega",
+    "title": "proyecto entrega",
+    "category": "proyectos",
+    "service": "proyectos",
+    "page": [
+      "general"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "detalle",
+    "people": false,
+    "industry": [
+      "commercial",
+      "industrial"
+    ],
+    "contains": [
+      "engineer",
+      "document"
+    ],
+    "dominant_colors": [
+      "#E0E0E0",
+      "#C0E0E0",
+      "#406060"
+    ],
+    "prompt": "Hyperrealistic corporate engineering photography, quality equivalent to a premium professional photo production for a company like Siemens, ABB, or Schneider Electric. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness, no warm tones, no different filters. Modern architecture, immaculate and orderly facilities. No stock-photo look, no clutter, no scattered tools, no dirt. Straight lines, professional perspective. No text, no watermarks, no 3D render look, no cartoon style. No visible third-party brand names or logos anywhere (equipment, vehicles, buildings, signage) — use plain unbranded surfaces and generic equipment labeling only. Close-up detail shot, A completed project handover folder and technical report on a clean table with a hard hat beside it, no people.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, third-party logo, watermark, 3D render, cartoon, inconsistent uniform, warm tones",
+    "generation_date": "2026-07-22",
+    "version": "v2.1",
+    "status": "generated",
+    "approved": null
   }
 ]
