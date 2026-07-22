@@ -1,7 +1,10 @@
-# GSU Servicios y Mantenimiento
+# GSU Ingeniería y Mantenimiento
 
-Landing y tienda online de GSU: gasfitería, electricidad y climatización
-certificada para empresas y hogares en Chile.
+Landing y tienda online de GSU: ingeniería eléctrica, climatización y ventilación,
+sistemas hidráulicos y mantenimiento integral para empresas y hogares en Chile.
+
+Ver `BRAND.md` para la estrategia de marca completa (ADN, arquitectura, sistema
+visual e identidad verbal) que rige el copy y el diseño de este sitio.
 
 ## Stack
 
@@ -22,7 +25,7 @@ npm run dev      # http://localhost:4321
 - `app/page.tsx` — landing (Hero, Servicios, Productos, Cobertura, Proceso, Contacto)
 - `app/tienda/` — catálogo de equipos y accesorios (`data/products.ts`)
 - `app/checkout/` — flujo de pedido con carrito
-- `app/api/contact/` — recibe solicitudes de cotización (`{name, email, message, service}`)
+- `app/api/contact/` — recibe solicitudes de propuesta técnica (`{name, email, message, service}`)
 - `app/api/orders/` — recibe pedidos de la tienda (`{name, email, phone, address, comuna, notes, items, total}`)
 
 Ambos endpoints por ahora solo loguean en consola (listos para conectar Resend — ver `.env.example`).

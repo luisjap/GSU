@@ -27,14 +27,14 @@ export default function CartDrawer() {
       <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" onClick={closeCart} />
       <div className="relative w-full max-w-md bg-white h-full shadow-2xl flex flex-col animate-rise">
         <div className="flex items-center justify-between px-6 py-5 border-b border-black/[0.06]">
-          <h2 className="font-display font-bold text-lg text-[#10231a]">Tu carrito</h2>
-          <button onClick={closeCart} className="text-[#5b6b62] hover:text-[#10231a] transition-colors" aria-label="Cerrar carrito">
+          <h2 className="font-display font-bold text-lg text-[#0A2342]">Tu carrito</h2>
+          <button onClick={closeCart} className="text-[#4B4F54] hover:text-[#0A2342] transition-colors" aria-label="Cerrar carrito">
             <X size={22} />
           </button>
         </div>
 
         {items.length === 0 ? (
-          <div className="flex-1 flex flex-col items-center justify-center gap-3 text-[#5b6b62] px-6 text-center">
+          <div className="flex-1 flex flex-col items-center justify-center gap-3 text-[#4B4F54] px-6 text-center">
             <ShoppingBag size={40} strokeWidth={1.25} className="text-black/15" />
             <p className="text-sm">Tu carrito está vacío.</p>
           </div>
@@ -44,12 +44,12 @@ export default function CartDrawer() {
               {items.map((item) => (
                 <div key={item.id} className="flex gap-4 pb-4 border-b border-black/[0.05] last:border-0">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-medium text-[#10231a] leading-snug line-clamp-2">{item.name}</h3>
-                    <p className="font-mono text-sm text-[#5b6b62] mt-1 tabular-nums">{formatCLP(item.price)}</p>
+                    <h3 className="text-sm font-medium text-[#0A2342] leading-snug line-clamp-2">{item.name}</h3>
+                    <p className="font-mono text-sm text-[#4B4F54] mt-1 tabular-nums">{formatCLP(item.price)}</p>
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="w-7 h-7 rounded-full border border-black/10 flex items-center justify-center text-[#10231a] hover:bg-black/5 transition-colors"
+                        className="w-7 h-7 rounded-full border border-black/10 flex items-center justify-center text-[#0A2342] hover:bg-black/5 transition-colors"
                         aria-label="Restar"
                       >
                         <Minus size={13} />
@@ -57,14 +57,14 @@ export default function CartDrawer() {
                       <span className="w-6 text-center text-sm font-mono tabular-nums">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="w-7 h-7 rounded-full border border-black/10 flex items-center justify-center text-[#10231a] hover:bg-black/5 transition-colors"
+                        className="w-7 h-7 rounded-full border border-black/10 flex items-center justify-center text-[#0A2342] hover:bg-black/5 transition-colors"
                         aria-label="Sumar"
                       >
                         <Plus size={13} />
                       </button>
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="ml-auto text-[#5b6b62] hover:text-red-600 transition-colors"
+                        className="ml-auto text-[#4B4F54] hover:text-red-600 transition-colors"
                         aria-label="Quitar del carrito"
                       >
                         <Trash2 size={15} />
@@ -77,17 +77,17 @@ export default function CartDrawer() {
 
             <div className="px-6 py-5 border-t border-black/[0.06] flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <span className="text-[#5b6b62] text-sm">Subtotal</span>
-                <span className="font-mono font-bold text-lg text-[#10231a] tabular-nums">{formatCLP(totalPrice)}</span>
+                <span className="text-[#4B4F54] text-sm">Subtotal</span>
+                <span className="font-mono font-bold text-lg text-[#0A2342] tabular-nums">{formatCLP(totalPrice)}</span>
               </div>
               <Link
                 href="/checkout"
                 onClick={closeCart}
-                className="w-full text-center bg-leaf hover:bg-leaf-light text-white font-semibold py-3.5 rounded-full transition-colors"
+                className="w-full text-center bg-brand hover:bg-brand-light text-white font-semibold py-3.5 rounded-full transition-colors"
               >
                 Ir a pagar
               </Link>
-              <p className="text-[11px] text-[#5b6b62] text-center leading-relaxed">
+              <p className="text-[11px] text-[#4B4F54] text-center leading-relaxed">
                 Aún no procesamos pago en línea — coordinamos el pago contigo al confirmar el pedido.
               </p>
             </div>

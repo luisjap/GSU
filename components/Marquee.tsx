@@ -1,7 +1,8 @@
 const CAPACIDADES = [
-  'Gasfitería', 'Electricidad', 'Climatización', 'Instalación', 'Mantención preventiva',
-  'Reparación', 'Certificación SEC', 'Servicio a empresas', 'Servicio a domicilio',
-  'Anticipo transparente', 'Garantía del trabajo', 'Contratos de mantención mensual',
+  'Infraestructura Eléctrica', 'Climatización y Ventilación', 'Sistemas Hidráulicos',
+  'Mantenimiento Integral', 'Instalaciones técnicas', 'Mantención preventiva',
+  'Mantención correctiva', 'Certificación SEC', 'Servicio a empresas', 'Servicio a domicilio',
+  'Propuesta técnica transparente', 'Garantía del trabajo', 'Contratos de mantenimiento anual',
 ];
 
 export default function Marquee() {
@@ -15,9 +16,9 @@ export default function Marquee() {
         {items.map((item, i) => (
           <span
             key={i}
-            className="text-[#5b6b62] text-sm font-medium tracking-wide whitespace-nowrap flex items-center gap-3"
+            className="text-[#4B4F54] text-sm font-medium tracking-wide whitespace-nowrap flex items-center gap-3"
           >
-            <span className="w-1 h-1 rounded-full bg-leaf/60 inline-block" />
+            <span className="w-1 h-1 rounded-full bg-brand/60 inline-block" />
             {item}
           </span>
         ))}

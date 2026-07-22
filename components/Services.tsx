@@ -1,59 +1,76 @@
 'use client';
-import { Droplet, Zap, Snowflake, Cpu, ArrowRight } from 'lucide-react';
+import { Zap, Snowflake, Droplet, ShieldCheck } from 'lucide-react';
 
-const SPECIALTIES = [
-  {
-    icon: Droplet,
-    title: 'Gasfitería',
-    desc: 'Griferías, artefactos sanitarios, calefonts y redes de agua y gas, con certificación SEC cuando corresponde.',
-    accent: '#0d9488',
-    tags: ['Instalación', 'Mantención', 'Reparación'],
-  },
+const DIVISIONS = [
   {
     icon: Zap,
-    title: 'Electricidad',
-    desc: 'Tableros, circuitos, iluminación y certificación eléctrica TE1 ante la SEC.',
-    accent: '#2563eb',
-    tags: ['Instalación', 'Mantención', 'Reparación'],
+    image: 'servicio-electrica-2',
+    name: 'GSU Electric',
+    title: 'Infraestructura Eléctrica',
+    desc: 'Tableros, alumbrado, canalizaciones y certificación eléctrica TE1 ante la SEC.',
+    tags: ['Tableros', 'Certificación SEC', 'Mantención'],
   },
   {
     icon: Snowflake,
-    title: 'Climatización',
-    desc: 'Aire acondicionado, calefacción, ductos y mantención de gas refrigerante.',
-    accent: '#0891b2',
-    tags: ['Instalación', 'Mantención', 'Reparación'],
+    image: 'servicio-climatizacion-1',
+    name: 'GSU Climate',
+    title: 'Climatización y Ventilación',
+    desc: 'Equipos split, multi split, VRV/VRF, ventilación y mantención de gas refrigerante.',
+    tags: ['Split / VRV / VRF', 'Ventilación', 'Mantención'],
+  },
+  {
+    icon: Droplet,
+    image: 'servicio-hidraulica-1',
+    name: 'GSU Hydro',
+    title: 'Sistemas Hidráulicos',
+    desc: 'Redes de agua potable y sanitarias, bombas, presurización y detección de fugas.',
+    tags: ['Redes hidráulicas', 'Bombas', 'Presurización'],
+  },
+  {
+    icon: ShieldCheck,
+    image: 'servicio-mantenimiento-1',
+    name: 'GSU Care',
+    title: 'Mantenimiento Integral',
+    desc: 'Contratos de mantención mensual, inspecciones, diagnósticos y planes anuales.',
+    tags: ['Contratos mensuales', 'Inspecciones', 'Diagnóstico'],
   },
 ];
 
-function SpecialtyCard({ icon: Icon, title, desc, accent, tags }: (typeof SPECIALTIES)[number]) {
+function DivisionCard({ icon: Icon, image, name, title, desc, tags }: (typeof DIVISIONS)[number]) {
   return (
     <div
-      className="group relative rounded-2xl bg-white border border-black/[0.06] p-7 overflow-hidden cursor-default
+      className="group relative rounded-2xl bg-white border border-black/[0.06] overflow-hidden cursor-default
         hover:shadow-lg hover:shadow-black/[0.05] hover:-translate-y-0.5 transition-all duration-300"
     >
-      {/* rail — el color identifica la especialidad, no es decorativo */}
-      <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: accent }} />
-
-      <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-        style={{ background: `${accent}14`, color: accent }}
-      >
-        <Icon size={22} strokeWidth={2} />
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <img
+          src={`/images/library/${image}.webp`}
+          alt={title}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div
+          className="absolute top-3 left-3 w-9 h-9 rounded-lg flex items-center justify-center bg-white/90 text-brand backdrop-blur-sm"
+        >
+          <Icon size={18} strokeWidth={2} />
+        </div>
       </div>
 
-      <h3 className="text-[#10231a] font-display font-semibold text-xl mb-2">{title}</h3>
-      <p className="text-[#5b6b62] text-sm leading-relaxed mb-5">{desc}</p>
+      <div className="p-7">
+        <span className="text-brand text-[11px] font-semibold tracking-widest uppercase">{name}</span>
+        <h3 className="mt-1 text-[#0A2342] font-display font-semibold text-xl mb-2">{title}</h3>
+        <p className="text-[#4B4F54] text-sm leading-relaxed mb-5">{desc}</p>
 
-      <div className="flex flex-wrap gap-2">
-        {tags.map((t) => (
-          <span
-            key={t}
-            className="text-[11px] font-medium px-2.5 py-1 rounded-full border"
-            style={{ borderColor: `${accent}40`, color: accent }}
-          >
-            {t}
-          </span>
-        ))}
+        <div className="flex flex-wrap gap-2">
+          {tags.map((t) => (
+            <span
+              key={t}
+              className="text-[11px] font-medium px-2.5 py-1 rounded-full border border-brand/25 text-brand"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -61,43 +78,24 @@ function SpecialtyCard({ icon: Icon, title, desc, accent, tags }: (typeof SPECIA
 
 export default function Services() {
   return (
-    <section id="servicios" className="bg-[#f2f7f4] py-24 px-4 sm:px-6">
+    <section id="servicios" className="bg-[#E8ECEF] py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-14 max-w-2xl">
-          <span className="text-leaf text-sm font-semibold tracking-widest uppercase">Especialidades</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#10231a] leading-tight">
-            Tres oficios certificados,<br />un solo proveedor
+          <span className="text-brand text-sm font-semibold tracking-widest uppercase">Infraestructura técnica</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#0A2342] leading-tight">
+            Cuatro divisiones técnicas,<br />una misma ingeniería
           </h2>
-          <p className="mt-4 text-[#5b6b62] text-lg leading-relaxed">
-            Coordinamos técnicos certificados para instalación, mantención y reparación —
-            tú tratas con un solo proveedor en vez de tres.
+          <p className="mt-4 text-[#4B4F54] text-lg leading-relaxed">
+            Coordinamos técnicos especialistas certificados para diseño, instalación, mantención y
+            reparación — un solo proveedor en vez de múltiples contratistas independientes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {SPECIALTIES.map((s) => (
-            <SpecialtyCard key={s.title} {...s} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {DIVISIONS.map((d) => (
+            <DivisionCard key={d.name} {...d} />
           ))}
         </div>
-
-        {/* línea secundaria — deliberadamente más discreta */}
-        <a
-          href="/#contacto"
-          className="mt-4 group flex items-center justify-between gap-4 rounded-2xl border border-black/[0.06] bg-white/60 px-6 py-5 hover:bg-white hover:border-black/[0.1] transition-all duration-300"
-        >
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-lg bg-black/[0.04] flex items-center justify-center text-[#5b6b62] shrink-0">
-              <Cpu size={18} strokeWidth={2} />
-            </div>
-            <div>
-              <span className="text-[#5b6b62]/70 text-[11px] font-medium uppercase tracking-widest">Línea complementaria</span>
-              <p className="text-[#334a3d] text-sm mt-0.5">
-                Soluciones tecnológicas: sistemas de gestión y automatización para tu negocio.
-              </p>
-            </div>
-          </div>
-          <ArrowRight size={16} className="text-[#5b6b62] group-hover:translate-x-0.5 transition-all shrink-0" />
-        </a>
       </div>
     </section>
   );

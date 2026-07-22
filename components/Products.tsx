@@ -9,16 +9,25 @@ export default function Products() {
   return (
     <section id="tienda" className="bg-white py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
+        <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+          <img
+            src="/images/library/tienda-header.webp"
+            alt="Bodega de equipos GSU"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-6">
           <div>
-            <span className="text-leaf text-sm font-semibold tracking-widest uppercase">Tienda</span>
-            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#10231a] leading-tight">
+            <span className="text-brand text-sm font-semibold tracking-widest uppercase">Tienda</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#0A2342] leading-tight">
               Nuestros equipos<br />y accesorios
             </h2>
           </div>
           <Link
             href="/tienda"
-            className="inline-flex items-center gap-1.5 text-leaf font-semibold text-sm hover:text-leaf-dark transition-colors"
+            className="inline-flex items-center gap-1.5 text-brand font-semibold text-sm hover:text-brand-dark transition-colors"
           >
             Ver toda la tienda
             <ArrowRight size={16} />

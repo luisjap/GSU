@@ -3,24 +3,29 @@ import { Button } from '@relume_io/relume-ui';
 export default function CtaBanner() {
   return (
     <section className="bg-white py-20 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto relative overflow-hidden rounded-3xl bg-gradient-to-br from-leaf-soft to-frost/10 border border-leaf/15 p-10 sm:p-16 text-center">
-        {/* glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-leaf/10 blur-3xl rounded-full pointer-events-none" />
+      <div className="max-w-4xl mx-auto relative overflow-hidden rounded-3xl border border-brand/15 p-10 sm:p-16 text-center">
+        <img
+          src="/images/library/banner-equipo.webp"
+          alt="Equipo técnico de GSU"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/85 via-brand-dark/75 to-brand-dark/85" />
 
-        <span className="relative text-leaf-dark text-sm font-semibold tracking-widest uppercase">¿Necesitas mantención?</span>
-        <h2 className="relative mt-4 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#10231a] leading-tight">
-          Coordina un técnico certificado<br className="hidden sm:block" /> sin vueltas
+        <span className="relative text-white/80 text-sm font-semibold tracking-widest uppercase">¿Necesitas mantención?</span>
+        <h2 className="relative mt-4 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white leading-tight">
+          Ingeniería aplicada a<br className="hidden sm:block" /> la continuidad operacional
         </h2>
-        <p className="relative mt-4 text-[#5b6b62] text-base sm:text-lg max-w-xl mx-auto">
-          Cotización clara, anticipo transparente y garantía del trabajo. Cuéntanos qué necesitas.
+        <p className="relative mt-4 text-white/85 text-base sm:text-lg max-w-xl mx-auto">
+          Propuesta técnica clara, ejecución certificada y garantía del trabajo. Cuéntanos qué necesita tu infraestructura.
         </p>
 
         <div className="relative mt-8 flex justify-center">
           <Button
             asChild
-            className="bg-leaf hover:bg-leaf-light text-white font-semibold px-8 py-3.5 rounded-full text-base shadow-lg shadow-leaf/20 transition-all"
+            className="bg-brand hover:bg-brand-light text-white font-semibold px-8 py-3.5 rounded-full text-base shadow-lg shadow-brand/20 transition-all"
           >
-            <a href="/#contacto">Solicitar cotización →</a>
+            <a href="/#contacto">Solicitar propuesta técnica →</a>
           </Button>
         </div>
       </div>

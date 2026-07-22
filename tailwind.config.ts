@@ -10,9 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["IBM Plex Sans", "system-ui", "sans-serif"],
-        display: ["Barlow Semi Condensed", "system-ui", "sans-serif"],
-        mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Montserrat", "system-ui", "sans-serif"],
+        mono: ["Roboto Mono", "ui-monospace", "monospace"],
       },
       colors: {
         background: "hsl(var(--background))",
@@ -30,38 +30,20 @@ const config: Config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        // Marca — verde (acento principal, CTA, precios, tienda)
-        leaf: {
-          DEFAULT: "#16a34a",
-          light: "#22c55e",
-          dark: "#0f7a3d",
-          soft: "rgba(22,163,74,0.08)",
+        // Azul Corporativo — ingeniería, tecnología, confianza (uso 70%)
+        brand: {
+          DEFAULT: "#0057B8",
+          light: "#1E73D6",
+          dark: "#0A2342",
+          soft: "rgba(0,87,184,0.08)",
         },
-        // Gasfitería
-        accent: {
-          DEFAULT: "#0d9488",
-          light: "#14b8a6",
-          dark: "#0f766e",
-          soft: "rgba(13,148,136,0.08)",
+        // Gris Grafito — acero, equipos, industria (uso 10%)
+        graphite: {
+          DEFAULT: "#4B4F54",
+          soft: "rgba(75,79,84,0.08)",
         },
-        // Electricidad
-        volt: {
-          DEFAULT: "#2563eb",
-          light: "#3b82f6",
-          soft: "rgba(37,99,235,0.08)",
-        },
-        // Climatización
-        frost: {
-          DEFAULT: "#0891b2",
-          light: "#06b6d4",
-          soft: "rgba(8,145,178,0.08)",
-        },
-        // Certificaciones / seguridad — uso puntual
-        safety: {
-          DEFAULT: "#d97706",
-          soft: "rgba(217,119,6,0.1)",
-        },
-        dark: "#0a141f",
+        // Gris Claro — fondos (uso 3%)
+        mist: "#E8ECEF",
       },
       keyframes: {
         marquee: { to: { transform: "translateX(-50%)" } },
