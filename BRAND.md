@@ -124,12 +124,37 @@ versión anterior que usaba un color distinto por especialidad).
 - **Radios**: `rounded-xl` (12px) en inputs/badges, `rounded-2xl` (16px) en cards, `rounded-full` en botones y pills. `--radius: 0.75rem` en `globals.css` para componentes Radix/Relume.
 - **Elevación**: `shadow-sm` (reposo) → `hover:shadow-lg hover:shadow-black/[0.05]` (hover de cards) → `shadow-lg shadow-brand/20` (CTA primario) → `shadow-2xl` (drawers/modales). No se usan más de 4 niveles para mantener la jerarquía simple.
 
+## 10. Base de datos (Prisma + Railway Postgres)
+
+`prisma/schema.prisma` define 3 modelos — `ContactRequest`, `Order`, `OrderItem` —
+apuntando a `env("DATABASE_URL")`. Sin esa variable configurada, el schema
+igual genera el cliente (`prisma generate`, parte del script `build`) pero
+`/api/contact` y `/api/orders` detectan su ausencia y solo hacen `console.log`,
+sin intentar conectarse.
+
+**Para activar la persistencia real en Railway:**
+
+1. En el proyecto de Railway, agregar el plugin de Postgres — inyecta
+   `DATABASE_URL` automáticamente al servicio.
+2. Ejecutar una vez `npx prisma migrate dev --name init` (o `prisma db push`
+   para no versionar migraciones) con esa `DATABASE_URL` disponible, para
+   crear las tablas. Esto requiere una sesión con acceso a esa base de datos
+   — no se generó aquí porque este repo no tiene una instancia real conectada.
+3. Redeploy — a partir de ahí, cada solicitud de contacto y cada pedido queda
+   guardado además de logueado.
+
+No se implementó panel admin ni portal de clientes todavía — quedan para
+cuando haya datos reales que mostrar.
+
 ## 9. Pendiente / fuera de alcance de este repo
 
 El brandbook también define papelería, uniformes, vehículos, redes sociales y
-un sitio multi-página (Nosotros, Proyectos, Casos de éxito, Blog, Portal
-Cliente, panel admin). Ese alcance requiere contenido real del negocio
-(historia, equipo, testimonios, casos) e infraestructura adicional (CMS,
-base de datos, autenticación) que no existen hoy en este repo — no están
-implementados aquí para evitar contenido inventado o infraestructura sin
-credenciales reales.
+un sitio multi-página (Proyectos, Casos de éxito, Portal Cliente, panel
+admin). Ese alcance requiere contenido real del negocio (casos, testimonios)
+e infraestructura adicional (CMS, autenticación) que no existen hoy en este
+repo — no están implementados aquí para evitar contenido inventado o
+infraestructura sin credenciales reales.
+
+Imágenes corporativas (kie.ai): pendientes de que la política de red del
+entorno permita `api.kie.ai`, o de que se generen fuera de esta sesión y se
+suban al repo.
