@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
   }
 
   console.log(
-    `[cotización] ${new Date().toISOString()} — ${name} <${email}>${service ? ` · ${service}` : ''}: ${message}`,
+    `[propuesta técnica] ${new Date().toISOString()} — ${name} <${email}>${service ? ` · ${service}` : ''}: ${message}`,
   );
 
   return NextResponse.json({ ok: true });

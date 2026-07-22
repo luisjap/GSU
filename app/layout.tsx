@@ -6,14 +6,14 @@ import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
 
 export const metadata: Metadata = {
-  title: 'GSU Servicios y Mantenimiento — Gasfitería, Electricidad y Climatización',
+  title: 'GSU Ingeniería y Mantenimiento — Ingeniería aplicada a la continuidad operacional',
   description:
-    'Instalación, mantención y reparación certificada en gasfitería, electricidad y climatización para empresas y hogares. Un solo proveedor, técnicos certificados.',
+    'Ingeniería eléctrica, climatización y ventilación, sistemas hidráulicos y mantenimiento integral para empresas y hogares en Chile. Propuesta técnica clara, ejecución certificada y respaldo documental.',
   openGraph: {
     type: 'website',
-    title: 'GSU Servicios y Mantenimiento',
+    title: 'GSU Ingeniería y Mantenimiento',
     description:
-      'Gasfitería, electricidad y climatización certificada. Instalación, mantención y reparación para empresas y hogares.',
+      'Ingeniería eléctrica, climatización y ventilación, sistemas hidráulicos y mantenimiento integral. Soluciones técnicas que garantizan continuidad operacional.',
     locale: 'es_CL',
   },
   icons: { icon: '/favicon.svg' },

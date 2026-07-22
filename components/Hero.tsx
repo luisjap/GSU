@@ -2,12 +2,19 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@relume_io/relume-ui';
 import { Badge } from '@relume_io/relume-ui';
-import { AirVent, MessageCircle, Phone } from 'lucide-react';
+import { Zap, Snowflake, Droplet, ShieldCheck, MessageCircle, Phone } from 'lucide-react';
 
 const STATS = [
-  { value: 3, suffix: '', label: 'Especialidades certificadas' },
+  { value: 4, suffix: '', label: 'Divisiones de ingeniería' },
   { value: 100, suffix: '%', label: 'Técnicos certificados SEC' },
-  { value: 24, suffix: 'h', label: 'Respuesta a cotizaciones' },
+  { value: 24, suffix: 'h', label: 'Respuesta a propuestas técnicas' },
+];
+
+const DIVISIONS = [
+  { icon: Zap, label: 'Eléctrica' },
+  { icon: Snowflake, label: 'Climatización' },
+  { icon: Droplet, label: 'Hidráulica' },
+  { icon: ShieldCheck, label: 'Mantenimiento' },
 ];
 
 function useCountUp(ref: React.RefObject<HTMLSpanElement>, target: number) {
@@ -38,47 +45,47 @@ function Stat({ value, suffix, label }: { value: number; suffix: string; label: 
   useCountUp(ref, value);
   return (
     <div className="text-center sm:text-left">
-      <div className="text-3xl font-display font-bold text-[#10231a] font-mono tabular-nums">
+      <div className="text-3xl font-display font-bold text-[#0A2342] font-mono tabular-nums">
         <span ref={ref}>0</span>{suffix}
       </div>
-      <div className="text-sm text-[#5b6b62] mt-1">{label}</div>
+      <div className="text-sm text-[#4B4F54] mt-1">{label}</div>
     </div>
   );
 }
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#f7faf8]">
+    <section className="relative overflow-hidden bg-[#E8ECEF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <div className="flex flex-col gap-7 text-center lg:text-left items-center lg:items-start">
-          <Badge className="bg-leaf-soft border border-leaf/15 text-leaf-dark text-xs px-4 py-1.5 rounded-full font-medium animate-rise">
-            GSU Servicios y Mantenimiento · Chile
+          <Badge className="bg-brand-soft border border-brand/15 text-brand-dark text-xs px-4 py-1.5 rounded-full font-medium animate-rise">
+            GSU Ingeniería y Mantenimiento · Chile
           </Badge>
 
           <h1
-            className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-[#10231a] leading-[1.1] animate-rise [animation-delay:80ms]"
+            className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-[#0A2342] leading-[1.1] animate-rise [animation-delay:80ms]"
             style={{ textWrap: 'balance' }}
           >
-            Expertos en instalación y mantención de{' '}
-            <em className="not-italic text-gradient">gasfitería, electricidad y climatización</em>
+            Ingeniería aplicada a{' '}
+            <em className="not-italic text-gradient">la continuidad operacional</em>
           </h1>
 
-          <p className="text-[#5b6b62] text-lg leading-relaxed max-w-xl animate-rise [animation-delay:160ms]">
-            Técnicos certificados, anticipo transparente y garantía del trabajo. Un solo proveedor
-            para empresas y hogares en Chile.
+          <p className="text-[#4B4F54] text-lg leading-relaxed max-w-xl animate-rise [animation-delay:160ms]">
+            Diseñamos, instalamos y mantenemos infraestructura eléctrica, climatización y sistemas
+            hidráulicos con técnicos especialistas, propuesta técnica clara y garantía del trabajo.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-rise [animation-delay:240ms]">
             <Button
               asChild
-              className="bg-leaf hover:bg-leaf-light text-white font-semibold px-8 py-3 rounded-full text-base shadow-lg shadow-leaf/20 transition-all"
+              className="bg-brand hover:bg-brand-light text-white font-semibold px-8 py-3 rounded-full text-base shadow-lg shadow-brand/20 transition-all"
             >
-              <a href="/#contacto">Solicitar cotización →</a>
+              <a href="/#contacto">Solicitar propuesta técnica →</a>
             </Button>
             <Button
               asChild
               variant="secondary"
-              className="border-black/10 text-[#10231a] hover:bg-black/[0.03] px-8 py-3 rounded-full text-base transition-all bg-transparent"
+              className="border-black/10 text-[#0A2342] hover:bg-black/[0.03] px-8 py-3 rounded-full text-base transition-all bg-transparent"
             >
               <a href="/tienda">Ver tienda</a>
             </Button>
@@ -91,13 +98,23 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* visual */}
+        {/* visual — ecosistema de las 4 divisiones GSU */}
         <div className="relative aspect-square max-w-md mx-auto lg:max-w-none w-full">
-          <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-leaf-soft via-white to-frost/10 border border-black/[0.05]" />
-          <div className="absolute top-8 right-8 w-40 h-40 rounded-full bg-leaf/10 blur-2xl" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-frost/15 blur-2xl" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <AirVent size={140} strokeWidth={1} className="text-leaf/60" />
+          <div className="absolute inset-0 rounded-[2.5rem] bg-white border border-black/[0.05]" />
+          <div className="absolute top-8 right-8 w-40 h-40 rounded-full bg-brand/10 blur-2xl" />
+          <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-brand-dark/10 blur-2xl" />
+          <div className="absolute inset-0 flex items-center justify-center p-14">
+            <div className="grid grid-cols-2 gap-5 w-full max-w-[240px]">
+              {DIVISIONS.map((d) => (
+                <div
+                  key={d.label}
+                  className="flex flex-col items-center justify-center gap-2 aspect-square rounded-2xl bg-brand-soft border border-brand/15"
+                >
+                  <d.icon size={30} strokeWidth={1.5} className="text-brand" />
+                  <span className="text-[11px] font-medium text-[#0A2342]">{d.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* floating contact buttons */}
@@ -111,7 +128,7 @@ export default function Hero() {
             </a>
             <a
               href="/#contacto"
-              className="flex items-center gap-2 bg-volt text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg hover:brightness-105 transition-all"
+              className="flex items-center gap-2 bg-brand-dark text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg hover:brightness-105 transition-all"
             >
               <Phone size={15} />
               Llamar

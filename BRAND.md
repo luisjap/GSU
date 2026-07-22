@@ -1,0 +1,129 @@
+# GSU Ingeniería y Mantenimiento — Brandbook (resumen operativo)
+
+Referencia de marca que rige el copy y el diseño de este repo. Si vas a escribir
+copy nuevo o tocar el sistema de diseño, lee esto primero.
+
+## 1. ADN de marca
+
+- **Esencia**: Ingeniería aplicada al funcionamiento continuo de las instalaciones.
+- **Propósito**: Mantener operativos los espacios donde las personas viven,
+  trabajan y producen, mediante soluciones técnicas confiables ejecutadas con
+  estándares de ingeniería.
+- **Misión**: Diseñar, instalar, reparar y mantener sistemas eléctricos,
+  hidráulicos y de climatización ofreciendo soluciones eficientes, seguras y
+  duraderas para empresas y particulares.
+- **Visión**: Ser la empresa chilena referente en ingeniería aplicada al
+  mantenimiento de infraestructura.
+- **Valores**: Profesionalismo, Seguridad, Honestidad, Confiabilidad,
+  Innovación, Calidad.
+
+## 2. Qué somos / qué vendemos
+
+No somos una empresa de "maestros" ni de reparaciones domésticas. Somos una
+empresa técnica de ingeniería.
+
+No vendemos electricidad → vendemos **continuidad operacional**.
+No vendemos aire acondicionado → vendemos **confort**.
+No vendemos gasfitería → vendemos **seguridad**.
+No vendemos reparaciones → vendemos **tranquilidad**.
+
+## 3. Arquitectura de marca — 4 divisiones
+
+```
+                    GSU
+        Ingeniería y Mantenimiento
+────────────────────────────────────
+        Infraestructura Técnica
+┌───────────┬───────────┬───────────┬────────────┐
+│  Electric │  Climate  │   Hydro   │    Care    │
+└───────────┴───────────┴───────────┴────────────┘
+```
+
+Cada división puede crecer (energías renovables, automatización, domótica,
+CCTV, redes) sin afectar la marca principal.
+
+| División | Foco | Servicios |
+|---|---|---|
+| **GSU Electric** | Infraestructura Eléctrica | Tableros, alumbrado, canalizaciones, certificación SEC/TE1, mantención |
+| **GSU Climate** | Climatización y Ventilación | Split, multi split, VRV/VRF, chillers, ventilación, calefacción |
+| **GSU Hydro** | Sistemas Hidráulicos | Agua potable, redes sanitarias, bombas, presurización, detección de fugas |
+| **GSU Care** | Mantenimiento Integral | Contratos mensuales (ingreso recurrente — prioridad de negocio), inspecciones, auditorías, planes anuales |
+
+Implementado en `components/Services.tsx` (grid de 4 divisiones) y
+`components/Contact.tsx` (selector de especialidad).
+
+## 4. Identidad verbal — siempre / nunca
+
+| No decir | Decir |
+|---|---|
+| Arreglamos | Diagnosticamos e implementamos soluciones |
+| Maestro | Técnico especialista |
+| Hacemos de todo / todo en uno | Soluciones integrales para infraestructura técnica |
+| Presupuesto / cotización | Propuesta técnica |
+| Trabajo terminado | Proyecto entregado |
+| Gasfitería (como categoría pública) | Sistemas Hidráulicos |
+| Aire acondicionado (como categoría pública) | Climatización y Ventilación |
+
+Evitar además: "pega", "barato", "económico", "mil usos".
+
+Tono: claro, técnico, educativo, respetuoso, profesional. Nunca vulgar,
+exagerado, informal ni sensacionalista.
+
+> ❌ "Somos los mejores de Chile."
+> ✔ "Aplicamos procedimientos técnicos para garantizar instalaciones seguras y confiables."
+
+## 5. Arquetipo y personalidad
+
+Principal: **El Cuidador** (mantiene, protege, previene, genera tranquilidad).
+Secundario: **El Sabio** (conocimiento, experiencia, diagnóstico, precisión).
+
+Personalidad: profesional, técnica, precisa, responsable, moderna, ordenada,
+confiable, cercana sin perder autoridad.
+
+## 6. Tagline
+
+**"Ingeniería aplicada a la continuidad operacional."** (usado en Hero y CtaBanner)
+
+## 7. Modelo de negocio (4 líneas de ingreso)
+
+1. Servicios puntuales (una instalación)
+2. Proyectos (remodelaciones, climatización completa)
+3. **Contratos** (GSU Care — prioridad, ingreso mensual recurrente)
+4. Venta de productos (equipos, repuestos, materiales — sección `/tienda`)
+
+## 8. Sistema de diseño implementado
+
+### Colores (`tailwind.config.ts`)
+
+| Token Tailwind | Hex | Uso | % |
+|---|---|---|---|
+| `brand` | `#0057B8` | Azul Corporativo — CTA, acentos, precios | 70% |
+| `brand-dark` | `#0A2342` | Azul Oscuro — títulos, texto fuerte, hover | 15% |
+| `graphite` | `#4B4F54` | Gris Grafito — texto secundario/muted | 10% |
+| `mist` (`#E8ECEF`) | — | Fondos de sección alternados | 3% |
+| blanco | `#FFFFFF` | Fondo base, respiración visual | 2% |
+
+Reglas: sin degradados en el logo, colores sobrios, sin iconos con relleno o
+caricaturescos (lineales, grosor uniforme).
+
+### Tipografía (`app/globals.css`, `tailwind.config.ts`)
+
+- **Montserrat** (`font-display`) — títulos, botones.
+- **Inter** (`font-sans`) — cuerpo de texto, web.
+- **Roboto Mono** (`font-mono`) — datos técnicos, precios, series.
+
+### Iconografía
+
+Lucide React, lineales, sin relleno, un solo color por contexto (azul
+corporativo) — sin codificar por color cada división (a diferencia de una
+versión anterior que usaba un color distinto por especialidad).
+
+## 9. Pendiente / fuera de alcance de este repo
+
+El brandbook también define papelería, uniformes, vehículos, redes sociales y
+un sitio multi-página (Nosotros, Proyectos, Casos de éxito, Blog, Portal
+Cliente, panel admin). Ese alcance requiere contenido real del negocio
+(historia, equipo, testimonios, casos) e infraestructura adicional (CMS,
+base de datos, autenticación) que no existen hoy en este repo — no están
+implementados aquí para evitar contenido inventado o infraestructura sin
+credenciales reales.
