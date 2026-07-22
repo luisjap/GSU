@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import {
   Building2, Stethoscope, Home, HardHat, Briefcase, Factory,
   ShoppingBag, UtensilsCrossed, Coffee, User,
@@ -37,10 +38,13 @@ export default function SectoresPage() {
             hogar — según lo que tu operación necesite.
           </p>
           <div className="mt-10 relative aspect-[21/9] rounded-2xl overflow-hidden">
-            <img
+            <Image
               src="/images/library/landing-sectores.webp"
               alt="GSU trabajando en distintos sectores"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
             />
           </div>
         </div>
@@ -62,11 +66,12 @@ export default function SectoresPage() {
               >
                 {s.image ? (
                   <div className="relative aspect-square">
-                    <img
+                    <Image
                       src={`/images/library/${s.image}.webp`}
                       alt={s.label}
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                      className="object-cover"
                     />
                   </div>
                 ) : (

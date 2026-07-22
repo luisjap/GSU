@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { Zap, Snowflake, Droplet, ShieldCheck } from 'lucide-react';
 
 const DIVISIONS = [
@@ -43,11 +44,12 @@ function DivisionCard({ icon: Icon, image, name, title, desc, tags }: (typeof DI
         hover:shadow-lg hover:shadow-black/[0.05] hover:-translate-y-0.5 transition-all duration-300"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img
+        <Image
           src={`/images/library/${image}.webp`}
           alt={title}
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div
           className="absolute top-3 left-3 w-9 h-9 rounded-lg flex items-center justify-center bg-white/90 text-brand backdrop-blur-sm"

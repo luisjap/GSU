@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const YEAR = new Date().getFullYear();
 
 const LINKS = {
@@ -24,12 +26,13 @@ const LINKS = {
 export default function Footer() {
   return (
     <footer className="relative bg-[#E8ECEF] border-t border-black/[0.05] py-16 px-4 sm:px-6 overflow-hidden">
-      <img
+      <Image
         src="/images/library/textura-panel-electrico.webp"
         alt=""
         aria-hidden="true"
-        loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none"
+        fill
+        sizes="100vw"
+        className="object-cover opacity-[0.05] pointer-events-none"
       />
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">

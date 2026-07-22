@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
@@ -37,10 +38,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </time>
 
         <div className="mt-8 relative aspect-video rounded-2xl overflow-hidden">
-          <img
+          <Image
             src={`/images/library/${post.image}.webp`}
             alt={post.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 672px"
+            className="object-cover"
           />
         </div>
 

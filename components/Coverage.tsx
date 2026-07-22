@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ShieldCheck, FileCheck2, BadgeCheck, Building2 } from 'lucide-react';
 
 const POINTS = [
@@ -45,11 +46,12 @@ export default function Coverage() {
               className="rounded-2xl bg-[#E8ECEF] border border-black/[0.05] overflow-hidden hover:bg-white hover:shadow-lg hover:shadow-black/[0.05] transition-all duration-300"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img
+                <Image
                   src={`/images/library/${p.image}.webp`}
                   alt={p.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
                 />
               </div>
               <div className="p-6">

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
@@ -10,11 +11,12 @@ export default function Products() {
     <section id="tienda" className="bg-white py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-10">
-          <img
+          <Image
             src="/images/library/tienda-header.webp"
             alt="Bodega de equipos GSU"
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-cover"
           />
         </div>
 
