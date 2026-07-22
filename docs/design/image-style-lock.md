@@ -10,7 +10,8 @@ seguir esta guía.
 |---|---|---|
 | **v1** | Fase 1 (20 imágenes: Home, Servicios, Nosotros, CTA, Contacto) | **Aprobada para desarrollo** — no se regenera todavía. Congelada tal como está hasta la pasada de consistencia final. |
 | **v2** | Fase 2 (28 imágenes: Sectores/Arquitectura, Proceso, Mantenimiento, Seguridad, Macro, Infraestructura) | **Aprobada** (9.5–10/10). No se regenera todavía. |
-| **v2.1** | Fase 3 en adelante | **Obligatoria** desde este documento en adelante — agrega reglas de marcas de terceros y variedad de planos |
+| **v2.1** | Fase 3 (28 imágenes: Blog, Casos ilustrativos, Emergencias, Proyectos) | **Aprobada** (9.7/10). No se regenera todavía. |
+| **v2.2** | Fase 4 (Biblioteca Premium) en adelante | **Obligatoria** — agrega categoría Smart Maintenance, personas cliente/administrador, y foco en activos reutilizables para marketing |
 
 Regla explícita: no se optimizan/regeneran activos que aún pueden cambiar por
 decisiones de diseño en curso (identidad visual, logo, tratamiento
@@ -44,11 +45,15 @@ Idéntico en **toda** la biblioteca, sin variaciones:
 
 ## 2bis. Marcas de terceros (obligatorio, v2.1)
 
-No deben aparecer marcas ni logos reconocibles de terceros (ej. Siemens) en
-equipos, edificios, vehículos ni señalética. Usar superficies limpias sin
-marca o etiquetado genérico. Si aparece una marca reconocible en una
-generación, esa imagen se regenera — no se usa tal cual ni se edita para
-tapar el logo.
+No deben aparecer marcas ni logos reconocibles de terceros (ej. Siemens,
+ABB) en equipos, edificios, vehículos ni señalética. Usar superficies
+limpias sin marca o etiquetado genérico. Si aparece una marca reconocible
+en una generación, esa imagen se regenera — no se usa tal cual ni se edita
+para tapar el logo.
+
+Excepción acotada: en artículos técnicos de blog donde la marca del equipo
+es relevante para el contenido, puede mantenerse. Nunca en imágenes
+institucionales o de marketing.
 
 ## 3. Vehículos (v2)
 
@@ -118,19 +123,37 @@ Distribución objetivo aproximada por fase (no exacta por imagen):
 ## 6. Relaciones de aspecto
 
 El modelo (Flux Kontext) soporta nativamente: `21:9`, `16:9`, `4:3`, `1:1`,
-`3:4`, `9:16`. Uso por destino:
+`3:4`, `9:16`. **No soporta `4:5`** — donde se pida ese formato (feeds tipo
+Instagram/LinkedIn) se usa `3:4` como el más cercano disponible, o `1:1`.
 
 | Ratio | Uso |
 |---|---|
 | 16:9 | Hero, secciones principales |
 | 4:3 | Cards |
-| 1:1 | Instagram |
+| 1:1 | Instagram / redes |
+| 3:4 | Sustituto de 4:5 |
 | 9:16 | Stories / Reels |
 | 21:9 | Banners anchos |
 
 No generar las 5 variantes de cada imagen por defecto — encarece el costo
 ~5x sin necesidad. Se define ratio por pieza según su uso real al momento de
 generarla (ver metadata `aspect_ratio`).
+
+## 6bis. Fase 4 — Biblioteca Premium (v2.2)
+
+Fase 4 deja de pensarse como "imágenes que faltan" y pasa a ser el cierre
+de una **colección definitiva de 100–120 imágenes** para toda la
+comunicación de GSU (web, redes, presentaciones comerciales, licitaciones,
+brochures) — no solo el sitio web. Incluye:
+
+- **Heroes cinematográficos**: fachadas, salas técnicas espectaculares, HVAC industrial a gran escala
+- **Landing**: espacio negativo orientado a conversión
+- **Redes sociales**: 1:1, 3:4 (sustituto de 4:5), 9:16
+- **Banners**: 21:9 ultra panorámico
+- **Texturas y fondos** (sin personas): acero, paneles, ductos, tuberías, mallas metálicas
+- **Detalles premium**: instrumentos, válvulas, PLC, sensores, cableado organizado
+- **Smart Maintenance** (nueva): dashboards, mantenimiento predictivo, sensores IoT, analítica, reportes digitales, QR + tablet, BIM/gemelos digitales, automatización
+- **Cliente/administrador interactuando con el técnico** (nuevo, en toda la biblioteca en adelante): administrador de hotel revisando un informe, jefe de mantenimiento recibiendo una explicación, reunión breve frente a un tablero, entrega de informe, revisión de dashboard en tablet — el cliente nunca es protagonista, es contexto que comunica asesoría y acompañamiento, no solo ejecución.
 
 ## 7. Asset Manifest (schema v2, obligatorio desde Fase 3)
 
