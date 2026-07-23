@@ -206,8 +206,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon",
     "generation_date": "2026-07-22",
     "version": "v1",
-    "status": "generated",
-    "approved": true
+    "status": "unresolved_third_party_branding",
+    "approved": false,
+    "edit_note": "Logo Toyota real visible en la parrilla y emblema HILUX en la puerta. 4 intentos de edicion via API fallaron con error interno del servidor (no rechazo de contenido). Pendiente: reintentar edicion o reemplazar por encuadre alternativo sin vehiculo de marca visible. Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-23"
   },
   {
     "id": "cta-banner",
@@ -304,8 +306,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
     "generation_date": "2026-07-22",
     "version": "v2",
-    "status": "generated",
-    "approved": null
+    "status": "edited_postproduction",
+    "approved": true,
+    "edit_note": "Texto/logo de letrero eliminado por edicion post-generacion (Flux Kontext, image-to-image) tras 3 intentos fallidos de regeneracion. Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-22"
   },
   {
     "id": "sector-clinica",
@@ -318,8 +322,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
     "generation_date": "2026-07-22",
     "version": "v2",
-    "status": "generated",
-    "approved": null
+    "status": "edited_postproduction",
+    "approved": true,
+    "edit_note": "Texto/logo de letrero eliminado por edicion post-generacion (Flux Kontext, image-to-image) tras 3 intentos fallidos de regeneracion. Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-22"
   },
   {
     "id": "sector-hospital",
@@ -332,8 +338,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
     "generation_date": "2026-07-22",
     "version": "v2",
-    "status": "generated",
-    "approved": null
+    "status": "edited_postproduction",
+    "approved": true,
+    "edit_note": "Texto/logo de letrero eliminado por edicion post-generacion (Flux Kontext, image-to-image) tras 3 intentos fallidos de regeneracion. Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-22"
   },
   {
     "id": "sector-restaurante",
@@ -346,8 +354,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
     "generation_date": "2026-07-22",
     "version": "v2",
-    "status": "generated",
-    "approved": null
+    "status": "edited_postproduction",
+    "approved": true,
+    "edit_note": "Texto/logo de letrero eliminado por edicion post-generacion (Flux Kontext, image-to-image) tras 3 intentos fallidos de regeneracion. Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-22"
   },
   {
     "id": "sector-condominio",
@@ -374,8 +384,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
     "generation_date": "2026-07-22",
     "version": "v2",
-    "status": "generated",
-    "approved": null
+    "status": "edited_postproduction",
+    "approved": true,
+    "edit_note": "Logo/texto de marca de terceros detectado pese a estar marcado como limpio en el reporte inicial. Eliminado por edicion post-generacion (Flux Kontext, image-to-image). Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-23"
   },
   {
     "id": "sector-retail",
@@ -388,8 +400,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
     "generation_date": "2026-07-22",
     "version": "v2",
-    "status": "generated",
-    "approved": null
+    "status": "edited_postproduction",
+    "approved": true,
+    "edit_note": "Logo/texto de marca de terceros detectado pese a estar marcado como limpio en el reporte inicial. Eliminado por edicion post-generacion (Flux Kontext, image-to-image). Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-23"
   },
   {
     "id": "sector-logistico",
@@ -402,8 +416,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
     "generation_date": "2026-07-22",
     "version": "v2",
-    "status": "generated",
-    "approved": null
+    "status": "edited_postproduction",
+    "approved": true,
+    "edit_note": "Logo/texto de marca de terceros detectado pese a estar marcado como limpio en el reporte inicial. Eliminado por edicion post-generacion (Flux Kontext, image-to-image). Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-23"
   },
   {
     "id": "sector-oficina",
@@ -416,8 +432,10 @@
     "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
     "generation_date": "2026-07-22",
     "version": "v2",
-    "status": "generated",
-    "approved": null
+    "status": "edited_postproduction",
+    "approved": true,
+    "edit_note": "Logo/texto de marca de terceros detectado pese a estar marcado como limpio en el reporte inicial. Eliminado por edicion post-generacion (Flux Kontext, image-to-image). Ver docs/design/image-style-lock.md seccion 2ter.",
+    "edit_date": "2026-07-23"
   },
   {
     "id": "proceso-inspeccion",

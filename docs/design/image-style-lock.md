@@ -18,10 +18,18 @@ decisiones de diseño en curso (identidad visual, logo, tratamiento
 fotográfico). Al completar toda la biblioteca se hace **una única pasada de
 consistencia v2 final**, regenerando solo lo que desentone.
 
-## 1. Base fotográfica (sin cambios desde v1)
+## 1. Base fotográfica (actualizado v2.2 — ver nota de causa raíz)
 
-Fotografía hiperrealista, calidad de producción corporativa profesional
-(nivel Siemens/ABB/Schneider Electric). Iluminación natural blanca uniforme,
+> **Nota de causa raíz (2026-07-22):** la versión original de esta sección
+> describía la calidad como "nivel Siemens/ABB/Schneider Electric". Esa frase
+> era la causa de que el modelo insertara esos nombres (u otro texto de
+> rótulo) como señalética en fachadas — el modelo interpretaba la referencia
+> de marca como parte literal de la escena a generar. Se reemplaza por una
+> descripción de calidad sin nombres de marca. **No reintroducir nombres de
+> empresas reales en ningún prompt de este documento.**
+
+Fotografía hiperrealista, calidad de producción corporativa profesional de
+primer nivel (grado editorial/publicitario industrial). Iluminación natural blanca uniforme,
 contraste medio. Color grading frío y consistente: azules ligeramente fríos,
 blancos limpios, negros profundos, alta nitidez. Arquitectura moderna,
 instalaciones impecables. Composición 16:9 cinematográfica por defecto, líneas
@@ -54,6 +62,30 @@ para tapar el logo.
 Excepción acotada: en artículos técnicos de blog donde la marca del equipo
 es relevante para el contenido, puede mantenerse. Nunca en imágenes
 institucionales o de marketing.
+
+## 2ter. Política de texto no deseado en fachadas — límite de 3 intentos (v2.2)
+
+Los modelos de generación de imágenes tienen un sesgo fuerte a colocar
+señalética/texto en accesos de edificios (hoteles, clínicas, hospitales,
+restaurantes), incluso con instrucciones explícitas de "sin texto" en el
+prompt y el negative prompt.
+
+**Regla:** si una imagen de fachada contiene texto generado por IA que no
+puede eliminarse tras **3 intentos de regeneración**, se detiene la
+regeneración — ya no es un problema de prompt, es una limitación del
+modelo. La resolución pasa a ser una de estas dos, no más intentos de
+generación:
+
+1. **Postproducción (preferida):** editar la imagen ya generada (edición
+   sobre imagen existente, no regeneración desde cero) para eliminar el
+   texto del letrero, dejando la arquitectura intacta y la fachada limpia.
+   Nunca agregar el logo de GSU en el lugar del texto eliminado.
+2. **Encuadre alternativo:** sustituir por una vista que excluya la zona de
+   señalética (ej. ángulo lateral, detalle de fachada, sin el área de
+   acceso/entrada).
+
+No se invierten más créditos intentando forzar al modelo a eliminar el
+texto más allá del tercer intento.
 
 ## 3. Vehículos (v2)
 
