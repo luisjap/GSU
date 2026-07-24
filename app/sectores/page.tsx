@@ -16,7 +16,7 @@ const EMPRESAS = [
   { icon: Stethoscope, label: 'Clínicas', image: 'sector-clinica' },
   { icon: Stethoscope, label: 'Hospitales', image: 'sector-hospital' },
   { icon: Home, label: 'Condominios', image: 'sector-condominio' },
-  { icon: HardHat, label: 'Constructoras', image: null },
+  { icon: HardHat, label: 'Constructoras', image: 'sector-constructora' },
   { icon: Briefcase, label: 'Oficinas', image: 'sector-oficina' },
   { icon: Factory, label: 'Plantas industriales', image: 'sector-industria' },
   { icon: ShoppingBag, label: 'Centros comerciales', image: 'sector-retail' },

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useCart } from '@/components/CartContext';
 import { formatCLP } from '@/lib/format';
 import { orderSchema, type OrderInput } from '@/lib/validation';
-import { Minus, Plus, Trash2, ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { Minus, Plus, Trash2, ArrowLeft, CheckCircle2, ShoppingBag } from 'lucide-react';
 
 type OrderForm = Omit<OrderInput, 'items' | 'total'>;
 
@@ -62,10 +62,21 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <main className="bg-white min-h-screen flex items-center justify-center px-4">
-        <div className="text-center flex flex-col items-center gap-4 py-24">
-          <p className="text-[#4B4F54]">Tu carrito está vacío.</p>
-          <Link href="/tienda" className="text-brand font-semibold text-sm hover:text-brand-dark transition-colors">
+      <main className="bg-[#E8ECEF] min-h-screen flex items-center justify-center px-4">
+        <div className="text-center flex flex-col items-center gap-5 py-24 max-w-sm">
+          <div className="w-16 h-16 rounded-full bg-brand-soft flex items-center justify-center">
+            <ShoppingBag size={28} className="text-brand" strokeWidth={1.5} />
+          </div>
+          <div className="flex flex-col gap-2">
+            <h1 className="font-display font-bold text-2xl text-[#0A2342]">Tu carrito está vacío</h1>
+            <p className="text-[#4B4F54] text-sm leading-relaxed">
+              Explora nuestro catálogo de equipos de climatización, accesorios y servicios de instalación.
+            </p>
+          </div>
+          <Link
+            href="/tienda"
+            className="inline-flex items-center gap-1.5 bg-brand hover:bg-brand-light text-white font-semibold text-sm px-6 py-3 rounded-full shadow-lg shadow-brand/20 transition-all"
+          >
             Ir a la tienda
           </Link>
         </div>

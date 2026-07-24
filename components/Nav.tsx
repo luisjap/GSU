@@ -47,7 +47,7 @@ export default function Nav() {
           >
             GSU
           </span>
-          <span className="hidden sm:block text-brand-dark font-display font-bold text-lg leading-none">
+          <span className="hidden md:block text-brand-dark font-display font-bold text-lg leading-none whitespace-nowrap">
             GSU <span className="font-medium">Ingeniería y Mantenimiento</span>
           </span>
         </Link>

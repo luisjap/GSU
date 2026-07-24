@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Button } from '@relume_io/relume-ui';
 import { Badge } from '@relume_io/relume-ui';
 import { MessageCircle, Phone } from 'lucide-react';
+import { whatsappLink, WHATSAPP_NUMBER } from '@/lib/contact';
 
 const STATS = [
   { value: 4, suffix: '', label: 'Divisiones de ingeniería' },
@@ -93,36 +94,40 @@ export default function Hero() {
         </div>
 
         {/* visual — fachada corporativa (escritorio) / sala técnica (móvil) */}
-        <div className="relative aspect-square max-w-md mx-auto lg:max-w-none w-full rounded-[2.5rem] overflow-hidden border border-black/[0.05]">
-          <Image
-            src="/images/library/home-hero.webp"
-            alt="Técnico de GSU trabajando en una sala eléctrica"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="lg:hidden object-cover"
-          />
-          <Image
-            src="/images/library/hero-fachada-corporativa.webp"
-            alt="Fachada corporativa moderna — GSU Ingeniería y Mantenimiento"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="hidden lg:block object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 via-transparent to-transparent" />
+        <div className="relative max-w-md mx-auto lg:max-w-none w-full pb-6">
+          <div className="relative aspect-square w-full rounded-[2.5rem] overflow-hidden border border-black/[0.05]">
+            <Image
+              src="/images/library/home-hero.webp"
+              alt="Técnico de GSU trabajando en una sala eléctrica"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="lg:hidden object-cover"
+            />
+            <Image
+              src="/images/library/hero-fachada-corporativa.webp"
+              alt="Fachada corporativa moderna — GSU Ingeniería y Mantenimiento"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="hidden lg:block object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 via-transparent to-transparent" />
+          </div>
 
-          {/* floating contact buttons */}
-          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-3">
+          {/* floating contact buttons — fuera del contenedor con overflow-hidden para no cortarse */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-3">
             <a
-              href="/#contacto"
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#25D366] text-[#0A2342] text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg hover:brightness-105 transition-all"
             >
               <MessageCircle size={16} />
               WhatsApp
             </a>
             <a
-              href="/#contacto"
+              href={`tel:+${WHATSAPP_NUMBER}`}
               className="flex items-center gap-2 bg-brand-dark text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg hover:brightness-105 transition-all"
             >
               <Phone size={15} />

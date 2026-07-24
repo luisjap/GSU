@@ -5,6 +5,7 @@ import { CartProvider } from '@/components/CartContext';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const BASE_URL = 'https://gsu.cl';
 
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
           <CartDrawer />
+          <WhatsAppFloat />
         </CartProvider>
       </body>
     </html>

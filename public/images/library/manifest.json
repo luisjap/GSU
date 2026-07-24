@@ -406,6 +406,20 @@
     "edit_date": "2026-07-23"
   },
   {
+    "id": "sector-constructora",
+    "title": "sector constructora",
+    "category": "arquitectura",
+    "page": "sectores",
+    "orientation": "landscape",
+    "aspect_ratio": "4:3",
+    "prompt": "Hyperrealistic corporate engineering photography, professional editorial-grade industrial production quality. Natural, even, white lighting with medium contrast. Consistent cool color grading: slightly cool blues, clean whites, deep blacks, high sharpness. Modern architecture, immaculate and orderly facilities. No text, no logos, no watermarks, no signage, no lettering, no 3D render look, no cartoon style. Modern construction site with a mid-rise building under construction, tower crane, organized scaffolding and safety fencing, clean and orderly worksite, daytime, no people, side angle avoiding any entrance or sign area.",
+    "negative_prompt": "stock photo, posing, artificial smile, looking at camera, clutter, dirt, text, logo, watermark, 3D render, cartoon, inconsistent uniform",
+    "generation_date": "2026-07-24",
+    "version": "v2.2",
+    "status": "generated",
+    "approved": true
+  },
+  {
     "id": "sector-logistico",
     "title": "sector logistico",
     "category": "arquitectura",

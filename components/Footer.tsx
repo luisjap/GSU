@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import { Phone, MessageCircle } from 'lucide-react';
+import { whatsappLink, WHATSAPP_NUMBER } from '@/lib/contact';
 
 const YEAR = new Date().getFullYear();
+const PHONE_DISPLAY = '+56 9 9850 1325';
 
 const LINKS = {
   Servicios: [
@@ -49,15 +52,33 @@ export default function Footer() {
                 GSU <span className="font-medium">Ingeniería y Mantenimiento</span>
               </span>
             </a>
-            <p className="text-[#4B4F54] text-sm leading-relaxed max-w-xs">
+            <p className="text-[#4B4F54] text-sm leading-relaxed max-w-xs mb-4">
               Ingeniería aplicada a la continuidad operacional — infraestructura eléctrica, climatización, sistemas hidráulicos y mantenimiento integral para empresas y hogares.
             </p>
+            <div className="flex flex-col gap-2">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#4B4F54] hover:text-brand text-sm transition-colors"
+              >
+                <MessageCircle size={15} />
+                {PHONE_DISPLAY}
+              </a>
+              <a
+                href={`tel:+${WHATSAPP_NUMBER}`}
+                className="inline-flex items-center gap-2 text-[#4B4F54] hover:text-brand text-sm transition-colors"
+              >
+                <Phone size={15} />
+                Llamar
+              </a>
+            </div>
           </div>
 
           {/* links */}
           {Object.entries(LINKS).map(([title, items]) => (
-            <div key={title}>
-              <h4 className="text-[#0A2342] text-xs font-semibold uppercase tracking-widest mb-4">{title}</h4>
+            <nav key={title} aria-label={title}>
+              <p className="text-[#0A2342] text-xs font-semibold uppercase tracking-widest mb-4">{title}</p>
               <ul className="flex flex-col gap-2.5">
                 {items.map((item) => (
                   <li key={item.label}>
@@ -70,7 +91,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           ))}
         </div>
 
