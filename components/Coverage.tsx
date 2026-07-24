@@ -23,8 +23,8 @@ const POINTS = [
   {
     icon: Building2,
     image: 'cliente-jefe-mantenimiento',
-    title: 'Empresas y hogares',
-    desc: 'Contratos de mantención mensual para edificios y empresas, o servicio puntual para el hogar, según lo que necesites.',
+    title: 'Un solo proveedor',
+    desc: '4 especialidades bajo una misma organización — un solo punto de contacto para eléctrica, climatización, hidráulica y mantenimiento.',
   },
 ];
 
@@ -33,7 +33,7 @@ export default function Coverage() {
     <section id="cobertura" className="bg-white py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-14 max-w-2xl">
-          <span className="text-brand text-sm font-semibold tracking-widest uppercase">Cobertura y garantía</span>
+          <span className="text-electric text-sm font-semibold tracking-widest uppercase">Por qué elegirnos</span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#0A2342] leading-tight">
             Trabajo certificado,<br />sin letra chica
           </h2>
@@ -55,7 +55,7 @@ export default function Coverage() {
                 />
               </div>
               <div className="p-6">
-                <div className="w-11 h-11 rounded-xl bg-brand-soft text-brand flex items-center justify-center mb-5">
+                <div className="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center mb-5">
                   <p.icon size={20} strokeWidth={2} />
                 </div>
                 <h3 className="text-[#0A2342] font-display font-semibold text-base mb-2">{p.title}</h3>

@@ -44,6 +44,18 @@ const config: Config = {
         },
         // Gris Claro — fondos (uso 3%)
         mist: "#E8ECEF",
+        // Fondo oscuro del Hero / secciones oscuras (footer, contacto)
+        night: {
+          DEFAULT: "#0a0e1a",
+          soft: "#0d1220",
+          card: "#111729",
+        },
+        // Azul eléctrico — acento sobre fondo oscuro
+        electric: {
+          DEFAULT: "#2563EB",
+          light: "#3b82f6",
+          soft: "rgba(37,99,235,0.12)",
+        },
       },
       keyframes: {
         marquee: { to: { transform: "translateX(-50%)" } },
@@ -51,10 +63,15 @@ const config: Config = {
           from: { opacity: "0", transform: "translateY(22px)" },
           to: { opacity: "1", transform: "none" },
         },
+        headlineIn: {
+          from: { opacity: "0", transform: "translateY(10px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         marquee: "marquee 36s linear infinite",
         rise: "rise 0.65s cubic-bezier(0.22,1,0.36,1) both",
+        headlineIn: "headlineIn 0.6s cubic-bezier(0.22,1,0.36,1) both",
       },
     },
   },
