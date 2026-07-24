@@ -2892,7 +2892,7 @@
     "generation_date": "2026-07-24",
     "version": "v2.2",
     "status": "edited_postproduction",
-    "edit_note": "Imagen original contenía logos reales de terceros (ABB, SIEMENS) en las etiquetas de los breakers. Corregido en el primer intento vía edición image-to-image (kie.ai/Flux Kontext): logos reemplazados por etiquetas genéricas sin marca, resto de la imagen sin alterar. Ver docs/design/image-style-lock.md sección 2bis/2ter.",
+    "edit_note": "Imagen original contenía logos reales de terceros (ABB, SIEMENS) en las etiquetas de los breakers. Corregido en el primer intento vía edición image-to-image (kie.ai/Flux Kontext): logos reemplazados por etiquetas genéricas sin marca, resto de la imagen sin alterar. Ver docs/design/image-style-lock.md sección 2bis/2ter. Segunda pasada (2026-07-24): se detectó una marca de agua tipo destello semitransparente sobre el cableado (no visible en la revisión inicial por quedar sobre fondo ocupado). Corregida en el primer intento vía edición image-to-image partiendo de la versión ya sin logos, resto de la imagen sin alterar.",
     "edit_date": "2026-07-24",
     "approved": true
   },
