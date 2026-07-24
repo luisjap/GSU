@@ -1,4 +1,4 @@
-import { Zap, Wind, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Zap, Wind, Flame, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const DIVISIONS = [
   {
@@ -12,6 +12,11 @@ const DIVISIONS = [
     desc: 'Climatización y ventilación: split, multi split y sistemas VRV/VRF.',
   },
   {
+    icon: Flame,
+    name: 'GSU Gas',
+    desc: 'Instalación de redes de gas y agua, conexión de artefactos y certificación ante la SEC (Instalador Clase 3).',
+  },
+  {
     icon: ShieldCheck,
     name: 'GSU Care',
     desc: 'Mantenimiento integral con contratos mensuales e inspecciones periódicas.',
@@ -21,7 +26,7 @@ const DIVISIONS = [
 export default function Divisions() {
   return (
     <section className="relative px-4 sm:px-6 -mt-10 sm:-mt-14 z-10">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {DIVISIONS.map((d) => (
           <a
             key={d.name}

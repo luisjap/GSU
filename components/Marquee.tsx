@@ -1,5 +1,5 @@
 const CAPACIDADES = [
-  'Infraestructura Eléctrica', 'Climatización y Ventilación',
+  'Infraestructura Eléctrica', 'Climatización y Ventilación', 'Gasfitería',
   'Mantenimiento Integral', 'Instalaciones técnicas', 'Mantención preventiva',
   'Mantención correctiva', 'Certificación SEC', 'Servicio a empresas', 'Servicio a domicilio',
   'Propuesta técnica transparente', 'Garantía del trabajo', 'Contratos de mantenimiento anual',

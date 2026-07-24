@@ -1,7 +1,7 @@
 # GSU Ingeniería y Mantenimiento
 
 Landing y tienda online de GSU: ingeniería eléctrica, climatización y ventilación,
-y mantenimiento integral para empresas y hogares en Chile.
+gasfitería y mantenimiento integral para empresas y hogares en Chile.
 
 Ver `BRAND.md` para la estrategia de marca completa (ADN, arquitectura, sistema
 visual e identidad verbal) que rige el copy y el diseño de este sitio.

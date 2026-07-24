@@ -8,7 +8,7 @@ import {
 export const metadata: Metadata = {
   title: 'Sectores — GSU Ingeniería y Mantenimiento',
   description:
-    'Ingeniería eléctrica, climatización y mantenimiento integral para hoteles, clínicas, hospitales, condominios, constructoras, industria y hogares en Chile.',
+    'Ingeniería eléctrica, climatización, gasfitería y mantenimiento integral para hoteles, clínicas, hospitales, condominios, constructoras, industria y hogares en Chile.',
 };
 
 const EMPRESAS = [

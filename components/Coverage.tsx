@@ -24,7 +24,7 @@ const POINTS = [
     icon: Building2,
     image: 'cliente-jefe-mantenimiento',
     title: 'Un solo proveedor',
-    desc: '3 especialidades bajo una misma organización — un solo punto de contacto para eléctrica, climatización y mantenimiento.',
+    desc: '4 especialidades bajo una misma organización — un solo punto de contacto para eléctrica, climatización, gasfitería y mantenimiento.',
   },
 ];
 

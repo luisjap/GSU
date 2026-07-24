@@ -6,7 +6,7 @@ import { BLOG_POSTS } from '@/lib/blog';
 
 export const metadata: Metadata = {
   title: 'Blog — GSU Ingeniería y Mantenimiento',
-  description: 'Contenido técnico sobre ingeniería eléctrica, climatización y mantenimiento integral.',
+  description: 'Contenido técnico sobre ingeniería eléctrica, climatización, gasfitería y mantenimiento integral.',
 };
 
 export default function BlogIndexPage() {

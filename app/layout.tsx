@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     template: '%s',
   },
   description:
-    'Ingeniería eléctrica, climatización y ventilación, y mantenimiento integral para empresas y hogares en Chile. Propuesta técnica clara, ejecución certificada y respaldo documental.',
+    'Ingeniería eléctrica, climatización y ventilación, gasfitería y mantenimiento integral para empresas y hogares en Chile. Propuesta técnica clara, ejecución certificada y respaldo documental.',
   openGraph: {
     type: 'website',
     title: 'GSU Ingeniería y Mantenimiento',
     description:
-      'Ingeniería eléctrica, climatización y ventilación, y mantenimiento integral. Soluciones técnicas que garantizan continuidad operacional.',
+      'Ingeniería eléctrica, climatización y ventilación, gasfitería y mantenimiento integral. Soluciones técnicas que garantizan continuidad operacional.',
     locale: 'es_CL',
     url: BASE_URL,
     images: ['/images/library/hero-fachada-corporativa.webp'],
@@ -59,7 +59,7 @@ const LOCAL_BUSINESS_JSON_LD = {
   '@type': 'ProfessionalService',
   name: 'GSU Ingeniería y Mantenimiento',
   description:
-    'Ingeniería eléctrica, climatización y ventilación, y mantenimiento integral para empresas y hogares en Chile.',
+    'Ingeniería eléctrica, climatización y ventilación, gasfitería y mantenimiento integral para empresas y hogares en Chile.',
   url: BASE_URL,
   areaServed: 'CL',
   address: { '@type': 'PostalAddress', addressCountry: 'CL' },
@@ -67,6 +67,7 @@ const LOCAL_BUSINESS_JSON_LD = {
   serviceType: [
     'Ingeniería Eléctrica',
     'Climatización y Ventilación',
+    'Gasfitería',
     'Mantenimiento Integral',
   ],
 };

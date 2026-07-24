@@ -110,7 +110,7 @@ destaca la infraestructura y la calidad técnica primero.
 
 ## 5. Categorías de la biblioteca
 
-- **Servicios**: Eléctrica, Climatización, Mantenimiento
+- **Servicios**: Eléctrica, Climatización, Gasfitería, Mantenimiento
 - **Diagnóstico**: ingeniero con tablet/iPad/laptop, software, planos BIM, mediciones
 - **Ingeniería**: planos, modelos 3D, planificación, reuniones técnicas
 - **Supervisión**: casco blanco + chaleco + tablet, inspección en terreno

@@ -2836,5 +2836,93 @@
     "version": "v2.2",
     "status": "generated",
     "approved": null
+  },
+  {
+    "id": "hero-banner-tecnico",
+    "title": "Detalle de instalación de gasfitería (cañería de cobre)",
+    "category": "home",
+    "service": "gas",
+    "page": [
+      "home"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "primer plano",
+    "people": false,
+    "industry": [
+      "residential",
+      "commercial"
+    ],
+    "contains": [
+      "copper_piping",
+      "valves"
+    ],
+    "prompt": "Imagen provista por el cliente (no generada por el pipeline kie.ai de GSU).",
+    "negative_prompt": null,
+    "generation_date": "2026-07-24",
+    "version": "v2.2",
+    "status": "edited_postproduction",
+    "edit_note": "Imagen de origen externo (archivo gasfiteria-banner-sin-marca.jpg), sin marca visible al recibirla. Redimensionada y convertida a WebP sin ediciones de contenido.",
+    "edit_date": "2026-07-24",
+    "approved": true
+  },
+  {
+    "id": "hero-banner-electrico",
+    "title": "Tablero eléctrico con cableado organizado",
+    "category": "home",
+    "service": "electrical",
+    "page": [
+      "home"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": false,
+    "industry": [
+      "residential",
+      "commercial"
+    ],
+    "contains": [
+      "electrical_panel",
+      "breakers",
+      "wiring"
+    ],
+    "prompt": "Imagen provista por el cliente (generada externamente con Gemini), editada vía kie.ai/Flux Kontext.",
+    "negative_prompt": null,
+    "generation_date": "2026-07-24",
+    "version": "v2.2",
+    "status": "edited_postproduction",
+    "edit_note": "Imagen original contenía logos reales de terceros (ABB, SIEMENS) en las etiquetas de los breakers. Corregido en el primer intento vía edición image-to-image (kie.ai/Flux Kontext): logos reemplazados por etiquetas genéricas sin marca, resto de la imagen sin alterar. Ver docs/design/image-style-lock.md sección 2bis/2ter.",
+    "edit_date": "2026-07-24",
+    "approved": true
+  },
+  {
+    "id": "hero-banner-climatizacion",
+    "title": "Equipo split de climatización instalado en muro",
+    "category": "home",
+    "service": "climate",
+    "page": [
+      "home"
+    ],
+    "orientation": "landscape",
+    "aspect_ratio": "16:9",
+    "shot": "medio",
+    "people": false,
+    "industry": [
+      "residential",
+      "commercial"
+    ],
+    "contains": [
+      "split_unit",
+      "office_interior"
+    ],
+    "prompt": "Imagen provista por el cliente (generada externamente con Gemini), editada vía kie.ai/Flux Kontext.",
+    "negative_prompt": null,
+    "generation_date": "2026-07-24",
+    "version": "v2.2",
+    "status": "edited_postproduction",
+    "edit_note": "Imagen original tenía una marca de agua (ícono destello) en la esquina inferior derecha. Eliminada en el primer intento vía edición image-to-image (kie.ai/Flux Kontext), resto de la imagen sin alterar.",
+    "edit_date": "2026-07-24",
+    "approved": true
   }
 ]

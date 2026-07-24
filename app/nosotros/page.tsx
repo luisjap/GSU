@@ -30,8 +30,8 @@ export default function NosotrosPage() {
             GSU nace para responder a una necesidad que el mercado chileno aún presenta: empresas
             capaces de ofrecer soluciones técnicas integrales con estándares de ingeniería, rapidez
             operativa y una imagen profesional. En un mercado donde predominan servicios
-            independientes o empresas enfocadas en una sola especialidad, GSU reúne electricidad
-            y climatización bajo una misma organización.
+            independientes o empresas enfocadas en una sola especialidad, GSU reúne electricidad,
+            climatización y gasfitería bajo una misma organización.
           </p>
           <div className="mt-10 relative aspect-[21/9] rounded-2xl overflow-hidden">
             <Image
@@ -58,8 +58,8 @@ export default function NosotrosPage() {
           <div>
             <span className="text-brand text-xs font-semibold tracking-widest uppercase">Misión</span>
             <p className="mt-3 text-[#0A2342] text-lg leading-relaxed">
-              Diseñar, instalar, reparar y mantener sistemas eléctricos y de climatización,
-              ofreciendo soluciones eficientes, seguras y duraderas para empresas y particulares.
+              Diseñar, instalar, reparar y mantener sistemas eléctricos, de climatización y de
+              gasfitería, ofreciendo soluciones eficientes, seguras y duraderas para empresas y particulares.
             </p>
           </div>
           <div>

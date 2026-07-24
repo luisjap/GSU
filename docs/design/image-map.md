@@ -13,8 +13,7 @@ porque la página/sección aún no existe, en vez de forzarlo.
 
 | Página | Sección | Imagen | Justificación |
 |---|---|---|---|
-| Home | Hero (desktop) | `hero-fachada-corporativa` | Cinematográfica, espacio negativo para el titular, refuerza "empresa de ingeniería moderna" — no una foto de servicio puntual. |
-| Home | Hero (mobile) | `home-hero` | Mismo tono, encuadre ya centrado para recorte vertical; evita repetir la imagen de escritorio 1:1. |
+| Home | Hero — banner rotativo (3 slides, sincronizado con el H1) | `hero-banner-tecnico` (Gasfitería) / `hero-banner-climatizacion` (Climatización) / `hero-banner-electrico` (Mantención) | Banner full-bleed con overlay oscuro; cada imagen ilustra el servicio del título activo — reemplaza el layout anterior de imagen fija a la derecha. |
 | Home | Marquee (fondo sutil) | `home-marquee-bg` | Textura de ductos/bandejas, generada específicamente para este uso. |
 | Home | Servicios — GSU Electric | `servicio-electrica-2` | Instalación de tablero, representa el servicio principal de la división. |
 | Home | Servicios — GSU Climate | `servicio-climatizacion-1` | Técnico en unidad VRV/VRF en azotea. |

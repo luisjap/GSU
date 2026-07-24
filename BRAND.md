@@ -9,9 +9,9 @@ copy nuevo o tocar el sistema de diseño, lee esto primero.
 - **Propósito**: Mantener operativos los espacios donde las personas viven,
   trabajan y producen, mediante soluciones técnicas confiables ejecutadas con
   estándares de ingeniería.
-- **Misión**: Diseñar, instalar, reparar y mantener sistemas eléctricos
-  y de climatización ofreciendo soluciones eficientes, seguras y
-  duraderas para empresas y particulares.
+- **Misión**: Diseñar, instalar, reparar y mantener sistemas eléctricos,
+  de climatización y de gasfitería ofreciendo soluciones eficientes, seguras
+  y duraderas para empresas y particulares.
 - **Visión**: Ser la empresa chilena referente en ingeniería aplicada al
   mantenimiento de infraestructura.
 - **Valores**: Profesionalismo, Seguridad, Honestidad, Confiabilidad,
@@ -26,16 +26,16 @@ No vendemos electricidad → vendemos **continuidad operacional**.
 No vendemos aire acondicionado → vendemos **confort**.
 No vendemos reparaciones → vendemos **tranquilidad**.
 
-## 3. Arquitectura de marca — 3 divisiones
+## 3. Arquitectura de marca — 4 divisiones
 
 ```
-                    GSU
-        Ingeniería y Mantenimiento
-────────────────────────────────────
-        Infraestructura Técnica
-┌───────────┬───────────┬────────────┐
-│  Electric │  Climate  │    Care    │
-└───────────┴───────────┴────────────┘
+                        GSU
+            Ingeniería y Mantenimiento
+──────────────────────────────────────────────
+            Infraestructura Técnica
+┌───────────┬───────────┬───────────┬────────────┐
+│  Electric │  Climate  │    Gas    │    Care    │
+└───────────┴───────────┴───────────┴────────────┘
 ```
 
 Cada división puede crecer (energías renovables, automatización, domótica,
@@ -45,9 +45,10 @@ CCTV, redes) sin afectar la marca principal.
 |---|---|---|
 | **GSU Electric** | Infraestructura Eléctrica | Tableros, alumbrado, canalizaciones, certificación SEC/TE1, mantención |
 | **GSU Climate** | Climatización y Ventilación | Split, multi split, VRV/VRF, chillers, ventilación, calefacción |
+| **GSU Gas** | Gasfitería | Redes de gas y agua potable, alcantarillado, conexión de artefactos (cocinas, calefonts, calderas), pruebas de hermeticidad y certificación de instalaciones de gas ante la SEC (Instalador Clase 3) |
 | **GSU Care** | Mantenimiento Integral | Contratos mensuales (ingreso recurrente — prioridad de negocio), inspecciones, auditorías, planes anuales |
 
-Implementado en `components/Divisions.tsx` (franja de 3 divisiones) y
+Implementado en `components/Divisions.tsx` (franja de 4 divisiones) y
 `components/Contact.tsx` (selector de especialidad).
 
 ## 4. Identidad verbal — siempre / nunca
