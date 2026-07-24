@@ -49,7 +49,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#0A2342] min-h-[560px] lg:min-h-[680px] flex items-center"
+      className="relative overflow-hidden bg-[#0A2342] -mt-16 pt-16 min-h-[560px] lg:min-h-[680px] flex items-center"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

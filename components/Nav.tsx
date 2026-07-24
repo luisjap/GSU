@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Search, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/components/CartContext';
 
@@ -19,10 +20,15 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const router = useRouter();
+  const pathname = usePathname();
   const { totalItems, openCart } = useCart();
+
+  const isHome = pathname === '/';
+  const transparent = isHome && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -35,32 +41,51 @@ export default function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
-        scrolled ? 'shadow-[0_2px_16px_rgba(16,35,26,0.08)]' : 'border-b border-black/[0.06]'
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        transparent
+          ? 'bg-transparent border-b border-transparent'
+          : scrolled
+            ? 'bg-white shadow-[0_2px_16px_rgba(16,35,26,0.08)] border-b border-transparent'
+            : 'bg-white border-b border-black/[0.06]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-4">
         <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+          <Image
+            src={transparent ? '/logo-gsu-white.png' : '/logo-gsu.png'}
+            alt="GSU"
+            width={785}
+            height={210}
+            priority
+            className="h-7 sm:h-8 w-auto transition-opacity duration-300"
+          />
           <span
-            className="w-9 h-9 flex items-center justify-center text-white font-display font-bold text-[11px] tracking-tight bg-brand shadow-sm"
-            style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
+            className={`hidden md:block font-display font-medium text-sm leading-none whitespace-nowrap transition-colors duration-300 ${
+              transparent ? 'text-white/90' : 'text-graphite'
+            }`}
           >
-            GSU
-          </span>
-          <span className="hidden md:block text-brand-dark font-display font-bold text-lg leading-none whitespace-nowrap">
-            GSU <span className="font-medium">Ingeniería y Mantenimiento</span>
+            Ingeniería y Mantenimiento
           </span>
         </Link>
 
         <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md">
           <div className="relative w-full">
-            <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-graphite" />
+            <Search
+              size={16}
+              className={`absolute left-3.5 top-1/2 -translate-y-1/2 transition-colors duration-300 ${
+                transparent ? 'text-white/70' : 'text-graphite'
+              }`}
+            />
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="¿Qué productos estás buscando?"
-              className="w-full bg-[#E8ECEF] border border-black/[0.06] rounded-full pl-10 pr-4 py-2 text-sm text-[#0A2342] placeholder:text-[#4B4F54] focus:outline-none focus:border-brand/40 focus:bg-white transition-colors"
+              className={`w-full rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none transition-colors duration-300 ${
+                transparent
+                  ? 'bg-white/15 border border-white/25 text-white placeholder:text-white/60 focus:bg-white/20'
+                  : 'bg-[#E8ECEF] border border-black/[0.06] text-[#0A2342] placeholder:text-[#4B4F54] focus:border-brand/40 focus:bg-white'
+              }`}
             />
           </div>
         </form>
@@ -70,7 +95,11 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="px-3.5 py-1.5 rounded-full text-sm font-medium text-[#0A2342] hover:text-brand hover:bg-brand-soft transition-all duration-200"
+              className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                transparent
+                  ? 'text-white hover:bg-white/10'
+                  : 'text-[#0A2342] hover:text-brand hover:bg-brand-soft'
+              }`}
             >
               {l.label}
             </Link>
@@ -79,7 +108,9 @@ export default function Nav() {
 
         <button
           onClick={openCart}
-          className="relative p-2 text-[#0A2342] hover:text-brand transition-colors ml-auto lg:ml-0"
+          className={`relative p-2 transition-colors ml-auto lg:ml-0 ${
+            transparent ? 'text-white hover:text-white/80' : 'text-[#0A2342] hover:text-brand'
+          }`}
           aria-label="Ver carrito"
         >
           <ShoppingCart size={22} strokeWidth={1.75} />
@@ -91,13 +122,16 @@ export default function Nav() {
         </button>
 
         <button
-          className="lg:hidden p-2 text-[#0A2342]"
+          className={`lg:hidden rounded-full px-4 py-1.5 text-sm font-medium border transition-colors duration-300 ${
+            transparent
+              ? 'bg-black/20 backdrop-blur-sm text-white border-white/25 hover:bg-black/30'
+              : 'bg-[#0A2342]/[0.04] text-[#0A2342] border-black/10 hover:bg-[#0A2342]/[0.08]'
+          }`}
           onClick={() => setOpen(!open)}
           aria-label="Menú"
+          aria-expanded={open}
         >
-          <span className={`block w-5 h-0.5 bg-current transition-all ${open ? 'rotate-45 translate-y-1' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-current mt-1.5 transition-all ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-current mt-1.5 transition-all ${open ? '-rotate-45 -translate-y-3' : ''}`} />
+          {open ? 'Cerrar' : 'Menú'}
         </button>
       </div>
 
