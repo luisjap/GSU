@@ -10,7 +10,6 @@ import { contactSchema, type ContactInput } from '@/lib/validation';
 const SERVICES = [
   'Infraestructura Eléctrica',
   'Climatización y Ventilación',
-  'Sistemas Hidráulicos',
   'Mantenimiento Integral (GSU Care)',
   'Otro',
 ];

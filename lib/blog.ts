@@ -28,13 +28,13 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'mantencion-preventiva-vs-correctiva',
     title: 'Mantención preventiva vs. correctiva: por qué la primera sale más barata',
     excerpt:
-      'Esperar a que un equipo falle para actuar suele costar más que mantenerlo. Así se comparan ambos enfoques en infraestructura eléctrica, climatización y sistemas hidráulicos.',
+      'Esperar a que un equipo falle para actuar suele costar más que mantenerlo. Así se comparan ambos enfoques en infraestructura eléctrica y climatización.',
     date: '2026-05-14',
     category: 'Mantenimiento Integral',
     image: 'blog-mantenimiento-calendario',
     content: [
-      'La mantención correctiva ocurre después de una falla: un equipo de climatización deja de enfriar, una bomba de agua se detiene, un tablero eléctrico presenta una falla intermitente. Se resuelve, pero casi siempre en el peor momento — cuando la instalación ya dejó de operar con normalidad.',
-      'La mantención preventiva, en cambio, se ejecuta en base a un calendario y a inspecciones periódicas, antes de que ocurra la falla. Para climatización, esto incluye limpieza de filtros y serpentines, revisión de gas refrigerante y de presiones de trabajo. Para electricidad, revisión de conexiones, torque de terminales y termografía de tableros. Para sistemas hidráulicos, revisión de bombas, presurización y detección temprana de fugas.',
+      'La mantención correctiva ocurre después de una falla: un equipo de climatización deja de enfriar, un tablero eléctrico presenta una falla intermitente. Se resuelve, pero casi siempre en el peor momento — cuando la instalación ya dejó de operar con normalidad.',
+      'La mantención preventiva, en cambio, se ejecuta en base a un calendario y a inspecciones periódicas, antes de que ocurra la falla. Para climatización, esto incluye limpieza de filtros y serpentines, revisión de gas refrigerante y de presiones de trabajo. Para electricidad, revisión de conexiones, torque de terminales y termografía de tableros.',
       'El costo de una mantención preventiva programada es predecible y menor al costo de una falla no planificada, que además puede implicar detener una operación (un restaurante, una planta, una clínica) mientras se repara.',
       'Por eso los contratos de mantención mensual — la línea que en GSU llamamos GSU Care — están pensados como una inversión recurrente y no como un gasto excepcional: el objetivo es que la falla no llegue a ocurrir.',
     ],

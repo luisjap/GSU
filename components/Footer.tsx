@@ -9,7 +9,6 @@ const LINKS = {
   Servicios: [
     { label: 'Infraestructura Eléctrica', href: '/#servicios' },
     { label: 'Climatización y Ventilación', href: '/#servicios' },
-    { label: 'Sistemas Hidráulicos', href: '/#servicios' },
     { label: 'Mantenimiento Integral', href: '/#servicios' },
   ],
   Empresa: [
@@ -53,7 +52,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-[#4B4F54] text-sm leading-relaxed max-w-xs mb-4">
-              Ingeniería aplicada a la continuidad operacional — infraestructura eléctrica, climatización, sistemas hidráulicos y mantenimiento integral para empresas y hogares.
+              Ingeniería aplicada a la continuidad operacional — infraestructura eléctrica, climatización y mantenimiento integral para empresas y hogares.
             </p>
             <div className="flex flex-col gap-2">
               <a

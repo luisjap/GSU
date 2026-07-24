@@ -4,7 +4,7 @@ const EXAMPLES = [
   { before: 'caso-electrico-antes', after: 'caso-electrico-despues', label: 'Tablero eléctrico' },
   { before: 'caso-hvac-antes', after: 'caso-hvac-despues', label: 'Climatización' },
   { before: 'caso-bombas-antes', after: 'caso-bombas-despues', label: 'Sala de bombas' },
-  { before: 'caso-hidraulico-antes', after: 'caso-hidraulico-despues', label: 'Red hidráulica' },
+  { before: 'caso-tablero-antes', after: 'caso-tablero-despues', label: 'Sala técnica' },
 ];
 
 export default function Gallery() {

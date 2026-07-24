@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 
 const STATS = [
-  { value: 4, suffix: '', label: 'Divisiones técnicas especializadas' },
+  { value: 3, suffix: '', label: 'Divisiones técnicas especializadas' },
   { value: 100, suffix: '%', label: 'Técnicos certificados SEC' },
   { value: 24, suffix: 'h', label: 'Respuesta a propuestas técnicas' },
 ];

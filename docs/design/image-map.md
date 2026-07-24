@@ -18,7 +18,6 @@ porque la página/sección aún no existe, en vez de forzarlo.
 | Home | Marquee (fondo sutil) | `home-marquee-bg` | Textura de ductos/bandejas, generada específicamente para este uso. |
 | Home | Servicios — GSU Electric | `servicio-electrica-2` | Instalación de tablero, representa el servicio principal de la división. |
 | Home | Servicios — GSU Climate | `servicio-climatizacion-1` | Técnico en unidad VRV/VRF en azotea. |
-| Home | Servicios — GSU Hydro | `servicio-hidraulica-1` | Sala de bombas, técnico revisando presurización. |
 | Home | Servicios — GSU Care | `servicio-mantenimiento-1` | Mantención preventiva con checklist en tablet. |
 | Home | Products (preview tienda) | `tienda-header` | Ya diseñada para este bloque desde Fase 1. |
 | Home | Coverage — Certificación SEC | `seguridad-checklist` | Checklist/LOTO comunica cumplimiento normativo. |
@@ -95,9 +94,7 @@ para cuando se construyan:
 |---|---|
 | Página individual "Ingeniería Eléctrica" | `hero-sala-tecnica`, `servicio-electrica-1`, `macro-pinza-amperimetrica`, `macro-camara-termografica`, `premium-plc`, `infra-subestacion`, `caso-electrico-antes`, `caso-electrico-despues`, `cliente-reunion-tablero` (narrativa completa, como en tu ejemplo) |
 | Página individual "Climatización" | `hero-hvac-industrial`, `servicio-climatizacion-2`, `caso-hvac-antes`, `caso-hvac-despues`, `macro-manometro`, `infra-torres-enfriamiento`, `cliente-dashboard-tablet` |
-| Página individual "Sistemas Hidráulicos" | `infra-sala-bombas`, `servicio-hidraulica-2`, `caso-bombas-antes`, `caso-bombas-despues`, `macro-valvula`, `premium-valvula` |
 | Página individual "Mantenimiento Integral" (GSU Care) | `servicio-mantenimiento-2`, `mantenimiento-preventivo-1`, `mantenimiento-preventivo-2`, `mantenimiento-correctivo`, `seguridad-epp`, `seguridad-permiso`, `premium-sensor`, `caso-tablero-antes`, `caso-tablero-despues`, `cliente-hotel-informe`, `cliente-entrega-informe` |
-| Sección/página "Casos de éxito" (si se separa como página propia) | `caso-hidraulico-antes`, `caso-hidraulico-despues` (los demás pares ya asignados arriba, por división) |
 | Sección/página "Emergencias 24/7" (si se decide ofrecer el servicio) | `emergencia-llegada`, `emergencia-inspeccion`, `emergencia-reparacion`, `emergencia-restablecimiento` |
 | Sección/página "Proyectos" | `proyecto-instalacion`, `proyecto-ductos`, `proyecto-entrega` |
 | Página overview "/servicios" (si se separa de la sección de Home) | `servicios-header` |

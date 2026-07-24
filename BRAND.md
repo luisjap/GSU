@@ -9,8 +9,8 @@ copy nuevo o tocar el sistema de diseño, lee esto primero.
 - **Propósito**: Mantener operativos los espacios donde las personas viven,
   trabajan y producen, mediante soluciones técnicas confiables ejecutadas con
   estándares de ingeniería.
-- **Misión**: Diseñar, instalar, reparar y mantener sistemas eléctricos,
-  hidráulicos y de climatización ofreciendo soluciones eficientes, seguras y
+- **Misión**: Diseñar, instalar, reparar y mantener sistemas eléctricos
+  y de climatización ofreciendo soluciones eficientes, seguras y
   duraderas para empresas y particulares.
 - **Visión**: Ser la empresa chilena referente en ingeniería aplicada al
   mantenimiento de infraestructura.
@@ -24,19 +24,18 @@ empresa técnica de ingeniería.
 
 No vendemos electricidad → vendemos **continuidad operacional**.
 No vendemos aire acondicionado → vendemos **confort**.
-No vendemos gasfitería → vendemos **seguridad**.
 No vendemos reparaciones → vendemos **tranquilidad**.
 
-## 3. Arquitectura de marca — 4 divisiones
+## 3. Arquitectura de marca — 3 divisiones
 
 ```
                     GSU
         Ingeniería y Mantenimiento
 ────────────────────────────────────
         Infraestructura Técnica
-┌───────────┬───────────┬───────────┬────────────┐
-│  Electric │  Climate  │   Hydro   │    Care    │
-└───────────┴───────────┴───────────┴────────────┘
+┌───────────┬───────────┬────────────┐
+│  Electric │  Climate  │    Care    │
+└───────────┴───────────┴────────────┘
 ```
 
 Cada división puede crecer (energías renovables, automatización, domótica,
@@ -46,10 +45,9 @@ CCTV, redes) sin afectar la marca principal.
 |---|---|---|
 | **GSU Electric** | Infraestructura Eléctrica | Tableros, alumbrado, canalizaciones, certificación SEC/TE1, mantención |
 | **GSU Climate** | Climatización y Ventilación | Split, multi split, VRV/VRF, chillers, ventilación, calefacción |
-| **GSU Hydro** | Sistemas Hidráulicos | Agua potable, redes sanitarias, bombas, presurización, detección de fugas |
 | **GSU Care** | Mantenimiento Integral | Contratos mensuales (ingreso recurrente — prioridad de negocio), inspecciones, auditorías, planes anuales |
 
-Implementado en `components/Services.tsx` (grid de 4 divisiones) y
+Implementado en `components/Divisions.tsx` (franja de 3 divisiones) y
 `components/Contact.tsx` (selector de especialidad).
 
 ## 4. Identidad verbal — siempre / nunca
@@ -61,7 +59,6 @@ Implementado en `components/Services.tsx` (grid de 4 divisiones) y
 | Hacemos de todo / todo en uno | Soluciones integrales para infraestructura técnica |
 | Presupuesto / cotización | Propuesta técnica |
 | Trabajo terminado | Proyecto entregado |
-| Gasfitería (como categoría pública) | Sistemas Hidráulicos |
 | Aire acondicionado (como categoría pública) | Climatización y Ventilación |
 
 Evitar además: "pega", "barato", "económico", "mil usos".

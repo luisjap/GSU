@@ -19,9 +19,9 @@ export default function Team() {
             Técnicos certificados, no cuadrillas improvisadas
           </h2>
           <p className="mt-4 text-[#4B4F54] text-lg leading-relaxed">
-            Cada especialidad de GSU la ejecuta un técnico certificado en su área — eléctrica,
-            climatización o sistemas hidráulicos. Coordinamos el equipo completo bajo una misma
-            organización, con estándares de seguridad y calidad consistentes en cada trabajo.
+            Cada especialidad de GSU la ejecuta un técnico certificado en su área — eléctrica o
+            climatización. Coordinamos el equipo completo bajo una misma organización, con
+            estándares de seguridad y calidad consistentes en cada trabajo.
           </p>
         </div>
       </div>

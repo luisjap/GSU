@@ -1,5 +1,5 @@
 import {
-  Zap, ShieldCheck, Wind, Snowflake, Droplet, Gauge,
+  Zap, ShieldCheck, Wind, Snowflake,
   Wrench, ClipboardCheck, CalendarCheck, FileText,
 } from 'lucide-react';
 
@@ -8,8 +8,6 @@ const SERVICES = [
   { icon: ShieldCheck, title: 'Certificación SEC', desc: 'Declaraciones de instalación eléctrica y gas.' },
   { icon: Wind, title: 'Climatización', desc: 'Split, multi split y sistemas VRV/VRF.' },
   { icon: Snowflake, title: 'Ventilación', desc: 'Extracción, inyección y renovación de aire.' },
-  { icon: Droplet, title: 'Redes de agua', desc: 'Instalación y ampliación de redes hidráulicas.' },
-  { icon: Gauge, title: 'Bombas y presurización', desc: 'Sistemas de bombeo e impulsión de agua.' },
   { icon: Wrench, title: 'Mantenimiento correctivo', desc: 'Diagnóstico y reparación de fallas.' },
   { icon: ClipboardCheck, title: 'Mantenimiento preventivo', desc: 'Inspecciones periódicas para evitar fallas.' },
   { icon: CalendarCheck, title: 'Contratos mensuales', desc: 'Mantención recurrente para empresas.' },

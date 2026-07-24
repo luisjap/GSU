@@ -16,7 +16,7 @@ const FAQS = [
   },
   {
     q: '¿Qué diferencia a GSU de contratar un técnico independiente?',
-    a: 'Con GSU tratas con un solo proveedor para infraestructura eléctrica, climatización, sistemas hidráulicos y mantenimiento integral, en vez de coordinar contratistas distintos. Cada intervención queda documentada y respaldada por la empresa, no por una persona individual.',
+    a: 'Con GSU tratas con un solo proveedor para infraestructura eléctrica, climatización y mantenimiento integral, en vez de coordinar contratistas distintos. Cada intervención queda documentada y respaldada por la empresa, no por una persona individual.',
   },
   {
     q: '¿Cómo funcionan los contratos de mantención mensual (GSU Care)?',
