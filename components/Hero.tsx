@@ -38,7 +38,7 @@ function RotatingHeadline() {
   return (
     <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <h1
-        className="grid grid-cols-1 w-full min-w-0 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-[#0A2342] leading-[1.15]"
+        className="grid grid-cols-1 w-full min-w-0 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.15]"
         style={{ textWrap: 'balance' }}
       >
         {PHRASES.map((phrase, i) => {
@@ -61,7 +61,7 @@ function RotatingHeadline() {
       </h1>
 
       {!reducedMotion && (
-        <div className="flex gap-2 mt-8 justify-center lg:justify-start" role="tablist" aria-label="Frases del titular">
+        <div className="flex gap-2 mt-8 justify-start" role="tablist" aria-label="Frases del titular">
           {PHRASES.map((phrase, i) => (
             <button
               key={phrase}
@@ -70,7 +70,7 @@ function RotatingHeadline() {
               aria-label={`Mostrar frase ${i + 1} de ${PHRASES.length}`}
               onClick={() => setActive(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                active === i ? 'w-6 bg-electric' : 'w-1.5 bg-black/15 hover:bg-black/25'
+                active === i ? 'w-6 bg-electric-light' : 'w-1.5 bg-white/25 hover:bg-white/40'
               }`}
             />
           ))}
@@ -82,16 +82,21 @@ function RotatingHeadline() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F5F7FA]">
-      {/* glow background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-electric/8 rounded-full blur-[130px]" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-electric-light/8 rounded-full blur-[110px]" />
-      </div>
+    <section className="relative overflow-hidden bg-[#0A2342] min-h-[560px] lg:min-h-[680px] flex items-center">
+      <Image
+        src="/images/library/hero-banner-tecnico.webp"
+        alt="Infraestructura técnica de GSU"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0A2342]/95 via-[#0A2342]/75 to-[#0A2342]/35" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0A2342]/70 via-transparent to-transparent" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-        <div className="flex flex-col gap-7 text-center lg:text-left items-center lg:items-start min-w-0 w-full">
-          <Badge className="bg-electric-soft border border-electric/20 text-electric text-xs px-4 py-1.5 rounded-full font-medium animate-rise">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 lg:py-36">
+        <div className="flex flex-col gap-7 max-w-2xl min-w-0">
+          <Badge className="bg-white/10 border border-white/20 text-white text-xs px-4 py-1.5 rounded-full font-medium animate-rise w-fit">
             GSU Ingeniería y Mantenimiento
           </Badge>
 
@@ -99,7 +104,7 @@ export default function Hero() {
             <RotatingHeadline />
           </div>
 
-          <p className="text-[#4B4F54] text-lg leading-relaxed max-w-xl animate-rise [animation-delay:160ms]">
+          <p className="text-white/80 text-lg leading-relaxed max-w-xl animate-rise [animation-delay:160ms]">
             Diseñamos, instalamos y mantenemos infraestructura eléctrica y climatización con
             técnicos certificados, propuesta técnica clara y garantía del trabajo.
           </p>
@@ -114,24 +119,11 @@ export default function Hero() {
             <Button
               asChild
               variant="secondary"
-              className="border-black/10 text-[#0A2342] hover:bg-black/[0.03] px-8 py-3 rounded-full text-base transition-all bg-transparent"
+              className="border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-full text-base transition-all bg-transparent"
             >
               <a href="/tienda">Ver tienda</a>
             </Button>
           </div>
-        </div>
-
-        {/* visual */}
-        <div className="relative aspect-square max-w-md mx-auto lg:max-w-none w-full rounded-[2.5rem] overflow-hidden border border-black/[0.05]">
-          <Image
-            src="/images/library/home-hero.webp"
-            alt="Técnico de GSU trabajando en una sala eléctrica"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A2342]/15 via-transparent to-transparent" />
         </div>
       </div>
     </section>
