@@ -66,9 +66,13 @@ const LOCAL_BUSINESS_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'GSU Ingeniería y Mantenimiento',
+  alternateName: 'GSU',
   description:
     'Ingeniería eléctrica, climatización y ventilación, gasfitería y mantenimiento integral para empresas y hogares en Chile.',
   url: BASE_URL,
+  logo: `${BASE_URL}/logo-gsu.png`,
+  image: `${BASE_URL}/logo-gsu.png`,
+  telephone: '+56998501325',
   areaServed: 'CL',
   address: { '@type': 'PostalAddress', addressCountry: 'CL' },
   slogan: 'Ingeniería aplicada a la continuidad operacional.',
