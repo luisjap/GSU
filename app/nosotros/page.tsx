@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ShieldCheck, Wrench, Heart, TrendingUp, Award, Lightbulb } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Nosotros — GSU Ingeniería y Mantenimiento',
+  title: 'Nosotros — GSU',
   description:
     'Ingeniería aplicada al funcionamiento continuo de las instalaciones. Conoce el propósito, la misión y los valores de GSU.',
 };

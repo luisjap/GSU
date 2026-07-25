@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Preguntas frecuentes — GSU Ingeniería y Mantenimiento',
+  title: 'Preguntas frecuentes — GSU',
   description: 'Cómo funciona la propuesta técnica, la garantía, los contratos de mantención y el proceso de trabajo de GSU.',
 };
 

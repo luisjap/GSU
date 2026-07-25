@@ -27,11 +27,40 @@ export default function Nav() {
   const transparent = isHome && !scrolled && !open;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+    const NAV_HEIGHT = 64;
+    const HYSTERESIS = 32;
+    let ticking = false;
+
+    const evaluate = () => {
+      ticking = false;
+      const heroEl = document.getElementById('hero');
+      if (!heroEl) {
+        setScrolled(window.scrollY > 24);
+        return;
+      }
+      const bottom = heroEl.getBoundingClientRect().bottom;
+      // hysteresis: switch to solid once the hero has fully passed under the
+      // nav, and only switch back once it reappears with some margin — avoids
+      // flicker from momentum/rubber-band scroll right at the boundary.
+      setScrolled((prev) =>
+        prev ? bottom < NAV_HEIGHT + HYSTERESIS : bottom <= NAV_HEIGHT
+      );
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(evaluate);
+    };
+
+    evaluate();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [isHome]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();

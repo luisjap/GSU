@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { BLOG_POSTS } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog — GSU Ingeniería y Mantenimiento',
+  title: 'Blog — GSU',
   description: 'Contenido técnico sobre ingeniería eléctrica, climatización, gasfitería y mantenimiento integral.',
 };
 

@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Sectores — GSU Ingeniería y Mantenimiento',
+  title: 'Sectores — GSU',
   description:
     'Ingeniería eléctrica, climatización, gasfitería y mantenimiento integral para hoteles, clínicas, hospitales, condominios, constructoras, industria y hogares en Chile.',
 };

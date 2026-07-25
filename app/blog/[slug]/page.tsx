@@ -13,7 +13,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const post = getBlogPost(params.slug);
   if (!post) return {};
   return {
-    title: `${post.title} — GSU Ingeniería y Mantenimiento`,
+    title: `${post.title} — GSU`,
     description: post.excerpt,
     openGraph: { images: [`/images/library/${post.image}.webp`] },
   };

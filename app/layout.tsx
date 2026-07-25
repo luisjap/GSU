@@ -31,7 +31,7 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'GSU Ingeniería y Mantenimiento — Ingeniería aplicada a la continuidad operacional',
+    default: 'GSU',
     template: '%s',
   },
   description:
@@ -51,7 +51,15 @@ export const metadata: Metadata = {
     description: 'Ingeniería aplicada a la continuidad operacional.',
     images: ['/images/library/hero-fachada-corporativa.webp'],
   },
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 const LOCAL_BUSINESS_JSON_LD = {
