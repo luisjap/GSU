@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, ShoppingCart } from 'lucide-react';
+import { Search, ShoppingCart, Menu as MenuIcon } from 'lucide-react';
 import { useCart } from '@/components/CartContext';
 
 const LINKS = [
@@ -150,6 +150,29 @@ export default function Nav() {
           )}
         </button>
 
+        {/* desktop: collapsed icon that expands on hover to reveal the "Menú" label */}
+        <button
+          onClick={() => setOpen(!open)}
+          aria-label="Menú"
+          aria-expanded={open}
+          className={`hidden lg:flex group items-center h-10 min-w-[40px] w-10 hover:w-[108px] rounded-full border overflow-hidden transition-[width] duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+            transparent
+              ? 'bg-black/20 backdrop-blur-sm border-white/25 hover:bg-black/30'
+              : 'bg-[#0A2342]/[0.04] border-black/10 hover:bg-[#0A2342]/[0.08]'
+          }`}
+        >
+          <span className="w-10 h-10 min-w-[40px] shrink-0 flex items-center justify-center">
+            <MenuIcon size={18} className={transparent ? 'text-white' : 'text-[#0A2342]'} />
+          </span>
+          <span
+            className={`text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pr-4 ${
+              transparent ? 'text-white' : 'text-[#0A2342]'
+            }`}
+          >
+            {open ? 'Cerrar' : 'Menú'}
+          </span>
+        </button>
+
         <button
           className={`lg:hidden rounded-full px-4 py-1.5 text-sm font-medium border transition-colors duration-300 ${
             transparent
@@ -165,7 +188,7 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-white border-t border-black/[0.06] px-4 py-4 flex flex-col gap-3">
+        <div className="bg-white border-t border-black/[0.06] px-4 py-4 flex flex-col gap-3">
           <form onSubmit={handleSearch} className="relative">
             <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-graphite" />
             <input

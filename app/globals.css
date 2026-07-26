@@ -30,7 +30,11 @@
 
 @layer base {
   * { @apply border-border; }
-  html, body { @apply overflow-x-hidden; max-width: 100vw; }
+  /* overflow-x: clip (not hidden) — hidden forces overflow-y to compute as
+     auto per the CSS overflow spec, turning html/body into their own
+     scrolling containers and breaking position:sticky everywhere on the
+     page. clip suppresses the horizontal overflow without that side effect. */
+  html, body { overflow-x: clip; max-width: 100vw; }
   body { @apply bg-background text-foreground font-sans antialiased; }
   h1, h2, h3, h4 { @apply font-display; }
 }

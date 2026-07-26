@@ -29,7 +29,7 @@ export default function Services() {
   };
 
   return (
-    <section id="servicios" className="bg-white py-24">
+    <section id="servicios" className="bg-white pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="mb-10 flex items-end justify-between gap-4">
           <div className="max-w-2xl">
