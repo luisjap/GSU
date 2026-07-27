@@ -117,9 +117,11 @@ export default function Divisions() {
   const active = DIVISIONS[storyIndex];
 
   return (
+    <>
+    {/* mobile/tablet — Instagram-stories style scroll-driven expansion */}
     <section
       ref={wrapperRef}
-      className="relative bg-white"
+      className="relative bg-white lg:hidden"
       style={{ height: `calc(100dvh + ${DWELL_VH}dvh)` }}
     >
       <div className="sticky top-0 h-[100dvh] w-full overflow-hidden bg-[#0A2342]">
@@ -203,5 +205,50 @@ export default function Divisions() {
         </div>
       </div>
     </section>
+
+    {/* desktop — static 4-column grid, no scroll-jack / story interaction */}
+    <section className="hidden lg:block bg-white py-20 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-4 gap-5">
+        {DIVISIONS.map((d) => (
+          <div
+            key={d.id}
+            className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#0A2342]"
+          >
+            <Image
+              src={d.image}
+              alt={d.alt}
+              fill
+              sizes="25vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-black/25" />
+
+            <span className="absolute top-4 left-4 text-white/90 text-xs font-medium tracking-wide">
+              {d.eyebrow}
+            </span>
+
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <h3 className="text-white font-display font-bold text-2xl leading-tight mb-1">{d.name}</h3>
+              <p className="text-white/80 text-sm mb-4">{d.desc}</p>
+              <div className="flex gap-2">
+                <Link
+                  href="/#contacto"
+                  className="flex-1 text-center bg-electric hover:bg-electric-light text-white text-sm font-semibold rounded-full py-2.5 transition-colors"
+                >
+                  Cotizar
+                </Link>
+                <Link
+                  href="/#servicios"
+                  className="flex-1 text-center bg-white hover:bg-white/90 text-[#0A2342] text-sm font-semibold rounded-full py-2.5 transition-colors"
+                >
+                  Ver servicio
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    </>
   );
 }
