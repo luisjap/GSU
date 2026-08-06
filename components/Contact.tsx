@@ -1,10 +1,8 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Input, Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@relume_io/relume-ui';
-import { ClipboardCheck, Clock, FileText } from 'lucide-react';
 import { contactSchema, type ContactInput } from '@/lib/validation';
 
 const SERVICES = [
@@ -13,12 +11,6 @@ const SERVICES = [
   'Gasfitería',
   'Mantenimiento Integral (GSU Care)',
   'Otro',
-];
-
-const NEXT_STEPS = [
-  { icon: Clock, text: 'Respondemos tu solicitud dentro de 24 horas hábiles.' },
-  { icon: FileText, text: 'Propuesta técnica con mano de obra y materiales desglosados.' },
-  { icon: ClipboardCheck, text: 'Sin compromiso: revisamos el alcance antes de agendar.' },
 ];
 
 export default function Contact() {
@@ -48,40 +40,17 @@ export default function Contact() {
 
   return (
     <section id="contacto" className="bg-[#E8ECEF] py-24 px-4 sm:px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        {/* left */}
-        <div>
-          <span className="text-brand text-sm font-semibold tracking-widest uppercase">Contacto</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#0A2342] leading-tight">
-            Solicita tu<br />propuesta técnica
+      <div className="max-w-xl mx-auto">
+        <div className="text-center mb-10">
+          <span className="text-brand text-sm font-semibold tracking-widest uppercase">Propuesta técnica</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-display font-bold text-[#0A2342] leading-tight">
+            Cuéntanos tu proyecto
           </h2>
-          <p className="mt-4 text-[#4B4F54] text-base leading-relaxed max-w-sm">
-            Describe tu proyecto y la especialidad. Te respondemos con una propuesta técnica clara.
+          <p className="mt-4 text-[#4B4F54] text-base leading-relaxed">
+            Describe tu proyecto y la especialidad. Te respondemos con una propuesta técnica clara dentro de 24 horas hábiles.
           </p>
-
-          <div className="mt-10 flex flex-col gap-5">
-            {NEXT_STEPS.map((s) => (
-              <div key={s.text} className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-black/[0.06] flex items-center justify-center text-brand shrink-0">
-                  <s.icon size={18} strokeWidth={2} />
-                </div>
-                <div className="text-[#0A2342] text-sm font-medium leading-snug">{s.text}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 relative aspect-video rounded-2xl overflow-hidden border border-black/[0.06]">
-            <Image
-              src="/images/library/landing-contacto.webp"
-              alt="Oficina de atención GSU"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
         </div>
 
-        {/* right — form */}
         <form
           onSubmit={handleSubmit(onSubmit)}
           noValidate

@@ -189,7 +189,7 @@ export default function Divisions() {
             <p className="text-white/80 text-sm mb-5">{active.desc}</p>
             <div className="flex gap-2 max-w-sm">
               <Link
-                href="/#contacto"
+                href="/contacto"
                 className="flex-1 text-center bg-electric hover:bg-electric-light text-white text-sm font-semibold rounded-full py-2.5 transition-colors"
               >
                 Cotizar
@@ -232,7 +232,7 @@ export default function Divisions() {
               <p className="text-white/80 text-sm mb-4">{d.desc}</p>
               <div className="flex gap-2">
                 <Link
-                  href="/#contacto"
+                  href="/contacto"
                   className="flex-1 text-center bg-electric hover:bg-electric-light text-white text-sm font-semibold rounded-full py-2.5 transition-colors"
                 >
                   Cotizar

@@ -129,8 +129,8 @@ export default function Hero() {
           </div>
 
           <p className="text-white/80 text-lg leading-relaxed max-w-xl animate-rise [animation-delay:160ms]">
-            Diseñamos, instalamos y mantenemos infraestructura eléctrica, climatización y gasfitería
-            con técnicos certificados, propuesta técnica clara y garantía del trabajo.
+            Diseño, Instalación y mantenimiento infraestructura eléctrica, climatización y gasfitería
+            con técnicos certificados, propuesta técnica y garantía del trabajo.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-rise [animation-delay:240ms]">
@@ -138,7 +138,7 @@ export default function Hero() {
               asChild
               className="bg-electric hover:bg-electric-light text-white font-semibold px-8 py-3 rounded-full text-base shadow-lg shadow-electric/20 transition-all"
             >
-              <a href="/#contacto">Solicitar propuesta técnica →</a>
+              <a href="/contacto">Solicitar propuesta técnica →</a>
             </Button>
             <Button
               asChild

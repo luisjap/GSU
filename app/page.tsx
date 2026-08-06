@@ -10,7 +10,6 @@ import Gallery from '@/components/Gallery';
 import Coverage from '@/components/Coverage';
 import Process from '@/components/Process';
 import CtaBanner from '@/components/CtaBanner';
-import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
       <Coverage />
       <Process />
       <CtaBanner />
-      <Contact />
     </main>
   );
 }

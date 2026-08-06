@@ -17,7 +17,7 @@ export default function QuickResponse() {
           </p>
         </div>
         <a
-          href="/#contacto"
+          href="/contacto"
           className="shrink-0 inline-flex items-center gap-1.5 bg-electric hover:bg-electric-light text-white font-semibold text-sm px-6 py-3 rounded-full transition-colors"
         >
           Contactar ahora

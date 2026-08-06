@@ -22,7 +22,7 @@ const LINKS = {
     { label: 'Tienda', href: '/tienda' },
     { label: 'Blog', href: '/blog' },
     { label: 'Preguntas frecuentes', href: '/faq' },
-    { label: 'Contacto', href: '/#contacto' },
+    { label: 'Contacto', href: '/contacto' },
   ],
 };
 

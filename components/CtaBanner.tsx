@@ -27,7 +27,7 @@ export default function CtaBanner() {
             asChild
             className="bg-brand hover:bg-brand-light text-white font-semibold px-8 py-3.5 rounded-full text-base shadow-lg shadow-brand/20 transition-all"
           >
-            <a href="/#contacto">Solicitar propuesta técnica →</a>
+            <a href="/contacto">Solicitar propuesta técnica →</a>
           </Button>
         </div>
       </div>
