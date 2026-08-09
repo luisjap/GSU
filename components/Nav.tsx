@@ -17,6 +17,7 @@ const LINKS = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const router = useRouter();
@@ -29,22 +30,36 @@ export default function Nav() {
   useEffect(() => {
     const NAV_HEIGHT = 64;
     const HYSTERESIS = 32;
+    const HIDE_DELTA = 6;
     let ticking = false;
+    let lastY = window.scrollY;
+    let scrolledNow = false;
 
     const evaluate = () => {
       ticking = false;
+      const currentY = window.scrollY;
       const heroEl = document.getElementById('hero');
       if (!heroEl) {
-        setScrolled(window.scrollY > 24);
-        return;
+        scrolledNow = currentY > 24;
+      } else {
+        const bottom = heroEl.getBoundingClientRect().bottom;
+        // hysteresis: switch to solid once the hero has fully passed under the
+        // nav, and only switch back once it reappears with some margin — avoids
+        // flicker from momentum/rubber-band scroll right at the boundary.
+        scrolledNow = scrolledNow ? bottom < NAV_HEIGHT + HYSTERESIS : bottom <= NAV_HEIGHT;
       }
-      const bottom = heroEl.getBoundingClientRect().bottom;
-      // hysteresis: switch to solid once the hero has fully passed under the
-      // nav, and only switch back once it reappears with some margin — avoids
-      // flicker from momentum/rubber-band scroll right at the boundary.
-      setScrolled((prev) =>
-        prev ? bottom < NAV_HEIGHT + HYSTERESIS : bottom <= NAV_HEIGHT
-      );
+      setScrolled(scrolledNow);
+
+      // past the hero: hide on scroll down, reveal on scroll up.
+      const delta = currentY - lastY;
+      if (!scrolledNow || currentY <= NAV_HEIGHT) {
+        setHidden(false);
+      } else if (delta > HIDE_DELTA) {
+        setHidden(true);
+      } else if (delta < -HIDE_DELTA) {
+        setHidden(false);
+      }
+      lastY = currentY;
     };
 
     const onScroll = () => {
@@ -71,6 +86,8 @@ export default function Nav() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
+        hidden ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'
+      } ${
         transparent
           ? 'bg-transparent border-b border-transparent'
           : scrolled
