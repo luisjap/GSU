@@ -52,8 +52,6 @@
       overflow-x: clip;
     }
 
-    body.is-loading { overflow: hidden; }
-
     a { color: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
     :focus-visible { outline: 2px solid var(--heritage); outline-offset: 5px; }
@@ -72,44 +70,6 @@
       border: 0;
     }
 
-    .loader {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: grid;
-      grid-template-rows: 1fr auto;
-      padding: max(24px, env(safe-area-inset-top)) var(--gutter) max(24px, env(safe-area-inset-bottom));
-      background: var(--carbon);
-      transition: clip-path 900ms var(--ease-out), visibility 900ms;
-      clip-path: inset(0 0 0 0);
-    }
-
-    .loader.is-done {
-      clip-path: inset(0 0 100% 0);
-      visibility: hidden;
-    }
-
-    .loader__mark {
-      align-self: center;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: end;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 18px;
-    }
-
-    .loader__number {
-      margin: 0;
-      font-family: var(--display);
-      font-size: clamp(92px, 22vw, 340px);
-      font-weight: 780;
-      font-variation-settings: "wdth" 78;
-      letter-spacing: -.075em;
-      line-height: .68;
-    }
-
-    .loader__meta,
     .micro {
       font-family: var(--data);
       font-size: 10px;
@@ -119,17 +79,6 @@
       text-transform: uppercase;
     }
 
-    .loader__meta { text-align: right; color: var(--alloy); }
-
-    .loader__foot {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 18px;
-      padding-top: 22px;
-    }
-
-    .loader__track,
     .telemetry__track {
       position: relative;
       height: 1px;
@@ -137,7 +86,6 @@
       background: rgba(255, 255, 255, .24);
     }
 
-    .loader__fill,
     .telemetry__fill {
       position: absolute;
       inset: 0;
@@ -738,10 +686,6 @@
       .telemetry__chapter { min-width: 9ch; }
       .scroll-cue { display: none; }
 
-      .loader__mark { display: block; }
-      .loader__number { font-size: 40vw; }
-      .loader__meta { margin-top: 22px; text-align: left; }
-
       .services { padding-top: 100px; padding-bottom: 100px; }
       .services__grid { grid-template-columns: 1fr; }
       .service__label { padding: 26px 12px 12px; }
@@ -769,19 +713,7 @@
     }
   </style>
 </head>
-<body class="is-loading">
-  <div class="loader" id="loader" aria-label="Cargando la secuencia de imágenes">
-    <div class="loader__mark">
-      <p class="loader__number" aria-hidden="true">01</p>
-      <div class="loader__meta">GSU<br>Sistemas integrales<br>20.04 segundos</div>
-    </div>
-    <div class="loader__foot">
-      <span class="micro" id="loader-label">Preparando obra</span>
-      <div class="loader__track" aria-hidden="true"><span class="loader__fill" id="loader-fill"></span></div>
-      <span class="micro" id="loader-count">000%</span>
-    </div>
-  </div>
-
+<body>
   <header class="site-header" aria-label="Información del sitio">
     <a class="site-header__brand" href="#inicio"><img class="site-header__logo" src="logo-white.webp" alt="GSU"></a>
     <nav class="site-header__nav" aria-label="Navegación principal">
@@ -993,10 +925,6 @@
       const heroStill = document.getElementById("hero-still");
       const whatsappFab = document.getElementById("whatsapp-fab");
       const serviceCards = Array.from(document.querySelectorAll(".service"));
-      const loader = document.getElementById("loader");
-      const loaderFill = document.getElementById("loader-fill");
-      const loaderCount = document.getElementById("loader-count");
-      const loaderLabel = document.getElementById("loader-label");
       const telemetryChapter = document.getElementById("telemetry-chapter");
       const telemetryFrame = document.getElementById("telemetry-frame");
       const chapters = Array.from(document.querySelectorAll(".chapter"));
@@ -1028,12 +956,6 @@
 
       function frameUrl(index, store = activeStore) {
         return `${store.directory}/frame-${String(index + 1).padStart(FRAME_PAD, "0")}.webp`;
-      }
-
-      function setLoaderProgress(ratio) {
-        const safeRatio = Math.max(0, Math.min(1, ratio));
-        loaderFill.style.transform = `scaleX(${safeRatio})`;
-        loaderCount.textContent = `${String(Math.round(safeRatio * 100)).padStart(3, "0")}%`;
       }
 
       function loadFrame(index, store = activeStore, retries = 1) {
@@ -1220,18 +1142,8 @@
         stage.style.setProperty("--scrim-opacity", String(Math.min(0.82, 0.5 + edge * 0.23)));
       }
 
-      function dismissLoader() {
-        setLoaderProgress(1);
-        loader.classList.add("is-done");
-        document.body.classList.remove("is-loading");
-        window.setTimeout(() => loader.remove(), 1000);
-      }
-
       function showLoadError() {
-        loaderLabel.textContent = "Fotogramas no disponibles — recarga la página";
-        loaderCount.textContent = "ERROR";
-        loaderCount.style.color = "var(--signal)";
-        loader.setAttribute("aria-label", "No se pudieron cargar los fotogramas. Recarga la página para intentarlo de nuevo.");
+        console.error("GSU: no se pudieron cargar los fotogramas de la secuencia.");
       }
 
       function renderReducedPoster(frame) {
@@ -1266,7 +1178,6 @@
         buildDwellLut();
         resizeCanvas();
         updateSequenceMetrics();
-        setLoaderProgress(0.06);
 
         if (reducedMotion) {
           const posterFrame = 0;
@@ -1281,7 +1192,6 @@
             card.style.opacity = "1";
             card.style.transform = "none";
           });
-          dismissLoader();
           return;
         }
 
@@ -1292,19 +1202,10 @@
         ])).sort((a, b) => a - b);
 
         const firstFrame = await loadFrame(0);
-        if (firstFrame) {
-          drawFrame(0);
-          setLoaderProgress(0.28);
-        }
+        if (firstFrame) drawFrame(0);
 
         const criticalTail = critical.filter((index) => index !== 0);
-        let prepared = 0;
-        await Promise.all(criticalTail.map(async (index) => {
-          const image = await loadFrame(index);
-          prepared += 1;
-          setLoaderProgress(0.28 + 0.68 * (prepared / criticalTail.length));
-          return image;
-        }));
+        await Promise.all(criticalTail.map((index) => loadFrame(index)));
 
         const readyFrame = nearestLoaded(0);
         if (readyFrame < 0) {
@@ -1312,7 +1213,6 @@
           return;
         }
         drawFrame(readyFrame);
-        dismissLoader();
         tick();
 
         const remaining = Array.from({ length: FRAME_COUNT }, (_, index) => index)
@@ -1337,10 +1237,21 @@
         loadInBatches(byDistance, 8, activeStore);
       }
 
-      window.addEventListener("resize", () => {
+      function syncViewport() {
         resizeCanvas();
         updateSequenceMetrics();
-      }, { passive: true });
+      }
+
+      window.addEventListener("resize", syncViewport, { passive: true });
+      window.addEventListener("orientationchange", syncViewport, { passive: true });
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", syncViewport, { passive: true });
+      }
+      // Mobile Safari settles its toolbar (and svh value) asynchronously after
+      // load, sometimes without firing a resize event — recheck a couple of
+      // times so the canvas buffer never stays short of the real viewport.
+      window.setTimeout(syncViewport, 300);
+      window.setTimeout(syncViewport, 1200);
       mobileMedia.addEventListener("change", swapFrameSet);
       document.addEventListener("visibilitychange", () => {
         pageVisible = !document.hidden;
