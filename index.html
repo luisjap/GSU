@@ -721,7 +721,7 @@
             </div>
           </article>
 
-          <article class="chapter chapter--left" data-center="0.833" data-window="0.035" data-label="GSU Solder">
+          <article class="chapter chapter--left" data-center="0.792" data-window="0.03" data-label="GSU Solder">
             <div class="chapter__copy">
               <p class="chapter__eyebrow micro">Servicio 05 / Fabricación y soldadura</p>
               <h2 class="chapter__title reveal"><span>GSU Solder</span></h2>
@@ -792,7 +792,7 @@
           </div>
         </article>
         <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0450.webp?v=20260820a" alt="Soldadura" loading="lazy">
+          <img class="service__media" src="frames/desktop/frame-0428.webp?v=20260820a" alt="Soldadura" loading="lazy">
           <div class="service__label">
             <p class="service__name"><b>GSU</b> Solder</p>
             <p class="service__tagline">Fabricación y soldadura</p>
@@ -848,7 +848,7 @@
       const LUT_SIZE = 2400;
       const MOBILE_QUERY = "(max-width: 780px)";
       const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
-      const DWELL_CENTERS = [0.0, 0.1725, 0.332, 0.501, 0.694, 0.833, 0.95, 0.985];
+      const DWELL_CENTERS = [0.0, 0.1725, 0.332, 0.501, 0.694, 0.792, 0.95, 0.985];
 
       const sequence = document.getElementById("sequence") || document.getElementById("inicio");
       const stage = document.getElementById("stage");
@@ -952,25 +952,47 @@
         sequenceDistance = Math.max(1, rect.height - window.innerHeight);
       }
 
-      function drawFrame(index) {
-        const resolved = nearestLoaded(Math.max(0, Math.min(FRAME_COUNT - 1, index)));
-        if (resolved < 0 || resolved === lastDrawn) return;
-        const image = activeStore.images[resolved];
+      function paintImage(image, width, height, alpha) {
         if (!image || !image.naturalWidth) return;
+        const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+        const drawWidth = image.naturalWidth * scale;
+        const drawHeight = image.naturalHeight * scale;
+        const x = (width - drawWidth) / 2;
+        const y = (height - drawHeight) / 2;
+        ctx.globalAlpha = alpha;
+        ctx.drawImage(image, x, y, drawWidth, drawHeight);
+        ctx.globalAlpha = 1;
+      }
+
+      // Accepts a fractional frame position and crossfades between the two
+      // neighboring frames so slow scrolling reads as continuous motion
+      // instead of a hard cut every time the rounded frame number changes.
+      function drawFrame(floatIndex) {
+        const clamped = Math.max(0, Math.min(FRAME_COUNT - 1, floatIndex));
+        const lower = Math.floor(clamped);
+        const upper = Math.min(FRAME_COUNT - 1, lower + 1);
+        const frac = clamped - lower;
+
+        const lowerResolved = nearestLoaded(lower);
+        const upperResolved = frac > 0.001 ? nearestLoaded(upper) : lowerResolved;
+        if (lowerResolved < 0 && upperResolved < 0) return;
+
+        const drawKey = `${lowerResolved}:${upperResolved}:${frac.toFixed(3)}`;
+        if (drawKey === lastDrawn) return;
 
         const width = canvas.width;
         const height = canvas.height;
         ctx.fillStyle = "#0A2342";
         ctx.fillRect(0, 0, width, height);
 
-        const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
-        const drawWidth = image.naturalWidth * scale;
-        const drawHeight = image.naturalHeight * scale;
-        const x = (width - drawWidth) / 2;
-        const y = (height - drawHeight) / 2;
-
-        ctx.drawImage(image, x, y, drawWidth, drawHeight);
-        lastDrawn = resolved;
+        if (lowerResolved >= 0 && upperResolved >= 0 && lowerResolved !== upperResolved) {
+          paintImage(activeStore.images[lowerResolved], width, height, 1);
+          paintImage(activeStore.images[upperResolved], width, height, frac);
+        } else {
+          const only = lowerResolved >= 0 ? lowerResolved : upperResolved;
+          paintImage(activeStore.images[only], width, height, 1);
+        }
+        lastDrawn = drawKey;
       }
 
       const rawAtEffective = new Float64Array(LUT_SIZE + 1);
@@ -1055,7 +1077,7 @@
         });
       }
 
-      function updateInterface(raw, effective, frame) {
+      function updateInterface(raw, effective) {
         document.documentElement.style.setProperty("--title-wdth", String(Math.round(78 + effective * 24)));
         const edge = Math.min(effective, 1 - effective) / 0.08;
         stage.style.setProperty("--scrim-opacity", String(Math.min(0.82, 0.5 + edge * 0.23)));
@@ -1083,13 +1105,12 @@
         const effective = remapProgress(raw);
         targetFrame = Math.round(effective * (FRAME_COUNT - 1));
         currentFrame += (targetFrame - currentFrame) * LERP_FACTOR;
-        const frame = Math.round(currentFrame);
-        drawFrame(frame);
+        drawFrame(currentFrame);
         updateHeroStill(raw);
         updateWhatsappFab(effective);
         updateServiceCards();
         updateChapters(effective);
-        updateInterface(raw, effective, frame);
+        updateInterface(raw, effective);
         rafId = requestAnimationFrame(tick);
       }
 
