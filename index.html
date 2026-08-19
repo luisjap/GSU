@@ -79,20 +79,6 @@
       text-transform: uppercase;
     }
 
-    .telemetry__track {
-      position: relative;
-      height: 1px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, .24);
-    }
-
-    .telemetry__fill {
-      position: absolute;
-      inset: 0;
-      background: var(--heritage);
-      transform: scaleX(0);
-      transform-origin: left;
-    }
 
     .site-header {
       position: fixed;
@@ -387,48 +373,6 @@
     .cta--solid::after { content: none; }
     .cta--solid:hover { background: #fff; border-color: #fff; color: var(--signal); }
 
-    .telemetry {
-      position: absolute;
-      inset: auto var(--gutter) max(18px, env(safe-area-inset-bottom));
-      z-index: 8;
-      display: grid;
-      grid-template-columns: auto minmax(100px, 1fr) auto auto;
-      align-items: center;
-      gap: 18px;
-      pointer-events: none;
-    }
-
-    .telemetry__fill {
-      transform: scaleX(var(--frame-progress));
-      will-change: transform;
-    }
-
-    .telemetry__chapter { min-width: 15ch; }
-    .telemetry__frame { color: var(--alloy); }
-
-    .scroll-cue {
-      display: inline-grid;
-      grid-template-columns: auto 18px;
-      align-items: center;
-      gap: 9px;
-      color: var(--paper);
-    }
-
-    .scroll-cue::after {
-      content: "";
-      width: 18px;
-      height: 18px;
-      border-right: 1px solid currentColor;
-      border-bottom: 1px solid currentColor;
-      transform: rotate(45deg) translate(-3px, 3px);
-      animation: cue 1.8s ease-in-out infinite;
-    }
-
-    @keyframes cue {
-      0%, 100% { transform: rotate(45deg) translate(-3px, 3px); opacity: .35; }
-      50% { transform: rotate(45deg) translate(1px, 7px); opacity: 1; }
-    }
-
     .services {
       position: relative;
       z-index: 10;
@@ -678,14 +622,6 @@
       .chapter--final .chapter__title { max-width: 8ch; }
       .chapter--final .cta { margin-top: 22px; }
 
-      .telemetry {
-        grid-template-columns: auto 1fr auto;
-        gap: 12px;
-      }
-
-      .telemetry__chapter { min-width: 9ch; }
-      .scroll-cue { display: none; }
-
       .services { padding-top: 100px; padding-bottom: 100px; }
       .services__grid { grid-template-columns: 1fr; }
       .service__label { padding: 26px 12px 12px; }
@@ -709,7 +645,6 @@
       .chapter--hero { visibility: visible; }
       .chapter--hero .reveal > span { transform: translateY(0); }
       .chapter--hero .chapter__eyebrow::before { transform: scaleX(1); }
-      .telemetry { display: none; }
     }
   </style>
 </head>
@@ -803,13 +738,6 @@
               <a class="cta cta--solid" href="#contacto">Contactar ahora.</a>
             </div>
           </article>
-        </div>
-
-        <div class="telemetry" aria-hidden="true">
-          <span class="telemetry__chapter micro" id="telemetry-chapter">El proyecto</span>
-          <div class="telemetry__track"><span class="telemetry__fill"></span></div>
-          <span class="telemetry__frame micro" id="telemetry-frame">F 0001 / 0540</span>
-          <span class="scroll-cue micro">Desliza para avanzar</span>
         </div>
       </div>
     </section>
@@ -925,8 +853,6 @@
       const heroStill = document.getElementById("hero-still");
       const whatsappFab = document.getElementById("whatsapp-fab");
       const serviceCards = Array.from(document.querySelectorAll(".service"));
-      const telemetryChapter = document.getElementById("telemetry-chapter");
-      const telemetryFrame = document.getElementById("telemetry-frame");
       const chapters = Array.from(document.querySelectorAll(".chapter"));
       const reducedMotion = window.matchMedia(REDUCED_QUERY).matches;
       const mobileMedia = window.matchMedia(MOBILE_QUERY);
@@ -1083,8 +1009,6 @@
       }
 
       function updateChapters(effective) {
-        let active = chapters[0];
-        let nearest = Infinity;
         for (const chapter of chapters) {
           const center = Number(chapter.dataset.center);
           const windowSize = Number(chapter.dataset.window);
@@ -1095,13 +1019,6 @@
             chapter.classList.toggle("is-visible", visible);
             chapter.setAttribute("aria-hidden", String(!visible));
           }
-          if (distance < nearest) {
-            nearest = distance;
-            active = chapter;
-          }
-        }
-        if (telemetryChapter.textContent !== active.dataset.label) {
-          telemetryChapter.textContent = active.dataset.label;
         }
       }
 
@@ -1135,9 +1052,7 @@
       }
 
       function updateInterface(raw, effective, frame) {
-        document.documentElement.style.setProperty("--frame-progress", raw.toFixed(4));
         document.documentElement.style.setProperty("--title-wdth", String(Math.round(78 + effective * 24)));
-        telemetryFrame.textContent = `F ${String(frame + 1).padStart(4, "0")} / ${String(FRAME_COUNT).padStart(4, "0")}`;
         const edge = Math.min(effective, 1 - effective) / 0.08;
         stage.style.setProperty("--scrim-opacity", String(Math.min(0.82, 0.5 + edge * 0.23)));
       }
