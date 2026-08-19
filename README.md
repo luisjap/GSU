@@ -1,54 +1,47 @@
-# GSU Ingeniería y Mantenimiento
+# GSU — Ingeniería y Mantenimiento
 
-Landing y tienda online de GSU: ingeniería eléctrica, climatización y ventilación,
-gasfitería y mantenimiento integral para empresas y hogares en Chile.
+Sitio scroll-driven de una sola página: una secuencia de video (desktop 16:9 /
+mobile 9:16) controlada por el scroll, con capítulos por servicio (Climatic,
+Electric, Gasfiter, Security, Solder, Care), un carrusel de servicios y
+contacto directo por WhatsApp.
 
-Ver `BRAND.md` para la estrategia de marca completa (ADN, arquitectura, sistema
-visual e identidad verbal) que rige el copy y el diseño de este sitio.
+Ver `BRAND.md` para la estrategia de marca (paleta, tipografía, tono) que
+rige el diseño y el copy de este sitio.
 
 ## Stack
 
-- Next.js 14 (App Router) + TypeScript
-- Tailwind CSS + Relume UI
-- Carrito de compras en cliente (React Context), sin base de datos
+- HTML + CSS + JavaScript vanilla, sin build step
+- `serve` como servidor estático en producción
 - Desplegado en Railway
 
-## Instalación local
+## Desarrollo local
 
 ```bash
-npm install
-npm run dev      # http://localhost:4321
+python3 -m http.server 8080
+# o
+npx serve .
 ```
+
+Abrir `http://localhost:8080`.
 
 ## Estructura
 
-- `app/page.tsx` — landing (Hero, Servicios, Productos, Cobertura, Proceso, Contacto)
-- `app/tienda/` — catálogo de equipos y accesorios (`data/products.ts`)
-- `app/checkout/` — flujo de pedido con carrito
-- `app/api/contact/` — recibe solicitudes de propuesta técnica (`{name, email, message, service}`)
-- `app/api/orders/` — recibe pedidos de la tienda (`{name, email, phone, address, comuna, notes, items, total}`)
-
-Ambos endpoints por ahora solo loguean en consola (listos para conectar Resend — ver `.env.example`).
-
-## Cómo agregar un producto
-
-Edita `data/products.ts` y agrega un objeto con este schema:
-
-```ts
-{
-  id: 'mi-producto',
-  name: 'Nombre del producto',
-  price: 100000,
-  category: 'equipos', // 'equipos' | 'accesorios' | 'servicios'
-  description: 'Descripción corta',
-  icon: 'ac', // 'ac' | 'wind' | 'wrench' | 'plug' | 'ruler'
-  featured: false,
-}
-```
+- `index.html` — el sitio completo (markup, estilos y motor de scroll en un solo archivo)
+- `frames/desktop/` y `frames/mobile/` — 540 fotogramas WebP por versión (secuencia de scroll)
+- `hero-still.webp` / `hero-still-mobile.webp` — imagen estática del hero antes de iniciar el scroll
+- `logo-white.webp` / `logo-navy.webp` — logo GSU (versión inversa y principal)
+- `favicons/` — íconos de pestaña/app
 
 ## Deploy en Railway
 
-1. Sube el repo a GitHub y conéctalo en Railway (New Project → Deploy from GitHub repo).
-2. Railway detecta Node y usa `next start` (también está `railway.json` con el start command).
-3. `PORT` la inyecta Railway automáticamente — no hay que configurar nada.
+1. El repo ya está conectado a Railway (proyecto existente, servicio enlazado a `main`).
+2. `railway.json` define `npm install` como build y `npm start` (sirve la carpeta con `serve`) como comando de arranque.
+3. `PORT` la inyecta Railway automáticamente.
 4. Cada push a `main` redeploya solo.
+
+## Historial
+
+Este repo alojaba antes una aplicación Next.js (tienda, blog, checkout). Ese
+proyecto no se eliminó: hay un respaldo completo (código + `git log`) en
+`../GSU-nextjs-backup-2026-08-19/`, y también sigue disponible en el
+historial de git de este mismo repo (commits anteriores a este cambio).

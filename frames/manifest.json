@@ -1,0 +1,34 @@
+{
+  "source": {
+    "desktop_filename": "1786657145845-aqvg7yljapn.mp4",
+    "desktop_duration": 20.04,
+    "desktop_resolution": "1280x720",
+    "mobile_filename": "1786648793160-d0gaehj2dxo.mp4",
+    "mobile_duration": 20.04,
+    "mobile_resolution": "720x1280",
+    "fps": 24.0,
+    "codec": "h264",
+    "note": "Desktop and mobile are a matched pair (landscape + portrait) from the same new shoot, same exact duration/pacing. Replaces the original hf_20260812... desktop video."
+  },
+  "frames": {
+    "target_count": 540,
+    "format": "webp",
+    "quality": "95 desktop / 80 mobile (webp)",
+    "naming_pattern": "frame-{NNNN}.webp",
+    "note": "Both extracted directly from their own source MP4, 540 evenly-spaced frames, single-generation compression (no ezgif JPEG intermediate)."
+  },
+  "recommended_scroll_height": "850vh desktop / 700vh mobile",
+  "created": "2026-08-14T08:55:49",
+  "desktop": {
+    "resolution": "1280x720",
+    "actual_count": 540,
+    "total_bytes": 59575204,
+    "total_mb": 56.82
+  },
+  "mobile": {
+    "resolution": "720x1280",
+    "actual_count": 540,
+    "total_bytes": 20336252,
+    "total_mb": 19.39
+  }
+}

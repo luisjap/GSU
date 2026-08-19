@@ -1,0 +1,1357 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0A2342">
+  <meta name="description" content="GSU — Reparación, instalación y mantenimiento de sistemas de climatización, eléctricos, hidráulicos, seguridad y estructuras.">
+  <title>GSU — Reparación, instalación y mantenimiento</title>
+  <link rel="icon" href="favicons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicons/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="favicons/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="hero-still.webp" media="(min-width: 781px)" fetchpriority="high">
+  <link rel="preload" as="image" href="hero-still-mobile.webp" media="(max-width: 780px)" fetchpriority="high">
+  <style>
+    :root {
+      --carbon: #0A2342;
+      --carbon-soft: #123059;
+      --paper: #FFFFFF;
+      --alloy: #9AA3AD;
+      --track: #3A5A82;
+      --heritage: #0057B8;
+      --signal: #0057B8;
+      --petrol: #0A2342;
+      --grafito: #4B4F54;
+      --display: "Montserrat", "Arial Narrow", system-ui, sans-serif;
+      --data: "Inter", system-ui, sans-serif;
+      --gutter: clamp(20px, 4.2vw, 72px);
+      --ease-out: cubic-bezier(.22, 1, .36, 1);
+      --line: rgba(255, 255, 255, .17);
+      --frame-progress: 0;
+      --title-wdth: 82;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      background: var(--carbon);
+      color: var(--paper);
+      font-family: var(--display);
+      scroll-behavior: auto;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--carbon);
+      color: var(--paper);
+      overflow-x: clip;
+    }
+
+    body.is-loading { overflow: hidden; }
+
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 2px solid var(--heritage); outline-offset: 5px; }
+
+    #servicios, #tienda, #contacto { scroll-margin-top: 90px; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .loader {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: max(24px, env(safe-area-inset-top)) var(--gutter) max(24px, env(safe-area-inset-bottom));
+      background: var(--carbon);
+      transition: clip-path 900ms var(--ease-out), visibility 900ms;
+      clip-path: inset(0 0 0 0);
+    }
+
+    .loader.is-done {
+      clip-path: inset(0 0 100% 0);
+      visibility: hidden;
+    }
+
+    .loader__mark {
+      align-self: center;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+    }
+
+    .loader__number {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(92px, 22vw, 340px);
+      font-weight: 780;
+      font-variation-settings: "wdth" 78;
+      letter-spacing: -.075em;
+      line-height: .68;
+    }
+
+    .loader__meta,
+    .micro {
+      font-family: var(--data);
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .loader__meta { text-align: right; color: var(--alloy); }
+
+    .loader__foot {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 18px;
+      padding-top: 22px;
+    }
+
+    .loader__track,
+    .telemetry__track {
+      position: relative;
+      height: 1px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .24);
+    }
+
+    .loader__fill,
+    .telemetry__fill {
+      position: absolute;
+      inset: 0;
+      background: var(--heritage);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      gap: clamp(28px, 4vw, 64px);
+      padding: max(16px, env(safe-area-inset-top)) var(--gutter) 12px;
+      pointer-events: none;
+    }
+
+    .site-header__brand {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .45));
+    }
+
+    .site-header__logo {
+      display: block;
+      height: clamp(22px, 2.6vw, 30px);
+      width: auto;
+    }
+
+    .site-header__nav {
+      pointer-events: auto;
+      display: flex;
+      gap: clamp(18px, 2.4vw, 34px);
+    }
+
+    .site-header__nav a {
+      font-family: var(--data);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--paper);
+      text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      transition: color 200ms ease;
+    }
+
+    .site-header__nav a:hover { color: var(--heritage); }
+
+    .sequence {
+      position: relative;
+      height: 1000vh;
+      background: var(--carbon);
+    }
+
+    .stage {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100svh;
+      overflow: hidden;
+      background: var(--carbon);
+      isolation: isolate;
+    }
+
+    #film-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-still {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 1;
+      transition: opacity 550ms var(--ease-out);
+      pointer-events: none;
+    }
+
+    .stage__scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(10, 35, 66, .68) 0%, rgba(10, 35, 66, .14) 35%, transparent 61%),
+        linear-gradient(0deg, rgba(10, 35, 66, .74) 0%, transparent 36%);
+      opacity: var(--scrim-opacity, .78);
+      transition: opacity 500ms ease;
+      pointer-events: none;
+    }
+
+    .stage__grid {
+      position: absolute;
+      inset: 0 var(--gutter);
+      z-index: 2;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(8.333% - 1px),
+        rgba(255, 255, 255, .07) calc(8.333% - 1px),
+        rgba(255, 255, 255, .07) 8.333%
+      );
+      mask-image: linear-gradient(180deg, transparent, black 14%, black 82%, transparent);
+      opacity: .5;
+      pointer-events: none;
+    }
+
+    .chapters {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .chapter {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      align-content: center;
+      column-gap: clamp(10px, 1.2vw, 20px);
+      padding: 96px var(--gutter) 104px;
+      visibility: hidden;
+    }
+
+    .chapter.is-visible { visibility: visible; }
+
+    .chapter__copy {
+      position: relative;
+      align-self: center;
+    }
+
+    .chapter__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: var(--paper);
+    }
+
+    .chapter__eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--heritage);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 650ms 100ms var(--ease-out);
+    }
+
+    .chapter.is-visible .chapter__eyebrow::before { transform: scaleX(1); }
+
+    .reveal {
+      overflow: hidden;
+      padding-bottom: .08em;
+    }
+
+    .reveal > span {
+      display: block;
+      transform: translateY(112%);
+      transition: transform 760ms var(--ease-out);
+    }
+
+    .reveal:nth-child(3) > span { transition-delay: 90ms; }
+    .reveal:nth-child(4) > span { transition-delay: 160ms; }
+    .chapter.is-visible .reveal > span { transform: translateY(0); }
+
+    .chapter__title {
+      margin: 0;
+      font-size: clamp(54px, 8.2vw, 132px);
+      font-weight: 760;
+      font-variation-settings: "wdth" var(--title-wdth);
+      letter-spacing: -.068em;
+      line-height: .82;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    .chapter__deck {
+      max-width: 32rem;
+      margin: 26px 0 0;
+      font-size: clamp(17px, 1.55vw, 24px);
+      font-weight: 450;
+      line-height: 1.25;
+      letter-spacing: -.025em;
+      text-wrap: balance;
+    }
+
+    .chapter__fact {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: baseline;
+      margin-top: 32px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--alloy);
+      max-width: 30rem;
+    }
+
+    .chapter--hero { align-content: end; }
+    .chapter--hero .chapter__copy { grid-column: 1 / 8; padding-bottom: 8vh; }
+
+    .hero-panel {
+      display: inline-block;
+      max-width: 400px;
+      padding: 26px 30px 30px;
+      background: rgba(6, 9, 12, .58);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    .hero-panel .chapter__eyebrow { margin-bottom: 14px; color: var(--alloy); }
+
+    .hero-panel__title {
+      margin: 0 0 22px;
+      font-size: clamp(24px, 3.4vw, 38px);
+      font-weight: 660;
+      line-height: 1.22;
+      letter-spacing: -.01em;
+      text-transform: none;
+    }
+
+    .hero-panel__title .reveal { display: block; padding-bottom: .05em; }
+
+    .chapter--right .chapter__copy { grid-column: 8 / 13; }
+    .chapter--left .chapter__copy { grid-column: 1 / 6; }
+
+    .chapter--index { align-content: center; }
+    .chapter--index .chapter__copy { grid-column: 8 / 13; z-index: 2; }
+
+    .chapter__title--stacked { line-height: 1; }
+    .chapter__title--stacked .reveal { display: block; padding-bottom: .12em; }
+
+    .chapter--security .chapter__copy { grid-column: 1 / 10; margin-top: 8vh; }
+
+    .chapter--final {
+      align-content: end;
+      background: linear-gradient(0deg, rgba(10, 35, 66, .88), rgba(10, 35, 66, 0) 64%);
+    }
+
+    .chapter--final .chapter__copy {
+      grid-column: 1 / 13;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 32px;
+      padding-bottom: 3vh;
+    }
+
+    .chapter--final .chapter__title { max-width: 11ch; }
+
+    .cta {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      min-width: min(100%, 280px);
+      min-height: 54px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, .56);
+      background: rgba(10, 35, 66, .18);
+      color: var(--paper);
+      font-family: var(--data);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 250ms ease, background 250ms ease, border-color 250ms ease;
+    }
+
+    .cta::after { content: "→"; font-size: 16px; }
+    .cta:hover { background: var(--paper); border-color: var(--paper); color: var(--carbon); }
+
+    .cta--solid {
+      justify-content: center;
+      gap: 10px;
+      min-width: 200px;
+      background: var(--signal);
+      border-color: var(--signal);
+      color: #fff;
+    }
+
+    .cta--solid::after { content: none; }
+    .cta--solid:hover { background: #fff; border-color: #fff; color: var(--signal); }
+
+    .telemetry {
+      position: absolute;
+      inset: auto var(--gutter) max(18px, env(safe-area-inset-bottom));
+      z-index: 8;
+      display: grid;
+      grid-template-columns: auto minmax(100px, 1fr) auto auto;
+      align-items: center;
+      gap: 18px;
+      pointer-events: none;
+    }
+
+    .telemetry__fill {
+      transform: scaleX(var(--frame-progress));
+      will-change: transform;
+    }
+
+    .telemetry__chapter { min-width: 15ch; }
+    .telemetry__frame { color: var(--alloy); }
+
+    .scroll-cue {
+      display: inline-grid;
+      grid-template-columns: auto 18px;
+      align-items: center;
+      gap: 9px;
+      color: var(--paper);
+    }
+
+    .scroll-cue::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border-right: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+      transform: rotate(45deg) translate(-3px, 3px);
+      animation: cue 1.8s ease-in-out infinite;
+    }
+
+    @keyframes cue {
+      0%, 100% { transform: rotate(45deg) translate(-3px, 3px); opacity: .35; }
+      50% { transform: rotate(45deg) translate(1px, 7px); opacity: 1; }
+    }
+
+    .services {
+      position: relative;
+      z-index: 10;
+      padding: clamp(100px, 13vw, 190px) var(--gutter);
+      background: var(--paper);
+      color: var(--carbon);
+    }
+
+    .services__title {
+      margin: 0 0 clamp(40px, 6vw, 84px);
+      font-size: clamp(40px, 6vw, 84px);
+      font-weight: 780;
+      font-variation-settings: "wdth" 86;
+      letter-spacing: -.06em;
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(3px, 0.5vw, 8px);
+    }
+
+    .service {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--carbon-soft);
+      opacity: 0;
+      transform: translateY(42px);
+      will-change: opacity, transform;
+    }
+
+    .service__media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.9) contrast(1.03);
+      transition: transform 900ms var(--ease-out), filter 500ms ease;
+    }
+
+    .service:hover .service__media { transform: scale(1.05); filter: saturate(1); }
+
+    .service__label {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 34px 16px 16px;
+      background: linear-gradient(0deg, rgba(10, 35, 66, .88) 0%, rgba(10, 35, 66, .4) 62%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .service__name {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(17px, 1.5vw, 22px);
+      font-weight: 740;
+      letter-spacing: -.01em;
+      line-height: 1.1;
+      color: var(--paper);
+    }
+
+    .service__name b {
+      color: var(--heritage);
+      font-weight: 740;
+    }
+
+    .service__tagline {
+      margin: 5px 0 0;
+      font-family: var(--data);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--alloy);
+    }
+
+    .service__actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      pointer-events: auto;
+    }
+
+    .service__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      background: var(--signal);
+      border: 1px solid var(--signal);
+      color: #fff;
+      font-family: var(--data);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 200ms ease, color 200ms ease;
+    }
+
+    .service__cta:hover { background: #fff; color: var(--signal); }
+
+    .service__cta--ghost {
+      min-height: 34px;
+      padding: 0 13px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, .5);
+      color: var(--paper);
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    .service__cta--ghost:hover { background: rgba(255, 255, 255, .14); border-color: var(--paper); }
+
+    .cta-band {
+      position: relative;
+      z-index: 10;
+      display: grid;
+      justify-items: center;
+      gap: 28px;
+      padding: clamp(70px, 10vw, 130px) var(--gutter);
+      background: var(--carbon);
+      color: var(--paper);
+      text-align: center;
+    }
+
+    .cta-band__title {
+      margin: 0;
+      max-width: 14ch;
+      font-size: clamp(34px, 5.4vw, 68px);
+      font-weight: 740;
+      font-variation-settings: "wdth" 90;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .whatsapp-fab {
+      position: fixed;
+      right: max(20px, env(safe-area-inset-right));
+      bottom: max(20px, env(safe-area-inset-bottom));
+      z-index: 500;
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+      opacity: 0;
+      transform: translateY(16px) scale(.6);
+      pointer-events: none;
+      transition: opacity 480ms var(--ease-out), transform 480ms var(--ease-out);
+    }
+
+    .whatsapp-fab.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+      animation: whatsapp-pulse 2.4s ease-out 480ms infinite;
+    }
+
+    .whatsapp-fab:hover { background: #1ebe5a; }
+
+    .whatsapp-fab__icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    @keyframes whatsapp-pulse {
+      0%, 100% { box-shadow: 0 8px 24px rgba(0, 0, 0, .35), 0 0 0 0 rgba(37, 211, 102, .55); }
+      60% { box-shadow: 0 8px 24px rgba(0, 0, 0, .35), 0 0 0 14px rgba(37, 211, 102, 0); }
+    }
+
+    .site-footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      padding: 44px var(--gutter) max(44px, env(safe-area-inset-bottom));
+      border-top: 1px solid rgba(255, 255, 255, .14);
+      background: var(--carbon);
+      color: var(--alloy);
+    }
+
+    .site-footer p { margin: 0; max-width: 50rem; line-height: 1.7; }
+    .site-footer a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 780px) {
+      :root { --gutter: 20px; }
+
+      .site-header {
+        gap: 16px;
+        min-height: 58px;
+      }
+
+      .site-header__nav { gap: 14px; }
+      .site-header__nav a { font-size: 10px; }
+      .sequence { height: 820vh; }
+
+      .stage__scrim {
+        background:
+          linear-gradient(180deg, rgba(10, 35, 66, .52), transparent 21%),
+          linear-gradient(0deg, rgba(10, 35, 66, .88), transparent 29%);
+      }
+
+      .stage__grid { opacity: .32; }
+
+      .chapter {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        align-content: end;
+        padding: 76px var(--gutter) 100px;
+      }
+
+      .chapter__copy,
+      .chapter--hero .chapter__copy,
+      .chapter--right .chapter__copy,
+      .chapter--left .chapter__copy,
+      .chapter--index .chapter__copy,
+      .chapter--final .chapter__copy {
+        grid-column: 1 / 7;
+      }
+
+      .chapter__eyebrow { margin-bottom: 14px; }
+      .chapter__title { font-size: clamp(52px, 16vw, 82px); line-height: .84; }
+      .chapter__deck { max-width: 24rem; margin-top: 14px; font-size: 17px; }
+      .chapter__fact { margin-top: 16px; }
+
+      .chapter--hero { align-content: end; padding-bottom: 6vh; }
+      .chapter--hero .chapter__copy { padding-bottom: 0; }
+      .hero-panel { max-width: 320px; padding: 20px 22px 24px; }
+      .hero-panel__title { font-size: clamp(21px, 6.4vw, 30px); margin-bottom: 18px; }
+
+      .chapter--final { align-content: end; }
+      .chapter--final .chapter__copy { display: block; }
+      .chapter--final .chapter__title { max-width: 8ch; }
+      .chapter--final .cta { margin-top: 22px; }
+
+      .telemetry {
+        grid-template-columns: auto 1fr auto;
+        gap: 12px;
+      }
+
+      .telemetry__chapter { min-width: 9ch; }
+      .scroll-cue { display: none; }
+
+      .loader__mark { display: block; }
+      .loader__number { font-size: 40vw; }
+      .loader__meta { margin-top: 22px; text-align: left; }
+
+      .services { padding-top: 100px; padding-bottom: 100px; }
+      .services__grid { grid-template-columns: 1fr; }
+      .service__label { padding: 26px 12px 12px; }
+      .service__tagline { font-size: 10px; }
+      .service__actions { margin-top: 10px; gap: 6px; }
+      .service__cta { min-height: 34px; padding: 0 12px; font-size: 10px; }
+      .service__cta--ghost { min-height: 28px; padding: 0 10px; font-size: 9px; }
+      .cta-band__title { font-size: 12vw; }
+      .site-footer { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+      .sequence { height: 100svh; }
+      .chapter:not(.chapter--hero) { display: none; }
+      .chapter--hero { visibility: visible; }
+      .chapter--hero .reveal > span { transform: translateY(0); }
+      .chapter--hero .chapter__eyebrow::before { transform: scaleX(1); }
+      .telemetry { display: none; }
+    }
+  </style>
+</head>
+<body class="is-loading">
+  <div class="loader" id="loader" aria-label="Cargando la secuencia de imágenes">
+    <div class="loader__mark">
+      <p class="loader__number" aria-hidden="true">01</p>
+      <div class="loader__meta">GSU<br>Sistemas integrales<br>20.04 segundos</div>
+    </div>
+    <div class="loader__foot">
+      <span class="micro" id="loader-label">Preparando obra</span>
+      <div class="loader__track" aria-hidden="true"><span class="loader__fill" id="loader-fill"></span></div>
+      <span class="micro" id="loader-count">000%</span>
+    </div>
+  </div>
+
+  <header class="site-header" aria-label="Información del sitio">
+    <a class="site-header__brand" href="#inicio"><img class="site-header__logo" src="logo-white.webp" alt="GSU"></a>
+    <nav class="site-header__nav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#tienda">Tienda</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="sequence" id="inicio" aria-label="Película de obra controlada por scroll">
+      <div class="stage" id="stage">
+        <canvas id="film-canvas" role="img" aria-label="Recorrido por los sistemas del proyecto conforme se hace scroll"></canvas>
+        <picture>
+          <source media="(max-width: 780px)" srcset="hero-still-mobile.webp">
+          <img id="hero-still" class="hero-still" src="hero-still.webp" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
+        </picture>
+        <div class="stage__scrim" aria-hidden="true"></div>
+        <div class="stage__grid" aria-hidden="true"></div>
+
+        <div class="chapters" aria-live="off">
+          <article class="chapter chapter--hero" data-center="0.0" data-window="0.045" data-label="El proyecto">
+            <div class="chapter__copy">
+              <div class="hero-panel">
+                <p class="chapter__eyebrow micro">GSU — Ingeniería y Mantenimiento</p>
+                <h1 class="hero-panel__title">
+                  <span class="reveal"><span>Reparación, Instalación y</span></span>
+                  <span class="reveal"><span>mantenimiento.</span></span>
+                </h1>
+                <a class="cta cta--solid" href="#contacto">Contactar ahora.</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--right" data-center="0.1725" data-window="0.06" data-label="GSU Climatic">
+            <div class="chapter__copy">
+              <p class="chapter__eyebrow micro">Servicio 01 / Climatización</p>
+              <h2 class="chapter__title reveal"><span>GSU Climatic</span></h2>
+              <p class="chapter__deck reveal"><span>Reparación e instalación de equipos HVAC calibrados a cada carga térmica.</span></p>
+              <div class="chapter__fact micro"><span>01</span><span>Mantenimiento preventivo programado</span></div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--left" data-center="0.332" data-window="0.06" data-label="GSU Electric">
+            <div class="chapter__copy">
+              <p class="chapter__eyebrow micro">Servicio 02 / Eléctrico</p>
+              <h2 class="chapter__title reveal"><span>GSU Electric</span></h2>
+              <p class="chapter__deck reveal"><span>Tableros e instalaciones eléctricas certificadas, circuito por circuito.</span></p>
+              <div class="chapter__fact micro"><span>02</span><span>Planos as-built entregados en obra</span></div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--index" data-center="0.501" data-window="0.065" data-label="GSU Gasfiter">
+            <div class="chapter__copy">
+              <p class="chapter__eyebrow micro">Servicio 03 / Gasfitería</p>
+              <h2 class="chapter__title reveal"><span>GSU Gasfiter</span></h2>
+              <p class="chapter__deck reveal"><span>Redes de gas, tuberías y bombeo instalados para presión constante.</span></p>
+            </div>
+          </article>
+
+          <article class="chapter chapter--left chapter--security" data-center="0.694" data-window="0.05" data-label="GSU Security">
+            <div class="chapter__copy">
+              <p class="chapter__eyebrow micro">Servicio 04 / Seguridad y monitoreo</p>
+              <h2 class="chapter__title chapter__title--stacked">
+                <span class="reveal"><span>GSU</span></span>
+                <span class="reveal"><span>Security</span></span>
+              </h2>
+              <p class="chapter__deck reveal"><span>Cámaras, equipos y sistemas de seguridad.</span></p>
+            </div>
+          </article>
+
+          <article class="chapter chapter--left" data-center="0.833" data-window="0.035" data-label="GSU Solder">
+            <div class="chapter__copy">
+              <p class="chapter__eyebrow micro">Servicio 05 / Fabricación y soldadura</p>
+              <h2 class="chapter__title reveal"><span>GSU Solder</span></h2>
+              <p class="chapter__deck reveal"><span>Estructuras metálicas fabricadas y soldadas a la medida del proyecto.</span></p>
+              <div class="chapter__fact micro"><span>05</span><span>Soldadura certificada en obra</span></div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--final" data-center="0.95" data-window="0.05" data-label="GSU Care">
+            <div class="chapter__copy">
+              <div>
+                <p class="chapter__eyebrow micro">Servicio 06 / Mantenimiento integral</p>
+                <h2 class="chapter__title reveal"><span>GSU Care</span></h2>
+              </div>
+              <a class="cta cta--solid" href="#contacto">Contactar ahora.</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="telemetry" aria-hidden="true">
+          <span class="telemetry__chapter micro" id="telemetry-chapter">El proyecto</span>
+          <div class="telemetry__track"><span class="telemetry__fill"></span></div>
+          <span class="telemetry__frame micro" id="telemetry-frame">F 0001 / 0540</span>
+          <span class="scroll-cue micro">Desliza para avanzar</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" aria-labelledby="services-title" id="servicios">
+      <h2 class="services__title" id="services-title">Servicios</h2>
+
+      <div class="services__grid">
+        <article class="service">
+          <img class="service__media" src="frames/desktop/frame-0094.webp" alt="Climatización" loading="lazy">
+          <div class="service__label">
+            <p class="service__name"><b>GSU</b> Climatic</p>
+            <p class="service__tagline">Climatización y refrigeración</p>
+            <div class="service__actions">
+              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Climatic." target="_blank" rel="noopener">Contratar</a>
+              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Climatic." target="_blank" rel="noopener">Ver servicio</a>
+            </div>
+          </div>
+        </article>
+        <article class="service">
+          <img class="service__media" src="frames/desktop/frame-0180.webp" alt="Electricidad" loading="lazy">
+          <div class="service__label">
+            <p class="service__name"><b>GSU</b> Electric</p>
+            <p class="service__tagline">Instalaciones eléctricas</p>
+            <div class="service__actions">
+              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Electric." target="_blank" rel="noopener">Contratar</a>
+              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Electric." target="_blank" rel="noopener">Ver servicio</a>
+            </div>
+          </div>
+        </article>
+        <article class="service">
+          <img class="service__media" src="frames/desktop/frame-0271.webp" alt="Gasfitería" loading="lazy">
+          <div class="service__label">
+            <p class="service__name"><b>GSU</b> Gasfiter</p>
+            <p class="service__tagline">Redes de gas y gasfitería</p>
+            <div class="service__actions">
+              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Gasfiter." target="_blank" rel="noopener">Contratar</a>
+              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Gasfiter." target="_blank" rel="noopener">Ver servicio</a>
+            </div>
+          </div>
+        </article>
+        <article class="service">
+          <img class="service__media" src="frames/desktop/frame-0375.webp" alt="Seguridad" loading="lazy">
+          <div class="service__label">
+            <p class="service__name"><b>GSU</b> Security</p>
+            <p class="service__tagline">Cámaras y videovigilancia</p>
+            <div class="service__actions">
+              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Security." target="_blank" rel="noopener">Contratar</a>
+              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Security." target="_blank" rel="noopener">Ver servicio</a>
+            </div>
+          </div>
+        </article>
+        <article class="service">
+          <img class="service__media" src="frames/desktop/frame-0450.webp" alt="Soldadura" loading="lazy">
+          <div class="service__label">
+            <p class="service__name"><b>GSU</b> Solder</p>
+            <p class="service__tagline">Fabricación y soldadura</p>
+            <div class="service__actions">
+              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Solder." target="_blank" rel="noopener">Contratar</a>
+              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Solder." target="_blank" rel="noopener">Ver servicio</a>
+            </div>
+          </div>
+        </article>
+        <article class="service">
+          <img class="service__media" src="frames/desktop/frame-0540.webp" alt="GSU" loading="lazy">
+          <div class="service__label">
+            <p class="service__name"><b>GSU</b> Care</p>
+            <p class="service__tagline">Mantenimiento integral</p>
+            <div class="service__actions">
+              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Care." target="_blank" rel="noopener">Contratar</a>
+              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Care." target="_blank" rel="noopener">Ver servicio</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band" id="contacto" aria-labelledby="cta-band-title">
+      <h2 class="cta-band__title" id="cta-band-title">Hablemos de tu proyecto.</h2>
+      <a class="cta cta--solid" href="mailto:contacto@gsu.com">Contactar ahora.</a>
+    </section>
+  </main>
+
+  <footer class="site-footer micro" id="tienda">
+    <p>Tienda — catálogo de equipos y repuestos, próximamente.<br>© 2026 GSU. Reparación, instalación y mantenimiento de sistemas.</p>
+    <a href="#inicio">Volver al inicio ↑</a>
+  </footer>
+
+  <a id="whatsapp-fab" class="whatsapp-fab" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg class="whatsapp-fab__icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.897 6.481L4 29l7.72-1.865A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm6.845 17.09c-.29.815-1.437 1.494-2.353 1.688-.63.13-1.452.234-4.22-.906-3.542-1.464-5.823-5.06-6.001-5.297-.171-.237-1.44-1.916-1.44-3.655 0-1.74.912-2.594 1.235-2.95.323-.356.706-.445.941-.445.235 0 .47.002.677.012.216.01.507-.082.793.605.29.7.986 2.415 1.072 2.591.086.176.144.382.029.618-.115.235-.172.382-.343.588-.171.206-.36.46-.514.618-.171.176-.35.367-.15.72.2.353.888 1.464 1.907 2.371 1.31 1.168 2.415 1.53 2.768 1.7.353.171.559.147.765-.088.206-.235.882-1.03 1.117-1.383.235-.353.47-.294.793-.176.323.117 2.038.96 2.388 1.135.35.176.583.264.67.412.088.147.088.853-.202 1.667Z"/>
+    </svg>
+  </a>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const FRAME_COUNT = 540;
+      const FRAME_PAD = 4;
+      const LERP_FACTOR = 0.115;
+      const DWELL_WIDTH = 0.038;
+      const DWELL_PEAK = 2.75;
+      const LUT_SIZE = 2400;
+      const MOBILE_QUERY = "(max-width: 780px)";
+      const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
+      const DWELL_CENTERS = [0.0, 0.1725, 0.332, 0.501, 0.694, 0.833, 0.95, 0.985];
+
+      const sequence = document.getElementById("sequence") || document.getElementById("inicio");
+      const stage = document.getElementById("stage");
+      const canvas = document.getElementById("film-canvas");
+      const ctx = canvas.getContext("2d", { alpha: false, desynchronized: true });
+      const heroStill = document.getElementById("hero-still");
+      const whatsappFab = document.getElementById("whatsapp-fab");
+      const serviceCards = Array.from(document.querySelectorAll(".service"));
+      const loader = document.getElementById("loader");
+      const loaderFill = document.getElementById("loader-fill");
+      const loaderCount = document.getElementById("loader-count");
+      const loaderLabel = document.getElementById("loader-label");
+      const telemetryChapter = document.getElementById("telemetry-chapter");
+      const telemetryFrame = document.getElementById("telemetry-frame");
+      const chapters = Array.from(document.querySelectorAll(".chapter"));
+      const reducedMotion = window.matchMedia(REDUCED_QUERY).matches;
+      const mobileMedia = window.matchMedia(MOBILE_QUERY);
+      const frameStores = {
+        desktop: createFrameStore("frames/desktop"),
+        mobile: createFrameStore("frames/mobile")
+      };
+      const chapterVisibility = new WeakMap();
+      let useMobileFrames = mobileMedia.matches;
+      let activeStore = useMobileFrames ? frameStores.mobile : frameStores.desktop;
+      let currentFrame = 0;
+      let targetFrame = 0;
+      let lastDrawn = -1;
+      let pageVisible = true;
+      let rafId = 0;
+      let sequenceTop = 0;
+      let sequenceDistance = 1;
+
+      function createFrameStore(directory) {
+        return {
+          directory,
+          images: new Array(FRAME_COUNT),
+          loaded: new Uint8Array(FRAME_COUNT),
+          promises: new Array(FRAME_COUNT)
+        };
+      }
+
+      function frameUrl(index, store = activeStore) {
+        return `${store.directory}/frame-${String(index + 1).padStart(FRAME_PAD, "0")}.webp`;
+      }
+
+      function setLoaderProgress(ratio) {
+        const safeRatio = Math.max(0, Math.min(1, ratio));
+        loaderFill.style.transform = `scaleX(${safeRatio})`;
+        loaderCount.textContent = `${String(Math.round(safeRatio * 100)).padStart(3, "0")}%`;
+      }
+
+      function loadFrame(index, store = activeStore, retries = 1) {
+        if (store.loaded[index]) return Promise.resolve(store.images[index]);
+        if (store.promises[index]) return store.promises[index];
+
+        store.promises[index] = new Promise((resolve) => {
+          const attempt = (remaining) => {
+            const image = new Image();
+            store.images[index] = image;
+            image.decoding = "async";
+            image.onload = () => {
+              store.loaded[index] = 1;
+              resolve(image);
+            };
+            image.onerror = () => {
+              if (remaining > 0) {
+                window.setTimeout(() => attempt(remaining - 1), 140);
+              } else {
+                store.images[index] = null;
+                store.promises[index] = null;
+                resolve(null);
+              }
+            };
+            image.src = frameUrl(index, store);
+          };
+          attempt(retries);
+        });
+        return store.promises[index];
+      }
+
+      async function loadInBatches(indices, size = 8, store = activeStore) {
+        for (let start = 0; start < indices.length; start += size) {
+          const batch = indices.slice(start, start + size);
+          await Promise.all(batch.map((index) => loadFrame(index, store)));
+        }
+      }
+
+      function nearestLoaded(index, store = activeStore) {
+        if (store.loaded[index]) return index;
+        for (let distance = 1; distance < FRAME_COUNT; distance += 1) {
+          const before = index - distance;
+          const after = index + distance;
+          if (before >= 0 && store.loaded[before]) return before;
+          if (after < FRAME_COUNT && store.loaded[after]) return after;
+        }
+        return -1;
+      }
+
+      function resizeCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const width = Math.round(stage.clientWidth * dpr);
+        const height = Math.round(stage.clientHeight * dpr);
+        if (canvas.width !== width || canvas.height !== height) {
+          canvas.width = width;
+          canvas.height = height;
+          lastDrawn = -1;
+        }
+      }
+
+      function updateSequenceMetrics() {
+        const rect = sequence.getBoundingClientRect();
+        sequenceTop = window.scrollY + rect.top;
+        sequenceDistance = Math.max(1, rect.height - window.innerHeight);
+      }
+
+      function drawFrame(index) {
+        const resolved = nearestLoaded(Math.max(0, Math.min(FRAME_COUNT - 1, index)));
+        if (resolved < 0 || resolved === lastDrawn) return;
+        const image = activeStore.images[resolved];
+        if (!image || !image.naturalWidth) return;
+
+        const width = canvas.width;
+        const height = canvas.height;
+        ctx.fillStyle = "#0A2342";
+        ctx.fillRect(0, 0, width, height);
+
+        const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+        const drawWidth = image.naturalWidth * scale;
+        const drawHeight = image.naturalHeight * scale;
+        const x = (width - drawWidth) / 2;
+        const y = (height - drawHeight) / 2;
+
+        ctx.drawImage(image, x, y, drawWidth, drawHeight);
+        lastDrawn = resolved;
+      }
+
+      const rawAtEffective = new Float64Array(LUT_SIZE + 1);
+
+      function buildDwellLut() {
+        let total = 0;
+        const density = new Float64Array(LUT_SIZE + 1);
+        for (let i = 0; i <= LUT_SIZE; i += 1) {
+          const effective = i / LUT_SIZE;
+          let value = 1;
+          for (const center of DWELL_CENTERS) {
+            const delta = (effective - center) / DWELL_WIDTH;
+            value += DWELL_PEAK * Math.exp(-0.5 * delta * delta);
+          }
+          density[i] = value;
+          if (i > 0) total += (density[i - 1] + value) * 0.5;
+          rawAtEffective[i] = total;
+        }
+        for (let i = 0; i <= LUT_SIZE; i += 1) rawAtEffective[i] /= total;
+      }
+
+      function remapProgress(raw) {
+        let low = 0;
+        let high = LUT_SIZE;
+        while (low < high) {
+          const mid = (low + high) >> 1;
+          if (rawAtEffective[mid] < raw) low = mid + 1;
+          else high = mid;
+        }
+        const index = Math.max(1, low);
+        const leftRaw = rawAtEffective[index - 1];
+        const rightRaw = rawAtEffective[index];
+        const span = rightRaw - leftRaw || 1;
+        const mix = (raw - leftRaw) / span;
+        return Math.max(0, Math.min(1, (index - 1 + mix) / LUT_SIZE));
+      }
+
+      function rawScrollProgress() {
+        return Math.max(0, Math.min(1, (window.scrollY - sequenceTop) / sequenceDistance));
+      }
+
+      function updateChapters(effective) {
+        let active = chapters[0];
+        let nearest = Infinity;
+        for (const chapter of chapters) {
+          const center = Number(chapter.dataset.center);
+          const windowSize = Number(chapter.dataset.window);
+          const distance = Math.abs(effective - center);
+          const visible = distance <= windowSize;
+          if (chapterVisibility.get(chapter) !== visible) {
+            chapterVisibility.set(chapter, visible);
+            chapter.classList.toggle("is-visible", visible);
+            chapter.setAttribute("aria-hidden", String(!visible));
+          }
+          if (distance < nearest) {
+            nearest = distance;
+            active = chapter;
+          }
+        }
+        if (telemetryChapter.textContent !== active.dataset.label) {
+          telemetryChapter.textContent = active.dataset.label;
+        }
+      }
+
+      const HERO_HIDE_RAW = 0.015;
+      const WHATSAPP_REVEAL_EFFECTIVE = 0.97;
+
+      function updateHeroStill(raw) {
+        if (!heroStill) return;
+        heroStill.style.opacity = raw < HERO_HIDE_RAW ? "1" : "0";
+      }
+
+      function updateWhatsappFab(effective) {
+        if (!whatsappFab) return;
+        whatsappFab.classList.toggle("is-visible", effective >= WHATSAPP_REVEAL_EFFECTIVE);
+      }
+
+      function updateServiceCards() {
+        if (!serviceCards.length) return;
+        const viewportHeight = window.innerHeight;
+        const revealStart = viewportHeight * 0.96;
+        const revealEnd = viewportHeight * 0.6;
+        serviceCards.forEach((card, index) => {
+          const rect = card.getBoundingClientRect();
+          if (rect.bottom < 0 || rect.top > viewportHeight) return;
+          const columnOffset = index % 2 === 1 ? 46 : 0;
+          const raw = (revealStart - (rect.top + columnOffset)) / (revealStart - revealEnd);
+          const progress = Math.max(0, Math.min(1, raw));
+          card.style.opacity = progress.toFixed(3);
+          card.style.transform = `translateY(${((1 - progress) * 42).toFixed(1)}px)`;
+        });
+      }
+
+      function updateInterface(raw, effective, frame) {
+        document.documentElement.style.setProperty("--frame-progress", raw.toFixed(4));
+        document.documentElement.style.setProperty("--title-wdth", String(Math.round(78 + effective * 24)));
+        telemetryFrame.textContent = `F ${String(frame + 1).padStart(4, "0")} / ${String(FRAME_COUNT).padStart(4, "0")}`;
+        const edge = Math.min(effective, 1 - effective) / 0.08;
+        stage.style.setProperty("--scrim-opacity", String(Math.min(0.82, 0.5 + edge * 0.23)));
+      }
+
+      function dismissLoader() {
+        setLoaderProgress(1);
+        loader.classList.add("is-done");
+        document.body.classList.remove("is-loading");
+        window.setTimeout(() => loader.remove(), 1000);
+      }
+
+      function showLoadError() {
+        loaderLabel.textContent = "Fotogramas no disponibles — recarga la página";
+        loaderCount.textContent = "ERROR";
+        loaderCount.style.color = "var(--signal)";
+        loader.setAttribute("aria-label", "No se pudieron cargar los fotogramas. Recarga la página para intentarlo de nuevo.");
+      }
+
+      function renderReducedPoster(frame) {
+        currentFrame = frame;
+        targetFrame = frame;
+        drawFrame(frame);
+        chapters.forEach((chapter, index) => {
+          const visible = index === 0;
+          chapterVisibility.set(chapter, visible);
+          chapter.classList.toggle("is-visible", visible);
+          chapter.setAttribute("aria-hidden", String(!visible));
+        });
+      }
+
+      function tick() {
+        if (!pageVisible || reducedMotion) return;
+        const raw = rawScrollProgress();
+        const effective = remapProgress(raw);
+        targetFrame = Math.round(effective * (FRAME_COUNT - 1));
+        currentFrame += (targetFrame - currentFrame) * LERP_FACTOR;
+        const frame = Math.round(currentFrame);
+        drawFrame(frame);
+        updateHeroStill(raw);
+        updateWhatsappFab(effective);
+        updateServiceCards();
+        updateChapters(effective);
+        updateInterface(raw, effective, frame);
+        rafId = requestAnimationFrame(tick);
+      }
+
+      async function init() {
+        buildDwellLut();
+        resizeCanvas();
+        updateSequenceMetrics();
+        setLoaderProgress(0.06);
+
+        if (reducedMotion) {
+          const posterFrame = 0;
+          const poster = await loadFrame(posterFrame);
+          if (!poster) {
+            showLoadError();
+            return;
+          }
+          renderReducedPoster(posterFrame);
+          if (whatsappFab) whatsappFab.classList.add("is-visible");
+          serviceCards.forEach((card) => {
+            card.style.opacity = "1";
+            card.style.transform = "none";
+          });
+          dismissLoader();
+          return;
+        }
+
+        const critical = Array.from(new Set([
+          0,
+          ...DWELL_CENTERS.map((center) => Math.round(center * (FRAME_COUNT - 1))),
+          FRAME_COUNT - 1
+        ])).sort((a, b) => a - b);
+
+        const firstFrame = await loadFrame(0);
+        if (firstFrame) {
+          drawFrame(0);
+          setLoaderProgress(0.28);
+        }
+
+        const criticalTail = critical.filter((index) => index !== 0);
+        let prepared = 0;
+        await Promise.all(criticalTail.map(async (index) => {
+          const image = await loadFrame(index);
+          prepared += 1;
+          setLoaderProgress(0.28 + 0.68 * (prepared / criticalTail.length));
+          return image;
+        }));
+
+        const readyFrame = nearestLoaded(0);
+        if (readyFrame < 0) {
+          showLoadError();
+          return;
+        }
+        drawFrame(readyFrame);
+        dismissLoader();
+        tick();
+
+        const remaining = Array.from({ length: FRAME_COUNT }, (_, index) => index)
+          .filter((index) => !critical.includes(index));
+        loadInBatches(remaining);
+      }
+
+      async function swapFrameSet(event) {
+        useMobileFrames = event.matches;
+        activeStore = useMobileFrames ? frameStores.mobile : frameStores.desktop;
+        lastDrawn = -1;
+        resizeCanvas();
+        updateSequenceMetrics();
+
+        const frame = Math.max(0, Math.min(FRAME_COUNT - 1, Math.round(currentFrame)));
+        const image = await loadFrame(frame, activeStore);
+        if (!image) return;
+        drawFrame(frame);
+
+        const byDistance = Array.from({ length: FRAME_COUNT }, (_, index) => index)
+          .sort((a, b) => Math.abs(a - frame) - Math.abs(b - frame));
+        loadInBatches(byDistance, 8, activeStore);
+      }
+
+      window.addEventListener("resize", () => {
+        resizeCanvas();
+        updateSequenceMetrics();
+      }, { passive: true });
+      mobileMedia.addEventListener("change", swapFrameSet);
+      document.addEventListener("visibilitychange", () => {
+        pageVisible = !document.hidden;
+        if (pageVisible && !reducedMotion) {
+          cancelAnimationFrame(rafId);
+          tick();
+        }
+      });
+
+      init();
+    })();
+  </script>
+</body>
+</html>
