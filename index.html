@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="hero-still.webp" media="(min-width: 781px)" fetchpriority="high">
-  <link rel="preload" as="image" href="hero-still-mobile.webp" media="(max-width: 780px)" fetchpriority="high">
+  <link rel="preload" as="image" href="hero-still.webp?v=20260820a" media="(min-width: 781px)" fetchpriority="high">
+  <link rel="preload" as="image" href="hero-still-mobile.webp?v=20260820a" media="(max-width: 780px)" fetchpriority="high">
   <style>
     :root {
       --carbon: #0A2342;
@@ -664,8 +664,8 @@
       <div class="stage" id="stage">
         <canvas id="film-canvas" role="img" aria-label="Recorrido por los sistemas del proyecto conforme se hace scroll"></canvas>
         <picture>
-          <source media="(max-width: 780px)" srcset="hero-still-mobile.webp">
-          <img id="hero-still" class="hero-still" src="hero-still.webp" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
+          <source media="(max-width: 780px)" srcset="hero-still-mobile.webp?v=20260820a">
+          <img id="hero-still" class="hero-still" src="hero-still.webp?v=20260820a" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
         </picture>
         <div class="stage__scrim" aria-hidden="true"></div>
         <div class="stage__grid" aria-hidden="true"></div>
@@ -748,7 +748,7 @@
 
       <div class="services__grid">
         <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0094.webp" alt="Climatización" loading="lazy">
+          <img class="service__media" src="frames/desktop/frame-0094.webp?v=20260820a" alt="Climatización" loading="lazy">
           <div class="service__label">
             <p class="service__name"><b>GSU</b> Climatic</p>
             <p class="service__tagline">Climatización y refrigeración</p>
@@ -759,7 +759,7 @@
           </div>
         </article>
         <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0180.webp" alt="Electricidad" loading="lazy">
+          <img class="service__media" src="frames/desktop/frame-0180.webp?v=20260820a" alt="Electricidad" loading="lazy">
           <div class="service__label">
             <p class="service__name"><b>GSU</b> Electric</p>
             <p class="service__tagline">Instalaciones eléctricas</p>
@@ -770,7 +770,7 @@
           </div>
         </article>
         <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0271.webp" alt="Gasfitería" loading="lazy">
+          <img class="service__media" src="frames/desktop/frame-0271.webp?v=20260820a" alt="Gasfitería" loading="lazy">
           <div class="service__label">
             <p class="service__name"><b>GSU</b> Gasfiter</p>
             <p class="service__tagline">Redes de gas y gasfitería</p>
@@ -781,7 +781,7 @@
           </div>
         </article>
         <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0375.webp" alt="Seguridad" loading="lazy">
+          <img class="service__media" src="frames/desktop/frame-0375.webp?v=20260820a" alt="Seguridad" loading="lazy">
           <div class="service__label">
             <p class="service__name"><b>GSU</b> Security</p>
             <p class="service__tagline">Cámaras y videovigilancia</p>
@@ -792,7 +792,7 @@
           </div>
         </article>
         <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0450.webp" alt="Soldadura" loading="lazy">
+          <img class="service__media" src="frames/desktop/frame-0450.webp?v=20260820a" alt="Soldadura" loading="lazy">
           <div class="service__label">
             <p class="service__name"><b>GSU</b> Solder</p>
             <p class="service__tagline">Fabricación y soldadura</p>
@@ -803,7 +803,7 @@
           </div>
         </article>
         <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0540.webp" alt="GSU" loading="lazy">
+          <img class="service__media" src="frames/desktop/frame-0540.webp?v=20260820a" alt="GSU" loading="lazy">
           <div class="service__label">
             <p class="service__name"><b>GSU</b> Care</p>
             <p class="service__tagline">Mantenimiento integral</p>
@@ -839,6 +839,9 @@
 
       const FRAME_COUNT = 540;
       const FRAME_PAD = 4;
+      // Bump this string whenever frame files change on disk so browsers/CDNs
+      // that cached the old bytes under the same filename are forced to refetch.
+      const ASSET_VERSION = "20260820a";
       const LERP_FACTOR = 0.115;
       const DWELL_WIDTH = 0.038;
       const DWELL_PEAK = 2.75;
@@ -882,7 +885,7 @@
       }
 
       function frameUrl(index, store = activeStore) {
-        return `${store.directory}/frame-${String(index + 1).padStart(FRAME_PAD, "0")}.webp`;
+        return `${store.directory}/frame-${String(index + 1).padStart(FRAME_PAD, "0")}.webp?v=${ASSET_VERSION}`;
       }
 
       function loadFrame(index, store = activeStore, retries = 1) {
