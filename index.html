@@ -12,9 +12,11 @@
   <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&family=Inter:wght@400..700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="hero-still.webp?v=20260820a" media="(min-width: 781px)" fetchpriority="high">
   <link rel="preload" as="image" href="hero-still-mobile.webp?v=20260820a" media="(max-width: 780px)" fetchpriority="high">
+  <link rel="preload" as="image" href="frames/desktop/frame-0001.webp?v=20260820b" media="(min-width: 781px)">
+  <link rel="preload" as="image" href="frames/mobile/frame-0001.webp?v=20260820b" media="(max-width: 780px)">
   <style>
     :root {
       --carbon: #0A2342;
@@ -1141,18 +1143,20 @@
         ])).sort((a, b) => a - b);
 
         const firstFrame = await loadFrame(0);
-        if (firstFrame) drawFrame(0);
+        if (firstFrame) {
+          drawFrame(0);
+        } else {
+          showLoadError();
+        }
+
+        // Go interactive immediately instead of blocking on every critical
+        // frame — nearestLoaded() already falls back gracefully to whatever
+        // is ready while the rest streams in, and hero-still covers the
+        // canvas until the user actually starts scrolling.
+        tick();
 
         const criticalTail = critical.filter((index) => index !== 0);
-        await Promise.all(criticalTail.map((index) => loadFrame(index)));
-
-        const readyFrame = nearestLoaded(0);
-        if (readyFrame < 0) {
-          showLoadError();
-          return;
-        }
-        drawFrame(readyFrame);
-        tick();
+        Promise.all(criticalTail.map((index) => loadFrame(index)));
 
         const remaining = Array.from({ length: FRAME_COUNT }, (_, index) => index)
           .filter((index) => !critical.includes(index));
