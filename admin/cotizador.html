@@ -138,6 +138,7 @@
     background: none; border: none; color: #B0343C; cursor: pointer; font-size: 16px; line-height: 1;
     padding: 2px 6px;
   }
+  table.items .rm-label { display: none; }
   .add-row {
     margin-top: 10px; font-size: 12px; font-weight: 600; color: var(--blue);
     background: none; border: 1px dashed var(--blue); border-radius: 6px; padding: 7px 14px; cursor: pointer;
@@ -156,6 +157,90 @@
   .sign .line { border-top: 1px solid var(--navy); margin-top: 46px; padding-top: 6px; font-size: 11px; color: var(--grafito); }
 
   .footer-note { margin-top: 30px; font-size: 10.5px; color: var(--grafito); text-align: center; }
+
+  /* ---- mobile: ingreso de datos más cómodo ---- */
+  @media screen and (max-width: 640px) {
+    .toolbar {
+      flex-wrap: wrap;
+      padding: 12px 14px;
+      gap: 8px;
+    }
+    .toolbar__title { width: 100%; margin-right: 0; font-size: 13px; }
+    .toolbar button { flex: 1; padding: 11px 10px; font-size: 13px; }
+
+    .sheet {
+      margin: 0;
+      padding: 20px 14px 60px;
+      box-shadow: none;
+    }
+
+    .head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .head__doc { text-align: left; width: 100%; }
+    .head__doc .meta input { width: 110px; }
+
+    h2.section { font-size: 11px; margin: 24px 0 10px; }
+
+    .grid2 { grid-template-columns: 1fr; gap: 14px; }
+    .field label { font-size: 11px; }
+
+    /* inputs a 16px: evita que iOS haga zoom automático al enfocar */
+    input, textarea, select {
+      font-size: 16px !important;
+      padding: 9px 4px;
+    }
+    .head__doc .meta input { font-size: 14px !important; }
+
+    /* tabla de ítems → tarjetas apiladas */
+    table.items, table.items tbody { display: block; width: 100%; }
+    table.items thead { display: none; }
+    table.items tr {
+      display: block;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    table.items td {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: none;
+      padding: 7px 0;
+      width: 100%;
+    }
+    table.items td::before {
+      content: attr(data-label);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--grafito);
+      flex-shrink: 0;
+    }
+    table.items td input { text-align: right; max-width: 60%; }
+    table.items td.subtotal { font-weight: 600; }
+    table.items .rm-cell { justify-content: flex-end; padding-top: 10px; }
+    table.items .rm-cell::before { content: none; }
+    table.items .rm {
+      font-size: 13px; font-weight: 600; color: #B0343C;
+      border: 1px solid #F0C4C4; border-radius: 8px;
+      padding: 8px 14px; min-height: 40px;
+    }
+    table.items .rm-label { display: inline; }
+
+    .add-row { width: 100%; padding: 12px; font-size: 13px; }
+
+    .totals { width: 100%; }
+    .totals input.money { font-size: 16px !important; }
+
+    .sign { grid-template-columns: 1fr; gap: 28px; }
+  }
 
   @media print {
     body { background: #fff; }
@@ -333,11 +418,11 @@ Esta cotización no constituye una boleta ni factura.</textarea>
   function addRow(desc = "", qty = 1, price = 0) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td><input type="text" class="desc" value="${desc}" placeholder="Descripción del trabajo o ítem"></td>
-      <td class="qty"><input type="number" class="qty-in" value="${qty}" min="0" step="1"></td>
-      <td class="num"><input type="number" class="price-in" value="${price}" min="0" step="1"></td>
-      <td class="num subtotal">$0</td>
-      <td><button class="rm" title="Eliminar">×</button></td>
+      <td data-label="Descripción"><input type="text" class="desc" value="${desc}" placeholder="Descripción del trabajo o ítem"></td>
+      <td class="qty" data-label="Cantidad"><input type="number" class="qty-in" value="${qty}" min="0" step="1" inputmode="numeric"></td>
+      <td class="num" data-label="Precio neto unit."><input type="number" class="price-in" value="${price}" min="0" step="1" inputmode="decimal"></td>
+      <td class="num subtotal" data-label="Subtotal">$0</td>
+      <td class="rm-cell"><button class="rm" title="Eliminar ítem">×<span class="rm-label"> Quitar</span></button></td>
     `;
     itemsBody.appendChild(tr);
     wireRow(tr);
