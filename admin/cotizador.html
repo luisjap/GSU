@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cotizador — GSU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&family=Inter:wght@400..700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A2342;
+    --blue: #0057B8;
+    --grafito: #4B4F54;
+    --paper: #FFFFFF;
+    --line: #D8DCE1;
+    --bg: #F4F6F8;
+    --display: "Montserrat", "Arial Narrow", system-ui, sans-serif;
+    --data: "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--data);
+    color: var(--navy);
+    background: var(--bg);
+  }
+
+  /* ---- gate de acceso ---- */
+  #gate {
+    position: fixed; inset: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--navy);
+  }
+  #gate .box {
+    background: var(--paper); border-radius: 12px; padding: 36px 32px;
+    width: 100%; max-width: 320px; text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  }
+  #gate img { height: 32px; margin-bottom: 18px; }
+  #gate h1 { font-family: var(--display); font-size: 15px; margin: 0 0 18px; color: var(--navy); }
+  #gate input {
+    width: 100%; font-family: var(--data); font-size: 14px; padding: 10px 12px;
+    border: 1px solid var(--line); border-radius: 8px; text-align: center;
+    margin-bottom: 12px; box-sizing: border-box;
+  }
+  #gate input:focus { outline: none; border-color: var(--blue); }
+  #gate button {
+    width: 100%; font-family: var(--data); font-weight: 600; font-size: 14px;
+    padding: 10px 12px; border-radius: 8px; border: none;
+    background: var(--blue); color: #fff; cursor: pointer;
+  }
+  #gate button:hover { filter: brightness(1.1); }
+  #gate .err { color: #B0343C; font-size: 12px; margin-top: 10px; min-height: 16px; }
+  #app { display: none; }
+
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 24px;
+    background: var(--navy);
+    color: #fff;
+  }
+  .toolbar__title { font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: .02em; margin-right: auto; }
+  .toolbar button {
+    font-family: var(--data);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.35);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+  .toolbar button.primary { background: var(--blue); border-color: var(--blue); }
+  .toolbar button:hover { filter: brightness(1.12); }
+
+  .sheet {
+    max-width: 800px;
+    margin: 28px auto 80px;
+    background: var(--paper);
+    padding: 48px;
+    box-shadow: 0 8px 30px rgba(10,35,66,.12);
+  }
+
+  .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; border-bottom: 3px solid var(--navy); padding-bottom: 20px; margin-bottom: 24px; }
+  .head img { height: 40px; width: auto; display: block; margin-bottom: 10px; }
+  .head__company { font-size: 12px; line-height: 1.6; color: var(--grafito); }
+  .head__doc { text-align: right; }
+  .head__doc h1 { font-family: var(--display); font-size: 20px; margin: 0 0 6px; color: var(--blue); }
+  .head__doc .meta { font-size: 12px; color: var(--grafito); line-height: 1.7; }
+  .head__doc .meta input { width: 130px; }
+
+  h2.section {
+    font-family: var(--display);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--blue);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+    margin: 28px 0 12px;
+  }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+  .field { font-size: 13px; }
+  .field label { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--grafito); margin-bottom: 3px; }
+  input, textarea {
+    font-family: var(--data);
+    font-size: 13px;
+    color: var(--navy);
+    border: none;
+    border-bottom: 1px solid var(--line);
+    padding: 4px 2px;
+    width: 100%;
+    background: transparent;
+  }
+  input:focus, textarea:focus { outline: none; border-bottom-color: var(--blue); }
+  textarea { resize: vertical; font-family: var(--data); line-height: 1.55; }
+
+  table.items { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  table.items th {
+    text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--grafito); border-bottom: 2px solid var(--navy); padding: 6px 6px;
+  }
+  table.items td { border-bottom: 1px solid var(--line); padding: 8px 6px; font-size: 13px; vertical-align: top; }
+  table.items td.num, table.items th.num { text-align: right; width: 110px; }
+  table.items td.qty, table.items th.qty { text-align: right; width: 70px; }
+  table.items input { text-align: left; }
+  table.items td.num input, table.items td.qty input { text-align: right; }
+  table.items .rm {
+    background: none; border: none; color: #B0343C; cursor: pointer; font-size: 16px; line-height: 1;
+    padding: 2px 6px;
+  }
+  .add-row {
+    margin-top: 10px; font-size: 12px; font-weight: 600; color: var(--blue);
+    background: none; border: 1px dashed var(--blue); border-radius: 6px; padding: 7px 14px; cursor: pointer;
+  }
+
+  .totals { margin-top: 16px; margin-left: auto; width: 280px; }
+  .totals .row { display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0; }
+  .totals .row.total { font-family: var(--display); font-weight: 700; font-size: 16px; color: var(--blue); border-top: 2px solid var(--navy); margin-top: 4px; padding-top: 10px; }
+  .totals input.money { text-align: right; width: 110px; }
+
+  .terms { font-size: 11.5px; line-height: 1.7; color: var(--grafito); }
+  .terms textarea { width: 100%; min-height: 120px; font-size: 11.5px; line-height: 1.7; border: 1px solid var(--line); padding: 10px; border-radius: 6px; }
+
+  .sign { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+  .sign div { text-align: center; }
+  .sign .line { border-top: 1px solid var(--navy); margin-top: 46px; padding-top: 6px; font-size: 11px; color: var(--grafito); }
+
+  .footer-note { margin-top: 30px; font-size: 10.5px; color: var(--grafito); text-align: center; }
+
+  @media print {
+    body { background: #fff; }
+    .toolbar { display: none; }
+    .sheet { box-shadow: none; margin: 0; max-width: 100%; padding: 12mm; }
+    input, textarea { border-bottom-color: transparent; }
+    .rm, .add-row { display: none !important; }
+    @page { size: A4; margin: 12mm; }
+  }
+</style>
+</head>
+<body>
+
+  <div id="gate">
+    <div class="box">
+      <img src="/logo-navy.webp" alt="GSU">
+      <h1>Panel de cotizaciones</h1>
+      <input type="password" id="gate-pass" placeholder="Clave de acceso" autofocus>
+      <button id="gate-btn">Entrar</button>
+      <div class="err" id="gate-err"></div>
+    </div>
+  </div>
+
+  <div id="app">
+  <div class="toolbar">
+    <div class="toolbar__title">GSU · Generador de cotizaciones</div>
+    <button id="btn-new">Nueva cotización (correlativo +1)</button>
+    <button id="btn-print" class="primary">Imprimir / Guardar PDF</button>
+  </div>
+
+  <div class="sheet" id="sheet">
+
+    <div class="head">
+      <div>
+        <img src="/logo-navy.webp" alt="GSU">
+        <div class="head__company">
+          Ingeniería y Mantenimiento<br>
+          Inversiones y Asesorías GSU SpA · RUT: 78.515.436-3<br>
+          Antonio Bellet 193, Of. 302, Providencia<br>
+          contacto@gsu.cl · WhatsApp +56 9 9850 1325
+        </div>
+      </div>
+      <div class="head__doc">
+        <h1>COTIZACIÓN</h1>
+        <div class="meta">
+          N° <input type="text" id="folio" value="0001"><br>
+          Fecha: <input type="date" id="fecha"><br>
+          Válida por: <input type="text" id="validez" value="15 días" style="width:70px">
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section">Datos del cliente</h2>
+    <div class="grid2">
+      <div class="field"><label>Razón social</label><input type="text" placeholder="—"></div>
+      <div class="field"><label>RUT</label><input type="text" placeholder="—"></div>
+      <div class="field"><label>Giro</label><input type="text" placeholder="—"></div>
+      <div class="field"><label>Dirección</label><input type="text" placeholder="—"></div>
+      <div class="field"><label>Comuna</label><input type="text" placeholder="—"></div>
+      <div class="field"><label>Correo</label><input type="text" placeholder="—"></div>
+    </div>
+
+    <h2 class="section">Detalle del trabajo</h2>
+    <table class="items" id="items-table">
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th class="qty">Cant.</th>
+          <th class="num">Precio neto unit.</th>
+          <th class="num">Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="items-body"></tbody>
+    </table>
+    <button class="add-row" id="add-row">+ Agregar ítem</button>
+
+    <div class="totals">
+      <div class="row"><span>Neto</span><input class="money" id="neto" readonly value="$0"></div>
+      <div class="row"><span>IVA (19%)</span><input class="money" id="iva" readonly value="$0"></div>
+      <div class="row total"><span>Total</span><input class="money" id="total-final" readonly value="$0"></div>
+    </div>
+
+    <h2 class="section">Condiciones comerciales</h2>
+    <div class="terms">
+      <textarea id="condiciones">Forma de pago: 50% de anticipo al aceptar esta cotización, 50% restante contra término del trabajo.
+Plazo de ejecución: a coordinar según disponibilidad, se confirma al aceptar esta cotización mediante la Orden de Trabajo correspondiente.
+Garantía: 90 días sobre la mano de obra ejecutada (no cubre desgaste normal, mal uso ni daños posteriores a terceros).
+Materiales: incluidos en el precio salvo que se indique lo contrario en el detalle.
+Esta cotización no constituye una boleta ni factura.</textarea>
+    </div>
+
+    <h2 class="section">Términos y condiciones</h2>
+    <div class="terms">
+      <textarea id="tyc">1. Precios expresados en pesos chilenos (CLP).
+2. Cotización válida por el plazo indicado en el encabezado; vencido ese plazo, los precios pueden ser ajustados.
+3. El inicio de los trabajos queda sujeto a la aceptación formal de esta cotización y, si corresponde, al pago del anticipo acordado.
+4. Cualquier trabajo adicional no contemplado en el detalle anterior será cotizado por separado.
+5. GSU no se hace responsable por daños o fallas preexistentes no informadas previamente por el cliente.</textarea>
+    </div>
+
+    <div class="sign">
+      <div>
+        <div class="line">Aceptado por el cliente — Nombre, RUT y fecha</div>
+      </div>
+      <div>
+        <div class="line">Por GSU — Nombre y fecha</div>
+      </div>
+    </div>
+
+    <div class="footer-note">GSU — Ingeniería y Mantenimiento · RUT 78.515.436-3 · WhatsApp +56 9 9850 1325</div>
+
+  </div>
+  </div>
+
+<script>
+(() => {
+  "use strict";
+
+  // ---- gate de acceso (clave simple, ver README de admin/) ----
+  const GATE_PASS = "gsu2026";
+  const GATE_KEY = "gsu_admin_unlocked";
+  const gate = document.getElementById("gate");
+  const app = document.getElementById("app");
+  const gatePass = document.getElementById("gate-pass");
+  const gateBtn = document.getElementById("gate-btn");
+  const gateErr = document.getElementById("gate-err");
+
+  function unlock() {
+    gate.style.display = "none";
+    app.style.display = "block";
+    sessionStorage.setItem(GATE_KEY, "1");
+  }
+
+  function tryUnlock() {
+    if (gatePass.value === GATE_PASS) {
+      unlock();
+    } else {
+      gateErr.textContent = "Clave incorrecta.";
+      gatePass.value = "";
+      gatePass.focus();
+    }
+  }
+
+  gateBtn.addEventListener("click", tryUnlock);
+  gatePass.addEventListener("keydown", (e) => { if (e.key === "Enter") tryUnlock(); });
+
+  if (sessionStorage.getItem(GATE_KEY) === "1") {
+    unlock();
+  }
+
+  // ---- generador de cotizaciones ----
+  const STORAGE_KEY = "gsu_cotizacion_folio_web";
+  const folioInput = document.getElementById("folio");
+  const fechaInput = document.getElementById("fecha");
+  const itemsBody = document.getElementById("items-body");
+  const netoEl = document.getElementById("neto");
+  const ivaEl = document.getElementById("iva");
+  const totalEl = document.getElementById("total-final");
+
+  const CLP = (n) => "$" + Math.round(n).toLocaleString("es-CL");
+
+  function today() {
+    const d = new Date();
+    return d.toISOString().slice(0, 10);
+  }
+
+  function nextFolio() {
+    const last = parseInt(localStorage.getItem(STORAGE_KEY) || "0", 10);
+    const next = last + 1;
+    localStorage.setItem(STORAGE_KEY, String(next));
+    return String(next).padStart(4, "0");
+  }
+
+  function addRow(desc = "", qty = 1, price = 0) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><input type="text" class="desc" value="${desc}" placeholder="Descripción del trabajo o ítem"></td>
+      <td class="qty"><input type="number" class="qty-in" value="${qty}" min="0" step="1"></td>
+      <td class="num"><input type="number" class="price-in" value="${price}" min="0" step="1"></td>
+      <td class="num subtotal">$0</td>
+      <td><button class="rm" title="Eliminar">×</button></td>
+    `;
+    itemsBody.appendChild(tr);
+    wireRow(tr);
+    recalc();
+  }
+
+  function wireRow(tr) {
+    tr.querySelector(".qty-in").addEventListener("input", recalc);
+    tr.querySelector(".price-in").addEventListener("input", recalc);
+    tr.querySelector(".rm").addEventListener("click", () => { tr.remove(); recalc(); });
+  }
+
+  function recalc() {
+    let neto = 0;
+    itemsBody.querySelectorAll("tr").forEach((tr) => {
+      const qty = parseFloat(tr.querySelector(".qty-in").value) || 0;
+      const price = parseFloat(tr.querySelector(".price-in").value) || 0;
+      const sub = qty * price;
+      tr.querySelector(".subtotal").textContent = CLP(sub);
+      neto += sub;
+    });
+    const iva = neto * 0.19;
+    netoEl.value = CLP(neto);
+    ivaEl.value = CLP(iva);
+    totalEl.value = CLP(neto + iva);
+  }
+
+  document.getElementById("add-row").addEventListener("click", () => addRow());
+  document.getElementById("btn-print").addEventListener("click", () => window.print());
+  document.getElementById("btn-new").addEventListener("click", () => {
+    if (!confirm("¿Iniciar una cotización nueva? Se asignará el siguiente N° correlativo y se borrará el detalle actual.")) return;
+    folioInput.value = nextFolio();
+    fechaInput.value = today();
+    itemsBody.innerHTML = "";
+    addRow();
+    document.querySelectorAll(".grid2 input").forEach((i) => (i.value = ""));
+  });
+
+  // init
+  fechaInput.value = today();
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    folioInput.value = "0001";
+    localStorage.setItem(STORAGE_KEY, "1");
+  } else {
+    folioInput.value = String(parseInt(localStorage.getItem(STORAGE_KEY), 10)).padStart(4, "0");
+  }
+  addRow("", 1, 0);
+})();
+</script>
+
+</body>
+</html>
