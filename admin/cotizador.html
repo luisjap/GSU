@@ -158,7 +158,54 @@
 
   .footer-note { margin-top: 30px; font-size: 10.5px; color: var(--grafito); text-align: center; }
 
-  /* ---- mobile: ingreso de datos más cómodo ---- */
+  /* ---- tablet y celular: tabla de ítems siempre como tarjetas ----
+     a cualquier ancho una tabla de 5 columnas queda apretada para tocar
+     con el dedo, así que esto aplica desde 1024px hacia abajo (todo lo
+     que no sea un monitor/laptop de escritorio) */
+  @media screen and (max-width: 1024px) {
+    table.items, table.items tbody { display: block; width: 100%; }
+    table.items thead { display: none; }
+    table.items tr {
+      display: block;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+    /* etiqueta arriba, campo abajo: nunca se aprietan entre sí sin
+       importar cuán angosta sea la pantalla */
+    table.items td {
+      display: block;
+      border-bottom: none;
+      padding: 7px 0;
+      width: 100%;
+    }
+    table.items td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--grafito);
+      margin-bottom: 4px;
+    }
+    table.items td input { width: 100%; max-width: 100%; text-align: left; }
+    table.items td.subtotal { font-weight: 600; }
+    table.items .rm-cell { display: flex; justify-content: flex-end; padding-top: 6px; }
+    table.items .rm-cell::before { content: none; }
+    table.items .rm {
+      font-size: 13px; font-weight: 600; color: #B0343C;
+      border: 1px solid #F0C4C4; border-radius: 8px;
+      padding: 8px 14px; min-height: 40px;
+    }
+    table.items .rm-label { display: inline; }
+
+    .add-row { width: 100%; padding: 12px; font-size: 13px; }
+  }
+
+  /* ---- solo celulares: todo a una columna, texto más grande ---- */
   @media screen and (max-width: 640px) {
     .toolbar {
       flex-wrap: wrap;
@@ -180,7 +227,6 @@
       gap: 14px;
     }
     .head__doc { text-align: left; width: 100%; }
-    .head__doc .meta input { width: 110px; }
 
     h2.section { font-size: 11px; margin: 24px 0 10px; }
 
@@ -192,54 +238,19 @@
       font-size: 16px !important;
       padding: 9px 4px;
     }
-    .head__doc .meta input { font-size: 14px !important; }
-
-    /* tabla de ítems → tarjetas apiladas */
-    table.items, table.items tbody { display: block; width: 100%; }
-    table.items thead { display: none; }
-    table.items tr {
-      display: block;
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 12px;
-      margin-bottom: 12px;
-    }
-    table.items td {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      border-bottom: none;
-      padding: 7px 0;
-      width: 100%;
-    }
-    table.items td::before {
-      content: attr(data-label);
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--grafito);
-      flex-shrink: 0;
-    }
-    table.items td input { text-align: right; max-width: 60%; }
-    table.items td.subtotal { font-weight: 600; }
-    table.items .rm-cell { justify-content: flex-end; padding-top: 10px; }
-    table.items .rm-cell::before { content: none; }
-    table.items .rm {
-      font-size: 13px; font-weight: 600; color: #B0343C;
-      border: 1px solid #F0C4C4; border-radius: 8px;
-      padding: 8px 14px; min-height: 40px;
-    }
-    table.items .rm-label { display: inline; }
-
-    .add-row { width: 100%; padding: 12px; font-size: 13px; }
+    .head__doc .meta input { width: 110px; font-size: 14px !important; }
 
     .totals { width: 100%; }
     .totals input.money { font-size: 16px !important; }
 
     .sign { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* ---- pantallas muy angostas (celulares chicos, ≤360px) ---- */
+  @media screen and (max-width: 360px) {
+    .sheet { padding: 16px 10px 50px; }
+    .toolbar button { font-size: 12px; padding: 10px 6px; }
+    .head img { height: 32px; }
   }
 
   @media print {
