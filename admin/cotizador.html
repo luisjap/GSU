@@ -320,7 +320,7 @@
         <tr>
           <th>Descripción</th>
           <th class="qty">Cant.</th>
-          <th class="num">Precio neto unit.</th>
+          <th class="num">Precio c/IVA unit.</th>
           <th class="num">Subtotal</th>
           <th></th>
         </tr>
@@ -431,7 +431,7 @@ Esta cotización no constituye una boleta ni factura.</textarea>
     tr.innerHTML = `
       <td data-label="Descripción"><input type="text" class="desc" value="${desc}" placeholder="Descripción del trabajo o ítem"></td>
       <td class="qty" data-label="Cantidad"><input type="number" class="qty-in" value="${qty}" min="0" step="1" inputmode="numeric"></td>
-      <td class="num" data-label="Precio neto unit."><input type="number" class="price-in" value="${price}" min="0" step="1" inputmode="decimal"></td>
+      <td class="num" data-label="Precio c/IVA unit."><input type="number" class="price-in" value="${price}" min="0" step="1" inputmode="decimal"></td>
       <td class="num subtotal" data-label="Subtotal">$0</td>
       <td class="rm-cell"><button class="rm" title="Eliminar ítem">×<span class="rm-label"> Quitar</span></button></td>
     `;
@@ -447,18 +447,21 @@ Esta cotización no constituye una boleta ni factura.</textarea>
   }
 
   function recalc() {
-    let neto = 0;
+    // El precio que se ingresa por ítem ya trae el IVA incluido —
+    // se suma directo como total bruto y de ahí se descuenta el neto.
+    let totalConIva = 0;
     itemsBody.querySelectorAll("tr").forEach((tr) => {
       const qty = parseFloat(tr.querySelector(".qty-in").value) || 0;
       const price = parseFloat(tr.querySelector(".price-in").value) || 0;
       const sub = qty * price;
       tr.querySelector(".subtotal").textContent = CLP(sub);
-      neto += sub;
+      totalConIva += sub;
     });
-    const iva = neto * 0.19;
+    const neto = totalConIva / 1.19;
+    const iva = totalConIva - neto;
     netoEl.value = CLP(neto);
     ivaEl.value = CLP(iva);
-    totalEl.value = CLP(neto + iva);
+    totalEl.value = CLP(totalConIva);
   }
 
   document.getElementById("add-row").addEventListener("click", () => addRow());
