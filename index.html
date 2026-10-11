@@ -203,6 +203,36 @@
       pointer-events: none;
     }
 
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: clamp(18px, 3.4vh, 32px);
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      color: var(--paper);
+      text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
+      opacity: 1;
+      transform: translateX(-50%);
+      transition: opacity 420ms ease;
+      pointer-events: none;
+    }
+
+    .scroll-cue.is-hidden { opacity: 0; }
+
+    .scroll-cue__chevron {
+      width: 18px;
+      height: 18px;
+      animation: scroll-cue-bounce 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scroll-cue-bounce {
+      0%, 100% { transform: translateY(0); opacity: .55; }
+      50% { transform: translateY(7px); opacity: 1; }
+    }
+
     .chapter {
       position: absolute;
       inset: 0;
@@ -681,7 +711,7 @@
                   <span class="reveal"><span>Reparación, Instalación y</span></span>
                   <span class="reveal"><span>mantenimiento.</span></span>
                 </h1>
-                <a class="cta cta--solid" href="#contacto">Contactar ahora.</a>
+                <a class="cta cta--solid" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener">Contactar ahora.</a>
               </div>
             </div>
           </article>
@@ -738,9 +768,16 @@
                 <p class="chapter__eyebrow micro">Servicio 06 / Mantenimiento integral</p>
                 <h2 class="chapter__title reveal"><span>GSU Care</span></h2>
               </div>
-              <a class="cta cta--solid" href="#contacto">Contactar ahora.</a>
+              <a class="cta cta--solid" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener">Contactar ahora.</a>
             </div>
           </article>
+        </div>
+
+        <div class="scroll-cue" id="scroll-cue" aria-hidden="true">
+          <span class="micro">Desliza hacia abajo</span>
+          <svg class="scroll-cue__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
         </div>
       </div>
     </section>
@@ -820,7 +857,7 @@
 
     <section class="cta-band" id="contacto" aria-labelledby="cta-band-title">
       <h2 class="cta-band__title" id="cta-band-title">Hablemos de tu proyecto.</h2>
-      <a class="cta cta--solid" href="mailto:contacto@gsu.cl">Contactar ahora.</a>
+      <a class="cta cta--solid" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener">Contactar ahora.</a>
     </section>
   </main>
 
@@ -857,6 +894,7 @@
       const canvas = document.getElementById("film-canvas");
       const ctx = canvas.getContext("2d", { alpha: false, desynchronized: true });
       const heroStill = document.getElementById("hero-still");
+      const scrollCue = document.getElementById("scroll-cue");
       const whatsappFab = document.getElementById("whatsapp-fab");
       const serviceCards = Array.from(document.querySelectorAll(".service"));
       const chapters = Array.from(document.querySelectorAll(".chapter"));
@@ -890,13 +928,14 @@
         return `${store.directory}/frame-${String(index + 1).padStart(FRAME_PAD, "0")}.webp?v=${ASSET_VERSION}`;
       }
 
-      function loadFrame(index, store = activeStore, retries = 1) {
+      function loadFrame(index, store = activeStore, retries = 1, priority = "auto") {
         if (store.loaded[index]) return Promise.resolve(store.images[index]);
         if (store.promises[index]) return store.promises[index];
 
         store.promises[index] = new Promise((resolve) => {
           const attempt = (remaining) => {
             const image = new Image();
+            image.fetchPriority = priority;
             store.images[index] = image;
             image.decoding = "async";
             image.onload = () => {
@@ -919,10 +958,28 @@
         return store.promises[index];
       }
 
-      async function loadInBatches(indices, size = 8, store = activeStore) {
+      async function loadInBatches(indices, size = 8, store = activeStore, priority = "low") {
         for (let start = 0; start < indices.length; start += size) {
           const batch = indices.slice(start, start + size);
-          await Promise.all(batch.map((index) => loadFrame(index, store)));
+          await Promise.all(batch.map((index) => loadFrame(index, store, 1, priority)));
+        }
+      }
+
+      // The background loader walks the frame list in a fixed order, but a
+      // visitor on a cold cache can scroll past wherever it currently is —
+      // nearestLoaded() then falls back to a far-away frame and the film
+      // looks frozen until the background pass catches up. This keeps a
+      // window of frames around wherever the user actually is loading with
+      // network priority, independent of the background pass's position.
+      let lastPriorityCenter = -1000;
+      function ensurePriorityWindow(center, radius = 24) {
+        if (Math.abs(center - lastPriorityCenter) < 4) return;
+        lastPriorityCenter = center;
+        for (let distance = 0; distance <= radius; distance += 1) {
+          const before = center - distance;
+          const after = center + distance;
+          if (before >= 0) loadFrame(before, activeStore, 1, "high");
+          if (after < FRAME_COUNT) loadFrame(after, activeStore, 1, "high");
         }
       }
 
@@ -1054,8 +1111,9 @@
       const WHATSAPP_REVEAL_EFFECTIVE = 0.97;
 
       function updateHeroStill(raw) {
-        if (!heroStill) return;
-        heroStill.style.opacity = raw < HERO_HIDE_RAW ? "1" : "0";
+        const atTop = raw < HERO_HIDE_RAW;
+        if (heroStill) heroStill.style.opacity = atTop ? "1" : "0";
+        if (scrollCue) scrollCue.classList.toggle("is-hidden", !atTop);
       }
 
       function updateWhatsappFab(effective) {
@@ -1107,6 +1165,7 @@
         const effective = remapProgress(raw);
         targetFrame = Math.round(effective * (FRAME_COUNT - 1));
         currentFrame += (targetFrame - currentFrame) * LERP_FACTOR;
+        ensurePriorityWindow(targetFrame);
         drawFrame(currentFrame);
         updateHeroStill(raw);
         updateWhatsappFab(effective);
@@ -1122,7 +1181,7 @@
 
         if (reducedMotion) {
           const posterFrame = 0;
-          const poster = await loadFrame(posterFrame);
+          const poster = await loadFrame(posterFrame, activeStore, 1, "high");
           if (!poster) {
             showLoadError();
             return;
@@ -1142,7 +1201,7 @@
           FRAME_COUNT - 1
         ])).sort((a, b) => a - b);
 
-        const firstFrame = await loadFrame(0);
+        const firstFrame = await loadFrame(0, activeStore, 1, "high");
         if (firstFrame) {
           drawFrame(0);
         } else {
@@ -1156,7 +1215,7 @@
         tick();
 
         const criticalTail = critical.filter((index) => index !== 0);
-        Promise.all(criticalTail.map((index) => loadFrame(index)));
+        Promise.all(criticalTail.map((index) => loadFrame(index, activeStore, 1, "high")));
 
         const remaining = Array.from({ length: FRAME_COUNT }, (_, index) => index)
           .filter((index) => !critical.includes(index));
@@ -1171,7 +1230,7 @@
         updateSequenceMetrics();
 
         const frame = Math.max(0, Math.min(FRAME_COUNT - 1, Math.round(currentFrame)));
-        const image = await loadFrame(frame, activeStore);
+        const image = await loadFrame(frame, activeStore, 1, "high");
         if (!image) return;
         drawFrame(frame);
 
