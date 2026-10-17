@@ -2034,3 +2034,65 @@ section { position: relative; }
 @keyframes flujo-v { from { transform: translateY(-50%); } to { transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .r26 .red__flujo, .r26 .nodo__v::after { animation: none; } }
 .r26 .nodo { grid-template-rows: auto 1fr; } .r26 .nodo__c { align-content: start; }
+
+/* impermeabilización: despiece de capas en 3D + temporada de lluvias */
+.r26 .imper { padding-bottom: 0 !important; background: #14281A; color: #fff; }
+.r26 .has-banner > .banner + .imp__zona { margin-top: 0; }
+.r26 .imp__zona { padding-block: clamp(56px, 7vw, 100px); }
+.r26 .imp__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
+.r26 .capas { position: relative; height: clamp(360px, 32vw, 500px); display: grid; place-items: center; perspective: 1400px; }
+.r26 .capas__escena { position: relative; width: min(380px, 72%); aspect-ratio: 1; transform: rotateX(58deg) rotateZ(-42deg); transform-style: preserve-3d; }
+.r26 .capa { position: absolute; inset: 0; border-radius: 16px; transform: translateZ(calc(var(--n) * 62px)); transition: transform 1s cubic-bezier(.22, 1, .36, 1), box-shadow 300ms ease, filter 300ms ease; box-shadow: 10px 10px 0 rgba(0, 0, 0, .28); }
+.r26 .imper.off:not(.play) .capa { transform: translateZ(calc(var(--n) * 12px)); }
+.r26 .capa.c1 { background: radial-gradient(circle at 30% 30%, #B5BBC0, #8D949A); background-image: radial-gradient(rgba(0,0,0,.18) 1.2px, transparent 1.4px), linear-gradient(135deg, #B5BBC0, #868D93); background-size: 9px 9px, 100% 100%; }
+.r26 .capa.c2 { background: linear-gradient(135deg, #3A3F44, #22262A); background-image: repeating-linear-gradient(90deg, transparent 0 46px, rgba(167, 214, 155, .55) 46px 50px), linear-gradient(135deg, #3A3F44, #22262A); }
+.r26 .capa.c3 { background: repeating-linear-gradient(0deg, #4E9F3D 0 64px, #438A34 64px 70px); }
+.r26 .capa.c4 { background-image: radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.6px), linear-gradient(135deg, #DDEBD7, #B9D2B0); background-size: 7px 7px, 100% 100%; }
+.r26 .capa.is-on { box-shadow: 10px 10px 0 rgba(0, 0, 0, .28), 0 0 0 4px #A7D69B, 0 0 40px 6px rgba(167, 214, 155, .55); filter: brightness(1.12); }
+.r26 .capas__gotas { position: absolute; inset: 0; pointer-events: none; }
+.r26 .capas__gotas i { position: absolute; top: 0; left: var(--x); width: 6px; height: 11px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: #A7D69B; opacity: 0; animation: gota-capa 2.4s cubic-bezier(.5, 0, .75, 0) infinite; animation-delay: var(--d); }
+@keyframes gota-capa { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: 1; } 55% { transform: translateY(150px); opacity: 1; } 75% { transform: translate(18px, 132px); opacity: .7; } 100% { transform: translate(30px, 150px); opacity: 0; } }
+.r26 .imp__txt h3 { font-size: clamp(26px, 2.8vw, 40px); font-weight: 800; letter-spacing: -.02em; line-height: 1.08; margin: 8px 0 14px; }
+.r26 .imp__deck { font-size: 15.5px; line-height: 1.65; color: #CFE3C9; max-width: 56ch; }
+.r26 .imp__lista { list-style: none; margin: 24px 0 8px; padding: 0; display: grid; gap: 10px; }
+.r26 .imp__lista a { display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: start; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(167, 214, 155, .18); background: rgba(255, 255, 255, .03); color: #fff; text-decoration: none; transition: background 300ms ease, border-color 300ms ease, transform 300ms var(--ease-out); }
+.r26 .imp__lista a:hover, .r26 .imp__lista a:focus-visible { background: rgba(167, 214, 155, .1); border-color: #A7D69B; transform: translateX(6px); outline: none; }
+.r26 .imp__ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: rgba(167, 214, 155, .14); color: #A7D69B; }
+.r26 .imp__lista small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #A7D69B; }
+.r26 .imp__lista b { display: block; font-family: var(--display); font-size: 16px; margin: 2px 0 3px; }
+.r26 .imp__lista a > span:last-child > span { font-size: 14px; line-height: 1.5; color: #CFE3C9; }
+.r26 .temporada { margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: 1fr 1.5fr auto; gap: 20px 28px; align-items: center; padding: 22px 24px; border-radius: 20px; background: #1E3A22; border: 1px solid rgba(167, 214, 155, .2); }
+.r26 .temporada__txt b { display: block; font-family: var(--display); font-size: 19px; font-weight: 800; }
+.r26 .temporada__txt span { font-size: 14px; line-height: 1.5; color: #CFE3C9; }
+.r26 .meses { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
+.r26 .meses span { text-align: center; padding: 10px 0; border-radius: 8px; font: 600 12px var(--mono); color: #9FB89A; background: rgba(255, 255, 255, .05); }
+.r26 .meses .insp { background: #A7D69B; color: #0A2342; }
+.r26 .meses .lluvia { background: #3E7FB0; color: #fff; }
+.r26 .temporada__ley { grid-column: 2; display: flex; gap: 18px; flex-wrap: wrap; font-size: 12.5px; color: #CFE3C9; margin-top: -8px; }
+.r26 .temporada__ley span { display: inline-flex; gap: 6px; align-items: center; }
+.r26 .temporada__ley i { width: 10px; height: 10px; border-radius: 3px; }
+.r26 .temporada__ley .insp { background: #A7D69B; } .r26 .temporada__ley .lluvia { background: #3E7FB0; }
+.r26 .temporada .rbtn { grid-column: 3; grid-row: 1; }
+@container (max-width: 980px) {
+  .r26 .imp__grid { grid-template-columns: 1fr; }
+  .r26 .capas { height: 340px; }
+  .r26 .temporada { grid-template-columns: 1fr; }
+  .r26 .temporada__ley, .r26 .temporada .rbtn { grid-column: auto; grid-row: auto; }
+  .r26 .temporada .rbtn { justify-self: start; }
+}
+@container (max-width: 560px) {
+  .r26 .capas { height: 290px; }
+  .r26 .capa { transform: translateZ(calc(var(--n) * 44px)); }
+  .r26 .meses { grid-template-columns: repeat(6, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .r26 .capas__gotas { display: none; } .r26 .capa { transition: none; } }
+
+/* impermeabilización: video de las capas del techo (reemplaza al despiece en CSS) */
+.r26 .capas-video { position: relative; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 24px; overflow: hidden; background: #0F2416; -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 62%, transparent 100%); }
+.r26 .capas-video video { object-fit: cover; }
+.r26 .imp__lista a:hover .imp__ic, .r26 .imp__lista a:focus-visible .imp__ic { background: #A7D69B; color: #0A2342; }
+.r26 .capas-video { border-radius: 0; background: transparent;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 14%, #000 86%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 14%, #000 86%, transparent);
+  mask-composite: intersect; }

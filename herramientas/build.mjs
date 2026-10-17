@@ -111,6 +111,17 @@ function imgTag(id, { cls = "fill", sizes = "(max-width: 700px) 100vw, 50vw", ea
 }
 const bgUrl = (id) => imagen(id)?.src || "";
 
+/** Video decorativo (contenido/videos.json): se reproduce solo cuando está en pantalla y nunca con "reducir movimiento". */
+function videoTag(id, cls) {
+  const base = `images/ia/${id}`;
+  if (!existe(`${base}.mp4`) || !existe(`${base}-poster-960.webp`)) {
+    pendientes.push({ donde: "Videos", que: id, nota: "Video aún no generado (python3 herramientas/generar_video.py)." });
+    return "";
+  }
+  const v = (f) => Math.round(fs.statSync(path.join(RAIZ, f)).mtimeMs / 1000).toString(36);
+  return `<div class="${cls}"><video class="fill" muted loop playsinline preload="none" aria-hidden="true" data-auto poster="${base}-poster-960.webp?v=${v(`${base}-poster-960.webp`)}">${existe(`${base}.webm`) ? `<source src="${base}.webm?v=${v(`${base}.webm`)}" type="video/webm">` : ""}<source src="${base}.mp4?v=${v(`${base}.mp4`)}" type="video/mp4"></video></div>`;
+}
+
 // ---------- componentes ----------
 
 function banner(s, { rev = false, hero = false, cap = "" } = {}) {
@@ -370,14 +381,43 @@ function seccionServicio(s) {
         </div>
       </section>`;
     }
-    case "impermeabilizacion":
+    case "impermeabilizacion": {
+      // de abajo hacia arriba: losa, sellado, membrana, protección (cada capa corresponde a una capacidad)
+      const porTitulo = (inicio) => caps.find((c) => c.titulo.startsWith(inicio));
+      const capas = [
+        ["Losa y estructura", porTitulo("Diagnóstico"), "Medimos la humedad y ubicamos dónde entra el agua."],
+        ["Sellado de puntos críticos", porTitulo("Tratamiento"), null],
+        ["Membrana impermeable", porTitulo("Impermeabilización"), null],
+        ["Capa de protección", porTitulo("Protección"), null],
+      ].filter(([, c]) => c);
+      const meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
       return `<section ${base}>
         ${banner(s, { rev: true, cap: capInicio(s) })}
-        <div class="wrap">
-          <div class="imper__cards">${caps.map((c) => `<div class="icard"><span class="c">${ico(c.icono)}</span><b>${esc(c.titulo)}</b><p>${esc(c.texto)}</p><a href="${s.slug}.html" class="pill">Ver más</a></div>`).join("")}</div>
-          <div class="imper__split"><div class="t"><h4>Antes de la lluvia,<br>no después.</h4><p>Inspección de cubierta y cotización antes del invierno.</p><a class="rbtn" href="${cotizar(s.slug)}" style="background:#A7D69B;color:#0A2342;justify-self:start">Solicitar cotización →</a></div><div class="p">${imgTag("imper-inspeccion")}</div></div>
+        <div class="imp__zona">
+          <div class="wrap imp__grid">
+            ${videoTag("impermeabilizacion-capas", "capas-video")}
+            <div class="imp__txt">
+              <p class="eyebrow-m" style="color:#A7D69B">${esc(s.division)}</p>
+              <h3>Un sistema por capas, no un parche.</h3>
+              <p class="imp__deck">${esc(s.presentacion)}</p>
+              <ol class="imp__lista">${capas.slice().reverse().map(([nombre, c]) => {
+                const n = capas.findIndex((x) => x[1] === c) + 1;
+                return `<li><a href="${s.slug}.html" data-capa="${n}"><span class="imp__ic">${ico(c.icono)}</span><span><small>${esc(nombre)}</small><b>${esc(c.titulo)}</b><span>${esc(c.texto)}</span></span></a></li>`;
+              }).join("")}</ol>
+              ${botonesServicio({ ...s, boton: "#A7D69B", botonTexto: "#0A2342" }, { claro: true })}
+            </div>
+          </div>
+          <div class="wrap">
+            <div class="temporada">
+              <div class="temporada__txt"><b>Antes de la lluvia, no después.</b><span>En Santiago las lluvias se concentran entre mayo y agosto. Revisar la cubierta en otoño permite intervenir a tiempo.</span></div>
+              <div class="meses" role="img" aria-label="Inspección recomendada de marzo a abril; lluvias de mayo a agosto">${meses.map((m, i) => `<span class="${i === 2 || i === 3 ? "insp" : i >= 4 && i <= 7 ? "lluvia" : ""}">${m}</span>`).join("")}</div>
+              <div class="temporada__ley"><span><i class="insp"></i>Inspección recomendada</span><span><i class="lluvia"></i>Temporada de lluvias</span></div>
+              <a class="rbtn" href="${cotizar(s.slug)}" style="background:#A7D69B;color:#0A2342">Agendar inspección →</a>
+            </div>
+          </div>
         </div>
       </section>`;
+    }
     case "soldadura":
       return `<section ${base}>
         ${banner(s, { cap: capInicio(s) })}

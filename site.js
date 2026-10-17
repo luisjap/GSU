@@ -81,6 +81,23 @@
     });
   });
 
+  // videos decorativos: se reproducen solo en pantalla y nunca con "reducir movimiento"
+  const videos = document.querySelectorAll("video[data-auto]");
+  if (videos.length && !reducedMotion && hasIO) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const v = e.target;
+        if (e.isIntersecting) {
+          if (v.preload === "none") v.preload = "auto";
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { rootMargin: "200px 0px" });
+    videos.forEach((v) => io.observe(v));
+  }
+
   // las flechas solo se muestran si el carrusel tiene tarjetas fuera de la vista
   const revisarFlechas = () => {
     document.querySelectorAll(".r26 .arrows").forEach((arr) => {
