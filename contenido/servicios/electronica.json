@@ -1,0 +1,128 @@
+{
+  "nombre": "Electrónica",
+  "nombreCorto": "Electrónica",
+  "titulo": "Electrónica",
+  "division": "GSU Electrónica",
+  "color": "#8B5CF6",
+  "tinte": "#C4B5FD",
+  "colorTexto": "#FFFFFF",
+  "boton": "#6D28D9",
+  "botonTexto": "#FFFFFF",
+  "claro": "#C4B5FD",
+  "banner": {
+    "silabas": [
+      "Electró",
+      "nica"
+    ],
+    "frase": [
+      "Diagnóstico",
+      "a nivel de",
+      "componente"
+    ],
+    "imagen": "electronica-banner",
+    "imagenLetras": "electronica-letras"
+  },
+  "seo": {
+    "titulo": "Electrónica: diagnóstico y reparación · GSU",
+    "descripcion": "Revisión, diagnóstico, instalación y mantenimiento de componentes y sistemas electrónicos y de control en la Región Metropolitana."
+  },
+  "resumen": "Diagnóstico, reparación de componentes y sistemas de control.",
+  "deck": "Diagnóstico, reparación y mantención de equipos electrónicos y sistemas de control.",
+  "presentacion": "Prestamos apoyo técnico en la revisión, diagnóstico, instalación y mantenimiento de componentes y sistemas electrónicos. El alcance se define según el tipo de equipo, la naturaleza de la falla y la viabilidad técnica de la intervención.",
+  "trabajos": [
+    "Revisión y diagnóstico",
+    "Reparación de componentes",
+    "Instalación",
+    "Mantenimiento de equipos",
+    "Sistemas de control"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Tengo un equipo que falló",
+      "texto": "Un equipo electrónico dejó de funcionar o funciona de forma intermitente.",
+      "puntos": [
+        "Diagnóstico técnico del equipo",
+        "Reparación de componentes",
+        "Revisión antes de entregar"
+      ]
+    },
+    {
+      "titulo": "Necesito mantención de mis equipos",
+      "texto": "Quiero evitar que mis equipos fallen en el peor momento.",
+      "puntos": [
+        "Revisión periódica programada",
+        "Mantención de sistemas de control",
+        "Informe técnico por equipo"
+      ]
+    },
+    {
+      "titulo": "No sé si reparar o reemplazar",
+      "texto": "No sé si conviene reparar el equipo o cambiarlo.",
+      "puntos": [
+        "Diagnóstico técnico",
+        "Evaluación del costo de reparación",
+        "Recomendación técnica clara"
+      ]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Diagnóstico electrónico",
+      "texto": "Identificación de la falla antes de intervenir el equipo.",
+      "icono": "lupa"
+    },
+    {
+      "titulo": "Reparación de componentes",
+      "texto": "Placas, componentes y módulos electrónicos.",
+      "icono": "chip"
+    },
+    {
+      "titulo": "Mantención de equipos",
+      "texto": "Revisión periódica para prevenir fallas en equipos críticos.",
+      "icono": "reloj"
+    },
+    {
+      "titulo": "Sistemas de control",
+      "texto": "Mantención de sistemas de control y automatización.",
+      "icono": "control"
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Decisión informada",
+      "texto": "Sabes qué falla y cuánto cuesta repararla antes de decidir."
+    },
+    {
+      "titulo": "Menos reemplazos",
+      "texto": "Reparar a nivel de componente puede evitar cambiar el equipo completo."
+    },
+    {
+      "titulo": "Sistemas que siguen operando",
+      "texto": "La mantención de controles y automatismos previene detenciones."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Reparan o solo diagnostican?",
+      "respuesta": "Hacemos ambas cosas: diagnóstico y, cuando es técnicamente viable, reparación del equipo."
+    },
+    {
+      "pregunta": "¿Qué pasa si el equipo no tiene reparación?",
+      "respuesta": "Te damos una recomendación técnica clara antes de que decidas."
+    },
+    {
+      "pregunta": "¿Hacen mantención de sistemas de control?",
+      "respuesta": "Sí, incluye mantención preventiva de sistemas de control y automatización."
+    },
+    {
+      "pregunta": "¿Atienden equipos industriales y domésticos?",
+      "respuesta": "Evaluamos cada caso según el tipo de equipo."
+    }
+  ],
+  "relacionados": [
+    "electricidad",
+    "camaras-de-seguridad",
+    "climatizacion"
+  ],
+  "slug": "electronica"
+}

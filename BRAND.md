@@ -58,7 +58,7 @@ Implementado en `components/Divisions.tsx` (franja de 4 divisiones) y
 | Arreglamos | Diagnosticamos e implementamos soluciones |
 | Maestro | Técnico especialista |
 | Hacemos de todo / todo en uno | Soluciones integrales para infraestructura técnica |
-| Presupuesto / cotización | Propuesta técnica |
+| Presupuesto | Cotización (en botones: "Solicitar cotización"); el documento entregado es la propuesta técnica |
 | Trabajo terminado | Proyecto entregado |
 | Aire acondicionado (como categoría pública) | Climatización y Ventilación |
 
@@ -112,9 +112,10 @@ caricaturescos (lineales, grosor uniforme).
 
 ### Iconografía
 
-Lucide React, lineales, sin relleno, un solo color por contexto (azul
-corporativo) — sin codificar por color cada división (a diferencia de una
-versión anterior que usaba un color distinto por especialidad).
+Lineales, sin relleno. Desde el rediseño de octubre de 2026 cada servicio
+tiene un color propio, usado solo dentro de su sección (botones, íconos,
+banner con la palabra gigante); el resto del sitio sigue en azul marino y azul
+corporativo. Los colores están en `contenido/servicios/*.json`.
 
 ## 8bis. Espaciado, radios y elevación
 

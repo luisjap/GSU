@@ -1,12 +1,21 @@
 {
-  "name": "gsu",
-  "version": "3.0.0",
-  "description": "GSU — Ingeniería y Mantenimiento. Sitio scroll-driven de una sola página.",
+  "name": "gsu-sitio",
   "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "start": "serve -l ${PORT:-8080} ."
+    "start": "node server.mjs",
+    "build": "node herramientas/build.mjs",
+    "build:revision": "node herramientas/build.mjs --revision",
+    "imagenes": "python3 herramientas/generar_imagenes.py"
   },
   "dependencies": {
-    "serve": "^14.2.4"
+    "serve-handler": "^6.1.6"
+  },
+  "optionalDependencies": {
+    "nodemailer": "^6.9.16"
   }
 }

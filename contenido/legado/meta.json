@@ -1,0 +1,26 @@
+{
+  "blog": {
+    "titulo": "Blog | GSU Ingeniería y Mantenimiento",
+    "descripcion": "Artículos técnicos sobre climatización, electricidad, gasfitería e impermeabilización, escritos por el equipo técnico de GSU."
+  },
+  "blog-certificacion-sec-instalaciones-electricas": {
+    "titulo": "Qué es la certificación SEC y por qué es obligatoria en instalaciones eléctricas | Blog GSU",
+    "descripcion": "Qué certifica la SEC, quién puede hacerlo y qué pasa si una instalación no está certificada."
+  },
+  "blog-instalador-clase-3-sec-gas": {
+    "titulo": "Instalador Clase 3 SEC: qué significa para tu instalación de gas | Blog GSU",
+    "descripcion": "Qué autoriza esta licencia y por qué importa al momento de instalar o certificar artefactos a gas."
+  },
+  "blog-mantencion-preventiva-climatizacion": {
+    "titulo": "Cuándo hacer mantención preventiva a tu sistema de climatización | Blog GSU",
+    "descripcion": "Señales que indican que tu equipo necesita revisión, y por qué conviene adelantarse a la falla."
+  },
+  "blog-senales-impermeabilizar-techo": {
+    "titulo": "Señales de que tu techo necesita impermeabilización | Blog GSU",
+    "descripcion": "Cómo identificar a tiempo un problema de filtraciones, antes de que dañe la estructura."
+  },
+  "cookies": {
+    "titulo": "Política de Cookies | GSU Ingeniería y Mantenimiento",
+    "descripcion": "Política de Cookies de GSU Ingeniería y Mantenimiento."
+  }
+}

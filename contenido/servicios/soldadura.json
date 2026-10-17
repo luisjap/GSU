@@ -1,0 +1,129 @@
+{
+  "nombre": "Soldadura",
+  "nombreCorto": "Soldadura",
+  "titulo": "Soldadura y estructuras metálicas",
+  "division": "GSU Soldadura",
+  "color": "#F26A21",
+  "tinte": "#FFE7B0",
+  "colorTexto": "#0A2342",
+  "boton": "#0A2342",
+  "botonTexto": "#FFFFFF",
+  "claro": "#F26A21",
+  "banner": {
+    "silabas": [
+      "Solda",
+      "dura"
+    ],
+    "frase": [
+      "Uniones",
+      "que sostienen",
+      "la operación"
+    ],
+    "imagen": "soldadura-banner",
+    "bloque": "#0A2342",
+    "imagenLetras": "soldadura-letras"
+  },
+  "seo": {
+    "titulo": "Soldadura y estructuras metálicas · GSU",
+    "descripcion": "Trabajos de soldadura, fabricación de elementos metálicos, reparación de estructuras y mantenimiento en la Región Metropolitana."
+  },
+  "resumen": "Uniones, estructuras, rejas, portones y reparaciones.",
+  "deck": "Fabricación, reparación y unión de estructuras metálicas ejecutadas con procedimientos técnicos y foco en seguridad.",
+  "presentacion": "Realizamos trabajos de soldadura y fabricación de elementos metálicos según las necesidades de cada proyecto. Los servicios pueden incluir uniones y reparaciones de estructuras, fabricación de piezas a medida, rejas y portones, y mantenimiento de elementos metálicos, de acuerdo con el alcance definido.",
+  "trabajos": [
+    "Uniones soldadas",
+    "Reparación de estructuras",
+    "Fabricación a medida",
+    "Rejas y portones",
+    "Mantenimiento de elementos metálicos"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Tengo una estructura dañada",
+      "texto": "Una estructura o elemento metálico se dañó y necesita reparación.",
+      "puntos": [
+        "Diagnóstico de la estructura",
+        "Reparación con procedimientos técnicos",
+        "Revisión antes de entregar"
+      ]
+    },
+    {
+      "titulo": "Necesito fabricar una pieza a medida",
+      "texto": "Necesito una estructura o elemento metálico hecho para mi proyecto.",
+      "puntos": [
+        "Evaluación técnica del requerimiento",
+        "Fabricación a medida",
+        "Entrega con control de calidad"
+      ]
+    },
+    {
+      "titulo": "Necesito mantención de elementos metálicos",
+      "texto": "Quiero revisar elementos metálicos expuestos a uso constante.",
+      "puntos": [
+        "Revisión técnica programada",
+        "Mantención preventiva",
+        "Informe técnico del estado"
+      ]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Trabajos de soldadura",
+      "texto": "Uniones metálicas ejecutadas con procedimientos técnicos y foco en seguridad.",
+      "icono": "soldar"
+    },
+    {
+      "titulo": "Fabricación de elementos metálicos",
+      "texto": "Piezas y estructuras metálicas a medida del proyecto.",
+      "icono": "viga"
+    },
+    {
+      "titulo": "Reparación de estructuras",
+      "texto": "Estructuras y componentes metálicos dañados o desgastados.",
+      "icono": "llave"
+    },
+    {
+      "titulo": "Mantenimiento de elementos metálicos",
+      "texto": "Revisión y protección de elementos expuestos a uso constante.",
+      "icono": "reloj"
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Estructuras confiables",
+      "texto": "Uniones hechas con el procedimiento adecuado para cada material y uso."
+    },
+    {
+      "titulo": "Hecho a la medida",
+      "texto": "Piezas y estructuras fabricadas según las dimensiones reales del proyecto."
+    },
+    {
+      "titulo": "En terreno o en taller",
+      "texto": "Evaluamos dónde conviene ejecutar cada trabajo."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Fabrican piezas a medida?",
+      "respuesta": "Sí, fabricamos estructuras y piezas metálicas según el requerimiento del proyecto."
+    },
+    {
+      "pregunta": "¿Reparan estructuras dañadas?",
+      "respuesta": "Sí, evaluamos el daño y aplicamos el procedimiento técnico adecuado."
+    },
+    {
+      "pregunta": "¿Trabajan en terreno o solo en taller?",
+      "respuesta": "Evaluamos cada proyecto para definir si el trabajo se hace en terreno o en taller."
+    },
+    {
+      "pregunta": "¿Hacen mantención preventiva de elementos metálicos?",
+      "respuesta": "Sí, revisamos y mantenemos elementos expuestos a uso constante."
+    }
+  ],
+  "relacionados": [
+    "cercos-electricos",
+    "impermeabilizacion",
+    "mantenimiento-integral"
+  ],
+  "slug": "soldadura"
+}

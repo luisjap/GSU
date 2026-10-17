@@ -1,0 +1,129 @@
+{
+  "nombre": "Climatización",
+  "nombreCorto": "Climatización",
+  "titulo": "Climatización",
+  "division": "GSU Climate",
+  "color": "#1EA7E1",
+  "tinte": "#EEF7FC",
+  "colorTexto": "#0A2342",
+  "boton": "#0B6E9C",
+  "botonTexto": "#FFFFFF",
+  "claro": "#7FD3F7",
+  "banner": {
+    "silabas": [
+      "Climati",
+      "zación"
+    ],
+    "frase": [
+      "Confort",
+      "estable",
+      "todo el año"
+    ],
+    "imagen": "climatizacion-banner",
+    "imagenLetras": "climatizacion-letras"
+  },
+  "seo": {
+    "titulo": "Climatización: instalación y mantención · GSU",
+    "descripcion": "Instalación, mantenimiento preventivo, limpieza técnica y diagnóstico de fallas de equipos de climatización en la Región Metropolitana."
+  },
+  "resumen": "Instalación, mantención preventiva y diagnóstico de equipos.",
+  "deck": "Instalación, mantención y reparación de sistemas de climatización según la carga térmica real de cada espacio.",
+  "presentacion": "Ofrecemos soluciones de instalación, revisión y mantenimiento de sistemas de climatización para contribuir al confort térmico y al funcionamiento adecuado de los equipos. Los servicios pueden contemplar mantenimiento preventivo, limpieza técnica, diagnóstico de fallas y revisión de componentes, según el tipo de sistema.",
+  "trabajos": [
+    "Instalación de equipos",
+    "Mantenimiento preventivo",
+    "Limpieza técnica",
+    "Diagnóstico de fallas",
+    "Revisión de componentes"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Tengo equipos sin mantención regular",
+      "texto": "No sé en qué estado están mis equipos. Consumen mucho o fallan seguido.",
+      "puntos": [
+        "Diagnóstico técnico del estado actual",
+        "Plan de mantención preventiva a medida",
+        "Historial técnico por equipo"
+      ]
+    },
+    {
+      "titulo": "Necesito instalar un sistema nuevo",
+      "texto": "Estoy abriendo un local, renovando instalaciones o reemplazando equipos antiguos.",
+      "puntos": [
+        "Cálculo de carga térmica por zona",
+        "Cotización con alcance definido",
+        "Instalación documentada"
+      ]
+    },
+    {
+      "titulo": "Mi sistema falló o no enfría",
+      "texto": "El equipo no enfría, hace ruido extraño o se apagó solo.",
+      "puntos": [
+        "Diagnóstico del origen de la falla",
+        "Reparación por técnico especialista",
+        "Revisión antes de entregar"
+      ],
+      "whatsapp": "Hola, mi equipo de climatización falló y necesito ayuda."
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Instalación de equipos",
+      "texto": "Montaje de equipos según la carga térmica y las condiciones reales del espacio.",
+      "icono": "aire"
+    },
+    {
+      "titulo": "Mantención preventiva",
+      "texto": "Revisiones programadas que reducen fallas y cuidan la vida útil de los equipos.",
+      "icono": "reloj"
+    },
+    {
+      "titulo": "Diagnóstico de fallas",
+      "texto": "Identificamos el origen del problema antes de intervenir.",
+      "icono": "lupa"
+    },
+    {
+      "titulo": "Optimización de instalaciones",
+      "texto": "Ajustes a instalaciones existentes para mejorar su rendimiento.",
+      "icono": "onda"
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Confort parejo",
+      "texto": "Equipos dimensionados y regulados para cada zona del espacio."
+    },
+    {
+      "titulo": "Equipos que duran más",
+      "texto": "La limpieza y revisión periódica evitan desgaste y fallas evitables."
+    },
+    {
+      "titulo": "Consumo bajo control",
+      "texto": "Un equipo bien mantenido trabaja menos para lograr la misma temperatura."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Hacen mantención sin contrato?",
+      "respuesta": "Sí, puedes solicitar una visita puntual o un plan de mantención periódico."
+    },
+    {
+      "pregunta": "¿Trabajan con cualquier marca de equipo?",
+      "respuesta": "Revisamos el equipo y te indicamos si podemos intervenirlo antes de cotizar."
+    },
+    {
+      "pregunta": "¿Cuánto dura una visita de diagnóstico?",
+      "respuesta": "Depende de la complejidad de la instalación; te lo confirmamos al coordinar la visita."
+    },
+    {
+      "pregunta": "¿Atienden en toda la Región Metropolitana?",
+      "respuesta": "Atendemos en la Región Metropolitana. Indícanos tu comuna al solicitar la cotización."
+    }
+  ],
+  "relacionados": [
+    "electricidad",
+    "mantenimiento-integral",
+    "electronica"
+  ],
+  "slug": "climatizacion"
+}

@@ -1,0 +1,128 @@
+{
+  "nombre": "Cámaras de seguridad y CCTV",
+  "nombreCorto": "Cámaras y CCTV",
+  "titulo": "Cámaras de seguridad y CCTV",
+  "division": "GSU Seguridad",
+  "color": "#E5383B",
+  "tinte": "#FDECEC",
+  "colorTexto": "#FFFFFF",
+  "boton": "#C1121F",
+  "botonTexto": "#FFFFFF",
+  "claro": "#FF8A8C",
+  "banner": {
+    "silabas": [
+      "Cámaras"
+    ],
+    "frase": [
+      "Tu instalación",
+      "a la vista",
+      "desde el celular"
+    ],
+    "imagen": "camaras-de-seguridad-banner",
+    "imagenLetras": "camaras-de-seguridad-letras"
+  },
+  "seo": {
+    "titulo": "Instalación de cámaras de seguridad y CCTV · GSU",
+    "descripcion": "Montaje de cámaras, cableado, configuración de grabadores y visualización remota para casas y empresas en la Región Metropolitana."
+  },
+  "resumen": "Montaje, cableado, grabadores y visualización remota.",
+  "deck": "Soluciones de videovigilancia adaptadas a las características de cada instalación.",
+  "presentacion": "Implementamos soluciones de videovigilancia adaptadas a las características de cada instalación. Los trabajos pueden contemplar el montaje de cámaras, cableado, configuración de grabadores y habilitación de visualización remota, de acuerdo con los equipos, la infraestructura y el alcance contratado.",
+  "trabajos": [
+    "Montaje de cámaras",
+    "Cableado",
+    "Configuración de grabadores",
+    "Visualización remota",
+    "Mantención del sistema"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Quiero instalar cámaras",
+      "texto": "Necesito vigilar accesos, estacionamientos o bodegas.",
+      "puntos": [
+        "Definición de puntos críticos",
+        "Cotización con equipos y alcance",
+        "Instalación y configuración"
+      ]
+    },
+    {
+      "titulo": "Quiero ver mis cámaras desde el celular",
+      "texto": "Tengo cámaras pero no puedo verlas a distancia.",
+      "puntos": [
+        "Revisión del grabador y la red",
+        "Configuración de la visualización remota",
+        "Usuarios y accesos"
+      ]
+    },
+    {
+      "titulo": "Mis cámaras fallan o no graban",
+      "texto": "Hay cámaras sin imagen, cortes de grabación o equipos dañados.",
+      "puntos": [
+        "Diagnóstico de cámaras y grabador",
+        "Reparación o reemplazo de componentes",
+        "Prueba de grabación"
+      ]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Instalación de cámaras",
+      "texto": "Ubicación según puntos críticos y cableado ordenado.",
+      "icono": "camara"
+    },
+    {
+      "titulo": "Visualización remota",
+      "texto": "Configuración de la aplicación y de los usuarios.",
+      "icono": "celular"
+    },
+    {
+      "titulo": "Grabación y almacenamiento",
+      "texto": "Grabador (DVR/NVR) y respaldo de imágenes.",
+      "icono": "grabador"
+    },
+    {
+      "titulo": "Mantención",
+      "texto": "Limpieza, ángulos y revisión de grabación.",
+      "icono": "reloj"
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Ves lo que pasa",
+      "texto": "Accesos y zonas críticas cubiertos desde los ángulos correctos."
+    },
+    {
+      "titulo": "Acceso desde donde estés",
+      "texto": "Visualización remota configurada y probada en terreno."
+    },
+    {
+      "titulo": "Registro disponible",
+      "texto": "Grabación configurada para revisar lo ocurrido cuando lo necesites."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Qué cámaras instalan?",
+      "respuesta": "",
+      "pendiente": "Confirmar marcas y tipos de equipos con que trabaja GSU."
+    },
+    {
+      "pregunta": "¿Puedo ver las cámaras desde el celular?",
+      "respuesta": "Sí, cuando los equipos y la conexión lo permiten, configuramos la visualización remota."
+    },
+    {
+      "pregunta": "¿Pueden trabajar con cámaras que ya tengo?",
+      "respuesta": "Sí, revisamos tus equipos y te indicamos si conviene repararlos, reconfigurarlos o reemplazarlos."
+    },
+    {
+      "pregunta": "¿Pueden instalar un cerco eléctrico en el mismo proyecto?",
+      "respuesta": "Sí, coordinamos cámaras y cerco eléctrico en una sola cotización."
+    }
+  ],
+  "relacionados": [
+    "cercos-electricos",
+    "electronica",
+    "electricidad"
+  ],
+  "slug": "camaras-de-seguridad"
+}

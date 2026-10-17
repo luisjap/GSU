@@ -1,0 +1,128 @@
+{
+  "nombre": "Impermeabilización",
+  "nombreCorto": "Impermeabilización",
+  "titulo": "Impermeabilización",
+  "division": "GSU Impermeabilización",
+  "color": "#4E9F3D",
+  "tinte": "#F4F7F2",
+  "colorTexto": "#FFFFFF",
+  "boton": "#2F6B23",
+  "botonTexto": "#FFFFFF",
+  "claro": "#A7D69B",
+  "banner": {
+    "silabas": [
+      "Impermea",
+      "bilización"
+    ],
+    "frase": [
+      "Techos",
+      "secos,",
+      "operación continua"
+    ],
+    "imagen": "impermeabilizacion-banner",
+    "imagenLetras": "impermeabilizacion-letras"
+  },
+  "seo": {
+    "titulo": "Impermeabilización de techos y terrazas · GSU",
+    "descripcion": "Soluciones para prevenir filtraciones en techumbres, terrazas, muros y otras superficies expuestas al agua en la Región Metropolitana."
+  },
+  "resumen": "Techumbres, terrazas, muros y tratamiento de filtraciones.",
+  "deck": "Protección de cubiertas y superficies con sistemas de impermeabilización evaluados para cada caso.",
+  "presentacion": "Desarrollamos soluciones para prevenir filtraciones y proteger superficies expuestas a la humedad y al agua. Evaluamos las condiciones del área afectada para determinar el tratamiento apropiado en techumbres, terrazas, muros y otras superficies, de acuerdo con las características del proyecto.",
+  "trabajos": [
+    "Techumbres",
+    "Terrazas",
+    "Muros",
+    "Tratamiento de filtraciones",
+    "Diagnóstico de humedad"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Tengo filtraciones en el techo",
+      "texto": "Hay manchas de humedad, goteras u olor a humedad.",
+      "puntos": [
+        "Diagnóstico del origen de la humedad",
+        "Sellado del punto crítico",
+        "Revisión después del trabajo"
+      ]
+    },
+    {
+      "titulo": "Necesito impermeabilizar una cubierta nueva",
+      "texto": "Estoy construyendo o remodelando y quiero proteger la cubierta desde el inicio.",
+      "puntos": [
+        "Evaluación técnica de la superficie",
+        "Instalación del sistema impermeabilizante",
+        "Revisión del trabajo al entregar"
+      ]
+    },
+    {
+      "titulo": "Quiero prevenir filtraciones futuras",
+      "texto": "Mi techo está bien hoy, pero quiero evitar problemas más adelante.",
+      "puntos": [
+        "Revisión preventiva de cubiertas",
+        "Protección de puntos críticos",
+        "Plan de mantención a medida"
+      ]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Impermeabilización de cubiertas",
+      "texto": "Sistemas impermeabilizantes para techos y terrazas.",
+      "icono": "techo"
+    },
+    {
+      "titulo": "Tratamiento de filtraciones",
+      "texto": "Sellado de los puntos donde se origina el ingreso de agua.",
+      "icono": "gota"
+    },
+    {
+      "titulo": "Protección de superficies",
+      "texto": "Soluciones para terrazas, losas y muros expuestos a humedad.",
+      "icono": "escudo"
+    },
+    {
+      "titulo": "Diagnóstico de humedad",
+      "texto": "Evaluación técnica del origen de la humedad antes de intervenir.",
+      "icono": "lupa"
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Se trata el origen",
+      "texto": "Buscamos dónde entra el agua, no solo dónde aparece la mancha."
+    },
+    {
+      "titulo": "Menos daños en interiores",
+      "texto": "Evitar filtraciones protege terminaciones, cielos y equipos."
+    },
+    {
+      "titulo": "Planificado antes del invierno",
+      "texto": "Una inspección a tiempo permite intervenir antes de las lluvias."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Cómo sé si necesito impermeabilizar?",
+      "respuesta": "Manchas de humedad, goteras u olor a humedad son señales habituales; podemos diagnosticarlo en terreno."
+    },
+    {
+      "pregunta": "¿El trabajo tiene garantía?",
+      "respuesta": "El alcance y las condiciones del trabajo se detallan en la cotización antes de iniciar."
+    },
+    {
+      "pregunta": "¿Trabajan en techos inclinados y planos?",
+      "respuesta": "Sí, evaluamos cada tipo de cubierta según su condición."
+    },
+    {
+      "pregunta": "¿Cuánto dura el proceso?",
+      "respuesta": "Depende de la superficie y el estado del techo; te lo indicamos en la cotización."
+    }
+  ],
+  "relacionados": [
+    "gasfiteria",
+    "mantenimiento-integral",
+    "soldadura"
+  ],
+  "slug": "impermeabilizacion"
+}

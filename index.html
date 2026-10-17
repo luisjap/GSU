@@ -4,1274 +4,352 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0A2342">
-  <meta name="description" content="GSU — Reparación, instalación y mantenimiento de sistemas de climatización, eléctricos, hidráulicos, seguridad y estructuras.">
-  <title>GSU — Reparación, instalación y mantenimiento</title>
+  <title>GSU Ingeniería y Mantenimiento · Región Metropolitana</title>
+  <meta name="description" content="Electricidad, climatización, gasfitería, impermeabilización, soldadura, electrónica, cercos eléctricos, cámaras de seguridad y mantenimiento para hogares y empresas. Solicita tu cotización.">
+  <link rel="canonical" href="https://gsu.cl/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GSU Ingeniería y Mantenimiento">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="GSU Ingeniería y Mantenimiento · Región Metropolitana">
+  <meta property="og:description" content="Electricidad, climatización, gasfitería, impermeabilización, soldadura, electrónica, cercos eléctricos, cámaras de seguridad y mantenimiento para hogares y empresas. Solicita tu cotización.">
+  <meta property="og:url" content="https://gsu.cl/">
+  <meta property="og:image" content="https://gsu.cl/images/ia/inicio-hero-960.webp?v=tn2icj">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicons/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="favicons/favicon-16.png" sizes="16x16" type="image/png">
   <link rel="icon" href="favicons/icon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&family=Inter:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="hero-still.webp?v=20260820c" media="(min-width: 781px)" fetchpriority="high">
-  <link rel="preload" as="image" href="hero-still-mobile.webp?v=20260820a" media="(max-width: 780px)" fetchpriority="high">
-  <link rel="preload" as="image" href="frames/desktop/frame-0001.webp?v=20260820b" media="(min-width: 781px)">
-  <link rel="preload" as="image" href="frames/mobile/frame-0001.webp?v=20260820b" media="(max-width: 780px)">
-  <style>
-    :root {
-      --carbon: #0A2342;
-      --carbon-soft: #123059;
-      --paper: #FFFFFF;
-      --alloy: #9AA3AD;
-      --track: #3A5A82;
-      --heritage: #0057B8;
-      --signal: #0057B8;
-      --petrol: #0A2342;
-      --grafito: #4B4F54;
-      --display: "Montserrat", "Arial Narrow", system-ui, sans-serif;
-      --data: "Inter", system-ui, sans-serif;
-      --gutter: clamp(20px, 4.2vw, 72px);
-      --ease-out: cubic-bezier(.22, 1, .36, 1);
-      --line: rgba(255, 255, 255, .17);
-      --frame-progress: 0;
-      --title-wdth: 82;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html {
-      background: var(--carbon);
-      color: var(--paper);
-      font-family: var(--display);
-      scroll-behavior: auto;
-    }
-
-    body {
-      margin: 0;
-      min-width: 320px;
-      background: var(--carbon);
-      color: var(--paper);
-      overflow-x: clip;
-    }
-
-    a { color: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    :focus-visible { outline: 2px solid var(--heritage); outline-offset: 5px; }
-
-    #servicios, #tienda, #contacto { scroll-margin-top: 90px; }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .micro {
-      font-family: var(--data);
-      font-size: 10px;
-      font-weight: 500;
-      line-height: 1.5;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-
-    .site-header {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 90;
-      display: flex;
-      align-items: center;
-      gap: clamp(28px, 4vw, 64px);
-      padding: max(16px, env(safe-area-inset-top)) var(--gutter) 12px;
-      pointer-events: none;
-    }
-
-    .site-header__brand {
-      pointer-events: auto;
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .45));
-    }
-
-    .site-header__logo {
-      display: block;
-      height: clamp(22px, 2.6vw, 30px);
-      width: auto;
-    }
-
-    .site-header__nav {
-      pointer-events: auto;
-      display: flex;
-      gap: clamp(18px, 2.4vw, 34px);
-    }
-
-    .site-header__nav a {
-      font-family: var(--data);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--paper);
-      text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      transition: color 200ms ease;
-    }
-
-    .site-header__nav a:hover { color: var(--heritage); }
-
-    .sequence {
-      position: relative;
-      height: 1000vh;
-      background: var(--carbon);
-    }
-
-    .stage {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      height: 100svh;
-      height: calc(var(--app-height, 100svh));
-      overflow: hidden;
-      background: var(--carbon);
-      isolation: isolate;
-    }
-
-    #film-canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .hero-still {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 1;
-      transition: opacity 550ms var(--ease-out);
-      pointer-events: none;
-    }
-
-    .stage__scrim {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(90deg, rgba(10, 35, 66, .68) 0%, rgba(10, 35, 66, .14) 35%, transparent 61%),
-        linear-gradient(0deg, rgba(10, 35, 66, .74) 0%, transparent 36%);
-      opacity: var(--scrim-opacity, .78);
-      transition: opacity 500ms ease;
-      pointer-events: none;
-    }
-
-    .stage__grid {
-      position: absolute;
-      inset: 0 var(--gutter);
-      z-index: 2;
-      background-image: repeating-linear-gradient(
-        90deg,
-        transparent 0,
-        transparent calc(8.333% - 1px),
-        rgba(255, 255, 255, .07) calc(8.333% - 1px),
-        rgba(255, 255, 255, .07) 8.333%
-      );
-      mask-image: linear-gradient(180deg, transparent, black 14%, black 82%, transparent);
-      opacity: .5;
-      pointer-events: none;
-    }
-
-    .chapters {
-      position: absolute;
-      inset: 0;
-      z-index: 4;
-      pointer-events: none;
-    }
-
-    .scroll-cue {
-      position: absolute;
-      left: 50%;
-      bottom: clamp(18px, 3.4vh, 32px);
-      z-index: 5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
-      color: var(--paper);
-      text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
-      opacity: 1;
-      transform: translateX(-50%);
-      transition: opacity 420ms ease;
-      pointer-events: none;
-    }
-
-    .scroll-cue.is-hidden { opacity: 0; }
-
-    .scroll-cue__chevron {
-      width: 18px;
-      height: 18px;
-      animation: scroll-cue-bounce 1.8s ease-in-out infinite;
-    }
-
-    @keyframes scroll-cue-bounce {
-      0%, 100% { transform: translateY(0); opacity: .55; }
-      50% { transform: translateY(7px); opacity: 1; }
-    }
-
-    .chapter {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      align-content: center;
-      column-gap: clamp(10px, 1.2vw, 20px);
-      padding: 96px var(--gutter) 104px;
-      visibility: hidden;
-    }
-
-    .chapter.is-visible { visibility: visible; }
-
-    .chapter__copy {
-      position: relative;
-      align-self: center;
-    }
-
-    .chapter__eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 22px;
-      color: var(--paper);
-    }
-
-    .chapter__eyebrow::before {
-      content: "";
-      width: 26px;
-      height: 2px;
-      background: var(--heritage);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 650ms 100ms var(--ease-out);
-    }
-
-    .chapter.is-visible .chapter__eyebrow::before { transform: scaleX(1); }
-
-    .reveal {
-      overflow: hidden;
-      padding-bottom: .08em;
-    }
-
-    .reveal > span {
-      display: block;
-      transform: translateY(112%);
-      transition: transform 760ms var(--ease-out);
-    }
-
-    .reveal:nth-child(3) > span { transition-delay: 90ms; }
-    .reveal:nth-child(4) > span { transition-delay: 160ms; }
-    .chapter.is-visible .reveal > span { transform: translateY(0); }
-
-    .chapter__title {
-      margin: 0;
-      font-size: clamp(54px, 8.2vw, 132px);
-      font-weight: 760;
-      font-variation-settings: "wdth" var(--title-wdth);
-      letter-spacing: -.068em;
-      line-height: .82;
-      text-transform: uppercase;
-      text-wrap: balance;
-    }
-
-    .chapter__deck {
-      max-width: 32rem;
-      margin: 26px 0 0;
-      font-size: clamp(17px, 1.55vw, 24px);
-      font-weight: 450;
-      line-height: 1.25;
-      letter-spacing: -.025em;
-      text-wrap: balance;
-    }
-
-    .chapter__fact {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 14px;
-      align-items: baseline;
-      margin-top: 32px;
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-      color: var(--alloy);
-      max-width: 30rem;
-    }
-
-    .chapter--hero { align-content: end; }
-    .chapter--hero .chapter__copy { grid-column: 1 / 8; padding-bottom: 8vh; }
-
-    .hero-panel {
-      display: inline-block;
-      max-width: 400px;
-      padding: 26px 30px 30px;
-      background: rgba(6, 9, 12, .58);
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-    }
-
-    .hero-panel .chapter__eyebrow { margin-bottom: 14px; color: var(--alloy); }
-
-    .hero-panel__title {
-      margin: 0 0 22px;
-      font-size: clamp(24px, 3.4vw, 38px);
-      font-weight: 660;
-      line-height: 1.22;
-      letter-spacing: -.01em;
-      text-transform: none;
-    }
-
-    .hero-panel__title .reveal { display: block; padding-bottom: .05em; }
-
-    .chapter--right .chapter__copy { grid-column: 8 / 13; }
-    .chapter--left .chapter__copy { grid-column: 1 / 6; }
-
-    .chapter--index { align-content: center; }
-    .chapter--index .chapter__copy { grid-column: 8 / 13; z-index: 2; }
-
-    .chapter__title--stacked { line-height: 1; }
-    .chapter__title--stacked .reveal { display: block; padding-bottom: .12em; }
-
-    .chapter--security .chapter__copy { grid-column: 1 / 10; margin-top: 8vh; }
-
-    .chapter--final {
-      align-content: end;
-      background: linear-gradient(0deg, rgba(10, 35, 66, .88), rgba(10, 35, 66, 0) 64%);
-    }
-
-    .chapter--final .chapter__copy {
-      grid-column: 1 / 13;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: end;
-      gap: 32px;
-      padding-bottom: 3vh;
-    }
-
-    .chapter--final .chapter__title { max-width: 11ch; }
-
-    .cta {
-      pointer-events: auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      min-width: min(100%, 280px);
-      min-height: 54px;
-      padding: 0 18px;
-      border: 1px solid rgba(255, 255, 255, .56);
-      background: rgba(10, 35, 66, .18);
-      color: var(--paper);
-      font-family: var(--data);
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 250ms ease, background 250ms ease, border-color 250ms ease;
-    }
-
-    .cta::after { content: "→"; font-size: 16px; }
-    .cta:hover { background: var(--paper); border-color: var(--paper); color: var(--carbon); }
-
-    .cta--solid {
-      justify-content: center;
-      gap: 10px;
-      min-width: 200px;
-      background: var(--signal);
-      border-color: var(--signal);
-      color: #fff;
-    }
-
-    .cta--solid::after { content: none; }
-    .cta--solid:hover { background: #fff; border-color: #fff; color: var(--signal); }
-
-    .services {
-      position: relative;
-      z-index: 10;
-      padding: clamp(100px, 13vw, 190px) var(--gutter);
-      background: var(--paper);
-      color: var(--carbon);
-    }
-
-    .services__title {
-      margin: 0 0 clamp(40px, 6vw, 84px);
-      font-size: clamp(40px, 6vw, 84px);
-      font-weight: 780;
-      font-variation-settings: "wdth" 86;
-      letter-spacing: -.06em;
-      line-height: .9;
-      text-transform: uppercase;
-    }
-
-    .services__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: clamp(3px, 0.5vw, 8px);
-    }
-
-    .service {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      background: var(--carbon-soft);
-      opacity: 0;
-      transform: translateY(42px);
-      will-change: opacity, transform;
-    }
-
-    .service__media {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(.9) contrast(1.03);
-      transition: transform 900ms var(--ease-out), filter 500ms ease;
-    }
-
-    .service:hover .service__media { transform: scale(1.05); filter: saturate(1); }
-
-    .service__label {
-      position: absolute;
-      inset: auto 0 0;
-      padding: 34px 16px 16px;
-      background: linear-gradient(0deg, rgba(10, 35, 66, .88) 0%, rgba(10, 35, 66, .4) 62%, transparent 100%);
-      pointer-events: none;
-    }
-
-    .service__name {
-      margin: 0;
-      font-family: var(--display);
-      font-size: clamp(17px, 1.5vw, 22px);
-      font-weight: 740;
-      letter-spacing: -.01em;
-      line-height: 1.1;
-      color: var(--paper);
-    }
-
-    .service__name b {
-      color: var(--heritage);
-      font-weight: 740;
-    }
-
-    .service__tagline {
-      margin: 5px 0 0;
-      font-family: var(--data);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      color: var(--alloy);
-    }
-
-    .service__actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 14px;
-      pointer-events: auto;
-    }
-
-    .service__cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      padding: 0 16px;
-      background: var(--signal);
-      border: 1px solid var(--signal);
-      color: #fff;
-      font-family: var(--data);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 200ms ease, color 200ms ease;
-    }
-
-    .service__cta:hover { background: #fff; color: var(--signal); }
-
-    .service__cta--ghost {
-      min-height: 34px;
-      padding: 0 13px;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, .5);
-      color: var(--paper);
-      font-size: 10px;
-      font-weight: 500;
-    }
-
-    .service__cta--ghost:hover { background: rgba(255, 255, 255, .14); border-color: var(--paper); }
-
-    .cta-band {
-      position: relative;
-      z-index: 10;
-      display: grid;
-      justify-items: center;
-      gap: 28px;
-      padding: clamp(70px, 10vw, 130px) var(--gutter);
-      background: var(--carbon);
-      color: var(--paper);
-      text-align: center;
-    }
-
-    .cta-band__title {
-      margin: 0;
-      max-width: 14ch;
-      font-size: clamp(34px, 5.4vw, 68px);
-      font-weight: 740;
-      font-variation-settings: "wdth" 90;
-      letter-spacing: -.03em;
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
-
-    .whatsapp-fab {
-      position: fixed;
-      right: max(20px, env(safe-area-inset-right));
-      bottom: max(20px, env(safe-area-inset-bottom));
-      z-index: 500;
-      display: grid;
-      place-items: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25d366;
-      color: #fff;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
-      opacity: 0;
-      transform: translateY(16px) scale(.6);
-      pointer-events: none;
-      transition: opacity 480ms var(--ease-out), transform 480ms var(--ease-out);
-    }
-
-    .whatsapp-fab.is-visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: auto;
-      animation: whatsapp-pulse 2.4s ease-out 480ms infinite;
-    }
-
-    .whatsapp-fab:hover { background: #1ebe5a; }
-
-    .whatsapp-fab__icon {
-      width: 28px;
-      height: 28px;
-    }
-
-    @keyframes whatsapp-pulse {
-      0%, 100% { box-shadow: 0 8px 24px rgba(0, 0, 0, .35), 0 0 0 0 rgba(37, 211, 102, .55); }
-      60% { box-shadow: 0 8px 24px rgba(0, 0, 0, .35), 0 0 0 14px rgba(37, 211, 102, 0); }
-    }
-
-    .site-footer {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 28px;
-      padding: 44px var(--gutter) max(44px, env(safe-area-inset-bottom));
-      border-top: 1px solid rgba(255, 255, 255, .14);
-      background: var(--carbon);
-      color: var(--alloy);
-    }
-
-    .site-footer p { margin: 0; max-width: 50rem; line-height: 1.7; }
-    .site-footer a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      text-underline-offset: 4px;
-    }
-
-    @media (max-width: 780px) {
-      :root { --gutter: 20px; }
-
-      .site-header {
-        gap: 16px;
-        min-height: 58px;
-      }
-
-      .site-header__nav { gap: 14px; }
-      .site-header__nav a { font-size: 10px; }
-      .sequence { height: 820vh; }
-
-      .stage__scrim {
-        background:
-          linear-gradient(180deg, rgba(10, 35, 66, .52), transparent 21%),
-          linear-gradient(0deg, rgba(10, 35, 66, .88), transparent 29%);
-      }
-
-      .stage__grid { opacity: .32; }
-
-      .chapter {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        align-content: end;
-        padding: 76px var(--gutter) 100px;
-      }
-
-      .chapter__copy,
-      .chapter--hero .chapter__copy,
-      .chapter--right .chapter__copy,
-      .chapter--left .chapter__copy,
-      .chapter--index .chapter__copy,
-      .chapter--final .chapter__copy {
-        grid-column: 1 / 7;
-      }
-
-      .chapter__eyebrow { margin-bottom: 14px; }
-      .chapter__title { font-size: clamp(52px, 16vw, 82px); line-height: .84; }
-      .chapter__deck { max-width: 24rem; margin-top: 14px; font-size: 17px; }
-      .chapter__fact { margin-top: 16px; }
-
-      .chapter--hero { align-content: end; padding-bottom: 6vh; }
-      .chapter--hero .chapter__copy { padding-bottom: 0; }
-      .hero-panel { max-width: 320px; padding: 20px 22px 24px; }
-      .hero-panel__title { font-size: clamp(21px, 6.4vw, 30px); margin-bottom: 18px; }
-
-      .chapter--final { align-content: end; }
-      .chapter--final .chapter__copy { display: block; }
-      .chapter--final .chapter__title { max-width: 8ch; }
-      .chapter--final .cta { margin-top: 22px; }
-
-      .services { padding-top: 100px; padding-bottom: 100px; }
-      .services__grid { grid-template-columns: 1fr; }
-      .service__label { padding: 26px 12px 12px; }
-      .service__tagline { font-size: 10px; }
-      .service__actions { margin-top: 10px; gap: 6px; }
-      .service__cta { min-height: 34px; padding: 0 12px; font-size: 10px; }
-      .service__cta--ghost { min-height: 28px; padding: 0 10px; font-size: 9px; }
-      .cta-band__title { font-size: 12vw; }
-      .site-footer { grid-template-columns: 1fr; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-      .sequence { height: 100svh; }
-      .chapter:not(.chapter--hero) { display: none; }
-      .chapter--hero { visibility: visible; }
-      .chapter--hero .reveal > span { transform: translateY(0); }
-      .chapter--hero .chapter__eyebrow::before { transform: scaleX(1); }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500..900&family=Inter:wght@400..700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=530e69fa">
+  <link rel="preload" as="image" href="images/ia/inicio-hero-960.webp?v=tn2icj" imagesrcset="images/ia/inicio-hero-480.webp?v=tn2icj 480w, images/ia/inicio-hero-960.webp?v=tn2icj 960w, images/ia/inicio-hero-1600.webp?v=tn2icj 1600w" imagesizes="100vw" fetchpriority="high">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"GSU Ingeniería y Mantenimiento","url":"https://gsu.cl/","telephone":"+56 9 9850 1325","email":"contacto@gsu.cl","logo":"https://gsu.cl/logo-navy.webp","areaServed":{"@type":"AdministrativeArea","name":"Región Metropolitana, Chile"},"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Electricidad","url":"https://gsu.cl/electricidad.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Climatización","url":"https://gsu.cl/climatizacion.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gasfitería y redes sanitarias","url":"https://gsu.cl/gasfiteria.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Impermeabilización","url":"https://gsu.cl/impermeabilizacion.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Soldadura","url":"https://gsu.cl/soldadura.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Electrónica","url":"https://gsu.cl/electronica.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cercos eléctricos y seguridad perimetral","url":"https://gsu.cl/cercos-electricos.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cámaras de seguridad y CCTV","url":"https://gsu.cl/camaras-de-seguridad.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mantenimiento general","url":"https://gsu.cl/mantenimiento-integral.html"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué servicios ofrece GSU?","acceptedAnswer":{"@type":"Answer","text":"Electricidad, climatización, gasfitería y redes sanitarias, impermeabilización, soldadura, electrónica, cercos eléctricos, cámaras de seguridad y CCTV, y mantenimiento general."}},{"@type":"Question","name":"¿En qué comunas o regiones trabaja?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos en la Región Metropolitana. Indícanos tu comuna al solicitar la cotización."}},{"@type":"Question","name":"¿Cómo puedo solicitar una cotización?","acceptedAnswer":{"@type":"Answer","text":"Con el formulario de contacto, por WhatsApp al +56 9 9850 1325 o escribiendo a contacto@gsu.cl."}},{"@type":"Question","name":"¿Es posible contratar varias especialidades para un proyecto?","acceptedAnswer":{"@type":"Answer","text":"Sí. Coordinamos las especialidades necesarias con un solo interlocutor y una sola cotización."}}]}</script>
 </head>
-<body>
-  <header class="site-header" aria-label="Información del sitio">
-    <a class="site-header__brand" href="#inicio"><img class="site-header__logo" src="logo-white.webp" alt="GSU"></a>
+<body id="top">
+  <a class="sr-only" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html"><img class="site-header__logo" src="logo-white.webp" alt="GSU Ingeniería y Mantenimiento" width="100" height="28"></a>
     <nav class="site-header__nav" aria-label="Navegación principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#tienda">Tienda</a>
+      <a href="index.html" aria-current="page">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <div class="has-dropdown">
+        <a href="servicios.html">Servicios</a>
+        <div class="nav-dropdown">
+          <a href="electricidad.html"><span class="dot" style="--c:#FFC72C"></span>Electricidad</a>
+          <a href="climatizacion.html"><span class="dot" style="--c:#1EA7E1"></span>Climatización</a>
+          <a href="gasfiteria.html"><span class="dot" style="--c:#0E9F8E"></span>Gasfitería y redes sanitarias</a>
+          <a href="impermeabilizacion.html"><span class="dot" style="--c:#4E9F3D"></span>Impermeabilización</a>
+          <a href="soldadura.html"><span class="dot" style="--c:#F26A21"></span>Soldadura</a>
+          <a href="electronica.html"><span class="dot" style="--c:#8B5CF6"></span>Electrónica</a>
+          <a href="cercos-electricos.html"><span class="dot" style="--c:#C2D62E"></span>Cercos eléctricos y seguridad perimetral</a>
+          <a href="camaras-de-seguridad.html"><span class="dot" style="--c:#E5383B"></span>Cámaras de seguridad y CCTV</a>
+          <a href="mantenimiento-integral.html"><span class="dot" style="--c:#0057B8"></span>Mantenimiento general</a>
+          <div class="nav-dropdown__foot"><a href="servicios.html">Ver todos los servicios →</a></div>
+        </div>
+      </div>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
+    <a class="site-header__cta" href="contacto.html">Solicitar cotización</a>
+    <button class="site-header__toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </header>
 
-  <main>
-    <section class="sequence" id="inicio" aria-label="Película de obra controlada por scroll">
-      <div class="stage" id="stage">
-        <canvas id="film-canvas" role="img" aria-label="Recorrido por los sistemas del proyecto conforme se hace scroll"></canvas>
-        <picture>
-          <source media="(max-width: 780px)" srcset="hero-still-mobile.webp?v=20260820a">
-          <img id="hero-still" class="hero-still" src="hero-still.webp?v=20260820c" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
-        </picture>
-        <div class="stage__scrim" aria-hidden="true"></div>
-        <div class="stage__grid" aria-hidden="true"></div>
+  <main id="contenido" class="r26">
 
-        <div class="chapters" aria-live="off">
-          <article class="chapter chapter--hero" data-center="0.0" data-window="0.045" data-label="El proyecto">
-            <div class="chapter__copy">
-              <div class="hero-panel">
-                <p class="chapter__eyebrow micro">GSU — Ingeniería y Mantenimiento</p>
-                <h1 class="hero-panel__title">
-                  <span class="reveal"><span>Reparación, Instalación y</span></span>
-                  <span class="reveal"><span>mantenimiento.</span></span>
-                </h1>
-                <a class="cta cta--solid" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener">Contactar ahora.</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="chapter chapter--right" data-center="0.1725" data-window="0.06" data-label="GSU Climatic">
-            <div class="chapter__copy">
-              <p class="chapter__eyebrow micro">Servicio 01 / Climatización</p>
-              <h2 class="chapter__title reveal"><span>GSU Climatic</span></h2>
-              <p class="chapter__deck reveal"><span>Reparación e instalación de equipos HVAC calibrados a cada carga térmica.</span></p>
-              <div class="chapter__fact micro"><span>01</span><span>Mantenimiento preventivo programado</span></div>
-            </div>
-          </article>
-
-          <article class="chapter chapter--left" data-center="0.332" data-window="0.06" data-label="GSU Electric">
-            <div class="chapter__copy">
-              <p class="chapter__eyebrow micro">Servicio 02 / Eléctrico</p>
-              <h2 class="chapter__title reveal"><span>GSU Electric</span></h2>
-              <p class="chapter__deck reveal"><span>Tableros e instalaciones eléctricas certificadas, circuito por circuito.</span></p>
-              <div class="chapter__fact micro"><span>02</span><span>Planos as-built entregados en obra</span></div>
-            </div>
-          </article>
-
-          <article class="chapter chapter--index" data-center="0.501" data-window="0.065" data-label="GSU Gasfiter">
-            <div class="chapter__copy">
-              <p class="chapter__eyebrow micro">Servicio 03 / Gasfitería</p>
-              <h2 class="chapter__title reveal"><span>GSU Gasfiter</span></h2>
-              <p class="chapter__deck reveal"><span>Redes de gas, tuberías y bombeo instalados para presión constante.</span></p>
-            </div>
-          </article>
-
-          <article class="chapter chapter--left chapter--security" data-center="0.694" data-window="0.05" data-label="GSU Security">
-            <div class="chapter__copy">
-              <p class="chapter__eyebrow micro">Servicio 04 / Seguridad y monitoreo</p>
-              <h2 class="chapter__title chapter__title--stacked">
-                <span class="reveal"><span>GSU</span></span>
-                <span class="reveal"><span>Security</span></span>
-              </h2>
-              <p class="chapter__deck reveal"><span>Cámaras, equipos y sistemas de seguridad.</span></p>
-            </div>
-          </article>
-
-          <article class="chapter chapter--left" data-center="0.792" data-window="0.03" data-label="GSU Solder">
-            <div class="chapter__copy">
-              <p class="chapter__eyebrow micro">Servicio 05 / Fabricación y soldadura</p>
-              <h2 class="chapter__title reveal"><span>GSU Solder</span></h2>
-              <p class="chapter__deck reveal"><span>Estructuras metálicas fabricadas y soldadas a la medida del proyecto.</span></p>
-              <div class="chapter__fact micro"><span>05</span><span>Soldadura certificada en obra</span></div>
-            </div>
-          </article>
-
-          <article class="chapter chapter--final" data-center="0.95" data-window="0.05" data-label="GSU Care">
-            <div class="chapter__copy">
-              <div>
-                <p class="chapter__eyebrow micro">Servicio 06 / Mantenimiento integral</p>
-                <h2 class="chapter__title reveal"><span>GSU Care</span></h2>
-              </div>
-              <a class="cta cta--solid" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener">Contactar ahora.</a>
-            </div>
-          </article>
+    <section class="hero">
+      <img class="hero__img" src="images/ia/inicio-hero-960.webp?v=tn2icj" srcset="images/ia/inicio-hero-480.webp?v=tn2icj 480w, images/ia/inicio-hero-960.webp?v=tn2icj 960w, images/ia/inicio-hero-1600.webp?v=tn2icj 1600w" sizes="100vw" alt="" fetchpriority="high" decoding="async">
+      <div class="hero__in wrap">
+        <div>
+          <p class="eyebrow-m" style="color:#7FB2F0">Ingeniería aplicada a la continuidad operacional</p>
+          <h1>Ingeniería y Mantenimiento</h1>
+          <p class="d">Soluciones integrales para instalaciones, infraestructura y mantenimiento. En GSU trabajamos para responder a las necesidades técnicas de nuestros clientes mediante servicios orientados a la seguridad, funcionalidad y conservación de sus espacios.</p>
+          <div class="acts"><a class="rbtn" href="contacto.html" style="background:#fff;color:#0A2342">Solicitar cotización</a><a class="rbtn" href="#servicios" style="border-color:rgba(255,255,255,.5);color:#fff">Conocer nuestros servicios ↓</a></div>
         </div>
+        <form class="qq" action="contacto.html" method="get">
+          <b>Cotización rápida</b>
+          <label for="qq-servicio">Especialidad</label>
+          <select id="qq-servicio" name="servicio"><option value="electricidad">Electricidad</option><option value="climatizacion">Climatización</option><option value="gasfiteria">Gasfitería</option><option value="impermeabilizacion">Impermeabilización</option><option value="soldadura">Soldadura</option><option value="electronica">Electrónica</option><option value="cercos-electricos">Cercos eléctricos</option><option value="camaras-de-seguridad">Cámaras y CCTV</option><option value="mantenimiento-integral">Mantenimiento</option><option value="varias">Varias especialidades</option></select>
+          <label for="qq-comuna">Comuna</label>
+          <input id="qq-comuna" name="comuna" autocomplete="address-level2" placeholder="Ej. Providencia">
+          <button class="rbtn" type="submit">Continuar →</button>
+        </form>
+      </div>
+      <nav class="index wrap" id="servicios" aria-label="Servicios">
+        <a href="#electricidad" style="--c:#FFC72C"><i></i>Electricidad</a>
+        <a href="#climatizacion" style="--c:#1EA7E1"><i></i>Climatización</a>
+        <a href="#gasfiteria" style="--c:#0E9F8E"><i></i>Gasfitería</a>
+        <a href="#impermeabilizacion" style="--c:#4E9F3D"><i></i>Impermeabilización</a>
+        <a href="#soldadura" style="--c:#F26A21"><i></i>Soldadura</a>
+        <a href="#electronica" style="--c:#8B5CF6"><i></i>Electrónica</a>
+        <a href="#cercos-electricos" style="--c:#C2D62E"><i></i>Cercos eléctricos</a>
+        <a href="#camaras-de-seguridad" style="--c:#E5383B"><i></i>Cámaras y CCTV</a>
+        <a href="#mantenimiento-integral" style="--c:#0057B8"><i></i>Mantenimiento</a>
+      </nav>
+    </section>
 
-        <div class="scroll-cue" id="scroll-cue" aria-hidden="true">
-          <span class="micro">Desliza hacia abajo</span>
-          <svg class="scroll-cue__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
+    <nav class="snav" aria-label="Ir a un servicio">
+      <div class="snav__track">
+        <div class="snav__set"><a href="#electricidad" style="--c:#FFC72C;--ct:#0A2342"><i></i>Electricidad</a><a href="#climatizacion" style="--c:#1EA7E1;--ct:#0A2342"><i></i>Climatización</a><a href="#gasfiteria" style="--c:#0E9F8E;--ct:#FFFFFF"><i></i>Gasfitería</a><a href="#impermeabilizacion" style="--c:#4E9F3D;--ct:#FFFFFF"><i></i>Impermeabilización</a><a href="#soldadura" style="--c:#F26A21;--ct:#0A2342"><i></i>Soldadura</a><a href="#electronica" style="--c:#8B5CF6;--ct:#FFFFFF"><i></i>Electrónica</a><a href="#cercos-electricos" style="--c:#C2D62E;--ct:#0A2342"><i></i>Cercos eléctricos</a><a href="#camaras-de-seguridad" style="--c:#E5383B;--ct:#FFFFFF"><i></i>Cámaras y CCTV</a><a href="#mantenimiento-integral" style="--c:#0057B8;--ct:#FFFFFF"><i></i>Mantenimiento</a></div><div class="snav__set" aria-hidden="true"><a href="#electricidad" tabindex="-1" style="--c:#FFC72C;--ct:#0A2342"><i></i>Electricidad</a><a href="#climatizacion" tabindex="-1" style="--c:#1EA7E1;--ct:#0A2342"><i></i>Climatización</a><a href="#gasfiteria" tabindex="-1" style="--c:#0E9F8E;--ct:#FFFFFF"><i></i>Gasfitería</a><a href="#impermeabilizacion" tabindex="-1" style="--c:#4E9F3D;--ct:#FFFFFF"><i></i>Impermeabilización</a><a href="#soldadura" tabindex="-1" style="--c:#F26A21;--ct:#0A2342"><i></i>Soldadura</a><a href="#electronica" tabindex="-1" style="--c:#8B5CF6;--ct:#FFFFFF"><i></i>Electrónica</a><a href="#cercos-electricos" tabindex="-1" style="--c:#C2D62E;--ct:#0A2342"><i></i>Cercos eléctricos</a><a href="#camaras-de-seguridad" tabindex="-1" style="--c:#E5383B;--ct:#FFFFFF"><i></i>Cámaras y CCTV</a><a href="#mantenimiento-integral" tabindex="-1" style="--c:#0057B8;--ct:#FFFFFF"><i></i>Mantenimiento</a></div><div class="snav__set" aria-hidden="true"><a href="#electricidad" tabindex="-1" style="--c:#FFC72C;--ct:#0A2342"><i></i>Electricidad</a><a href="#climatizacion" tabindex="-1" style="--c:#1EA7E1;--ct:#0A2342"><i></i>Climatización</a><a href="#gasfiteria" tabindex="-1" style="--c:#0E9F8E;--ct:#FFFFFF"><i></i>Gasfitería</a><a href="#impermeabilizacion" tabindex="-1" style="--c:#4E9F3D;--ct:#FFFFFF"><i></i>Impermeabilización</a><a href="#soldadura" tabindex="-1" style="--c:#F26A21;--ct:#0A2342"><i></i>Soldadura</a><a href="#electronica" tabindex="-1" style="--c:#8B5CF6;--ct:#FFFFFF"><i></i>Electrónica</a><a href="#cercos-electricos" tabindex="-1" style="--c:#C2D62E;--ct:#0A2342"><i></i>Cercos eléctricos</a><a href="#camaras-de-seguridad" tabindex="-1" style="--c:#E5383B;--ct:#FFFFFF"><i></i>Cámaras y CCTV</a><a href="#mantenimiento-integral" tabindex="-1" style="--c:#0057B8;--ct:#FFFFFF"><i></i>Mantenimiento</a></div><div class="snav__set" aria-hidden="true"><a href="#electricidad" tabindex="-1" style="--c:#FFC72C;--ct:#0A2342"><i></i>Electricidad</a><a href="#climatizacion" tabindex="-1" style="--c:#1EA7E1;--ct:#0A2342"><i></i>Climatización</a><a href="#gasfiteria" tabindex="-1" style="--c:#0E9F8E;--ct:#FFFFFF"><i></i>Gasfitería</a><a href="#impermeabilizacion" tabindex="-1" style="--c:#4E9F3D;--ct:#FFFFFF"><i></i>Impermeabilización</a><a href="#soldadura" tabindex="-1" style="--c:#F26A21;--ct:#0A2342"><i></i>Soldadura</a><a href="#electronica" tabindex="-1" style="--c:#8B5CF6;--ct:#FFFFFF"><i></i>Electrónica</a><a href="#cercos-electricos" tabindex="-1" style="--c:#C2D62E;--ct:#0A2342"><i></i>Cercos eléctricos</a><a href="#camaras-de-seguridad" tabindex="-1" style="--c:#E5383B;--ct:#FFFFFF"><i></i>Cámaras y CCTV</a><a href="#mantenimiento-integral" tabindex="-1" style="--c:#0057B8;--ct:#FFFFFF"><i></i>Mantenimiento</a></div><div class="snav__set" aria-hidden="true"><a href="#electricidad" tabindex="-1" style="--c:#FFC72C;--ct:#0A2342"><i></i>Electricidad</a><a href="#climatizacion" tabindex="-1" style="--c:#1EA7E1;--ct:#0A2342"><i></i>Climatización</a><a href="#gasfiteria" tabindex="-1" style="--c:#0E9F8E;--ct:#FFFFFF"><i></i>Gasfitería</a><a href="#impermeabilizacion" tabindex="-1" style="--c:#4E9F3D;--ct:#FFFFFF"><i></i>Impermeabilización</a><a href="#soldadura" tabindex="-1" style="--c:#F26A21;--ct:#0A2342"><i></i>Soldadura</a><a href="#electronica" tabindex="-1" style="--c:#8B5CF6;--ct:#FFFFFF"><i></i>Electrónica</a><a href="#cercos-electricos" tabindex="-1" style="--c:#C2D62E;--ct:#0A2342"><i></i>Cercos eléctricos</a><a href="#camaras-de-seguridad" tabindex="-1" style="--c:#E5383B;--ct:#FFFFFF"><i></i>Cámaras y CCTV</a><a href="#mantenimiento-integral" tabindex="-1" style="--c:#0057B8;--ct:#FFFFFF"><i></i>Mantenimiento</a></div><div class="snav__set" aria-hidden="true"><a href="#electricidad" tabindex="-1" style="--c:#FFC72C;--ct:#0A2342"><i></i>Electricidad</a><a href="#climatizacion" tabindex="-1" style="--c:#1EA7E1;--ct:#0A2342"><i></i>Climatización</a><a href="#gasfiteria" tabindex="-1" style="--c:#0E9F8E;--ct:#FFFFFF"><i></i>Gasfitería</a><a href="#impermeabilizacion" tabindex="-1" style="--c:#4E9F3D;--ct:#FFFFFF"><i></i>Impermeabilización</a><a href="#soldadura" tabindex="-1" style="--c:#F26A21;--ct:#0A2342"><i></i>Soldadura</a><a href="#electronica" tabindex="-1" style="--c:#8B5CF6;--ct:#FFFFFF"><i></i>Electrónica</a><a href="#cercos-electricos" tabindex="-1" style="--c:#C2D62E;--ct:#0A2342"><i></i>Cercos eléctricos</a><a href="#camaras-de-seguridad" tabindex="-1" style="--c:#E5383B;--ct:#FFFFFF"><i></i>Cámaras y CCTV</a><a href="#mantenimiento-integral" tabindex="-1" style="--c:#0057B8;--ct:#FFFFFF"><i></i>Mantenimiento</a></div>
+      </div>
+      <span class="prog"></span>
+    </nav>
+
+    <section class="svc-sec elec has-banner anim" id="electricidad" data-c="#FFC72C" data-ct="#0A2342">
+        <div class="banner" style="--blk:#FFC72C;--hl:#FFC72C"><div class="banner__photo"><img class="fill" src="images/ia/electricidad-banner-960.webp?v=tn2jx1" srcset="images/ia/electricidad-banner-480.webp?v=tn2jx1 480w, images/ia/electricidad-banner-960.webp?v=tn2jx1 960w, images/ia/electricidad-banner-1600.webp?v=tn2jx1 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Técnico midiendo un tablero eléctrico ordenado" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#FFC72C">GSU Electric</p><h3>Tableros,<br><span>circuitos</span><br>y canalizaciones</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:7;--stroke:#0A2342" data-bg="images/ia/electricidad-letras-960.webp?v=tn2jwq">Electri<br>cidad</div></div></div>
+        <div class="elec__band wrap">
+          <span class="ghost" aria-hidden="true">Capacidades</span>
+          <div class="shead"><div><p class="eyebrow-m" style="color:#FFC72C">Capacidades</p><h3>Energía continua para tu instalación.</h3></div><div class="acts" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="rbtn" href="contacto.html?servicio=electricidad" style="background:#FFC72C;color:#0A2342">Solicitar cotización</a><a class="rbtn" href="electricidad.html" style="border-color:rgba(255,255,255,.45);color:#fff">Ver servicio</a></div></div>
+          <div class="ecards"><a class="ec" href="electricidad.html"><div class="ec__img"><img class="fill" src="images/ia/elec-instalaciones-960.webp?v=tn2jfd" srcset="images/ia/elec-instalaciones-480.webp?v=tn2jfd 480w, images/ia/elec-instalaciones-960.webp?v=tn2jfd 960w, images/ia/elec-instalaciones-1600.webp?v=tn2jfd 1600w" sizes="(max-width:560px) 78vw, (max-width:900px) 45vw, 25vw" alt="Electricista instalando una luminaria LED" loading="lazy" decoding="async"><span class="ec__ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" data-bolt=""><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span></div><div class="ec__b"><span class="ec__tag">GSU Electric</span><b>Instalaciones eléctricas</b><p>Circuitos, alumbrado y canalizaciones ejecutados según la normativa vigente.</p><span class="ec__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a><a class="ec" href="electricidad.html"><div class="ec__img"><img class="fill" src="images/ia/elec-tableros-960.webp?v=tn2jfe" srcset="images/ia/elec-tableros-480.webp?v=tn2jfe 480w, images/ia/elec-tableros-960.webp?v=tn2jfe 960w, images/ia/elec-tableros-1600.webp?v=tn2jfe 1600w" sizes="(max-width:560px) 78vw, (max-width:900px) 45vw, 25vw" alt="Ajuste de un interruptor en un tablero eléctrico nuevo" loading="lazy" decoding="async"><span class="ec__ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span></div><div class="ec__b"><span class="ec__tag">GSU Electric</span><b>Tableros y canalizaciones</b><p>Armado, orden e identificación de tableros y sus circuitos.</p><span class="ec__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a><a class="ec" href="electricidad.html"><div class="ec__img"><img class="fill" src="images/ia/elec-diagnostico-960.webp?v=tn2jfn" srcset="images/ia/elec-diagnostico-480.webp?v=tn2jfn 480w, images/ia/elec-diagnostico-960.webp?v=tn2jfn 960w, images/ia/elec-diagnostico-1600.webp?v=tn2jfn 1600w" sizes="(max-width:560px) 78vw, (max-width:900px) 45vw, 25vw" alt="Diagnóstico de un tablero con cámara termográfica" loading="lazy" decoding="async"><span class="ec__ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></span></div><div class="ec__b"><span class="ec__tag">GSU Electric</span><b>Diagnóstico y reparación</b><p>Detección de fallas en tableros, circuitos y puntos de consumo.</p><span class="ec__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a><a class="ec" href="electricidad.html"><div class="ec__img"><img class="fill" src="images/ia/elec-mantencion-960.webp?v=tn2jf8" srcset="images/ia/elec-mantencion-480.webp?v=tn2jf8 480w, images/ia/elec-mantencion-960.webp?v=tn2jf8 960w, images/ia/elec-mantencion-1600.webp?v=tn2jf8 1600w" sizes="(max-width:560px) 78vw, (max-width:900px) 45vw, 25vw" alt="Mantención preventiva de un tablero eléctrico" loading="lazy" decoding="async"><span class="ec__ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span></div><div class="ec__b"><span class="ec__tag">GSU Electric</span><b>Mantención</b><p>Revisión periódica de tableros e instalaciones para prevenir fallas.</p><span class="ec__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></div>
+        </div>
+      </section>
+
+    <section class="svc-sec clima has-banner anim" id="climatizacion" data-c="#1EA7E1" data-ct="#0A2342">
+        <div class="banner rev" style="--blk:#1EA7E1;--hl:#7FD3F7"><div class="banner__photo"><img class="fill" src="images/ia/climatizacion-banner-960.webp?v=tn2ic9" srcset="images/ia/climatizacion-banner-480.webp?v=tn2ic9 480w, images/ia/climatizacion-banner-960.webp?v=tn2ic9 960w, images/ia/climatizacion-banner-1600.webp?v=tn2ic9 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Técnico realizando mantención a un equipo split" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#7FD3F7">GSU Climate</p><h3>Confort<br><span>estable</span><br>todo el año</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:7;--stroke:#0A2342" data-bg="images/ia/climatizacion-letras-960.webp?v=tn2k5s">Climati<br>zación</div></div></div>
+        <div class="clima__zona">
+          <svg class="airflow" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true"><path style="--d:0s" d="M-50 60 C150 20 350 100 550 60 S950 20 1250 60"/><path style="--d:-2.5s" d="M-50 140 C150 100 350 180 550 140 S950 100 1250 140"/><path style="--d:-5s" d="M-50 230 C150 190 350 270 550 230 S950 190 1250 230"/><path style="--d:-7.5s" d="M-50 320 C150 280 350 360 550 320 S950 280 1250 320"/></svg>
+          <div class="wrap clima__grid">
+            <div class="clima__intro">
+              <p class="eyebrow-m" style="color:#0B6E9C">GSU Climate</p>
+              <h3>Climatización y ventilación para cada espacio.</h3>
+              <p class="clima__deck">Instalación, mantención y reparación de sistemas de climatización según la carga térmica real de cada espacio.</p>
+              <div class="thermo" aria-hidden="true">
+                <svg viewBox="0 0 120 120"><circle class="track-r" cx="60" cy="60" r="50"/><circle class="arc" cx="60" cy="60" r="50"/></svg>
+                <div class="thermo__v"><b data-count="22">22</b><span>°C</span></div>
+                <div class="thermo__t"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="8" rx="2"/><path d="M7 17v2M12 17v3M17 17v2"/></svg><span>Confort estable</span></div>
+              </div>
+              <div class="acts" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="rbtn" href="contacto.html?servicio=climatizacion" style="background:#0B6E9C;color:#FFFFFF">Solicitar cotización</a><a class="rbtn" href="climatizacion.html" style="border-color:#C5CFDA;color:#0A2342">Ver servicio</a></div>
+            </div>
+            <div class="acc" role="list">
+              <a class="acc__p is-open" href="climatizacion.html" role="listitem">
+                <img class="fill" src="images/ia/clima-instalacion-960.webp?v=tn2id4" srcset="images/ia/clima-instalacion-480.webp?v=tn2id4 480w, images/ia/clima-instalacion-960.webp?v=tn2id4 960w, images/ia/clima-instalacion-1600.webp?v=tn2id4 1600w" sizes="(max-width:760px) 100vw, 40vw" alt="Condensadoras de climatización instaladas en una azotea" loading="lazy" decoding="async">
+                <span class="acc__ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="8" rx="2"/><path d="M7 17v2M12 17v3M17 17v2"/></svg></span>
+                <span class="acc__v" aria-hidden="true">Instalación de equipos</span>
+                <span class="acc__b"><b>Instalación de equipos</b><span class="acc__t">Montaje de equipos según la carga térmica y las condiciones reales del espacio.</span><span class="acc__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+              </a>
+              <a class="acc__p" href="climatizacion.html" role="listitem">
+                <img class="fill" src="images/ia/clima-mantencion-960.webp?v=tn2i1z" srcset="images/ia/clima-mantencion-480.webp?v=tn2i1z 480w, images/ia/clima-mantencion-960.webp?v=tn2i1z 960w, images/ia/clima-mantencion-1600.webp?v=tn2i1z 1600w" sizes="(max-width:760px) 100vw, 40vw" alt="Limpieza del filtro de un equipo split" loading="lazy" decoding="async">
+                <span class="acc__ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span>
+                <span class="acc__v" aria-hidden="true">Mantención preventiva</span>
+                <span class="acc__b"><b>Mantención preventiva</b><span class="acc__t">Revisiones programadas que reducen fallas y cuidan la vida útil de los equipos.</span><span class="acc__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+              </a>
+              <a class="acc__p" href="climatizacion.html" role="listitem">
+                <img class="fill" src="images/ia/clima-diagnostico-960.webp?v=tn2i28" srcset="images/ia/clima-diagnostico-480.webp?v=tn2i28 480w, images/ia/clima-diagnostico-960.webp?v=tn2i28 960w, images/ia/clima-diagnostico-1600.webp?v=tn2i28 1600w" sizes="(max-width:760px) 100vw, 40vw" alt="Manómetros conectados a una unidad exterior" loading="lazy" decoding="async">
+                <span class="acc__ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></span>
+                <span class="acc__v" aria-hidden="true">Diagnóstico de fallas</span>
+                <span class="acc__b"><b>Diagnóstico de fallas</b><span class="acc__t">Identificamos el origen del problema antes de intervenir.</span><span class="acc__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+              </a>
+              <a class="acc__p" href="climatizacion.html" role="listitem">
+                <img class="fill" src="images/ia/clima-optimizacion-960.webp?v=tn2i2g" srcset="images/ia/clima-optimizacion-480.webp?v=tn2i2g 480w, images/ia/clima-optimizacion-960.webp?v=tn2i2g 960w, images/ia/clima-optimizacion-1600.webp?v=tn2i2g 1600w" sizes="(max-width:760px) 100vw, 40vw" alt="Equipo de climatización tipo cassette en una oficina" loading="lazy" decoding="async">
+                <span class="acc__ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+                <span class="acc__v" aria-hidden="true">Optimización de instalaciones</span>
+                <span class="acc__b"><b>Optimización de instalaciones</b><span class="acc__t">Ajustes a instalaciones existentes para mejorar su rendimiento.</span><span class="acc__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="svc-sec gas has-banner anim" id="gasfiteria" data-c="#0E9F8E" data-ct="#FFFFFF">
+        <div class="banner" style="--blk:#0E9F8E;--hl:#7FE0D3"><div class="banner__photo"><img class="fill" src="images/ia/gasfiteria-banner-960.webp?v=tn2hzp" srcset="images/ia/gasfiteria-banner-480.webp?v=tn2hzp 480w, images/ia/gasfiteria-banner-960.webp?v=tn2hzp 960w, images/ia/gasfiteria-banner-1600.webp?v=tn2hzp 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Técnico conectando cañerías de cobre bajo un calefont" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#7FE0D3">GSU Gas</p><h3>Gas, agua<br><span>y redes</span><br>sanitarias</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:5;--stroke:#FFFFFF" data-bg="images/ia/gasfiteria-letras-960.webp?v=tn2k51">Gasfi<br>tería</div></div></div>
+        <div class="gas__zona">
+          <div class="wrap gas__top">
+            <div class="gas__txt">
+              <p class="eyebrow-m" style="color:#0A7A6C">GSU Gas</p>
+              <h3>Gasfitería y redes sanitarias.</h3>
+              <p class="gas__deck">Realizamos trabajos de instalación, reparación y mantenimiento de redes de agua y sistemas sanitarios, según las necesidades de cada espacio. Los servicios pueden incluir reparación de filtraciones, cambio de griferías, instalación de artefactos, revisión de conexiones y solución de problemas de funcionamiento.</p>
+              <div class="gas__chips"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg>Agua potable y alcantarillado</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/></svg>Gas y artefactos</span></div>
+              <div class="acts" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="rbtn" href="contacto.html?servicio=gasfiteria" style="background:#0A7A6C;color:#FFFFFF">Solicitar cotización</a><a class="rbtn" href="gasfiteria.html" style="border-color:#C5CFDA;color:#0A2342">Ver servicio</a></div>
+            </div>
+            <div class="gas__col">
+              <div class="gas__big"><img class="fill" src="images/ia/gas-detalle-960.webp?v=tn2i3i" srcset="images/ia/gas-detalle-480.webp?v=tn2i3i 480w, images/ia/gas-detalle-960.webp?v=tn2i3i 960w, images/ia/gas-detalle-1600.webp?v=tn2i3i 1600w" sizes="(max-width:760px) 100vw, 40vw" alt="Técnico revisando una conexión de gas con un detector" loading="lazy" decoding="async"></div>
+              <div class="gas__small"><img class="fill" src="images/ia/gas-hermeticidad-960.webp?v=tn2idy" srcset="images/ia/gas-hermeticidad-480.webp?v=tn2idy 480w, images/ia/gas-hermeticidad-960.webp?v=tn2idy 960w, images/ia/gas-hermeticidad-1600.webp?v=tn2idy 1600w" sizes="(max-width:760px) 50vw, 20vw" alt="Prueba de hermeticidad en una red de gas" loading="lazy" decoding="async"></div>
+              <div class="gas__tag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg><div><b>Agua y gas</b><span>un mismo equipo</span></div></div>
+            </div>
+          </div>
+          <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C200 0 400 60 600 30 S1000 0 1200 30 V60 H0Z" fill="#E6F5F3"/></svg>
+          <div class="gas__band">
+            <div class="wrap">
+              <div class="gas__head"><p class="eyebrow-m" style="color:#0A7A6C">La red completa</p><h3>Del medidor a cada artefacto.</h3></div>
+              <div class="red">
+                <div class="red__tubo" aria-hidden="true"><span class="red__flujo"></span></div>
+                <a class="nodo" href="gasfiteria.html" style="--i:0">
+                  <span class="nodo__v"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></span>
+                  <span class="nodo__c"><b>Instalaciones sanitarias</b><span>Redes de agua potable y alcantarillado instaladas según la normativa vigente.</span><span class="nodo__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+                </a><a class="nodo" href="gasfiteria.html" style="--i:1">
+                  <span class="nodo__v"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/></svg></span>
+                  <span class="nodo__c"><b>Instalación de gas</b><span>Conexión de artefactos a gas y pruebas de hermeticidad.</span><span class="nodo__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+                </a><a class="nodo" href="gasfiteria.html" style="--i:2">
+                  <span class="nodo__v"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></span>
+                  <span class="nodo__c"><b>Detección de filtraciones</b><span>Localización de fugas y pruebas de hermeticidad.</span><span class="nodo__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+                </a><a class="nodo" href="gasfiteria.html" style="--i:3">
+                  <span class="nodo__v"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2z"/></svg></span>
+                  <span class="nodo__c"><b>Reparaciones</b><span>Cañerías, griferías, artefactos y componentes de la red.</span><span class="nodo__more">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="svc-sec imper has-banner anim" id="impermeabilizacion" data-c="#4E9F3D" data-ct="#FFFFFF">
+        <div class="banner rev" style="--blk:#4E9F3D;--hl:#A7D69B"><div class="banner__photo"><img class="fill" src="images/ia/impermeabilizacion-banner-960.webp?v=tn2hzr" srcset="images/ia/impermeabilizacion-banner-480.webp?v=tn2hzr 480w, images/ia/impermeabilizacion-banner-960.webp?v=tn2hzr 960w, images/ia/impermeabilizacion-banner-1600.webp?v=tn2hzr 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Aplicación de membrana impermeabilizante en una azotea" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#A7D69B">GSU Impermeabilización</p><h3>Techos<br><span>secos,</span><br>operación continua</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:10;--stroke:#FFFFFF" data-bg="images/ia/impermeabilizacion-letras-960.webp?v=tn2k5g">Impermea<br>bilización</div></div></div>
+        <div class="wrap">
+          <div class="imper__cards"><div class="icard"><span class="c"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10"/></svg></span><b>Impermeabilización de cubiertas</b><p>Sistemas impermeabilizantes para techos y terrazas.</p><a href="impermeabilizacion.html" class="pill">Ver más</a></div><div class="icard"><span class="c"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></span><b>Tratamiento de filtraciones</b><p>Sellado de los puntos donde se origina el ingreso de agua.</p><a href="impermeabilizacion.html" class="pill">Ver más</a></div><div class="icard"><span class="c"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Protección de superficies</b><p>Soluciones para terrazas, losas y muros expuestos a humedad.</p><a href="impermeabilizacion.html" class="pill">Ver más</a></div><div class="icard"><span class="c"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></span><b>Diagnóstico de humedad</b><p>Evaluación técnica del origen de la humedad antes de intervenir.</p><a href="impermeabilizacion.html" class="pill">Ver más</a></div></div>
+          <div class="imper__split"><div class="t"><h4>Antes de la lluvia,<br>no después.</h4><p>Inspección de cubierta y cotización antes del invierno.</p><a class="rbtn" href="contacto.html?servicio=impermeabilizacion" style="background:#A7D69B;color:#0A2342;justify-self:start">Solicitar cotización →</a></div><div class="p"><img class="fill" src="images/ia/imper-inspeccion-960.webp?v=tn2i4l" srcset="images/ia/imper-inspeccion-480.webp?v=tn2i4l 480w, images/ia/imper-inspeccion-960.webp?v=tn2i4l 960w, images/ia/imper-inspeccion-1600.webp?v=tn2i4l 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Inspección de una junta de membrana en un techo" loading="lazy" decoding="async"></div></div>
+        </div>
+      </section>
+
+    <section class="svc-sec sold has-banner anim" id="soldadura" data-c="#F26A21" data-ct="#0A2342">
+        <div class="banner" style="--blk:#0A2342;--hl:#F26A21"><div class="banner__photo"><img class="fill" src="images/ia/soldadura-banner-960.webp?v=tn2i0j" srcset="images/ia/soldadura-banner-480.webp?v=tn2i0j 480w, images/ia/soldadura-banner-960.webp?v=tn2i0j 960w, images/ia/soldadura-banner-1600.webp?v=tn2i0j 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Soldador trabajando una viga de acero con chispas" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#F26A21">GSU Soldadura</p><h3>Uniones<br><span>que sostienen</span><br>la operación</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:5;--stroke:#F26A21" data-bg="images/ia/soldadura-letras-960.webp?v=tn2kb4">Solda<br>dura</div></div></div>
+        <div class="wrap">
+          <div class="sold__grid">
+            <div class="sold__hl"><span class="arr"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="bar" style="background:#fff"></span><span><b>Soldar</b> es</span><span>crear uniones</span><span>que sostienen</span><span>la operación.</span><div class="acts" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="rbtn" href="contacto.html?servicio=soldadura" style="background:#0A2342;color:#fff">Solicitar cotización</a><a class="rbtn" href="soldadura.html" style="border-color:#C5CFDA;color:#0A2342">Ver servicio</a></div></div>
+            <div class="sold__photo" data-sparks><img class="fill" src="images/ia/soldadura-taller-960.webp?v=tn2idy" srcset="images/ia/soldadura-taller-480.webp?v=tn2idy 480w, images/ia/soldadura-taller-960.webp?v=tn2idy 960w, images/ia/soldadura-taller-1600.webp?v=tn2idy 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Soldador fabricando el marco de un portón de acero" loading="lazy" decoding="async">
+              <div class="badge" aria-hidden="true"><svg class="ring" viewBox="0 0 110 110"><defs><path id="circ" d="M55 55 m-42 0 a42 42 0 1 1 84 0 a42 42 0 1 1 -84 0"/></defs><text><textPath href="#circ">ESTRUCTURAS · REJAS · REPARACIONES ·</textPath></text></svg><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="color:#F26A21;width:26px;height:26px"><path d="M3 21l6-6M13 7l4 4M9 13l6-6M15 5l1-1 4 4-1 1"/></svg></div>
+            </div>
+          </div>
+          <div class="sold__chips"><span>Trabajos de soldadura</span><span>Fabricación de elementos metálicos</span><span>Reparación de estructuras</span><span>Mantenimiento de elementos metálicos</span></div>
+        </div>
+      </section>
+
+    <section class="svc-sec tron has-banner anim" id="electronica" data-c="#8B5CF6" data-ct="#FFFFFF">
+        <svg class="tron__pcb" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 H300 L340 120 H700 L740 80 H1200"/><path d="M0 260 H180 L220 300 H520 L560 340 H900 L940 300 H1200"/><path d="M0 430 H420 L460 400 H820 L860 440 H1200"/><path d="M600 0 V60 L640 100 V200"/><path d="M1000 500 V380 L960 340 V260"/></svg>
+        <div class="banner rev" style="--blk:#8B5CF6;--hl:#C4B5FD"><div class="banner__photo"><img class="fill" src="images/ia/electronica-banner-960.webp?v=tn2i0o" srcset="images/ia/electronica-banner-480.webp?v=tn2i0o 480w, images/ia/electronica-banner-960.webp?v=tn2i0o 960w, images/ia/electronica-banner-1600.webp?v=tn2i0o 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Técnico reparando una placa electrónica en su mesa de trabajo" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#C4B5FD">GSU Electrónica</p><h3>Diagnóstico<br><span>a nivel de</span><br>componente</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:7;--stroke:#FFFFFF" data-bg="images/ia/electronica-letras-960.webp?v=tn2k6c">Electró<br>nica</div></div></div>
+        <div class="wrap">
+          <div class="shead"><div><p class="eyebrow-m" style="color:#C4B5FD">GSU Electrónica</p><h3>Diagnóstico a nivel de componente.</h3><div class="acts" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="rbtn" href="contacto.html?servicio=electronica" style="background:#6D28D9;color:#FFFFFF">Solicitar cotización</a><a class="rbtn" href="electronica.html" style="border-color:rgba(255,255,255,.45);color:#fff">Ver servicio</a></div></div><p style="color:#B8B2D6">Diagnóstico, reparación y mantención de equipos electrónicos y sistemas de control.</p></div>
+          <div class="bento">
+            <div class="bcard bcard--big"><div class="ph"><img class="fill" src="images/ia/electronica-placa-960.webp?v=tn2ieh" srcset="images/ia/electronica-placa-480.webp?v=tn2ieh 480w, images/ia/electronica-placa-960.webp?v=tn2ieh 960w, images/ia/electronica-placa-1600.webp?v=tn2ieh 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Placa electrónica en reparación" loading="lazy" decoding="async"></div><div class="tx"><span class="mono">capacidad principal</span><b>Diagnóstico electrónico</b><p>Identificación de la falla antes de intervenir el equipo.</p></div></div>
+            <div class="bcard"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span><b>Reparación de componentes</b><p>Placas, componentes y módulos electrónicos.</p></div><div class="bcard"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span><b>Mantención de equipos</b><p>Revisión periódica para prevenir fallas en equipos críticos.</p></div><div class="bcard wide"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="15" r="3"/></svg></span><b>Sistemas de control</b><p>Mantención de sistemas de control y automatización.</p></div>
+          </div>
+        </div>
+      </section>
+
+    <section class="svc-sec cerco has-banner anim" id="cercos-electricos" data-c="#C2D62E" data-ct="#0A2342">
+        <div class="banner" style="--blk:#C2D62E;--hl:#E9F57A"><div class="banner__photo"><img class="fill" src="images/ia/cercos-electricos-banner-960.webp?v=tn2ic9" srcset="images/ia/cercos-electricos-banner-480.webp?v=tn2ic9 480w, images/ia/cercos-electricos-banner-960.webp?v=tn2ic9 960w, images/ia/cercos-electricos-banner-1600.webp?v=tn2ic9 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Técnico instalando hilos de un cerco eléctrico sobre un muro" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#E9F57A">GSU Seguridad</p><h3>Seguridad<br><span>perimetral</span><br>para tu propiedad</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:10;--stroke:#0A2342" data-bg="images/ia/cercos-electricos-letras-960.webp?v=tn2k6c">Cercos<br>eléctricos</div></div></div>
+        <div class="wrap">
+          <div class="shead"><div><p class="eyebrow-m" style="color:#5F6B0F">Seguridad perimetral</p><h3>Cercos eléctricos y<br>seguridad perimetral.</h3></div></div>
+          <div class="fence" aria-hidden="true">
+            <span class="post" style="left:4%"></span><span class="post" style="left:28%"></span><span class="post" style="left:52%"></span><span class="post" style="left:76%"></span><span class="post" style="left:97%"></span>
+            <span class="w" style="top:26px"><span class="run" style="--d:0s"></span></span><span class="w" style="top:44px"><span class="run" style="--d:0.5s"></span></span><span class="w" style="top:62px"><span class="run" style="--d:1s"></span></span><span class="w" style="top:80px"><span class="run" style="--d:1.5s"></span></span>
+            <div class="zones"><span><i></i>ZONA 1 · ACCESO</span><span><i></i>ZONA 2 · PATIO</span><span><i></i>ZONA 3 · BODEGA</span><span><i></i>ZONA 4 · FONDO</span></div>
+          </div>
+          <div class="fcards"><div class="fcard"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V6M10 20V6M16 20V6M22 20V6M2 9h22M2 13h22"/></svg></span><b>Instalación de cerco</b><p>Postes, aisladores e hilos sobre muro o reja.</p></div><div class="fcard"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span><b>Energizador y respaldo</b><p>Equipo energizador y batería de respaldo ante cortes de luz.</p></div><div class="fcard"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21h4"/></svg></span><b>Alarma y señalización</b><p>Aviso ante corte o intento de ingreso y señalética del cerco.</p></div><div class="fcard"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span><b>Revisión y mantención</b><p>Tensión, hilos, aisladores y conexiones del sistema.</p></div></div>
+          <div class="combo"><div style="display:flex;gap:14px;align-items:center"><span class="dots2"><i style="background:#C2D62E"></i><i style="background:#E5383B"></i></span><div><b>Cerco eléctrico + cámaras, en un solo proyecto</b><p>Un levantamiento, una cotización y un solo equipo para todo el perímetro.</p></div></div><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="rbtn" href="contacto.html?servicio=cercos-electricos" style="background:#C2D62E;color:#0A2342">Solicitar cotización →</a><a class="rbtn" href="cercos-electricos.html" style="border-color:rgba(255,255,255,.4);color:#fff">Ver servicio</a></div></div>
+        </div>
+      </section>
+
+    <section class="svc-sec cam has-banner anim" id="camaras-de-seguridad" data-c="#E5383B" data-ct="#FFFFFF">
+        <div class="banner rev" style="--blk:#E5383B;--hl:#FF8A8C"><div class="banner__photo"><img class="fill" src="images/ia/camaras-de-seguridad-banner-960.webp?v=tn2i0z" srcset="images/ia/camaras-de-seguridad-banner-480.webp?v=tn2i0z 480w, images/ia/camaras-de-seguridad-banner-960.webp?v=tn2i0z 960w, images/ia/camaras-de-seguridad-banner-1600.webp?v=tn2i0z 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Técnico instalando una cámara de seguridad en un muro exterior" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#FF8A8C">GSU Seguridad</p><h3>Tu instalación<br><span>a la vista</span><br>desde el celular</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:7;--stroke:#FFFFFF" data-bg="images/ia/camaras-de-seguridad-letras-960.webp?v=tn2k6l">Cámaras</div></div></div>
+        <div class="wrap">
+          <div class="shead"><div><p class="eyebrow-m" style="color:#FF8A8C">Videovigilancia</p><h3>Cámaras de seguridad y CCTV.</h3></div><p style="color:#AEB8C6">Montaje, cableado, configuración de grabadores y visualización remota, según los equipos y el alcance contratado.</p></div>
+          <div class="cam__grid">
+            <div class="feeds" aria-hidden="true"><div class="feed"><img class="fill" src="images/ia/camara-acceso-960.webp?v=tn2if2" srcset="images/ia/camara-acceso-480.webp?v=tn2if2 480w, images/ia/camara-acceso-960.webp?v=tn2if2 960w, images/ia/camara-acceso-1600.webp?v=tn2if2 1600w" sizes="(max-width:700px) 50vw, 25vw" alt="Vista de cámara del acceso a un edificio" loading="lazy" decoding="async"><span class="ts" data-clock></span><span class="rec"><i></i>REC</span><span class="lbl">CAM 01 · ACCESO</span></div><div class="feed"><img class="fill" src="images/ia/camara-estacionamiento-960.webp?v=tn2ifn" srcset="images/ia/camara-estacionamiento-480.webp?v=tn2ifn 480w, images/ia/camara-estacionamiento-960.webp?v=tn2ifn 960w, images/ia/camara-estacionamiento-1600.webp?v=tn2ifn 1600w" sizes="(max-width:700px) 50vw, 25vw" alt="Vista de cámara de un estacionamiento" loading="lazy" decoding="async"><span class="rec"><i></i>REC</span><span class="lbl">CAM 02 · ESTACIONAMIENTO</span></div><div class="feed"><img class="fill" src="images/ia/camara-recepcion-960.webp?v=tn2if7" srcset="images/ia/camara-recepcion-480.webp?v=tn2if7 480w, images/ia/camara-recepcion-960.webp?v=tn2if7 960w, images/ia/camara-recepcion-1600.webp?v=tn2if7 1600w" sizes="(max-width:700px) 50vw, 25vw" alt="Vista de cámara de una recepción" loading="lazy" decoding="async"><span class="rec"><i></i>REC</span><span class="lbl">CAM 03 · RECEPCIÓN</span></div><div class="feed"><img class="fill" src="images/ia/camara-bodega-960.webp?v=tn2ifr" srcset="images/ia/camara-bodega-480.webp?v=tn2ifr 480w, images/ia/camara-bodega-960.webp?v=tn2ifr 960w, images/ia/camara-bodega-1600.webp?v=tn2ifr 1600w" sizes="(max-width:700px) 50vw, 25vw" alt="Vista de cámara de una bodega" loading="lazy" decoding="async"><span class="rec"><i></i>REC</span><span class="lbl">CAM 04 · BODEGA</span></div></div>
+            <div>
+              <div class="camlist"><div><span class="sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h12l4-3v14l-4-3H3z"/></svg></span><div><b>Instalación de cámaras</b><p>Ubicación según puntos críticos y cableado ordenado.</p></div></div><div><span class="sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><b>Visualización remota</b><p>Configuración de la aplicación y de los usuarios.</p></div></div><div><span class="sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 12h.01M11 12h6"/></svg></span><div><b>Grabación y almacenamiento</b><p>Grabador (DVR/NVR) y respaldo de imágenes.</p></div></div><div><span class="sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span><div><b>Mantención</b><p>Limpieza, ángulos y revisión de grabación.</p></div></div></div>
+              <div class="acts" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="rbtn" href="contacto.html?servicio=camaras-de-seguridad" style="background:#C1121F;color:#FFFFFF">Solicitar cotización</a><a class="rbtn" href="camaras-de-seguridad.html" style="border-color:rgba(255,255,255,.45);color:#fff">Ver servicio</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="svc-sec care has-banner anim" id="mantenimiento-integral" data-c="#0057B8" data-ct="#FFFFFF">
+        <div class="banner" style="--blk:#0057B8;--hl:#7FB2F0"><div class="banner__photo"><img class="fill" src="images/ia/mantenimiento-integral-banner-960.webp?v=tn2i1c" srcset="images/ia/mantenimiento-integral-banner-480.webp?v=tn2i1c 480w, images/ia/mantenimiento-integral-banner-960.webp?v=tn2i1c 960w, images/ia/mantenimiento-integral-banner-1600.webp?v=tn2i1c 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Técnico inspeccionando una sala de máquinas con una tableta" loading="lazy" decoding="async"><div class="cap"><p class="eyebrow-m" style="color:#7FB2F0">GSU Care</p><h3>Todos los<br><span>servicios</span><br>en un plan</h3></div></div><div class="banner__big"><div class="banner__word" aria-hidden="true" style="--mlen:6;--stroke:#FFFFFF" data-bg="images/ia/mantenimiento-integral-letras-960.webp?v=tn2k6x">Manten<br>ción</div></div></div>
+        <div class="wrap">
+          <div class="care__grid">
+            <div>
+              <p class="eyebrow-m" style="color:#0057B8">GSU Care · Mantención integral</p>
+              <h3 style="font-size:clamp(24px,3.4cqi,36px);font-weight:800;margin-top:8px">Un equipo, en vez de varios proveedores.</h3>
+              <div class="care__list"><div><span class="sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></span><div><b>Diagnóstico inicial</b><p>Revisamos el estado actual de tus instalaciones antes de proponer un plan.</p></div></div><div><span class="sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><div><b>Plan a medida</b><p>Frecuencia y alcance definidos según el tipo de instalación y su uso real.</p></div></div><div><span class="sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 12h6M9 16h4"/></svg></span><div><b>Informe por visita</b><p>Cada intervención queda documentada, con historial técnico.</p></div></div></div>
+              <div class="acts" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="rbtn" href="contacto.html?servicio=mantenimiento-integral" style="background:#0057B8;color:#FFFFFF">Solicitar cotización</a><a class="rbtn" href="mantenimiento-integral.html" style="border-color:#C5CFDA;color:#0A2342">Ver servicio</a></div>
+            </div>
+            <div class="care__collage"><div class="a"><img class="fill" src="images/ia/mantenimiento-equipo-960.webp?v=tn2i68" srcset="images/ia/mantenimiento-equipo-480.webp?v=tn2i68 480w, images/ia/mantenimiento-equipo-960.webp?v=tn2i68 960w, images/ia/mantenimiento-equipo-1600.webp?v=tn2i68 1600w" sizes="(max-width:700px) 60vw, 30vw" alt="Dos técnicos revisando una lista de verificación" loading="lazy" decoding="async"></div><div><img class="fill" src="images/ia/mantenimiento-detalle-960.webp?v=tn2i6p" srcset="images/ia/mantenimiento-detalle-480.webp?v=tn2i6p 480w, images/ia/mantenimiento-detalle-960.webp?v=tn2i6p 960w, images/ia/mantenimiento-detalle-1600.webp?v=tn2i6p 1600w" sizes="(max-width:700px) 40vw, 20vw" alt="Registro de una mantención en una tableta" loading="lazy" decoding="async"></div><div class="st"><div><b>Un solo plan</b>para todos los<br>servicios</div></div></div>
+          </div>
+          <div class="plans">
+            <div class="plan"><span class="eyebrow-m">Servicio puntual</span><b>Una intervención</b><ul><li>Diagnóstico y cotización</li><li>Ejecución y revisión</li></ul></div>
+            <div class="plan hi"><span class="eyebrow-m">Recomendado</span><b>Plan preventivo</b><ul><li>Visitas programadas</li><li>Uno o varios servicios</li><li>Informe por visita</li></ul></div>
+            <div class="plan"><span class="eyebrow-m">Empresas</span><b>Contrato de mantención</b><ul><li>Toda la instalación</li><li>Un solo interlocutor</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+    <section class="why">
+      <div class="wrap">
+        <div class="shead"><div><p class="eyebrow-m">¿Por qué elegir GSU?</p><h3>Un solo equipo técnico,<br>con reglas claras.</h3></div><p style="color:#4B4F54">Lo que puedes esperar en cada servicio, desde la primera consulta hasta la entrega.</p></div>
+        <div class="why__grid"><div class="why__c"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Responsabilidad</b><p>Cada trabajo considera sus implicancias técnicas, la seguridad y el cuidado de la instalación.</p></div><div class="why__c"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><b>Atención personalizada</b><p>Evaluamos cada requerimiento según el espacio, su uso y lo que necesitas.</p></div><div class="why__c"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 12h6M9 16h4"/></svg></span><b>Cotizaciones claras</b><p>Alcance, materiales, precio, plazos estimados y condiciones, por escrito.</p></div><div class="why__c"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span><b>Especialidades coordinadas</b><p>Varios servicios en un mismo proyecto, con un solo interlocutor.</p></div><div class="why__c"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span><b>Compromiso con el cliente</b><p>Te mantenemos informado y revisamos el alcance al entregar.</p></div></div>
+      </div>
+    </section>
+
+    <section class="how anim" id="como-trabajamos">
+        <div class="wrap">
+          <div class="shead"><div><p class="eyebrow-m" style="color:#7FB2F0">Cómo trabajamos</p><h3>De la solicitud a la entrega, en cinco etapas.</h3></div><a class="rbtn" href="como-trabajamos.html" style="border-color:rgba(255,255,255,.4);color:#fff">Ver el proceso completo →</a></div>
+          <ol class="tl"><li><span class="n">1</span><b>Solicitud</b><p>Nos cuentas la necesidad, la ubicación, el tipo de instalación y el trabajo requerido.</p></li><li><span class="n">2</span><b>Evaluación técnica</b><p>Revisamos los antecedentes y coordinamos una visita cuando es necesaria.</p></li><li><span class="n">3</span><b>Cotización</b><p>Te enviamos una propuesta técnica con alcance, materiales, precio, plazos estimados y condiciones.</p></li><li><span class="n">4</span><b>Ejecución</b><p>Con la propuesta aprobada, coordinamos y ejecutamos el trabajo contratado.</p></li><li><span class="n">5</span><b>Revisión y entrega</b><p>Revisamos lo ejecutado y te comunicamos las recomendaciones o documentos que correspondan.</p></li></ol>
+        </div>
+      </section>
+
+    
+
+    <section class="about">
+      <div class="wrap about__g">
+        <div>
+          <p class="eyebrow-m">Sobre GSU</p>
+          <h3 style="font-size:clamp(24px,3.4cqi,36px);font-weight:800;margin-top:8px">Ingeniería, instalaciones y mantenimiento para espacios residenciales, comerciales y empresariales.</h3>
+          <p class="l">Buscamos comprender las necesidades de cada cliente, evaluar las condiciones de cada proyecto y proponer soluciones acordes con sus requerimientos técnicos y operativos.</p>
+          <a class="rbtn" href="nosotros.html" style="background:#0A2342;color:#fff">Conocer GSU →</a>
+        </div>
+        <div class="mv">
+          <div><b>Misión</b><p>Entregar soluciones integrales que contribuyan a la seguridad, funcionalidad y conservación de las instalaciones de nuestros clientes.</p></div>
+          <div><b>Visión</b><p>Ser una empresa reconocida en Chile por la calidad de sus servicios de ingeniería y mantenimiento.</p></div>
+          <div><b>Valores</b><span class="vals"><span>Responsabilidad</span><span>Calidad</span><span>Compromiso</span><span>Transparencia</span><span>Mejora continua</span></span></div>
         </div>
       </div>
     </section>
 
-    <section class="services" aria-labelledby="services-title" id="servicios">
-      <h2 class="services__title" id="services-title">Servicios</h2>
-
-      <div class="services__grid">
-        <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0094.webp?v=20260820a" alt="Climatización" loading="lazy">
-          <div class="service__label">
-            <p class="service__name"><b>GSU</b> Climatic</p>
-            <p class="service__tagline">Climatización y refrigeración</p>
-            <div class="service__actions">
-              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Climatic." target="_blank" rel="noopener">Contratar</a>
-              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Climatic." target="_blank" rel="noopener">Ver servicio</a>
-            </div>
-          </div>
-        </article>
-        <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0180.webp?v=20260820a" alt="Electricidad" loading="lazy">
-          <div class="service__label">
-            <p class="service__name"><b>GSU</b> Electric</p>
-            <p class="service__tagline">Instalaciones eléctricas</p>
-            <div class="service__actions">
-              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Electric." target="_blank" rel="noopener">Contratar</a>
-              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Electric." target="_blank" rel="noopener">Ver servicio</a>
-            </div>
-          </div>
-        </article>
-        <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0271.webp?v=20260820a" alt="Gasfitería" loading="lazy">
-          <div class="service__label">
-            <p class="service__name"><b>GSU</b> Gasfiter</p>
-            <p class="service__tagline">Redes de gas y gasfitería</p>
-            <div class="service__actions">
-              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Gasfiter." target="_blank" rel="noopener">Contratar</a>
-              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Gasfiter." target="_blank" rel="noopener">Ver servicio</a>
-            </div>
-          </div>
-        </article>
-        <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0375.webp?v=20260820a" alt="Seguridad" loading="lazy">
-          <div class="service__label">
-            <p class="service__name"><b>GSU</b> Security</p>
-            <p class="service__tagline">Cámaras y videovigilancia</p>
-            <div class="service__actions">
-              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Security." target="_blank" rel="noopener">Contratar</a>
-              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Security." target="_blank" rel="noopener">Ver servicio</a>
-            </div>
-          </div>
-        </article>
-        <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0428.webp?v=20260820a" alt="Soldadura" loading="lazy">
-          <div class="service__label">
-            <p class="service__name"><b>GSU</b> Solder</p>
-            <p class="service__tagline">Fabricación y soldadura</p>
-            <div class="service__actions">
-              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Solder." target="_blank" rel="noopener">Contratar</a>
-              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Solder." target="_blank" rel="noopener">Ver servicio</a>
-            </div>
-          </div>
-        </article>
-        <article class="service">
-          <img class="service__media" src="frames/desktop/frame-0540.webp?v=20260820a" alt="GSU" loading="lazy">
-          <div class="service__label">
-            <p class="service__name"><b>GSU</b> Care</p>
-            <p class="service__tagline">Mantenimiento integral</p>
-            <div class="service__actions">
-              <a class="service__cta" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20contratar%20el%20servicio%20GSU%20Care." target="_blank" rel="noopener">Contratar</a>
-              <a class="service__cta service__cta--ghost" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GSU%20Care." target="_blank" rel="noopener">Ver servicio</a>
-            </div>
-          </div>
-        </article>
+    <section class="guar">
+      <div class="wrap">
+        <div class="shead"><div><p class="eyebrow-m">Garantías y respaldo</p><h3>Condiciones claras antes,<br>durante y después del trabajo.</h3></div><a class="rbtn" href="garantias.html" style="background:#0A2342;color:#fff">Ver garantías y respaldo →</a></div>
+        <div class="guar__g"><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 12h6M9 16h4"/></svg><b>Alcance del trabajo contratado</b><p>Lo que incluye cada trabajo queda definido en la cotización aceptada: tareas, materiales, plazos estimados y condiciones.</p></div><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><b>Revisión y entrega del servicio</b><p>Al terminar, revisamos el trabajo ejecutado contigo según el alcance acordado.</p></div><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg><b>Cómo comunicar observaciones</b><p>Si notas algo después de la entrega, escríbenos a contacto@gsu.cl o por WhatsApp indicando el servicio, la fecha y fotos si las tienes.</p></div><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><b>Documentación y recomendaciones técnicas</b><p>Cuando corresponda, entregamos recomendaciones de uso y mantención, y los documentos técnicos asociados al trabajo.</p></div></div>
       </div>
     </section>
 
-    <section class="cta-band" id="contacto" aria-labelledby="cta-band-title">
-      <h2 class="cta-band__title" id="cta-band-title">Hablemos de tu proyecto.</h2>
-      <a class="cta cta--solid" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener">Contactar ahora.</a>
+    <section class="faqs">
+      <div class="wrap faq__g">
+        <div><p class="eyebrow-m">Preguntas frecuentes</p><h3 style="font-size:clamp(24px,3.4cqi,36px);font-weight:800;margin:8px 0 14px">Lo que más nos preguntan.</h3><a class="rbtn" href="preguntas-frecuentes.html" style="border-color:#C5CFDA;color:#0A2342">Ver todas las preguntas</a></div>
+        <div class="faq"><details open><summary>¿Qué servicios ofrece GSU?</summary><p>Electricidad, climatización, gasfitería y redes sanitarias, impermeabilización, soldadura, electrónica, cercos eléctricos, cámaras de seguridad y CCTV, y mantenimiento general.</p></details><details><summary>¿En qué comunas o regiones trabaja?</summary><p>Trabajamos en la Región Metropolitana. Indícanos tu comuna al solicitar la cotización.</p></details><details><summary>¿Cómo puedo solicitar una cotización?</summary><p>Con el formulario de contacto, por WhatsApp al +56 9 9850 1325 o escribiendo a contacto@gsu.cl.</p></details><details><summary>¿Es posible contratar varias especialidades para un proyecto?</summary><p>Sí. Coordinamos las especialidades necesarias con un solo interlocutor y una sola cotización.</p></details></div>
+      </div>
     </section>
+
+    <div class="wrap"><div class="cta"><div class="t"><p class="eyebrow-m" style="color:#7FB2F0">Hablemos</p><h3>¿Qué necesita tu instalación?</h3><p style="color:#C9D4E2;font-size:15px">Cuéntanos el servicio y la comuna. Te respondemos con una cotización clara.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="rbtn" href="contacto.html" style="background:#fff;color:#0A2342">Solicitar cotización</a><a class="rbtn" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener" style="border-color:rgba(255,255,255,.4);color:#fff">WhatsApp</a></div></div><div class="p"><img class="fill" src="images/ia/inicio-cta-960.webp?v=tn2ig6" srcset="images/ia/inicio-cta-480.webp?v=tn2ig6 480w, images/ia/inicio-cta-960.webp?v=tn2ig6 960w, images/ia/inicio-cta-1600.webp?v=tn2ig6 1600w" sizes="(max-width: 700px) 100vw, 50vw" alt="Técnico saludando a un cliente en un hall" loading="lazy" decoding="async"></div></div></div>
   </main>
 
-  <footer class="site-footer micro" id="tienda">
-    <p>Tienda — catálogo de equipos y repuestos, próximamente.<br>© 2026 GSU. Reparación, instalación y mantenimiento de sistemas.</p>
-    <a href="#inicio">Volver al inicio ↑</a>
+  <footer class="site-footer">
+    <div class="site-footer__col">
+      <a class="site-footer__brand" href="index.html"><img class="site-footer__logo" src="logo-white.webp" alt="GSU" width="86" height="24"></a>
+      <p class="site-footer__lead">GSU Ingeniería y Mantenimiento. Soluciones integrales para instalaciones, infraestructura y mantenimiento en la Región Metropolitana.</p>
+    </div>
+    <div class="site-footer__col"><h3>Servicios</h3><ul><li><a href="electricidad.html">Electricidad</a></li><li><a href="climatizacion.html">Climatización</a></li><li><a href="gasfiteria.html">Gasfitería</a></li><li><a href="impermeabilizacion.html">Impermeabilización</a></li><li><a href="soldadura.html">Soldadura</a></li><li><a href="electronica.html">Electrónica</a></li><li><a href="cercos-electricos.html">Cercos eléctricos</a></li><li><a href="camaras-de-seguridad.html">Cámaras y CCTV</a></li><li><a href="mantenimiento-integral.html">Mantenimiento</a></li></ul></div>
+    <div class="site-footer__col"><h3>Empresa</h3><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="como-trabajamos.html">Cómo trabajamos</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="garantias.html">Garantías y respaldo</a></li><li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div class="site-footer__col"><h3>Políticas</h3><ul><li><a href="politica-de-calidad.html">Política de calidad</a></li><li><a href="politica-de-seguridad.html">Seguridad y prevención</a></li><li><a href="terminos.html">Términos y condiciones</a></li><li><a href="privacidad.html">Privacidad y datos personales</a></li><li><a href="consultas-y-reclamos.html">Consultas y reclamos</a></li><li><a href="cookies.html">Cookies</a></li></ul></div>
+    <div class="site-footer__col"><h3>Contacto</h3><ul>
+      <li><a href="tel:+56998501325">+56 9 9850 1325</a></li>
+      <li><a href="mailto:contacto@gsu.cl">contacto@gsu.cl</a></li>
+      <li><a href="https://wa.me/56998501325?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener">WhatsApp</a></li>
+      <li>Región Metropolitana</li>
+    </ul></div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> GSU Ingeniería y Mantenimiento.</span>
+      <span>Las imágenes de los servicios son ilustrativas.</span>
+      <a href="#top">Volver arriba ↑</a>
+    </div>
   </footer>
 
-  <a id="whatsapp-fab" class="whatsapp-fab" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <svg class="whatsapp-fab__icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-      <path fill="currentColor" d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.897 6.481L4 29l7.72-1.865A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm6.845 17.09c-.29.815-1.437 1.494-2.353 1.688-.63.13-1.452.234-4.22-.906-3.542-1.464-5.823-5.06-6.001-5.297-.171-.237-1.44-1.916-1.44-3.655 0-1.74.912-2.594 1.235-2.95.323-.356.706-.445.941-.445.235 0 .47.002.677.012.216.01.507-.082.793.605.29.7.986 2.415 1.072 2.591.086.176.144.382.029.618-.115.235-.172.382-.343.588-.171.206-.36.46-.514.618-.171.176-.35.367-.15.72.2.353.888 1.464 1.907 2.371 1.31 1.168 2.415 1.53 2.768 1.7.353.171.559.147.765-.088.206-.235.882-1.03 1.117-1.383.235-.353.47-.294.793-.176.323.117 2.038.96 2.388 1.135.35.176.583.264.67.412.088.147.088.853-.202 1.667Z"/>
-    </svg>
+  <a class="whatsapp-fab is-visible" href="https://wa.me/56998501325?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20GSU." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg class="whatsapp-fab__icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.897 6.481L4 29l7.72-1.865A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm6.845 17.09c-.29.815-1.437 1.494-2.353 1.688-.63.13-1.452.234-4.22-.906-3.542-1.464-5.823-5.06-6.001-5.297-.171-.237-1.44-1.916-1.44-3.655 0-1.74.912-2.594 1.235-2.95.323-.356.706-.445.941-.445.235 0 .47.002.677.012.216.01.507-.082.793.605.29.7.986 2.415 1.072 2.591.086.176.144.382.029.618-.115.235-.172.382-.343.588-.171.206-.36.46-.514.618-.171.176-.35.367-.15.72.2.353.888 1.464 1.907 2.371 1.31 1.168 2.415 1.53 2.768 1.7.353.171.559.147.765-.088.206-.235.882-1.03 1.117-1.383.235-.353.47-.294.793-.176.323.117 2.038.96 2.388 1.135.35.176.583.264.67.412.088.147.088.853-.202 1.667Z"/></svg>
   </a>
 
-  <script>
-    (() => {
-      "use strict";
-
-      const FRAME_COUNT = 540;
-      const FRAME_PAD = 4;
-      // Bump this string whenever frame files change on disk so browsers/CDNs
-      // that cached the old bytes under the same filename are forced to refetch.
-      const ASSET_VERSION = "20260820b";
-      const LERP_FACTOR = 0.16;
-      const DWELL_WIDTH = 0.048;
-      const DWELL_PEAK = 1.7;
-      const LUT_SIZE = 2400;
-      const MOBILE_QUERY = "(max-width: 780px)";
-      const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
-      const DWELL_CENTERS = [0.0, 0.1725, 0.332, 0.501, 0.694, 0.792, 0.95, 0.985];
-
-      const sequence = document.getElementById("sequence") || document.getElementById("inicio");
-      const stage = document.getElementById("stage");
-      const canvas = document.getElementById("film-canvas");
-      const ctx = canvas.getContext("2d", { alpha: false, desynchronized: true });
-      const heroStill = document.getElementById("hero-still");
-      const scrollCue = document.getElementById("scroll-cue");
-      const whatsappFab = document.getElementById("whatsapp-fab");
-      const serviceCards = Array.from(document.querySelectorAll(".service"));
-      const chapters = Array.from(document.querySelectorAll(".chapter"));
-      const reducedMotion = window.matchMedia(REDUCED_QUERY).matches;
-      const mobileMedia = window.matchMedia(MOBILE_QUERY);
-      const frameStores = {
-        desktop: createFrameStore("frames/desktop"),
-        mobile: createFrameStore("frames/mobile")
-      };
-      const chapterVisibility = new WeakMap();
-      let useMobileFrames = mobileMedia.matches;
-      let activeStore = useMobileFrames ? frameStores.mobile : frameStores.desktop;
-      let currentFrame = 0;
-      let targetFrame = 0;
-      let lastDrawn = -1;
-      let pageVisible = true;
-      let rafId = 0;
-      let sequenceTop = 0;
-      let sequenceDistance = 1;
-
-      function createFrameStore(directory) {
-        return {
-          directory,
-          images: new Array(FRAME_COUNT),
-          loaded: new Uint8Array(FRAME_COUNT),
-          promises: new Array(FRAME_COUNT)
-        };
-      }
-
-      function frameUrl(index, store = activeStore) {
-        return `${store.directory}/frame-${String(index + 1).padStart(FRAME_PAD, "0")}.webp?v=${ASSET_VERSION}`;
-      }
-
-      function loadFrame(index, store = activeStore, retries = 1, priority = "auto") {
-        if (store.loaded[index]) return Promise.resolve(store.images[index]);
-        if (store.promises[index]) return store.promises[index];
-
-        store.promises[index] = new Promise((resolve) => {
-          const attempt = (remaining) => {
-            const image = new Image();
-            image.fetchPriority = priority;
-            store.images[index] = image;
-            image.decoding = "async";
-            image.onload = () => {
-              store.loaded[index] = 1;
-              resolve(image);
-            };
-            image.onerror = () => {
-              if (remaining > 0) {
-                window.setTimeout(() => attempt(remaining - 1), 140);
-              } else {
-                store.images[index] = null;
-                store.promises[index] = null;
-                resolve(null);
-              }
-            };
-            image.src = frameUrl(index, store);
-          };
-          attempt(retries);
-        });
-        return store.promises[index];
-      }
-
-      async function loadInBatches(indices, size = 8, store = activeStore, priority = "low") {
-        for (let start = 0; start < indices.length; start += size) {
-          const batch = indices.slice(start, start + size);
-          await Promise.all(batch.map((index) => loadFrame(index, store, 1, priority)));
-        }
-      }
-
-      // The background loader walks the frame list in a fixed order, but a
-      // visitor on a cold cache can scroll past wherever it currently is —
-      // nearestLoaded() then falls back to a far-away frame and the film
-      // looks frozen until the background pass catches up. This keeps a
-      // window of frames around wherever the user actually is loading with
-      // network priority, independent of the background pass's position.
-      let lastPriorityCenter = -1000;
-      function ensurePriorityWindow(center, radius = 24) {
-        if (Math.abs(center - lastPriorityCenter) < 4) return;
-        lastPriorityCenter = center;
-        for (let distance = 0; distance <= radius; distance += 1) {
-          const before = center - distance;
-          const after = center + distance;
-          if (before >= 0) loadFrame(before, activeStore, 1, "high");
-          if (after < FRAME_COUNT) loadFrame(after, activeStore, 1, "high");
-        }
-      }
-
-      function nearestLoaded(index, store = activeStore) {
-        if (store.loaded[index]) return index;
-        for (let distance = 1; distance < FRAME_COUNT; distance += 1) {
-          const before = index - distance;
-          const after = index + distance;
-          if (before >= 0 && store.loaded[before]) return before;
-          if (after < FRAME_COUNT && store.loaded[after]) return after;
-        }
-        return -1;
-      }
-
-      function resizeCanvas() {
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        const width = Math.round(stage.clientWidth * dpr);
-        const height = Math.round(stage.clientHeight * dpr);
-        if (canvas.width !== width || canvas.height !== height) {
-          canvas.width = width;
-          canvas.height = height;
-          lastDrawn = -1;
-        }
-      }
-
-      function updateSequenceMetrics() {
-        const rect = sequence.getBoundingClientRect();
-        sequenceTop = window.scrollY + rect.top;
-        sequenceDistance = Math.max(1, rect.height - window.innerHeight);
-      }
-
-      function paintImage(image, width, height, alpha) {
-        if (!image || !image.naturalWidth) return;
-        const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
-        const drawWidth = image.naturalWidth * scale;
-        const drawHeight = image.naturalHeight * scale;
-        const x = (width - drawWidth) / 2;
-        const y = (height - drawHeight) / 2;
-        ctx.globalAlpha = alpha;
-        ctx.drawImage(image, x, y, drawWidth, drawHeight);
-        ctx.globalAlpha = 1;
-      }
-
-      // Accepts a fractional frame position and crossfades between the two
-      // neighboring frames so slow scrolling reads as continuous motion
-      // instead of a hard cut every time the rounded frame number changes.
-      function drawFrame(floatIndex) {
-        const clamped = Math.max(0, Math.min(FRAME_COUNT - 1, floatIndex));
-        const lower = Math.floor(clamped);
-        const upper = Math.min(FRAME_COUNT - 1, lower + 1);
-        const frac = clamped - lower;
-
-        const lowerResolved = nearestLoaded(lower);
-        const upperResolved = frac > 0.001 ? nearestLoaded(upper) : lowerResolved;
-        if (lowerResolved < 0 && upperResolved < 0) return;
-
-        const drawKey = `${lowerResolved}:${upperResolved}:${frac.toFixed(3)}`;
-        if (drawKey === lastDrawn) return;
-
-        const width = canvas.width;
-        const height = canvas.height;
-        ctx.fillStyle = "#0A2342";
-        ctx.fillRect(0, 0, width, height);
-
-        if (lowerResolved >= 0 && upperResolved >= 0 && lowerResolved !== upperResolved) {
-          paintImage(activeStore.images[lowerResolved], width, height, 1);
-          paintImage(activeStore.images[upperResolved], width, height, frac);
-        } else {
-          const only = lowerResolved >= 0 ? lowerResolved : upperResolved;
-          paintImage(activeStore.images[only], width, height, 1);
-        }
-        lastDrawn = drawKey;
-      }
-
-      const rawAtEffective = new Float64Array(LUT_SIZE + 1);
-
-      function buildDwellLut() {
-        let total = 0;
-        const density = new Float64Array(LUT_SIZE + 1);
-        for (let i = 0; i <= LUT_SIZE; i += 1) {
-          const effective = i / LUT_SIZE;
-          let value = 1;
-          for (const center of DWELL_CENTERS) {
-            const delta = (effective - center) / DWELL_WIDTH;
-            value += DWELL_PEAK * Math.exp(-0.5 * delta * delta);
-          }
-          density[i] = value;
-          if (i > 0) total += (density[i - 1] + value) * 0.5;
-          rawAtEffective[i] = total;
-        }
-        for (let i = 0; i <= LUT_SIZE; i += 1) rawAtEffective[i] /= total;
-      }
-
-      function remapProgress(raw) {
-        let low = 0;
-        let high = LUT_SIZE;
-        while (low < high) {
-          const mid = (low + high) >> 1;
-          if (rawAtEffective[mid] < raw) low = mid + 1;
-          else high = mid;
-        }
-        const index = Math.max(1, low);
-        const leftRaw = rawAtEffective[index - 1];
-        const rightRaw = rawAtEffective[index];
-        const span = rightRaw - leftRaw || 1;
-        const mix = (raw - leftRaw) / span;
-        return Math.max(0, Math.min(1, (index - 1 + mix) / LUT_SIZE));
-      }
-
-      function rawScrollProgress() {
-        return Math.max(0, Math.min(1, (window.scrollY - sequenceTop) / sequenceDistance));
-      }
-
-      function updateChapters(effective) {
-        for (const chapter of chapters) {
-          const center = Number(chapter.dataset.center);
-          const windowSize = Number(chapter.dataset.window);
-          const distance = Math.abs(effective - center);
-          const visible = distance <= windowSize;
-          if (chapterVisibility.get(chapter) !== visible) {
-            chapterVisibility.set(chapter, visible);
-            chapter.classList.toggle("is-visible", visible);
-            chapter.setAttribute("aria-hidden", String(!visible));
-          }
-        }
-      }
-
-      const HERO_HIDE_RAW = 0.015;
-      const WHATSAPP_REVEAL_EFFECTIVE = 0.97;
-
-      function updateHeroStill(raw) {
-        const atTop = raw < HERO_HIDE_RAW;
-        if (heroStill) heroStill.style.opacity = atTop ? "1" : "0";
-        if (scrollCue) scrollCue.classList.toggle("is-hidden", !atTop);
-      }
-
-      function updateWhatsappFab(effective) {
-        if (!whatsappFab) return;
-        whatsappFab.classList.toggle("is-visible", effective >= WHATSAPP_REVEAL_EFFECTIVE);
-      }
-
-      function updateServiceCards() {
-        if (!serviceCards.length) return;
-        const viewportHeight = window.innerHeight;
-        const revealStart = viewportHeight * 0.96;
-        const revealEnd = viewportHeight * 0.6;
-        serviceCards.forEach((card, index) => {
-          const rect = card.getBoundingClientRect();
-          if (rect.bottom < 0 || rect.top > viewportHeight) return;
-          const columnOffset = index % 2 === 1 ? 46 : 0;
-          const raw = (revealStart - (rect.top + columnOffset)) / (revealStart - revealEnd);
-          const progress = Math.max(0, Math.min(1, raw));
-          card.style.opacity = progress.toFixed(3);
-          card.style.transform = `translateY(${((1 - progress) * 42).toFixed(1)}px)`;
-        });
-      }
-
-      function updateInterface(raw, effective) {
-        document.documentElement.style.setProperty("--title-wdth", String(Math.round(78 + effective * 24)));
-        const edge = Math.min(effective, 1 - effective) / 0.08;
-        stage.style.setProperty("--scrim-opacity", String(Math.min(0.82, 0.5 + edge * 0.23)));
-      }
-
-      function showLoadError() {
-        console.error("GSU: no se pudieron cargar los fotogramas de la secuencia.");
-      }
-
-      function renderReducedPoster(frame) {
-        currentFrame = frame;
-        targetFrame = frame;
-        drawFrame(frame);
-        chapters.forEach((chapter, index) => {
-          const visible = index === 0;
-          chapterVisibility.set(chapter, visible);
-          chapter.classList.toggle("is-visible", visible);
-          chapter.setAttribute("aria-hidden", String(!visible));
-        });
-      }
-
-      function tick() {
-        if (!pageVisible || reducedMotion) return;
-        const raw = rawScrollProgress();
-        const effective = remapProgress(raw);
-        targetFrame = Math.round(effective * (FRAME_COUNT - 1));
-        currentFrame += (targetFrame - currentFrame) * LERP_FACTOR;
-        ensurePriorityWindow(targetFrame);
-        drawFrame(currentFrame);
-        updateHeroStill(raw);
-        updateWhatsappFab(effective);
-        updateServiceCards();
-        updateChapters(effective);
-        updateInterface(raw, effective);
-        rafId = requestAnimationFrame(tick);
-      }
-
-      async function init() {
-        buildDwellLut();
-        syncViewport();
-
-        if (reducedMotion) {
-          const posterFrame = 0;
-          const poster = await loadFrame(posterFrame, activeStore, 1, "high");
-          if (!poster) {
-            showLoadError();
-            return;
-          }
-          renderReducedPoster(posterFrame);
-          if (whatsappFab) whatsappFab.classList.add("is-visible");
-          serviceCards.forEach((card) => {
-            card.style.opacity = "1";
-            card.style.transform = "none";
-          });
-          return;
-        }
-
-        const critical = Array.from(new Set([
-          0,
-          ...DWELL_CENTERS.map((center) => Math.round(center * (FRAME_COUNT - 1))),
-          FRAME_COUNT - 1
-        ])).sort((a, b) => a - b);
-
-        const firstFrame = await loadFrame(0, activeStore, 1, "high");
-        if (firstFrame) {
-          drawFrame(0);
-        } else {
-          showLoadError();
-        }
-
-        // Go interactive immediately instead of blocking on every critical
-        // frame — nearestLoaded() already falls back gracefully to whatever
-        // is ready while the rest streams in, and hero-still covers the
-        // canvas until the user actually starts scrolling.
-        tick();
-
-        const criticalTail = critical.filter((index) => index !== 0);
-        Promise.all(criticalTail.map((index) => loadFrame(index, activeStore, 1, "high")));
-
-        const remaining = Array.from({ length: FRAME_COUNT }, (_, index) => index)
-          .filter((index) => !critical.includes(index));
-        loadInBatches(remaining);
-      }
-
-      async function swapFrameSet(event) {
-        useMobileFrames = event.matches;
-        activeStore = useMobileFrames ? frameStores.mobile : frameStores.desktop;
-        lastDrawn = -1;
-        resizeCanvas();
-        updateSequenceMetrics();
-
-        const frame = Math.max(0, Math.min(FRAME_COUNT - 1, Math.round(currentFrame)));
-        const image = await loadFrame(frame, activeStore, 1, "high");
-        if (!image) return;
-        drawFrame(frame);
-
-        const byDistance = Array.from({ length: FRAME_COUNT }, (_, index) => index)
-          .sort((a, b) => Math.abs(a - frame) - Math.abs(b - frame));
-        loadInBatches(byDistance, 8, activeStore);
-      }
-
-      function syncViewport() {
-        // svh/dvh don't reliably track mobile Safari's toolbar show/hide, which
-        // can leave .stage shorter than the true visible viewport (revealing
-        // the --carbon background of .sequence behind it). Measure the real
-        // height in JS and drive .stage's height from it instead.
-        const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-        document.documentElement.style.setProperty("--app-height", `${vh}px`);
-        resizeCanvas();
-        updateSequenceMetrics();
-      }
-
-      syncViewport();
-      window.addEventListener("resize", syncViewport, { passive: true });
-      window.addEventListener("orientationchange", syncViewport, { passive: true });
-      if (window.visualViewport) {
-        window.visualViewport.addEventListener("resize", syncViewport, { passive: true });
-      }
-      // Mobile Safari settles its toolbar height asynchronously after load,
-      // sometimes without firing a resize event — recheck a couple of times
-      // so .stage never stays short of the real viewport.
-      window.setTimeout(syncViewport, 300);
-      window.setTimeout(syncViewport, 1200);
-      mobileMedia.addEventListener("change", swapFrameSet);
-      document.addEventListener("visibilitychange", () => {
-        pageVisible = !document.hidden;
-        if (pageVisible && !reducedMotion) {
-          cancelAnimationFrame(rafId);
-          tick();
-        }
-      });
-
-      init();
-    })();
-  </script>
+  <script src="site.js?v=530e69fa" defer></script>
 </body>
 </html>

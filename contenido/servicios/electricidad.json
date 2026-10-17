@@ -1,0 +1,142 @@
+{
+  "nombre": "Electricidad",
+  "nombreCorto": "Electricidad",
+  "titulo": "Electricidad",
+  "division": "GSU Electric",
+  "color": "#FFC72C",
+  "tinte": "#FFF3C4",
+  "colorTexto": "#0A2342",
+  "boton": "#FFC72C",
+  "botonTexto": "#0A2342",
+  "claro": "#FFC72C",
+  "banner": {
+    "silabas": [
+      "Electri",
+      "cidad"
+    ],
+    "frase": [
+      "Tableros,",
+      "circuitos",
+      "y canalizaciones"
+    ],
+    "imagen": "electricidad-banner",
+    "imagenLetras": "electricidad-letras"
+  },
+  "seo": {
+    "titulo": "Electricidad para hogares y empresas · GSU",
+    "descripcion": "Revisión de circuitos, tableros eléctricos, luminarias, canalizaciones, detección de fallas y mantenimiento en la Región Metropolitana. Solicita tu cotización."
+  },
+  "resumen": "Tableros, circuitos, luminarias, canalizaciones y mantención.",
+  "deck": "Instalaciones eléctricas y tableros ejecutados circuito por circuito, con foco en seguridad y continuidad operacional.",
+  "presentacion": "Desarrollamos soluciones eléctricas orientadas al funcionamiento seguro y eficiente de instalaciones residenciales, comerciales y empresariales. Los trabajos pueden incluir revisión de circuitos, instalación de luminarias, tableros eléctricos, canalizaciones, detección de fallas, ampliaciones y mantenimiento, según el alcance de cada proyecto.",
+  "trabajos": [
+    "Revisión de circuitos",
+    "Instalación de luminarias",
+    "Tableros eléctricos",
+    "Canalizaciones",
+    "Detección de fallas",
+    "Ampliaciones",
+    "Mantenimiento"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Tengo instalaciones sin revisión",
+      "texto": "No sé si mi tablero o instalación está en buen estado y temo una falla.",
+      "puntos": [
+        "Diagnóstico técnico de tableros y circuitos",
+        "Plan de mantención preventiva",
+        "Informe técnico de la instalación"
+      ]
+    },
+    {
+      "titulo": "Necesito una instalación nueva",
+      "texto": "Estoy habilitando un local o ampliando mi instalación eléctrica.",
+      "puntos": [
+        "Diseño de tableros y circuitos",
+        "Cotización con alcance y materiales definidos",
+        "Ejecución según la normativa vigente"
+      ]
+    },
+    {
+      "titulo": "Tengo una falla eléctrica",
+      "texto": "Hay cortes, calentamiento en el tablero o un circuito que no funciona.",
+      "puntos": [
+        "Diagnóstico del origen de la falla",
+        "Reparación por técnico especialista",
+        "Revisión de seguridad antes de entregar"
+      ],
+      "whatsapp": "Hola, tengo una falla eléctrica y necesito ayuda."
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Instalaciones eléctricas",
+      "texto": "Circuitos, alumbrado y canalizaciones ejecutados según la normativa vigente.",
+      "icono": "rayo",
+      "imagen": "elec-instalaciones"
+    },
+    {
+      "titulo": "Tableros y canalizaciones",
+      "texto": "Armado, orden e identificación de tableros y sus circuitos.",
+      "icono": "tablero",
+      "imagen": "elec-tableros"
+    },
+    {
+      "titulo": "Diagnóstico y reparación",
+      "texto": "Detección de fallas en tableros, circuitos y puntos de consumo.",
+      "icono": "lupa",
+      "imagen": "elec-diagnostico"
+    },
+    {
+      "titulo": "Mantención",
+      "texto": "Revisión periódica de tableros e instalaciones para prevenir fallas.",
+      "icono": "reloj",
+      "imagen": "elec-mantencion"
+    },
+    {
+      "titulo": "Declaración SEC (TE1)",
+      "texto": "Declaración de la instalación ante la SEC cuando el trabajo lo requiere.",
+      "icono": "escudo",
+      "pendiente": "Confirmar licencia SEC vigente (clase y número) antes de publicar."
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Instalación más segura",
+      "texto": "Circuitos protegidos y tableros identificados reducen el riesgo de fallas."
+    },
+    {
+      "titulo": "Menos interrupciones",
+      "texto": "La mantención preventiva detecta problemas antes de que corten la operación."
+    },
+    {
+      "titulo": "Todo claro desde el inicio",
+      "texto": "Alcance, materiales y plazos estimados quedan por escrito en la cotización."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Entregan declaración SEC?",
+      "respuesta": "",
+      "pendiente": "Responder según la licencia SEC vigente de GSU."
+    },
+    {
+      "pregunta": "¿Pueden revisar una instalación que no hicimos nosotros?",
+      "respuesta": "Sí, hacemos diagnóstico de instalaciones existentes, sean o no nuestras."
+    },
+    {
+      "pregunta": "¿Atienden urgencias eléctricas?",
+      "respuesta": "Escríbenos por WhatsApp y coordinamos la atención según disponibilidad."
+    },
+    {
+      "pregunta": "¿Trabajan en edificios con varias unidades?",
+      "respuesta": "Sí, coordinamos trabajos y mantención eléctrica para edificios y condominios."
+    }
+  ],
+  "relacionados": [
+    "climatizacion",
+    "electronica",
+    "mantenimiento-integral"
+  ],
+  "slug": "electricidad"
+}

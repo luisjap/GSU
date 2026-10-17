@@ -1,0 +1,128 @@
+{
+  "nombre": "Mantenimiento general",
+  "nombreCorto": "Mantenimiento",
+  "titulo": "Mantenimiento general",
+  "division": "GSU Care",
+  "color": "#0057B8",
+  "tinte": "#E8ECEF",
+  "colorTexto": "#FFFFFF",
+  "boton": "#0057B8",
+  "botonTexto": "#FFFFFF",
+  "claro": "#7FB2F0",
+  "banner": {
+    "silabas": [
+      "Manten",
+      "ción"
+    ],
+    "frase": [
+      "Todos los",
+      "servicios",
+      "en un plan"
+    ],
+    "imagen": "mantenimiento-integral-banner",
+    "imagenLetras": "mantenimiento-integral-letras"
+  },
+  "seo": {
+    "titulo": "Mantenimiento general e integral · GSU",
+    "descripcion": "Mantenimiento preventivo y correctivo coordinando todas las especialidades de tu instalación con un solo equipo técnico."
+  },
+  "resumen": "Preventivo y correctivo, con todas las especialidades coordinadas.",
+  "deck": "Un plan de mantención preventiva y correctiva que coordina todas las especialidades de tu instalación con un mismo equipo técnico.",
+  "presentacion": "Apoyamos la conservación y el funcionamiento de instalaciones mediante trabajos de mantenimiento preventivo y correctivo. Coordinamos distintas especialidades para atender necesidades de infraestructura, resolver desperfectos y contribuir a reducir interrupciones operativas.",
+  "trabajos": [
+    "Mantenimiento preventivo",
+    "Mantenimiento correctivo",
+    "Planes por especialidad",
+    "Coordinación de especialidades",
+    "Informe por visita"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Quiero un plan preventivo",
+      "texto": "Prefiero programar las revisiones en vez de esperar a que algo falle.",
+      "puntos": [
+        "Diagnóstico inicial de la instalación",
+        "Frecuencia definida según el uso",
+        "Informe por visita"
+      ]
+    },
+    {
+      "titulo": "Tengo varios proveedores",
+      "texto": "Cada sistema lo atiende alguien distinto y no hay historial común.",
+      "puntos": [
+        "Un solo interlocutor técnico",
+        "Especialidades coordinadas",
+        "Historial técnico unificado"
+      ]
+    },
+    {
+      "titulo": "Tengo una falla puntual",
+      "texto": "Algo dejó de funcionar y necesito resolverlo.",
+      "puntos": [
+        "Diagnóstico del desperfecto",
+        "Cotización del trabajo correctivo",
+        "Revisión al entregar"
+      ]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Diagnóstico inicial",
+      "texto": "Revisamos el estado actual de tus instalaciones antes de proponer un plan.",
+      "icono": "lupa"
+    },
+    {
+      "titulo": "Plan a medida",
+      "texto": "Frecuencia y alcance definidos según el tipo de instalación y su uso real.",
+      "icono": "calendario"
+    },
+    {
+      "titulo": "Ejecución coordinada",
+      "texto": "Un mismo equipo coordina todas las especialidades.",
+      "icono": "grilla"
+    },
+    {
+      "titulo": "Informe por visita",
+      "texto": "Cada intervención queda documentada, con historial técnico.",
+      "icono": "documento"
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Un solo contacto",
+      "texto": "Un equipo para todas las especialidades de tu instalación."
+    },
+    {
+      "titulo": "Menos fallas inesperadas",
+      "texto": "La mantención programada se adelanta a los desperfectos."
+    },
+    {
+      "titulo": "Historial ordenado",
+      "texto": "Cada visita queda registrada por equipo e instalación."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Qué especialidades puede incluir el plan?",
+      "respuesta": "El plan se arma a medida: puede incluir una especialidad o varias, según tu instalación."
+    },
+    {
+      "pregunta": "¿Cómo se define la frecuencia de las visitas?",
+      "respuesta": "Depende del tipo de instalación y su uso; se define contigo en la cotización."
+    },
+    {
+      "pregunta": "¿Puedo partir con una sola especialidad e ir sumando otras?",
+      "respuesta": "Sí, el plan puede ampliarse con el tiempo según tus necesidades."
+    },
+    {
+      "pregunta": "¿Qué pasa si surge una falla fuera de las visitas programadas?",
+      "respuesta": "Puedes contactarnos directamente y coordinamos la atención según disponibilidad."
+    }
+  ],
+  "relacionados": [
+    "electricidad",
+    "climatizacion",
+    "gasfiteria"
+  ],
+  "slug": "mantenimiento-integral"
+}

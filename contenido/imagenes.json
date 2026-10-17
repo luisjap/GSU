@@ -1,0 +1,336 @@
+{
+  "estilo": "Photorealistic commercial photography for a professional engineering and maintenance company in Santiago, Chile. Technicians wear plain dark navy work uniforms with no logos and no text, with the correct safety gear for the trade. Clean, orderly, well-lit work site, realistic hands and tools, natural skin texture, crisp detail, calm and competent mood. No text, no letters, no numbers, no logos, no watermarks, no brand names on equipment.",
+  "movil": "Composition: ONE single full-bleed photograph that fills the entire frame edge to edge. The website crops this same image to a wide strip on desktop and to a tall frame on phones, so keep the main subject and every important detail inside the central 60% of the frame. Do NOT draw any layout: no borders, no margins, no frames, no rounded corners, no inset or picture-in-picture photos, no split panels, no screens or monitors showing the scene, no UI, no badges, no graphic overlays, no gradients added on top.",
+  "modelo": "nano-banana-pro",
+  "resolucion": "2K",
+  "imagenes": [
+    {
+      "id": "inicio-hero",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): full-screen homepage hero background with white headline text placed over the left side on desktop; on phones the image fills a tall vertical screen, so the two technicians must be in the exact center.",
+      "prompt": "Two technicians in navy uniforms walking with a tool bag and a tablet across the technical rooftop of a modern office building in Santiago at blue hour, HVAC units and electrical cabinets around them, Andes mountains softly visible far behind, open evening sky on the left side of the scene, cinematic and calm",
+      "respaldo": "hero-still.webp",
+      "alt": "Técnicos recorriendo la azotea técnica de un edificio moderno"
+    },
+    {
+      "id": "electricidad-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones.",
+      "prompt": "Electrician in navy uniform, safety glasses and dielectric gloves measuring an open, neatly organized commercial electrical distribution board with a digital multimeter, aligned breakers and tidy color-coded wiring, bright technical room, warm yellow accent light",
+      "respaldo": "hero-electricidad.webp",
+      "alt": "Técnico midiendo un tablero eléctrico ordenado"
+    },
+    {
+      "id": "climatizacion-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones; the same photo is also used as the texture inside giant bold letters, so it needs strong contrast, bright highlights and clear mid-tones (avoid a dark, muddy image).",
+      "prompt": "HVAC technician in navy uniform on a stepladder servicing a wall-mounted split air conditioner in a bright modern office, refrigerant gauges connected, cool daylight with subtle cyan blue tones",
+      "respaldo": "hero-climatizacion.webp",
+      "alt": "Técnico realizando mantención a un equipo split"
+    },
+    {
+      "id": "gasfiteria-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones; the same photo is also used as the texture inside giant bold letters, so it needs strong contrast, bright highlights and clear mid-tones (avoid a dark, muddy image).",
+      "prompt": "Plumber and gas fitter in navy uniform connecting copper water and gas pipes with brass valves under a modern wall-mounted water heater in a clean laundry room, aqua teal tiles",
+      "respaldo": "hero-gasfiteria.webp",
+      "alt": "Técnico conectando cañerías de cobre bajo un calefont"
+    },
+    {
+      "id": "impermeabilizacion-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones; the same photo is also used as the texture inside giant bold letters, so it needs strong contrast, bright highlights and clear mid-tones (avoid a dark, muddy image).",
+      "prompt": "Two workers in navy uniforms applying a liquid waterproofing membrane with long rollers on a flat concrete rooftop, fresh smooth uniform coating with a subtle green tint, bright overcast sky, city buildings behind",
+      "respaldo": "hero-impermeabilizacion.webp",
+      "alt": "Aplicación de membrana impermeabilizante en una azotea"
+    },
+    {
+      "id": "soldadura-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones; the same photo is also used as the texture inside giant bold letters, so it needs strong contrast, bright highlights and clear mid-tones (avoid a dark, muddy image).",
+      "prompt": "Welder in navy work jacket and auto-darkening welding helmet doing MIG welding on a steel beam, bright arc and orange sparks frozen in motion, clean workshop, strong orange rim light",
+      "respaldo": "hero-soldadura.webp",
+      "alt": "Soldador trabajando una viga de acero con chispas"
+    },
+    {
+      "id": "electronica-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones; the same photo is also used as the texture inside giant bold letters, so it needs strong contrast, bright highlights and clear mid-tones (avoid a dark, muddy image).",
+      "prompt": "Electronics technician at an anti-static workbench soldering a component on a green circuit board under a magnifying lamp, oscilloscope glowing behind, violet ambient accent light, bright and crisp",
+      "respaldo": "hero-electronica.webp",
+      "alt": "Técnico reparando una placa electrónica en su mesa de trabajo"
+    },
+    {
+      "id": "cercos-electricos-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones; the same photo is also used as the texture inside giant bold letters, so it needs strong contrast, bright highlights and clear mid-tones (avoid a dark, muddy image).",
+      "prompt": "Security technician in navy uniform with insulated gloves tensioning parallel electric fence wires on black insulators along the top of a perimeter wall of a modern house, clear blue sky, crisp straight lines, lime green accent",
+      "respaldo": null,
+      "alt": "Técnico instalando hilos de un cerco eléctrico sobre un muro"
+    },
+    {
+      "id": "camaras-de-seguridad-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones; the same photo is also used as the texture inside giant bold letters, so it needs strong contrast, bright highlights and clear mid-tones (avoid a dark, muddy image).",
+      "prompt": "Security technician in navy uniform on a ladder mounting a white bullet CCTV camera on the exterior wall of a modern commercial building, cables in neat conduit, late afternoon light, small red LED on the camera",
+      "respaldo": null,
+      "alt": "Técnico instalando una cámara de seguridad en un muro exterior"
+    },
+    {
+      "id": "mantenimiento-integral-banner",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): website service banner. Shown at half width beside a solid colored block on desktop and full width with reduced height on phones; the same photo is also used as the texture inside giant bold letters, so it needs strong contrast, bright highlights and clear mid-tones (avoid a dark, muddy image).",
+      "prompt": "Technician in navy uniform with a tablet doing a scheduled inspection in a clean building plant room with pipes, electrical panels and an air handling unit, corporate blue accent light, orderly",
+      "respaldo": "hero-empresa.webp",
+      "alt": "Técnico inspeccionando una sala de máquinas con una tableta"
+    },
+    {
+      "id": "clima-instalacion",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): small service card in a swipeable carousel, about 300 px wide. One clear subject, close framing, readable at small size, simple uncluttered background.",
+      "prompt": "Row of outdoor air conditioning condenser units neatly installed on a dry, clean building rooftop with insulated copper lines, Andes mountains in the far distance, clear blue morning sky, no snow on the rooftop",
+      "respaldo": "hero-climatizacion.webp",
+      "alt": "Condensadoras de climatización instaladas en una azotea"
+    },
+    {
+      "id": "clima-mantencion",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): small service card in a swipeable carousel, about 300 px wide. One clear subject, close framing, readable at small size, simple uncluttered background.",
+      "prompt": "Close-up of a technician's gloved hands cleaning the filter and fins of an indoor split unit, fine detail on aluminum fins, cool light",
+      "respaldo": "hero-climatizacion.webp",
+      "alt": "Limpieza del filtro de un equipo split"
+    },
+    {
+      "id": "clima-diagnostico",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): small service card in a swipeable carousel, about 300 px wide. One clear subject, close framing, readable at small size, simple uncluttered background.",
+      "prompt": "Close-up of a digital refrigerant gauge set connected to the service valves of an outdoor unit, sharp focus on the gauge, cool blue background",
+      "respaldo": "hero-climatizacion.webp",
+      "alt": "Manómetros conectados a una unidad exterior"
+    },
+    {
+      "id": "clima-optimizacion",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): small service card in a swipeable carousel, about 300 px wide. One clear subject, close framing, readable at small size, simple uncluttered background.",
+      "prompt": "Modern office ceiling with a clean ceiling-mounted cassette air conditioner and evenly lit workspace below, calm cool tones",
+      "respaldo": "hero-climatizacion.webp",
+      "alt": "Equipo de climatización tipo cassette en una oficina"
+    },
+    {
+      "id": "gas-detalle",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): photo inside a section with a diagonal right edge and a round badge in the lower left corner; on phones shown full width at 220 px height. Keep the subject in the center-right, leave the lower-left corner simple.",
+      "prompt": "Licensed gas fitter in navy uniform checking a gas connection with an electronic leak detector next to a modern kitchen stove, clean and bright",
+      "respaldo": "hero-gasfiteria.webp",
+      "alt": "Técnico revisando una conexión de gas con un detector"
+    },
+    {
+      "id": "gas-filtraciones",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): small service card in a carousel; the website trims the bottom edge with a soft curve, so place the subject in the upper-middle part of the frame and let the photo continue naturally to every edge.",
+      "prompt": "Technician holding an acoustic water leak detector against a tiled bathroom wall, clean bright bathroom",
+      "respaldo": "hero-gasfiteria.webp",
+      "alt": "Detección de filtraciones en un baño"
+    },
+    {
+      "id": "gas-reparaciones",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): small service card in a carousel; the website trims the bottom edge with a soft curve, so place the subject in the upper-middle part of the frame and let the photo continue naturally to every edge.",
+      "prompt": "Close-up of hands installing a new chrome faucet on a modern sink with new flexible hoses, bright and clean",
+      "respaldo": "hero-gasfiteria.webp",
+      "alt": "Instalación de una grifería nueva"
+    },
+    {
+      "id": "gas-hermeticidad",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): small service card in a carousel; the website trims the bottom edge with a soft curve, so place the subject in the upper-middle part of the frame and let the photo continue naturally to every edge.",
+      "prompt": "Close-up of a pressure test gauge attached to a copper gas pipe manifold, needle steady, clean fittings",
+      "respaldo": "hero-gasfiteria.webp",
+      "alt": "Prueba de hermeticidad en una red de gas"
+    },
+    {
+      "id": "imper-inspeccion",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): right half of a split call-to-action band next to dark green text on desktop; on phones shown full width at 180 px height. Subject centered.",
+      "prompt": "Technician kneeling on a flat roof inspecting a sealed seam of a waterproof membrane around a drain outlet, bright overcast light",
+      "respaldo": "hero-impermeabilizacion.webp",
+      "alt": "Inspección de una junta de membrana en un techo"
+    },
+    {
+      "id": "soldadura-taller",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): large photo on the website with a round badge placed by the website over its top-right corner, so keep that corner a simple dark background; on phones shown full width at a short height.",
+      "prompt": "Welder in navy uniform kneeling and welding a black steel gate frame in a tidy dark workshop, bright sparks near the center of the frame, warm orange rim light",
+      "respaldo": "hero-soldadura.webp",
+      "alt": "Soldador fabricando el marco de un portón de acero"
+    },
+    {
+      "id": "electronica-placa",
+      "ratio": "3:2",
+      "ubicacion": "Context for composition only (do not draw it): main tile of a dark website grid where the website adds a fade at the bottom for text, so keep the subject in the upper two thirds.",
+      "prompt": "Macro photograph of a green circuit board with microchips, capacitors and fine copper traces, a soldering iron tip touching a joint, shallow depth of field, violet rim light",
+      "respaldo": "hero-electronica.webp",
+      "alt": "Placa electrónica en reparación"
+    },
+    {
+      "id": "camara-acceso",
+      "ratio": "16:9",
+      "ubicacion": "Context for composition only (do not draw it): one tile of a 2x2 camera grid that the website builds with its own labels; the image itself must be just the plain scene with no monitor, no grid, no frame, no labels, no timestamps, no on-screen text.",
+      "prompt": "A single real photograph taken from a high corner angle, as a ceiling-mounted security camera would see the main entrance gate and walkway of a modern office building, slight wide-angle perspective, sharp and clean, people small and distant or absent, no identifiable faces",
+      "respaldo": null,
+      "alt": "Vista de cámara del acceso a un edificio"
+    },
+    {
+      "id": "camara-estacionamiento",
+      "ratio": "16:9",
+      "ubicacion": "Context for composition only (do not draw it): one tile of a 2x2 camera grid that the website builds with its own labels; the image itself must be just the plain scene with no monitor, no grid, no frame, no labels, no timestamps, no on-screen text.",
+      "prompt": "A single real photograph taken from a high corner angle, as a ceiling-mounted security camera would see an outdoor parking lot with several parked cars, slight wide-angle perspective, sharp and clean, people small and distant or absent, no identifiable faces",
+      "respaldo": null,
+      "alt": "Vista de cámara de un estacionamiento"
+    },
+    {
+      "id": "camara-recepcion",
+      "ratio": "16:9",
+      "ubicacion": "Context for composition only (do not draw it): one tile of a 2x2 camera grid that the website builds with its own labels; the image itself must be just the plain scene with no monitor, no grid, no frame, no labels, no timestamps, no on-screen text.",
+      "prompt": "A single real photograph taken from a high corner angle, as a ceiling-mounted security camera would see a clean modern reception lobby with a desk, slight wide-angle perspective, sharp and clean, people small and distant or absent, no identifiable faces",
+      "respaldo": null,
+      "alt": "Vista de cámara de una recepción"
+    },
+    {
+      "id": "camara-bodega",
+      "ratio": "16:9",
+      "ubicacion": "Context for composition only (do not draw it): one tile of a 2x2 camera grid that the website builds with its own labels; the image itself must be just the plain scene with no monitor, no grid, no frame, no labels, no timestamps, no on-screen text.",
+      "prompt": "A single real photograph taken from a high corner angle, as a ceiling-mounted security camera would see an organized warehouse aisle with shelves and boxes, slight wide-angle perspective, sharp and clean, people small and distant or absent, no identifiable faces",
+      "respaldo": null,
+      "alt": "Vista de cámara de una bodega"
+    },
+    {
+      "id": "mantenimiento-equipo",
+      "ratio": "4:5",
+      "ubicacion": "Context for composition only (do not draw it): tall left photo of a two-photo collage next to a blue information block; on phones it keeps its proportion. Subject centered.",
+      "prompt": "Two technicians in navy uniforms reviewing a checklist on a tablet in a bright building corridor next to an open electrical cabinet",
+      "respaldo": "hero-empresa.webp",
+      "alt": "Dos técnicos revisando una lista de verificación"
+    },
+    {
+      "id": "mantenimiento-detalle",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): small square-ish photo in a collage. One simple subject.",
+      "prompt": "Close-up of a technician's hand ticking a maintenance checklist on a tablet in front of a rooftop air conditioning unit, screen blurred and unreadable",
+      "respaldo": "hero-climatizacion.webp",
+      "alt": "Registro de una mantención en una tableta"
+    },
+    {
+      "id": "inicio-cta",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): right half of a call-to-action block on the website; on phones shown full width at a short height. Subject centered.",
+      "prompt": "Technician in navy uniform shaking hands with a building manager in a bright modern lobby, tablet in hand, friendly and professional",
+      "respaldo": "hero-empresa.webp",
+      "alt": "Técnico saludando a un cliente en un hall"
+    },
+    {
+      "id": "elec-instalaciones",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): top photo of a service card about 320 px wide in a row of four on a dark navy section; the website adds a large number over the lower-left corner and a small icon over the top-right corner, so keep those corners simple. One clear subject, close framing, readable at small size.",
+      "prompt": "Electrician in navy uniform installing a new LED ceiling light and pulling cables through a clean conduit in a bright modern office under construction, warm yellow accent light",
+      "respaldo": "hero-electricidad.webp",
+      "alt": "Electricista instalando una luminaria LED"
+    },
+    {
+      "id": "elec-tableros",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): top photo of a service card about 320 px wide in a row of four on a dark navy section; the website adds a large number over the lower-left corner and a small icon over the top-right corner, so keep those corners simple. One clear subject, close framing, readable at small size.",
+      "prompt": "Close-up of hands in insulated gloves tightening a breaker inside a brand-new, neatly organized electrical distribution board with color-coded wires, warm yellow light",
+      "respaldo": "hero-electricidad.webp",
+      "alt": "Ajuste de un interruptor en un tablero eléctrico nuevo"
+    },
+    {
+      "id": "elec-diagnostico",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): top photo of a service card about 320 px wide in a row of four on a dark navy section; the website adds a large number over the lower-left corner and a small icon over the top-right corner, so keep those corners simple. One clear subject, close framing, readable at small size.",
+      "prompt": "Technician holding a thermal imaging camera pointed at an electrical panel, the camera screen showing a colorful heat map, dark room with warm yellow accent",
+      "respaldo": "hero-electricidad.webp",
+      "alt": "Diagnóstico de un tablero con cámara termográfica"
+    },
+    {
+      "id": "elec-mantencion",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): top photo of a service card about 320 px wide in a row of four on a dark navy section; the website adds a large number over the lower-left corner and a small icon over the top-right corner, so keep those corners simple. One clear subject, close framing, readable at small size.",
+      "prompt": "Technician in navy uniform checking and tightening terminals of an electrical panel with an insulated screwdriver during scheduled maintenance, tablet with checklist nearby, bright clean technical room",
+      "respaldo": "hero-electricidad.webp",
+      "alt": "Mantención preventiva de un tablero eléctrico"
+    },
+    {
+      "id": "electricidad-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid yellow block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly.",
+      "prompt": "Macro close-up filling the entire frame with neatly bundled electrical cables in blue, red, black, green-yellow and brown, polished copper conductors, busbars and breaker terminals inside an illuminated electrical switchboard, warm yellow light and crisp metallic reflections, dark navy shadows between the cables, sharp focus across the whole image, no people",
+      "respaldo": null,
+      "alt": ""
+    },
+    {
+      "id": "climatizacion-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid light cyan blue block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly against the light cyan blue.",
+      "prompt": "Macro close-up filling the entire frame with aluminum condenser fins and polished copper refrigerant coils covered in tiny cold condensation droplets, crisp cool cyan and white light with dark navy shadows, sharp focus across the whole image, no people",
+      "respaldo": null,
+      "alt": ""
+    },
+    {
+      "id": "gasfiteria-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid teal green block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly against the teal green.",
+      "prompt": "Macro close-up filling the entire frame with densely arranged polished copper pipes, brass valves, elbows and threaded fittings with small clear water droplets, warm metallic highlights and dark teal shadows, sharp focus across the whole image, no people",
+      "respaldo": null,
+      "alt": ""
+    },
+    {
+      "id": "impermeabilizacion-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid green block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly against the green.",
+      "prompt": "Macro close-up filling the entire frame with large clear rain droplets beading on a dark charcoal textured waterproof roofing membrane, bright reflections in every droplet, high contrast, sharp focus across the whole image, no people",
+      "respaldo": null,
+      "alt": ""
+    },
+    {
+      "id": "soldadura-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid dark navy block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly against the dark navy.",
+      "prompt": "Abstract extreme macro texture of molten metal: a wide glowing orange-yellow weld pool and red-hot steel surface spanning the whole frame from edge to edge, covered by a dense spray of bright white-yellow and orange sparks in every part of the image, bright warm light everywhere with only thin dark lines, absolutely no person, no hands, no arms, no gloves, no clothing, no welding torch or tools in the frame",
+      "respaldo": null,
+      "alt": ""
+    },
+    {
+      "id": "electronica-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid violet block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly against the violet.",
+      "prompt": "Macro close-up filling the entire frame with a dense printed circuit board, microchips, gold traces, solder joints and tiny components lit by violet and cyan LED light, deep dark shadows, sharp focus across the whole image, no people",
+      "respaldo": null,
+      "alt": ""
+    },
+    {
+      "id": "cercos-electricos-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid lime green block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly against the lime green.",
+      "prompt": "Close-up filling the entire frame with many tight parallel steel electric fence wires and black insulators on metal posts, seen against a deep navy dusk sky, bright metallic reflections on the wires, high contrast, sharp focus, no people",
+      "respaldo": null,
+      "alt": ""
+    },
+    {
+      "id": "camaras-de-seguridad-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid red block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly against the red.",
+      "prompt": "Close-up filling the entire frame with many white dome and bullet security cameras mounted close together on a dark charcoal wall, glass lenses with reflections and small glowing red indicator lights, high contrast, sharp focus across the whole image, no people",
+      "respaldo": null,
+      "alt": ""
+    },
+    {
+      "id": "mantenimiento-integral-letras",
+      "ratio": "4:3",
+      "ubicacion": "Context for composition only (do not draw it): this image is never shown as a normal photo; the website uses it only as the texture visible through giant bold capital letters placed on a solid blue block. So the whole frame must be evenly filled with rich detail edge to edge, with no empty, blurry or flat areas, strong contrast, bright highlights and deep shadows, so the letter shapes read clearly against the blue.",
+      "prompt": "Top-down view filling the entire frame with professional tools neatly arranged on a dark navy surface: wrenches, screwdrivers, pliers, a multimeter, pressure gauges and fittings, bright metallic highlights, high contrast, sharp focus across the whole image, no people",
+      "respaldo": null,
+      "alt": ""
+    }
+  ]
+}

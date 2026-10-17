@@ -1,0 +1,135 @@
+{
+  "nombre": "Gasfitería y redes sanitarias",
+  "nombreCorto": "Gasfitería",
+  "titulo": "Gasfitería y redes sanitarias",
+  "division": "GSU Gas",
+  "color": "#0E9F8E",
+  "tinte": "#E6F5F3",
+  "colorTexto": "#FFFFFF",
+  "boton": "#0A7A6C",
+  "botonTexto": "#FFFFFF",
+  "claro": "#7FE0D3",
+  "banner": {
+    "silabas": [
+      "Gasfi",
+      "tería"
+    ],
+    "frase": [
+      "Gas, agua",
+      "y redes",
+      "sanitarias"
+    ],
+    "imagen": "gasfiteria-banner",
+    "imagenLetras": "gasfiteria-letras"
+  },
+  "seo": {
+    "titulo": "Gasfitería y redes sanitarias · GSU",
+    "descripcion": "Instalación, reparación y mantenimiento de redes de agua y gas, artefactos y sistemas sanitarios en la Región Metropolitana. Solicita tu cotización."
+  },
+  "resumen": "Redes de agua y gas, filtraciones, griferías y artefactos.",
+  "deck": "Redes de agua, gas y sistemas sanitarios instalados y mantenidos para un funcionamiento seguro y constante.",
+  "presentacion": "Realizamos trabajos de instalación, reparación y mantenimiento de redes de agua y sistemas sanitarios, según las necesidades de cada espacio. Los servicios pueden incluir reparación de filtraciones, cambio de griferías, instalación de artefactos, revisión de conexiones y solución de problemas de funcionamiento.",
+  "trabajos": [
+    "Reparación de filtraciones",
+    "Cambio de griferías",
+    "Instalación de artefactos",
+    "Revisión de conexiones",
+    "Redes de gas y agua potable"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Tengo filtraciones o fugas",
+      "texto": "Hay humedad, olor a gas o una cuenta de agua más alta de lo normal.",
+      "puntos": [
+        "Prueba de hermeticidad",
+        "Detección del punto exacto de la fuga",
+        "Reparación y revisión final"
+      ]
+    },
+    {
+      "titulo": "Necesito instalar redes nuevas",
+      "texto": "Estoy habilitando cocina o calefont, o ampliando la red de agua o gas.",
+      "puntos": [
+        "Diseño de redes de agua y gas",
+        "Conexión de artefactos",
+        "Pruebas antes de entregar"
+      ]
+    },
+    {
+      "titulo": "Necesito mantención preventiva",
+      "texto": "Quiero revisar mis redes de agua y gas antes de que fallen.",
+      "puntos": [
+        "Revisión de cañerías y artefactos",
+        "Plan de mantención a medida",
+        "Informe técnico de la instalación"
+      ]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Instalaciones sanitarias",
+      "texto": "Redes de agua potable y alcantarillado instaladas según la normativa vigente.",
+      "icono": "gota"
+    },
+    {
+      "titulo": "Instalación de gas",
+      "texto": "Conexión de artefactos a gas y pruebas de hermeticidad.",
+      "icono": "llama"
+    },
+    {
+      "titulo": "Detección de filtraciones",
+      "texto": "Localización de fugas y pruebas de hermeticidad.",
+      "icono": "lupa"
+    },
+    {
+      "titulo": "Reparaciones",
+      "texto": "Cañerías, griferías, artefactos y componentes de la red.",
+      "icono": "llave"
+    },
+    {
+      "titulo": "Certificación SEC de gas",
+      "texto": "Declaración de instalaciones de gas ante la SEC como Instalador Clase 3.",
+      "icono": "escudo",
+      "pendiente": "Publicar solo con la licencia de Instalador Clase 3 vigente (número) a la vista."
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Instalaciones seguras",
+      "texto": "Pruebas de hermeticidad y revisión de conexiones antes de entregar."
+    },
+    {
+      "titulo": "Menos pérdidas de agua",
+      "texto": "Detectar y reparar filtraciones a tiempo evita daños y consumos excesivos."
+    },
+    {
+      "titulo": "Un solo equipo para agua y gas",
+      "texto": "Redes de agua potable, gas y artefactos coordinados por el mismo equipo."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Hacen certificación de instalaciones de gas?",
+      "respuesta": "",
+      "pendiente": "Responder según la licencia de Instalador Clase 3 vigente."
+    },
+    {
+      "pregunta": "¿Atienden filtraciones de agua además de gas?",
+      "respuesta": "Sí, trabajamos tanto redes de agua potable como de gas."
+    },
+    {
+      "pregunta": "¿Pueden revisar una instalación antes de comprarla o arrendarla?",
+      "respuesta": "Sí, podemos hacer una revisión técnica previa."
+    },
+    {
+      "pregunta": "¿Conectan artefactos nuevos como cocinas o calefonts?",
+      "respuesta": "Sí, conectamos artefactos a gas como cocinas y calefonts."
+    }
+  ],
+  "relacionados": [
+    "impermeabilizacion",
+    "mantenimiento-integral",
+    "electricidad"
+  ],
+  "slug": "gasfiteria"
+}

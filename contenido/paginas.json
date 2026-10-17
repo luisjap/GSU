@@ -1,0 +1,368 @@
+{
+  "proceso": [
+    {
+      "titulo": "Solicitud",
+      "texto": "Nos cuentas la necesidad, la ubicación, el tipo de instalación y el trabajo requerido."
+    },
+    {
+      "titulo": "Evaluación técnica",
+      "texto": "Revisamos los antecedentes y coordinamos una visita cuando es necesaria."
+    },
+    {
+      "titulo": "Cotización",
+      "texto": "Te enviamos una propuesta técnica con alcance, materiales, precio, plazos estimados y condiciones."
+    },
+    {
+      "titulo": "Ejecución",
+      "texto": "Con la propuesta aprobada, coordinamos y ejecutamos el trabajo contratado."
+    },
+    {
+      "titulo": "Revisión y entrega",
+      "texto": "Revisamos lo ejecutado y te comunicamos las recomendaciones o documentos que correspondan."
+    }
+  ],
+  "porQue": [
+    {
+      "titulo": "Responsabilidad",
+      "texto": "Cada trabajo considera sus implicancias técnicas, la seguridad y el cuidado de la instalación.",
+      "icono": "escudo"
+    },
+    {
+      "titulo": "Atención personalizada",
+      "texto": "Evaluamos cada requerimiento según el espacio, su uso y lo que necesitas.",
+      "icono": "persona"
+    },
+    {
+      "titulo": "Cotizaciones claras",
+      "texto": "Alcance, materiales, precio, plazos estimados y condiciones, por escrito.",
+      "icono": "documento"
+    },
+    {
+      "titulo": "Especialidades coordinadas",
+      "texto": "Varios servicios en un mismo proyecto, con un solo interlocutor.",
+      "icono": "grilla"
+    },
+    {
+      "titulo": "Compromiso con el cliente",
+      "texto": "Te mantenemos informado y revisamos el alcance al entregar.",
+      "icono": "corazon"
+    }
+  ],
+  "nosotros": {
+    "quienes": [
+      "En GSU somos una empresa orientada a la prestación de servicios de ingeniería, instalaciones y mantenimiento, enfocada en entregar soluciones técnicas para el funcionamiento, la seguridad y la conservación de espacios residenciales, comerciales y empresariales.",
+      "Nuestra oferta abarca electricidad, climatización, impermeabilización, gasfitería, soldadura, seguridad electrónica, instalación de cámaras de vigilancia, cercos eléctricos, electrónica y mantenimiento general.",
+      "Buscamos comprender las necesidades de cada cliente, evaluar las condiciones de cada proyecto y proponer soluciones acordes con sus requerimientos técnicos y operativos.",
+      "Nuestro enfoque se basa en la responsabilidad, la comunicación clara, la atención al cliente y el compromiso con la calidad de los trabajos realizados."
+    ],
+    "mision": [
+      "Entregar soluciones integrales de ingeniería, instalaciones y mantenimiento que respondan a las necesidades de nuestros clientes, contribuyendo a la seguridad, funcionalidad y conservación de sus instalaciones.",
+      "Nos comprometemos a trabajar con responsabilidad, eficiencia y orientación al cliente, procurando una ejecución técnica adecuada, una comunicación transparente y soluciones que aporten valor en el corto y largo plazo."
+    ],
+    "vision": [
+      "Ser una empresa reconocida en Chile por la calidad de sus servicios de ingeniería y mantenimiento, destacándonos por la confianza de nuestros clientes, la capacidad de entregar soluciones integrales y la mejora continua de nuestros procesos.",
+      "Aspiramos a consolidar relaciones duraderas con empresas, instituciones y particulares, ampliando nuestras capacidades técnicas y contribuyendo al desarrollo de espacios más seguros, eficientes y funcionales."
+    ],
+    "valores": [
+      {
+        "titulo": "Responsabilidad",
+        "texto": "Ejecutar los trabajos considerando las implicancias técnicas, la seguridad y el cuidado de las instalaciones.",
+        "icono": "escudo"
+      },
+      {
+        "titulo": "Calidad",
+        "texto": "Prestar atención a los detalles, los materiales y las condiciones acordadas.",
+        "icono": "check"
+      },
+      {
+        "titulo": "Compromiso",
+        "texto": "Procurar cumplir los plazos, alcances y compromisos establecidos.",
+        "icono": "corazon"
+      },
+      {
+        "titulo": "Transparencia",
+        "texto": "Mantener una comunicación clara sobre diagnósticos, cotizaciones, plazos y condiciones.",
+        "icono": "ojo"
+      },
+      {
+        "titulo": "Mejora continua",
+        "texto": "Perfeccionar procedimientos y adoptar soluciones que respondan a las necesidades técnicas de los clientes.",
+        "icono": "onda"
+      }
+    ],
+    "compromiso": [
+      "En GSU entendemos que cada instalación y cada proyecto presenta necesidades particulares. Por eso, buscamos entregar una atención cercana, ordenada y orientada a resultados.",
+      "Nuestro compromiso se basa en evaluar responsablemente cada requerimiento, presentar cotizaciones claras, planificar los trabajos, mantener informado al cliente y revisar los servicios ejecutados conforme al alcance acordado."
+    ],
+    "equipo": [
+      {
+        "nombre": "Luis Andrade",
+        "cargo": "Socio · Gerente General",
+        "texto": "Representa a la empresa y lidera el área comercial y administrativa."
+      },
+      {
+        "nombre": "Alejandro Buitrago",
+        "cargo": "Socio · Gerente de Operaciones",
+        "texto": "Lidera la ejecución técnica, los equipos de terreno y la gestión de personal."
+      }
+    ]
+  },
+  "garantias": {
+    "intro": [
+      "En GSU buscamos entregar trabajos que cumplan con las condiciones técnicas y el alcance acordado con cada cliente. Por ello, promovemos la revisión de los servicios ejecutados y una comunicación clara ante cualquier observación posterior a la entrega.",
+      "Cada servicio debe contar con condiciones de contratación claras, definición de su alcance y, cuando corresponda, información sobre los plazos, cobertura y procedimiento para solicitar una garantía.",
+      "Ante una eventual falla o disconformidad, solicitaremos los antecedentes necesarios para evaluar su origen y determinar las medidas que correspondan conforme a las condiciones del servicio y la normativa aplicable."
+    ],
+    "aspectos": [
+      {
+        "titulo": "Alcance del trabajo contratado",
+        "texto": "Lo que incluye cada trabajo queda definido en la cotización aceptada: tareas, materiales, plazos estimados y condiciones.",
+        "icono": "documento"
+      },
+      {
+        "titulo": "Revisión y entrega del servicio",
+        "texto": "Al terminar, revisamos el trabajo ejecutado contigo según el alcance acordado.",
+        "icono": "check"
+      },
+      {
+        "titulo": "Cómo comunicar observaciones",
+        "texto": "Si notas algo después de la entrega, escríbenos a contacto@gsu.cl o por WhatsApp indicando el servicio, la fecha y fotos si las tienes. Evaluamos los antecedentes y te respondemos con los pasos a seguir.",
+        "icono": "chat"
+      },
+      {
+        "titulo": "Condiciones de garantía por especialidad",
+        "texto": "",
+        "icono": "escudo",
+        "pendiente": "Definir plazo, cobertura, exclusiones y procedimiento de garantía para cada especialidad."
+      },
+      {
+        "titulo": "Documentación y recomendaciones técnicas",
+        "texto": "Cuando corresponda, entregamos recomendaciones de uso y mantención, y los documentos técnicos asociados al trabajo.",
+        "icono": "calendario"
+      }
+    ]
+  },
+  "proyectos": [],
+  "faq": [
+    {
+      "pregunta": "¿Qué servicios ofrece GSU?",
+      "respuesta": "Electricidad, climatización, gasfitería y redes sanitarias, impermeabilización, soldadura, electrónica, cercos eléctricos, cámaras de seguridad y CCTV, y mantenimiento general.",
+      "inicio": true
+    },
+    {
+      "pregunta": "¿Qué tipos de clientes atiende?",
+      "respuesta": "Hogares, comercios, empresas, edificios y condominios."
+    },
+    {
+      "pregunta": "¿En qué comunas o regiones trabaja?",
+      "respuesta": "Trabajamos en la Región Metropolitana. Indícanos tu comuna al solicitar la cotización.",
+      "inicio": true
+    },
+    {
+      "pregunta": "¿Cómo puedo solicitar una cotización?",
+      "respuesta": "Con el formulario de contacto, por WhatsApp al +56 9 9850 1325 o escribiendo a contacto@gsu.cl.",
+      "inicio": true
+    },
+    {
+      "pregunta": "¿La visita técnica tiene costo?",
+      "respuesta": "",
+      "pendiente": "Definir si la visita técnica tiene costo y en qué casos.",
+      "inicio": true
+    },
+    {
+      "pregunta": "¿Cuánto demora un trabajo?",
+      "respuesta": "Depende del alcance de cada trabajo. El plazo estimado se informa en la cotización."
+    },
+    {
+      "pregunta": "¿Los materiales están incluidos?",
+      "respuesta": "",
+      "pendiente": "Definir la política de materiales (incluidos, aparte o según cotización)."
+    },
+    {
+      "pregunta": "¿Los servicios tienen garantía?",
+      "respuesta": "",
+      "pendiente": "Definir condiciones de garantía por especialidad.",
+      "inicio": true
+    },
+    {
+      "pregunta": "¿Se realizan mantenimientos preventivos y correctivos?",
+      "respuesta": "Sí. Puedes contratar una visita puntual o un plan de mantención con una o varias especialidades."
+    },
+    {
+      "pregunta": "¿Es posible contratar varias especialidades para un proyecto?",
+      "respuesta": "Sí. Coordinamos las especialidades necesarias con un solo interlocutor y una sola cotización.",
+      "inicio": true
+    },
+    {
+      "pregunta": "¿Se entrega documentación técnica?",
+      "respuesta": "Cuando corresponde al tipo de trabajo, entregamos recomendaciones y los documentos técnicos asociados."
+    },
+    {
+      "pregunta": "¿Cómo puedo presentar una consulta o reclamo?",
+      "respuesta": "Escríbenos a contacto@gsu.cl indicando el servicio y la fecha. El procedimiento está en la página Consultas y reclamos."
+    }
+  ],
+  "politicas": {
+    "politica-de-calidad": {
+      "titulo": "Política de calidad",
+      "descripcion": "Cómo GSU planifica, ejecuta y revisa sus trabajos para mantener un estándar de calidad.",
+      "secciones": [
+        {
+          "parrafos": [
+            "En GSU buscamos mantener un estándar de calidad mediante la planificación de los trabajos, la definición de sus alcances, la selección adecuada de materiales y la revisión de las actividades ejecutadas.",
+            "Promovemos la mejora continua de nuestros procedimientos, la comunicación con nuestros clientes y el cumplimiento de los requisitos técnicos y normativos aplicables a cada proyecto.",
+            "Nuestro compromiso es identificar oportunidades de mejora y trabajar para entregar soluciones confiables, funcionales y acordes con las necesidades de cada cliente."
+          ]
+        }
+      ],
+      "nota": "Esta política describe un compromiso de trabajo de GSU y no corresponde a una certificación formal de calidad."
+    },
+    "politica-de-seguridad": {
+      "titulo": "Política de seguridad y prevención",
+      "descripcion": "Criterios de seguridad que GSU aplica en la planificación y ejecución de sus servicios.",
+      "secciones": [
+        {
+          "parrafos": [
+            "La seguridad constituye un criterio fundamental en la planificación y ejecución de nuestros servicios. Procuramos identificar los riesgos asociados a cada trabajo, utilizar procedimientos y elementos de protección adecuados y respetar las condiciones de seguridad del lugar de intervención.",
+            "Las actividades deben desarrollarse por personal competente y de acuerdo con las exigencias técnicas y normativas que correspondan a cada especialidad.",
+            "Cuando las condiciones de una intervención no permitan trabajar de manera segura, estas deberán evaluarse antes de continuar."
+          ]
+        }
+      ]
+    },
+    "terminos": {
+      "titulo": "Términos y condiciones",
+      "descripcion": "Condiciones generales de los servicios de GSU y del uso de este sitio web.",
+      "secciones": [
+        {
+          "titulo": "Condiciones del servicio",
+          "parrafos": [
+            "Cada servicio se ejecutará conforme a la cotización aceptada y a las condiciones acordadas entre GSU y el cliente.",
+            "Antes de comenzar, se deben definir el alcance del trabajo, los materiales considerados, los plazos estimados, el precio, las condiciones de pago y las responsabilidades de cada parte.",
+            "Cualquier modificación del alcance deberá comunicarse y acordarse antes de su ejecución. Las condiciones particulares de acceso, disponibilidad de instalaciones, trabajos adicionales y entrega deberán quedar debidamente informadas.",
+            "Las condiciones contractuales estarán sujetas a la legislación vigente y no limitarán los derechos que correspondan al cliente."
+          ]
+        },
+        {
+          "titulo": "Condiciones de pago",
+          "parrafos": [],
+          "pendiente": "Completar con las condiciones comerciales reales (anticipo, medios y plazos de pago)."
+        },
+        {
+          "titulo": "Solicitudes de contacto",
+          "parrafos": [
+            "El envío de un formulario o de un mensaje por WhatsApp no constituye un contrato ni una aceptación de trabajo. El acuerdo se establece cuando ambas partes validan el alcance y las condiciones de la cotización."
+          ]
+        },
+        {
+          "titulo": "Información publicada",
+          "parrafos": [
+            "La información sobre servicios y procesos de este sitio es de carácter general. Las imágenes de los servicios son ilustrativas y no corresponden a proyectos ejecutados por GSU, salvo en la página Proyectos."
+          ]
+        },
+        {
+          "titulo": "Propiedad del contenido",
+          "parrafos": [
+            "El logotipo, los textos y el diseño de este sitio son propiedad de GSU Ingeniería y Mantenimiento, salvo que se indique lo contrario."
+          ]
+        },
+        {
+          "titulo": "Modificaciones",
+          "parrafos": [
+            "Estos términos pueden actualizarse. La fecha de última actualización se indica al inicio de esta página."
+          ]
+        }
+      ],
+      "nota": "Este texto es una base general y debe revisarse para que refleje las condiciones comerciales reales de GSU y la legislación aplicable."
+    },
+    "privacidad": {
+      "titulo": "Privacidad y protección de datos personales",
+      "descripcion": "Cómo GSU trata los datos personales que recibe a través de este sitio y de sus canales de contacto.",
+      "secciones": [
+        {
+          "titulo": "Nuestro compromiso",
+          "parrafos": [
+            "En GSU procuramos tratar los datos personales de nuestros clientes y visitantes de manera responsable y transparente."
+          ]
+        },
+        {
+          "titulo": "Responsable del tratamiento",
+          "parrafos": [
+            "GSU Ingeniería y Mantenimiento. Contacto: contacto@gsu.cl."
+          ]
+        },
+        {
+          "titulo": "Datos del responsable",
+          "parrafos": [],
+          "pendiente": "Completar razón social, RUT y domicilio del responsable del tratamiento."
+        },
+        {
+          "titulo": "Qué datos recopilamos",
+          "parrafos": [
+            "Cuando completas el formulario de contacto: nombre, empresa (opcional), correo electrónico, teléfono, comuna o ubicación, especialidad requerida, descripción de tu necesidad y, si las adjuntas, fotografías."
+          ]
+        },
+        {
+          "titulo": "Para qué los usamos",
+          "parrafos": [
+            "Usamos esta información para atender tu solicitud, preparar cotizaciones, coordinar servicios y mantener las comunicaciones relacionadas con la relación comercial."
+          ]
+        },
+        {
+          "titulo": "Quién recibe los datos",
+          "parrafos": [
+            "Las solicitudes del formulario se envían al correo contacto@gsu.cl. No vendemos ni compartimos tus datos con terceros para fines comerciales. Si nos contactas por WhatsApp, esa conversación también queda sujeta a las políticas de WhatsApp/Meta."
+          ]
+        },
+        {
+          "titulo": "Proveedor de envío de correo",
+          "parrafos": [],
+          "pendiente": "Indicar el proveedor que procesa el envío del formulario (servicio de correo transaccional o SMTP)."
+        },
+        {
+          "titulo": "Cuánto tiempo los conservamos",
+          "parrafos": [],
+          "pendiente": "Definir el plazo de conservación de las solicitudes y cotizaciones."
+        },
+        {
+          "titulo": "Tus derechos",
+          "parrafos": [
+            "Puedes solicitar el acceso, la rectificación o la eliminación de tus datos escribiendo a contacto@gsu.cl."
+          ]
+        },
+        {
+          "titulo": "Normativa",
+          "parrafos": [
+            "El tratamiento se realiza conforme a la normativa chilena vigente sobre protección de datos personales."
+          ]
+        }
+      ],
+      "nota": "Revisar esta política con la Ley 21.719 de protección de datos personales antes de su entrada en vigencia."
+    },
+    "consultas-y-reclamos": {
+      "titulo": "Atención de consultas y reclamos",
+      "descripcion": "Cómo presentar una consulta o reclamo sobre un servicio de GSU y cómo lo gestionamos.",
+      "secciones": [
+        {
+          "parrafos": [
+            "En GSU valoramos las observaciones de nuestros clientes como una oportunidad para revisar nuestros procesos y mejorar la atención.",
+            "Ante una consulta o reclamo, solicitaremos los antecedentes necesarios para identificar el servicio involucrado, evaluar la situación y determinar los pasos a seguir.",
+            "Cuando corresponda, coordinaremos una revisión técnica y comunicaremos una respuesta de acuerdo con los antecedentes disponibles, las condiciones del servicio y las obligaciones aplicables.",
+            "Nuestro objetivo es gestionar cada caso con seriedad, imparcialidad y comunicación transparente."
+          ]
+        },
+        {
+          "titulo": "Cómo presentarlo",
+          "parrafos": [
+            "Escríbenos a contacto@gsu.cl o por WhatsApp al +56 9 9850 1325 indicando tu nombre, el servicio, la dirección y la fecha del trabajo, y una descripción de la situación. Si tienes fotografías, adjúntalas."
+          ]
+        },
+        {
+          "titulo": "Plazo de respuesta",
+          "parrafos": [],
+          "pendiente": "Definir el plazo en que GSU responde consultas y reclamos."
+        }
+      ]
+    }
+  }
+}

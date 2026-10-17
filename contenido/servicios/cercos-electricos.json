@@ -1,0 +1,129 @@
+{
+  "nombre": "Cercos eléctricos y seguridad perimetral",
+  "nombreCorto": "Cercos eléctricos",
+  "titulo": "Cercos eléctricos y seguridad perimetral",
+  "division": "GSU Seguridad",
+  "color": "#C2D62E",
+  "tinte": "#F6F8EC",
+  "colorTexto": "#0A2342",
+  "boton": "#C2D62E",
+  "botonTexto": "#0A2342",
+  "claro": "#E9F57A",
+  "banner": {
+    "silabas": [
+      "Cercos",
+      "eléctricos"
+    ],
+    "frase": [
+      "Seguridad",
+      "perimetral",
+      "para tu propiedad"
+    ],
+    "imagen": "cercos-electricos-banner",
+    "imagenLetras": "cercos-electricos-letras"
+  },
+  "seo": {
+    "titulo": "Instalación de cercos eléctricos · GSU",
+    "descripcion": "Cercos eléctricos y seguridad perimetral: instalación de componentes, energizadores, cableado, señalización y revisión del sistema."
+  },
+  "resumen": "Cercos, energizadores, señalización y revisión del sistema.",
+  "deck": "Soluciones de seguridad perimetral para complementar la protección de casas, empresas y condominios.",
+  "presentacion": "Ofrecemos soluciones de seguridad perimetral destinadas a complementar la protección de propiedades. Los trabajos pueden incluir instalación de componentes, energizadores, cableado, señalización y revisión del sistema, considerando las condiciones del recinto y los requisitos de seguridad aplicables.",
+  "trabajos": [
+    "Instalación de componentes",
+    "Energizadores",
+    "Cableado",
+    "Señalización",
+    "Revisión del sistema"
+  ],
+  "situaciones": [
+    {
+      "titulo": "Quiero proteger mi perímetro",
+      "texto": "Necesito reforzar la seguridad de una casa, empresa o condominio.",
+      "puntos": [
+        "Evaluación del perímetro",
+        "Cotización con alcance y materiales",
+        "Instalación y prueba del sistema"
+      ]
+    },
+    {
+      "titulo": "Mi cerco no funciona bien",
+      "texto": "El cerco da falsas alarmas, no tiene tensión o tiene hilos dañados.",
+      "puntos": [
+        "Revisión de energizador e hilos",
+        "Reparación de componentes",
+        "Prueba de funcionamiento"
+      ]
+    },
+    {
+      "titulo": "Quiero cerco y cámaras juntos",
+      "texto": "Busco una solución de seguridad perimetral completa.",
+      "puntos": [
+        "Un levantamiento para ambos sistemas",
+        "Una sola cotización",
+        "Un mismo equipo técnico"
+      ]
+    }
+  ],
+  "capacidades": [
+    {
+      "titulo": "Instalación de cerco",
+      "texto": "Postes, aisladores e hilos sobre muro o reja.",
+      "icono": "cerco"
+    },
+    {
+      "titulo": "Energizador y respaldo",
+      "texto": "Equipo energizador y batería de respaldo ante cortes de luz.",
+      "icono": "rayo"
+    },
+    {
+      "titulo": "Alarma y señalización",
+      "texto": "Aviso ante corte o intento de ingreso y señalética del cerco.",
+      "icono": "campana"
+    },
+    {
+      "titulo": "Revisión y mantención",
+      "texto": "Tensión, hilos, aisladores y conexiones del sistema.",
+      "icono": "reloj"
+    }
+  ],
+  "beneficios": [
+    {
+      "titulo": "Disuasión visible",
+      "texto": "Un cerco bien instalado y señalizado desincentiva intentos de ingreso."
+    },
+    {
+      "titulo": "Aviso inmediato",
+      "texto": "La alarma avisa ante un corte o contacto con el cerco."
+    },
+    {
+      "titulo": "Se complementa con cámaras",
+      "texto": "Cerco y videovigilancia pueden coordinarse en un mismo proyecto."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Qué declaración o autorización requiere un cerco eléctrico?",
+      "respuesta": "",
+      "pendiente": "Confirmar con la SEC la declaración aplicable y cómo la gestiona GSU."
+    },
+    {
+      "pregunta": "¿Funciona si se corta la luz?",
+      "respuesta": "Depende del energizador y de si incluye batería de respaldo; lo definimos en la cotización."
+    },
+    {
+      "pregunta": "¿Pueden revisar un cerco instalado por otra empresa?",
+      "respuesta": "Sí, revisamos el sistema y te indicamos qué reparar."
+    },
+    {
+      "pregunta": "¿Pueden instalar cámaras en el mismo proyecto?",
+      "respuesta": "Sí, coordinamos cerco eléctrico y cámaras en una sola cotización."
+    }
+  ],
+  "relacionados": [
+    "camaras-de-seguridad",
+    "electricidad",
+    "soldadura"
+  ],
+  "slug": "cercos-electricos"
+}

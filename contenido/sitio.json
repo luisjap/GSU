@@ -1,0 +1,50 @@
+{
+  "nombre": "GSU Ingeniería y Mantenimiento",
+  "nombreCorto": "GSU",
+  "dominio": "https://gsu.cl",
+  "lema": "Ingeniería aplicada a la continuidad operacional",
+  "telefono": "+56 9 9850 1325",
+  "telefonoLink": "+56998501325",
+  "whatsapp": "56998501325",
+  "correo": "contacto@gsu.cl",
+  "cobertura": "Región Metropolitana",
+  "comunas": { "pendiente": "Confirmar el listado de comunas atendidas dentro de la Región Metropolitana." },
+  "horario": { "pendiente": "Confirmar horario de atención para publicarlo en contacto y en el pie de página." },
+  "plazoRespuesta": { "pendiente": "Confirmar el plazo de respuesta a solicitudes para mostrarlo al enviar el formulario." },
+  "servicios": [
+    "electricidad",
+    "climatizacion",
+    "gasfiteria",
+    "impermeabilizacion",
+    "soldadura",
+    "electronica",
+    "cercos-electricos",
+    "camaras-de-seguridad",
+    "mantenimiento-integral"
+  ],
+  "menu": [
+    { "texto": "Inicio", "url": "index.html" },
+    { "texto": "Nosotros", "url": "nosotros.html" },
+    { "texto": "Servicios", "url": "servicios.html", "desplegable": true },
+    { "texto": "Proyectos", "url": "proyectos.html" },
+    { "texto": "Contacto", "url": "contacto.html" }
+  ],
+  "piePagina": {
+    "empresa": [
+      { "texto": "Nosotros", "url": "nosotros.html" },
+      { "texto": "Cómo trabajamos", "url": "como-trabajamos.html" },
+      { "texto": "Proyectos", "url": "proyectos.html" },
+      { "texto": "Garantías y respaldo", "url": "garantias.html" },
+      { "texto": "Preguntas frecuentes", "url": "preguntas-frecuentes.html" },
+      { "texto": "Blog", "url": "blog.html" }
+    ],
+    "politicas": [
+      { "texto": "Política de calidad", "url": "politica-de-calidad.html" },
+      { "texto": "Seguridad y prevención", "url": "politica-de-seguridad.html" },
+      { "texto": "Términos y condiciones", "url": "terminos.html" },
+      { "texto": "Privacidad y datos personales", "url": "privacidad.html" },
+      { "texto": "Consultas y reclamos", "url": "consultas-y-reclamos.html" },
+      { "texto": "Cookies", "url": "cookies.html" }
+    ]
+  }
+}

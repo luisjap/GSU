@@ -1,47 +1,104 @@
 # GSU — Ingeniería y Mantenimiento
 
-Sitio scroll-driven de una sola página: una secuencia de video (desktop 16:9 /
-mobile 9:16) controlada por el scroll, con capítulos por servicio (Climatic,
-Electric, Gasfiter, Security, Solder, Care), un carrusel de servicios y
-contacto directo por WhatsApp.
+Sitio corporativo de GSU: inicio con una sección por servicio, nueve páginas
+de servicio, páginas corporativas (Nosotros, Cómo trabajamos, Garantías,
+Proyectos, Preguntas frecuentes), políticas y un formulario de cotización con
+envío real por correo.
 
-Ver `BRAND.md` para la estrategia de marca (paleta, tipografía, tono) que
-rige el diseño y el copy de este sitio.
+Ver `BRAND.md` para la marca (paleta, tipografía, tono).
 
-## Stack
+## Cómo cambiar textos
 
-- HTML + CSS + JavaScript vanilla, sin build step
-- `serve` como servidor estático en producción
-- Desplegado en Railway
+Los textos **no se editan en los `.html`**: esos archivos se generan. Se editan
+en `contenido/` y luego se ejecuta `npm run build`.
+
+| Archivo | Qué contiene |
+|---|---|
+| `contenido/sitio.json` | Teléfono, correo, cobertura, menú, enlaces del pie de página |
+| `contenido/servicios/<servicio>.json` | Todo el texto de cada servicio: títulos, presentación, situaciones, capacidades, beneficios, preguntas, colores y palabra del banner |
+| `contenido/paginas.json` | Nosotros, proceso de 5 etapas, ¿Por qué elegir GSU?, garantías, preguntas frecuentes, proyectos y políticas |
+| `contenido/imagenes.json` | Cada imagen del sitio con su prompt de IA y su ubicación |
+| `contenido/legado/` | Blog y cookies (se envuelven con el nuevo encabezado y pie) |
+
+Los textos de composición del inicio (por ejemplo las etiquetas de las
+cámaras o las zonas del cerco) están en `herramientas/build.mjs`, función
+`seccionServicio`.
+
+### Datos pendientes
+
+Cualquier elemento con un campo `"pendiente": "nota"` **no se publica**.
+`npm run build` escribe `PENDIENTES.md` con la lista completa. Para publicar el
+dato, completa el texto y borra el campo `"pendiente"`.
+
+Para ver los pendientes marcados en amarillo dentro de las páginas:
+`npm run build:revision` (no publicar esa versión; vuelve a correr `npm run build`).
+
+### Proyectos
+
+Se agregan en `contenido/paginas.json` → `proyectos`, solo con trabajos reales
+de GSU y autorización del cliente:
+
+```json
+{ "titulo": "…", "servicio": "electricidad", "necesidad": "…", "solucion": "…",
+  "alcance": "…", "resultado": "…", "fotos": { "despues": "images/proyectos/….webp" } }
+```
+
+## Imágenes
+
+Las imágenes de servicios son generadas con IA (kie.ai, modelo nano-banana-pro)
+y son **ilustrativas**: nunca se usan en Proyectos. Cada una tiene un prompt
+pensado para su ubicación, y una sola versión que funciona en escritorio y en
+teléfono (sujeto centrado).
+
+```bash
+npm run imagenes                                   # genera las que falten
+python3 herramientas/generar_imagenes.py --solo inicio-hero --forzar   # rehace una
+```
+
+Requiere la clave `KIE_API_KEY` en el archivo `.env` (git lo ignora) y Pillow.
+Cada imagen se guarda en `images/ia/<id>-480.webp`, `-960.webp` y `-1600.webp`.
+Cuesta 18 créditos por imagen.
 
 ## Desarrollo local
 
 ```bash
-python3 -m http.server 8080
-# o
-npx serve .
+npm install
+npm run build
+npm start          # http://localhost:8080
 ```
 
-Abrir `http://localhost:8080`.
+## Formulario de cotización
 
-## Estructura
+`server.mjs` sirve el sitio y recibe `POST /api/contacto`. Valida los datos,
+acepta hasta 3 fotos de 5 MB, tiene campo trampa anti-spam y un límite de 5
+envíos cada 10 minutos por IP, y envía la solicitud a `contacto@gsu.cl`.
 
-- `index.html` — el sitio completo (markup, estilos y motor de scroll en un solo archivo)
-- `frames/desktop/` y `frames/mobile/` — 540 fotogramas WebP por versión (secuencia de scroll)
-- `hero-still.webp` / `hero-still-mobile.webp` — imagen estática del hero antes de iniciar el scroll
-- `logo-white.webp` / `logo-navy.webp` — logo GSU (versión inversa y principal)
-- `favicons/` — íconos de pestaña/app
+Variables de entorno en Railway (Variables del servicio):
+
+| Variable | Valor |
+|---|---|
+| `MAIL_TO` | `contacto@gsu.cl` (valor por defecto) |
+| `MAIL_FROM` | remitente verificado, ej. `Sitio GSU <web@gsu.cl>` |
+| `RESEND_API_KEY` | si se usa Resend (resend.com), **o bien**: |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | datos SMTP del correo de gsu.cl |
+
+Sin proveedor configurado, el formulario responde con un error y ofrece
+WhatsApp: nunca muestra un envío exitoso que no ocurrió.
 
 ## Deploy en Railway
 
-1. El repo ya está conectado a Railway (proyecto existente, servicio enlazado a `main`).
-2. `railway.json` define `npm install` como build y `npm start` (sirve la carpeta con `serve`) como comando de arranque.
-3. `PORT` la inyecta Railway automáticamente.
-4. Cada push a `main` redeploya solo.
+`railway.json` ejecuta `npm install` y `npm start`. Los `.html` generados se
+suben al repositorio, así que antes de cada push hay que correr `npm run build`.
+Cada push a `main` publica el sitio.
 
-## Historial
+## Estructura
 
-Este repo alojaba antes una aplicación Next.js (tienda, blog, checkout). Ese
-proyecto no se eliminó: hay un respaldo completo (código + `git log`) en
-`../GSU-nextjs-backup-2026-08-19/`, y también sigue disponible en el
-historial de git de este mismo repo (commits anteriores a este cambio).
+- `*.html` — páginas generadas (no editar a mano)
+- `styles.css`, `site.js` — estilos y comportamiento compartidos
+- `server.mjs` — servidor y formulario
+- `contenido/` — textos y datos
+- `herramientas/build.mjs` — generador de páginas
+- `herramientas/generar_imagenes.py` — generador de imágenes con kie.ai
+- `images/ia/` — imágenes generadas · `images/hero-*.webp` — imágenes anteriores (respaldo)
+- `admin/cotizador.html` — cotizador interno (no se genera, no está en el sitemap)
+- `frames/` — secuencia de 540 fotogramas del sitio anterior; ya no la usa ninguna página
